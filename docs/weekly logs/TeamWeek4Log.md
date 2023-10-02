@@ -22,10 +22,10 @@ Group member usernames:
 
 ### Burnup Chart
 
----------------
+![Burn Up Chart](images/BurnUpChartWk4.png)
 
 ### Kanban board - Tasks identified this week
 
----------------
+![Kanban Board](images/TableViewCreatedIssues.png)
 
-### *No test reports this week*
+#### *No test reports this week*
