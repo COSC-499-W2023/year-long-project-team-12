@@ -9,3 +9,11 @@ Group member: Tyler Grant @tmg-repo
 * Wrote this log and did peer evaluation.
 
 ![tasks](/docs/weekly%20logs/images/TylerWeek4Log.png)
+
+## Week 5 Log (October 2nd - October 8th)
+
+* Added to and responded to issues on Kanban board.
+* Started learning AWS and React watching tutorials etc. on them to gain familiarity.
+* Wrote this log and did peer evaluation.
+
+![week 5 tasks](/docs/weekly%20logs/images/Tyler_Week5.png)
