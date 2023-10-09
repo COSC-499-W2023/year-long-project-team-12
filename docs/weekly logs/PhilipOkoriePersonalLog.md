@@ -17,3 +17,14 @@ Group member: Philip Okorie
   
 
 <img width="1440" alt="Screen Shot 2023-10-01 at 7 15 34 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/edbd5269-9766-4e4c-83d4-dc4c48917f11">
+
+
+
+## Week 5 Log (October 1st - October 8th)
+
+Group member: Philip Okorie
+
+* Created the app logo
+* Contributed in app name selection
+* Worked on AWS and React Knowledge
+  
