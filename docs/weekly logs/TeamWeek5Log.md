@@ -20,6 +20,8 @@ Group member usernames:
 
 * Watched tutorial videos on AWS and React
 
+* Added issues in the team's Kanban Board
+
 ### App Name and logo
 
 <img width="216" alt="Ex-ZBT logo" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/e2c52143-30ea-4b60-9115-32729ebb8695">
