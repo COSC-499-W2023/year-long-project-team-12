@@ -8,7 +8,7 @@ Group member usernames:
 
 * @PhilipOkorie - Philip Okorie
 
-* Jusnoor Kaur Sachdeva
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
 
 * @tmg-repo - Tyler Grant
 
