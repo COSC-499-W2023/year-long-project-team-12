@@ -5,7 +5,7 @@ const Login = () => {
     <div className="login">
         <div className="card">
             <div className="left">
-                <h1> Hello world</h1>
+                <h1>EX-ZBT</h1>
                 <p>
                     The purpose of the software is to provide a video sharing platform specifically designed for job interviews.
                      It allows users to register, create profiles, upload and share videos for job interviews, and receive feedback/hiring decisions based on their video submissions.
