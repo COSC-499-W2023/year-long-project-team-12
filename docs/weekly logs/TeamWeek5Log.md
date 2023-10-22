@@ -8,25 +8,34 @@ Group member usernames:
 
 * @PhilipOkorie - Philip Okorie
 
-* Jusnoor Kaur Sachdeva
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
 
 * @tmg-repo - Tyler Grant
 
-## Tasks Completed
+## Features for Milestone
 
-* Created Application's name and logo
+* Created application's name and logo
 
-* Created mockup of the app
+* Created mockup of the web application
 
 * Watched tutorial videos on AWS and React
 
-* Added issues in the team's Kanban Board
+* Created issues in the team's Kanban Board
 
 ### App Name and logo
 
-<img width="216" alt="Ex-ZBT logo" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/e2c52143-30ea-4b60-9115-32729ebb8695">
+![Logo](images/Ex-ZBT%20E%20logo.png)
 
-<img width="108" alt="Ex-ZBT E logo" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/41206449-59de-4988-af17-fc31b7b3f5e9">
+![Name and Logo](images/Ex-ZBT%20logo.png)
 
+### Burnup Chart
+
+![Burn Up Chart](images/BurnUpChartWk5.png)
+
+### Kanban board - Tasks identified this week
+
+![Completed Tasks - Board](images/CompletedTasksWk5.png)
+
+![In Progress Tasks - Board](images/InProgressTasksWk5.png)
 
 #### *No test reports this week*

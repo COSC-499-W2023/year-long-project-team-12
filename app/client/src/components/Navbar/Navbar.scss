@@ -1,0 +1,40 @@
+.navbar{
+    height: 80px;
+    
+
+    .wrapper{
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .item{
+            display: flex;
+            align-items: center;
+            font-size:  20px;
+        }
+
+        .left{
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .center{
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            .icons{
+                display: flex;
+                gap: 15px;
+                color: #777;
+                cursor: pointer;
+            }
+        }
+    }
+}

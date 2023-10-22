@@ -1,7 +1,19 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11992536&assignment_repo_type=AssignmentRepo)
 # Project-Starter
+ Here are some things to keep in mind on this project.
+ - Only make a PR on the `develop` branch.
+ - We would merge the develop branch to the master branch every Sunday. (p.s: it would only be merged if all the tests pass)
+ - When making a PR follow this format below;
+    - What is this change?
+    
+    - Why are you making this change?
+    
+    - Link to design document/Github issues.
+    
+    - What testing was conducted?
+    
+    - Does the change have unit test coverage?
 
-Please use the provided folder structure for your docs (project plan, design documentation, communications log, weekly logs, and final documentation), source code, testing, etc.    You are free to organize any additional internal folder structure as required by the project.  Please use a branching workflow and once an item is ready, do remember to issue a PR, code review, and merge it into the develop branch and then the master branch.
 ```
 .
 ├── docs                    # Documentation files (alternatively `doc`)
