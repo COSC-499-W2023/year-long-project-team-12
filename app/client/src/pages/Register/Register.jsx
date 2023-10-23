@@ -5,6 +5,7 @@ import Login from '../Login/Login';
 const Register = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [userType, setUserType] = useState('interviewee'); // Default to 'interviewee'
+  const [username, setUsername] = useState('');
 
   const toggleLogin = () => {
     setShowLogin(!showLogin);
@@ -12,6 +13,10 @@ const Register = () => {
 
   const handleUserTypeChange = (event) => {
     setUserType(event.target.value);
+  };
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
   };
 
   return (
@@ -29,6 +34,13 @@ const Register = () => {
             <form>
               <input type="text" placeholder="Full Name" />
               <input type="text" placeholder="Email" />
+              
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={handleUsernameChange}
+              />
 
               <div className="user-type">
                 <p>Select User Type:</p>
