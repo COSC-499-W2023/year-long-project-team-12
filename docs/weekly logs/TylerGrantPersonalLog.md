@@ -17,3 +17,12 @@ Group member: Tyler Grant @tmg-repo
 * Wrote this log and did peer evaluation.
 
 ![week 5 tasks](/docs/weekly%20logs/images/Tyler_Week5.png)
+
+## Week 6 & 7 Log (October 9th - October 22nd)
+
+* Continued learning React framework.
+* Contributed to the creation of the front end of the project by coding pages.
+* Created a team log for the week.
+* Learning the AWS implementation for the project.
+
+![week 6&7 tasks](/docs/weekly%20logs/images/week67Tyler.png)
