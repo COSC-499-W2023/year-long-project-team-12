@@ -27,4 +27,14 @@ Group member: Philip Okorie
 * Created the app logo
 * Contributed in app name selection
 * Worked on AWS and React Knowledge
-  
+
+## Week 5 and 6 Log (0ctober 8th - October 22nd)
+
+Group member: Philip Okorie
+
+* Reviewed others code for FE and Backend
+* Dockerized our app
+
+
+  <img width="1440" alt="Screenshot 2023-10-22 at 11 11 28 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/1f506072-54b0-4351-a3e9-554b44e43f43">
+
