@@ -32,7 +32,7 @@ Group member: Philip Okorie
 
 Group member: Philip Okorie
 
-* Reviewed others code for FE and Backend
+* Reviewed PR for FE and Backend
 * Dockerized our app
 
 
