@@ -26,6 +26,4 @@ public class getUserLogin {
                 '}';
     }
 
-    public convertToDTO()
-
 }
