@@ -11,6 +11,7 @@ import Profile from "./pages/Profile/Profile";
 import Login from "./pages/Login/Login";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import Uploader from "./pages/Uploader/Uploader";
 import "./app.scss";
 import { useContext } from "react";
 import { AuthContext } from "./context/authContext";
@@ -67,6 +68,10 @@ function App() {
         {
           path:"/jobs",
           element:<JobPostings/>
+        },
+        {
+          path:"/upload",
+          element:<Uploader />
         }
       ]
     }
