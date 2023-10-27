@@ -25,3 +25,18 @@ Group member username:
 * Completed logs and weekly peer evaluation.
 
 ![Hameed Tasks](images/HameedWeek5Tasks.png)
+
+
+## Week 6 Log (October 9th - October 22nd)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Setup MongoDB on backend, for user login and registration.
+* Started testing AWS amplify/docker for containerization.
+* Setup application backend following a widget, business, transactional and DB architecture.
+* Wrote code to read user details from FE and store on Database for user login and registration.
+* Setting up spring framework for dependency injection on the backend.
+
+
+![Hameed Tasks](images/HameedWeek6and7Tasks.png)
