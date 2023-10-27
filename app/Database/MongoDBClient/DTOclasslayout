@@ -1,0 +1,61 @@
+public class UserRegistrationDTO {
+    private String username;
+    private String password;
+    // Add more fields as needed for user registration data
+
+    // Default constructor
+    public UserRegistrationDTO() {
+    }
+
+    public UserRegistrationDTO(String username, String password) {
+        this.username = username;
+        this.password = password;
+        // Initialize other fields here if needed
+    }
+
+    // Getter and setter methods for fields
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    
+}
+
+#Data Transfer Object (DTO) class in Java can be used to transfer user registration details from the front end to the back end via JSON. Create a Java class with fields that match the structure of the JSON data
+#BELOW IS THE DEMONSTRATION FOR THE SAME:
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+//received a JSON string from the front end
+String jsonFromFrontEnd = "{\"username\":\"user123\", \"password\":\"password123\"}";
+
+// Initialize ObjectMapper from Jackson library
+ObjectMapper objectMapper = new ObjectMapper();
+
+try {
+   
+    UserRegistrationDTO registrationDTO = objectMapper.readValue(jsonFromFrontEnd, UserRegistrationDTO.class);
+
+    //  access registration data using the DTO object
+    String username = registrationDTO.getUsername();
+    String password = registrationDTO.getPassword();
+
+    // Process the registration data in the back end
+} catch (Exception e) {
+    e.printStackTrace();
+    // Handle JSON parsing or other exceptions
+}
+
+
+
