@@ -31,6 +31,7 @@ const Profile = () => {
       </div>
       <div className="profileContainer">
         <div className="uInfo">
+          
           <div className="center">
             <span>{currentUser.name}</span>
             <div className="info">

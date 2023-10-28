@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import "./Login.scss"
 import { AuthContext } from "../../context/authContext"
-import { redirect } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 
 const Login = () => {
 
@@ -21,7 +21,9 @@ const Login = () => {
                     The purpose of the software is to provide a video sharing platform specifically designed for job interviews.
                      It allows users to register, create profiles, upload and share videos for job interviews, and receive feedback/hiring decisions based on their video submissions.
                 </p>
+                <Link to="/register">
                 <button>Register</button>
+                </Link>
             </div>
             <div className="right">
                 <h1>Login</h1>

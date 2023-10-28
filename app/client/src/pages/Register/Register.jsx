@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Register.scss';
 import Login from '../Login/Login';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -27,7 +28,10 @@ const Register = () => {
         <div className="card">
           <div className="left">
             <h1>EX-ZBT</h1>
+            <Link to="/login">
             <button onClick={toggleLogin}>Already have an account? Sign in</button>
+            </Link>
+            
           </div>
           <div className="right">
             <h1>Register</h1>
