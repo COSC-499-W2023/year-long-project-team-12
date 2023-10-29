@@ -13,16 +13,11 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Uploader from "./pages/Uploader/Uploader";
 import "./app.scss";
-import { useContext } from "react";
-import { AuthContext } from "./context/authContext";
-
-
-
-
+import {useAuth} from "./context/authContext";
 
 
 function App() {
-  const currentUser = useContext(AuthContext);
+  const currentUser = useAuth();
   
   const Layout = () =>{
     return (
@@ -33,9 +28,7 @@ function App() {
       </div>
     )
   }
-  
 
- 
   const ProtectedRoute = ({children}) =>{
     if(!currentUser){
       return <Navigate to="/login"/>
@@ -86,9 +79,6 @@ function App() {
     <RouterProvider router={router}/>
   </div> 
   );
-
-  
-  
 }
 
 export default App;

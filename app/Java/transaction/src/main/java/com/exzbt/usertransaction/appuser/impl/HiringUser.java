@@ -1,6 +1,4 @@
 package com.exzbt.usertransaction.appuser.impl;
-
-import com.exzbt.mongoDBclient.MongoDBAtlasClient;
 import com.exzbt.usertransaction.appuser.api.UserDetails;
 
 import javax.inject.Inject;
@@ -18,10 +16,6 @@ public class HiringUser implements UserDetails {
     private String email;
     @Inject
     private String password;
-    @Inject
-    private MongoDBAtlasClient dbClient;
-
-    private String DatabaseName = "EXZBT_USERDATA";
 
     public String getUserId() {
         return userId;
