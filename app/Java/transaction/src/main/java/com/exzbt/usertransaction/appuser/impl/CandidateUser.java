@@ -1,37 +1,41 @@
 package com.exzbt.usertransaction.appuser.impl;
 
-import com.exzbt.mongoDBclient.MongoDBAtlasClient;
 import com.exzbt.usertransaction.appuser.api.UserDetails;
 
-import org.bson.Document;
-import org.springframework.stereotype.Component;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.inject.Inject;
-
-@Component
+@Document("UserData")
 public class CandidateUser implements UserDetails {
-    @Inject
+    @Id
     private String userId;
-    @Inject
     private String firstName;
-    @Inject
     private String lastName;
-    @Inject
     private String username;
-    @Inject
     private String email;
-    @Inject
     private String password;
-    @Inject
-    private MongoDBAtlasClient dbClient;
-    private final String DatabaseName = "EXZBT_USERDATA";
+
+    public CandidateUser(){
+
+    }
+
+    public CandidateUser(String userId, String firstName, String lastName, String username, String email, String password) {
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
     public String getUserId() {
         return userId;
     }
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
     @Override
     public String getFirstName() {
         return firstName;
@@ -80,26 +84,5 @@ public class CandidateUser implements UserDetails {
     @Override
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void insert(String Collection){
-        Document user = new Document();
-        user.append("UserID", getUserId());
-        user.append("First Name", getFirstName());
-        user.append("Last Name", getLastName());
-        user.append("Email", getEmail());
-        user.append("Username", getUsername());
-        user.append("Password", getPassword());
-        dbClient.writeToDatabaseCollection(DatabaseName,
-                Collection, user);
-    }
-    public void read(String Collection) {
-        dbClient.readDatabaseCollection(DatabaseName, Collection);
-    }
-    public void update(){
-
-    }
-    public void delete(){
-
     }
 }

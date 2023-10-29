@@ -21,4 +21,6 @@ public interface UserDetails {
     String getEmail();
 
     void setEmail(String email);
+
+
 }
