@@ -11,7 +11,7 @@ Group member username:
 * Created Team's Kanban Board.
 * Completed logs and weekly peer evaluation.
 
-![Hameed Tasks](images/HameedWeek4Tasks.png)
+![Hameed Tasks](images/Hameed/HameedWeek4Tasks.png)
 
 ## Week 5 Log (October 2nd - October 8th)
 
@@ -24,7 +24,7 @@ Group member username:
 * Decided on React and Java (spring) frameworks for project.
 * Completed logs and weekly peer evaluation.
 
-![Hameed Tasks](images/HameedWeek5Tasks.png)
+![Hameed Tasks](images/Hameed/HameedWeek5Tasks.png)
 
 
 ## Week 6 Log (October 9th - October 22nd)
@@ -39,4 +39,21 @@ Group member username:
 * Setting up spring framework for dependency injection on the backend.
 
 
-![Hameed Tasks](images/HameedWeek6and7Tasks.png)
+![Hameed Tasks](images/Hameed/HameedWeek6and7Tasks.png)
+
+## Week 6 Log (October 23rd - October 29th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Created Rest Controllers and worked on FE connection using Spring Web MVC
+* Used AWS Amplify to host the web application for the first time.
+* Setting up CI/CD pipeline with AWS and Github actions (still in progress).
+* Worked to implement user login and registration features for both the frontend and backend.
+* Cleaned up repositories, and also removed unused code. Trying to setup dockerization for local development and testing.
+
+![Hameed Tasks](images/Hameed/HameedWeek8WLtasks.png)
+
+I mostly worked on task 11 all week, the code functionality is good, still working on implementing testing.
+
+![Hameed Tasks](images/Hameed/HameedWeek8Tasks.png)
