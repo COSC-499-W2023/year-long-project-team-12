@@ -144,4 +144,12 @@ Group member usernames:
 
 ![Kanban tasks continued](images/week8_kanban2.png)
 
-#### *No test reports this week*
+### Testing reports
+
+The Jest testing framework was used. There was testing conducted on ensuring suitable ouputs for user error validation whilst interacting with the login and register pages.
+
+Screenshot of some testing (testing code + file needing corrections so changes still required to have passed tests)
+
+
+
+
