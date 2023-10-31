@@ -9,5 +9,15 @@
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
     "babel-jest": "^29.7.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": []
+  },
+  "transform": {
+    "^.+\\.jsx$": "babel-jest"
   }
 }

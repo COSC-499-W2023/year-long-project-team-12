@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Register from '../app/client/src/pages/Register'; 
+import Register from '../app/client/src/pages/Register/Register'; 
 
 describe('Register Component', () => {
   it('displays error messages for empty fields', () => {
@@ -51,21 +51,17 @@ describe('Register Component', () => {
   });
 
   it('displays an error message for special symbols in First Name and Last Name', () => {
-    const { getByText, getByPlaceholderText } = render(<Register />);
+    const { getByText, getByPlaceholderText } = render(<Register/>);
 
-  
     const firstNameInput = getByPlaceholderText('First Name');
     const lastNameInput = getByPlaceholderText('Last Name');
 
-    
     fireEvent.change(firstNameInput, { target: { value: 'John@' } });
     fireEvent.change(lastNameInput, { target: { value: 'Doe$' } });
 
-    
     const registerButton = getByText('Register');
     fireEvent.click(registerButton);
 
-   
     expect(getByText('First Name cannot contain special symbols')).toBeInTheDocument();
     expect(getByText('Last Name cannot contain special symbols')).toBeInTheDocument();
   });
