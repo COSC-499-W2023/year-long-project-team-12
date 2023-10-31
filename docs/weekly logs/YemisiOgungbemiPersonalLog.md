@@ -20,3 +20,20 @@
 - Added and Moved issues in the project Kanban board.
 - Wrote documentation for the React app.
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/f6c9b606-df62-4bc3-8df7-69e2b4c0b71e)
+
+
+## Week October 23rd - October 29th
+- Designed the front end for the profile page.
+- Designed the front end for the upload page.
+- Designed the video upload functionality.
+- Designed the front end of the Job Page.
+- Fixed the slider issue on the home page.
+- Reviewed PRs.
+- Read tutorials on React testing.
+- Moved issues in the project kanban board.
+
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/46ff034d-cab2-47a5-b997-d598606cb103)
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/41d711ae-697c-4442-872f-08cb773f1f36)
+
+
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/67c4e600-d4ff-43dd-8121-f1369d5e266f)
