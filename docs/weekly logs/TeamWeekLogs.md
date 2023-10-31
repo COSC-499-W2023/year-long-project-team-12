@@ -150,6 +150,8 @@ The Jest testing framework was used. There was testing conducted on ensuring sui
 
 Screenshot of some testing (testing code + file needing corrections so changes still required to have passed tests)
 
+This is where the testing is at currently but it is being worked through on issue assigned on Kanban board.
 
+![register](images/testing_register.png)
 
-
+![register tests 2](images/testing_register2.png)
