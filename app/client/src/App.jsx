@@ -12,6 +12,7 @@ import Login from "./pages/Login/Login";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Uploader from "./pages/Uploader/Uploader";
+import DoesNotExist from "./pages/DoesNotExist/DoesNotExist"
 import "./app.scss";
 import {useAuth} from "./context/authContext";
 
@@ -65,6 +66,10 @@ function App() {
         {
           path:"/upload",
           element:<Uploader />
+        },
+        {
+          path:"*",
+          element:<DoesNotExist />
         }
       ]
     }
