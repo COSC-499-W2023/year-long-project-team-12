@@ -26,3 +26,12 @@ Group member: Tyler Grant @tmg-repo
 * Learning the AWS implementation for the project.
 
 ![week 6&7 tasks](/docs/weekly%20logs/images/week67Tyler.png)
+
+
+## Week 8 Log (October 9th - October 22nd)
+
+* Added user input error validation to register and login pages.
+* Added tests for the code that was added to see verification worked.
+* Created weekly team log.
+
+![week 8 tasks](/docs/weekly%20logs/images/week8_ind.png)

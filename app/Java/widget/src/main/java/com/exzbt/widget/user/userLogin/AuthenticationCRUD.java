@@ -20,6 +20,6 @@ public class AuthenticationCRUD {
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.AUTHORIZATION, response.getToken())
-                .build();
+                .body(response);
     }
 }

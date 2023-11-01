@@ -144,4 +144,8 @@ Group member usernames:
 
 ![Kanban tasks continued](images/week8_kanban2.png)
 
-#### *No test reports this week*
+![Tests](images/TestingRunBE.png)
+
+Unit Testing for BE is being done via Spring Boot and JUnit. TestNG will be used to run testing scripts as well.
+For the FE, testing is being done via Jest. There was testing conducted on ensuring suitable ouputs for user error validation whilst interacting with the login and register pages.
+
