@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginIcon from '@mui/icons-material/Login';
 import SwitchAccountIcon from '@mui/icons-material/SwitchAccount';
+
+import logo from "./logo.png"
+
+
 import "./Navbar.scss";
 const Navbar = () => {
   return (
@@ -9,7 +13,7 @@ const Navbar = () => {
         <div className="wrapper">
             
             <div className='left'>
-               
+               <img src={logo} alt="logo"></img>
             </div>
             
             <div className='center'>
