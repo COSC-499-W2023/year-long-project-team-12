@@ -8,10 +8,8 @@ function DoesNotExist() {
       <div className="header">
       <h2> Sorry, The Page you want to visit does not Exist :)</h2>
       </div>
-
     </div>
-
-  )
-}
+  );
+};
 
 export default DoesNotExist;
