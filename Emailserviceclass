@@ -1,0 +1,66 @@
+#after completing registration :
+import java.util.Properties;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+public class EmailService {
+    private final String smtpHost;
+    private final String smtpPort;
+    private final String senderEmail;
+    private final String senderPassword;
+
+    public EmailService(String smtpHost, String smtpPort, String senderEmail, String senderPassword) {
+        this.smtpHost = smtpHost;
+        this.smtpPort = smtpPort;
+        this.senderEmail = senderEmail;
+        this.senderPassword = senderPassword;
+    }
+
+    public void sendRegistrationConfirmationEmail(String recipientEmail, String userName) {
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", smtpHost);
+        props.put("mail.smtp.port", smtpPort);
+
+        Session session = Session.getInstance(props, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(senderEmail, senderPassword);
+            }
+        });
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(senderEmail));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail));
+            message.setSubject("Account Registration Confirmation");
+            message.setText("Hello " + userName + ",\n\nYour account has been successfully created. Thank you for registering.");
+
+            Transport.send(message);
+            System.out.println("Registration confirmation email sent successfully.");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            System.err.println("Failed to send registration confirmation email: " + e.getMessage());
+        }
+    }
+}
+
+
+#the above EmailService class can be used using our SMTP server details and senders details , after completing the registration process we can call the sendRegistrationConfirmationEmail with the email and username as shown below for example:
+public class RegistrationApp {
+    public static void main(String[] args) {
+        String smtpHost = "your_smtp_server";
+        String smtpPort = "your_smtp_port";
+        String senderEmail = "your_sender_email";
+        String senderPassword = "your_sender_password";
+
+        EmailService emailService = new EmailService(smtpHost, smtpPort, senderEmail, senderPassword);
+
+        // Simulate a user registration
+        String userName = "John Doe";
+        String recipientEmail = "user@example.com";
+
+        emailService.sendRegistrationConfirmationEmail(recipientEmail, userName);
+    }
+}

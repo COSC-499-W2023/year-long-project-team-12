@@ -1,6 +1,6 @@
 import React from 'react'
 import "./post.scss";
-
+import { Link } from 'react-router-dom';
 
 function Post({post}) {
   return (
@@ -23,7 +23,10 @@ function Post({post}) {
             </div>  
         </div>
         <div className='info'>
-        <button >Apply</button>
+          <Link to="/upload">
+          <button >Apply</button>
+          </Link>
+        
         </div>
     </div>
     </div>

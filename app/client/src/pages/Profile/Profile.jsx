@@ -8,13 +8,12 @@ import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { AuthContext } from "../../context/authContext";
-import { useContext } from "react";
+import {useAuth} from "../../context/authContext";
 
 
 const Profile = () => {
 
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser } = useAuth();
   return (
     <div className="profile">
       <div className="images">
@@ -31,6 +30,7 @@ const Profile = () => {
       </div>
       <div className="profileContainer">
         <div className="uInfo">
+          
           <div className="center">
             <span>{currentUser.name}</span>
             <div className="info">

@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import './Register.scss';
-import Login from '../Login/Login';
+import {useAuth} from '../../context/authContext.js';
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { saveCurrentUser } from "../../services/ClientAPI";
 
 const Register = () => {
-  const [showLogin, setShowLogin] = useState(false);
+  const {currentUser, setCurrentUserFromToken} = useAuth();
   const [userType, setUserType] = useState('interviewee'); // Default to 'interviewee'
   const [username, setUsername] = useState('');
+  let navigate = useNavigate();
 
   const toggleLogin = () => {
-    setShowLogin(!showLogin);
+     navigate("/login")
   };
 
   const handleUserTypeChange = (event) => {
@@ -19,59 +23,75 @@ const Register = () => {
     setUsername(event.target.value);
   };
 
+  const handleRegister = (event) => {
+    event.preventDefault()
+    const object= {}
+    const formData = new FormData(event.target)
+    formData.forEach((value, key) => object[key] = value);
+    const currentUser = JSON.stringify(object)
+    let token;
+    saveCurrentUser(currentUser).then(resp => {
+      token = resp.headers["authorization"];
+      localStorage.setItem("access_token", token)
+      setCurrentUserFromToken()
+      navigate("/jobs");
+      console.log(token)
+    }).catch(err => {
+        console.log(err);
+    })
+  }
+
   return (
     <div className="register">
-      {showLogin ? (
-        <Login />
-      ) : (
-        <div className="card">
-          <div className="left">
-            <h1>EX-ZBT</h1>
-            <button onClick={toggleLogin}>Already have an account? Sign in</button>
-          </div>
-          <div className="right">
-            <h1>Register</h1>
-            <form>
-              <input type="text" placeholder="Full Name" />
-              <input type="text" placeholder="Email" />
-              
-              <input
+      <div className="card">
+        <div className="left">
+          <h1>EX-ZBT</h1>
+          <button onClick={toggleLogin}>Already have an account? Sign in</button>
+        </div>
+        <div className="right">
+          <h1>Register</h1>
+          <form onSubmit={handleRegister}>
+            <input type="text" name = "firstName" placeholder="First Name" />
+            <input type="text" name = "lastName" placeholder="Last Name" />
+            <input type="text" name = "email" placeholder="Email" />
+
+            <input
                 type="text"
+                name = "username"
                 placeholder="Username"
                 value={username}
                 onChange={handleUsernameChange}
-              />
+            />
 
-              <div className="user-type">
-                <p>Select User Type:</p>
-                <label>
-                  <input
+            <div className="user-type">
+              <p>Select User Type:</p>
+              <label>
+                <input
                     type="radio"
                     value="interviewee"
                     checked={userType === 'interviewee'}
                     onChange={handleUserTypeChange}
-                  />
-                  Interviewee
-                </label>
-                <label>
-                  <input
+                />
+                Interviewee
+              </label>
+              <label>
+                <input
                     type="radio"
                     value="interviewer"
                     checked={userType === 'interviewer'}
                     onChange={handleUserTypeChange}
-                  />
-                  Interviewer
-                </label>
-              </div>
+                />
+                Interviewer
+              </label>
+            </div>
 
-              <input type="password" placeholder="Password" />
-              <input type="password" placeholder="Confirm Password" />
+            <input type="password" placeholder="Password" />
+            <input type="password" name = "password" placeholder="Confirm Password" />
 
-              <button>Register</button>
-            </form>
-          </div>
+            <button type="submit">Register</button>
+          </form>
         </div>
-      )}
+      </div>
     </div>
   );
 };

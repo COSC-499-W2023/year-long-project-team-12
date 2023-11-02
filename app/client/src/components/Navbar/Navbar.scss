@@ -1,13 +1,13 @@
 .navbar{
-    height: 80px;
-   
-    
+    height: 60px;
 
     .wrapper{
         padding: 10px 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-family: Garamond;
+        font-weight: bold;
 
         .item{
             display: flex;
@@ -19,6 +19,11 @@
             display: flex;
             align-items: center;
             gap: 25px;
+
+            img{
+                width: 35px;
+                height: 35px;
+            }
         }
 
         .center{

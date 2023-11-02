@@ -46,7 +46,7 @@ const Slider = () => {
         </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;
