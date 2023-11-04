@@ -16,8 +16,8 @@ const Navbar = () => {
         logOut()
         navigate("/home");
     };
-    console.log(currentUser);
-    console.log(isCustomerAuthenticated());
+    // console.log(currentUser);
+    // console.log(isCustomerAuthenticated());
   return (
     <div>
         {
