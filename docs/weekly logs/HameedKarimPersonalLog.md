@@ -41,7 +41,7 @@ Group member username:
 
 ![Hameed Tasks](images/Hameed/HameedWeek6and7Tasks.png)
 
-## Week 6 Log (October 23rd - October 29th)
+## Week 8 Log (October 23rd - October 29th)
 
 Group member username:
 @Abdulhameed23 - Hameed Karim
@@ -57,3 +57,19 @@ Group member username:
 I mostly worked on task 11 all week, the code functionality is good, still working on implementing testing.
 
 ![Hameed Tasks](images/Hameed/HameedWeek8Tasks.png)
+
+## Week 9 Log (October 30th - November 5th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Working on AWS s3 setup, to store user profile image.
+* Working on AWS hosting for Spring BE and improving CI/CD pipeline with AWS and Github actions (still in progress).
+* Refactoring User class to have roles, for both candidate and hiring personel.
+* Working on automated testing, and additional unit tests.
+
+![Hameed Tasks](images/Hameed/HameedWeek9WLtasks.png)
+
+I started work on tasks 2 and 3, while task 6 was already in progress. Task 7 is done but in review. Testing is still WIP for task 5.
+
+![Hameed Tasks](images/Hameed/HameedWeek9Tasks.png)

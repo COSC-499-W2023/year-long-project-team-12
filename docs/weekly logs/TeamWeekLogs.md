@@ -97,9 +97,6 @@ Group member usernames:
 * Creating the docker setup for the project.
 
 
-
-
-
 ### Burnup Chart
 
 ![Burn Up Chart](images/burnUpweek6&7.png)
@@ -149,3 +146,40 @@ Group member usernames:
 Unit Testing for BE is being done via Spring Boot and JUnit. TestNG will be used to run testing scripts as well.
 For the FE, testing is being done via Jest. There was testing conducted on ensuring suitable ouputs for user error validation whilst interacting with the login and register pages.
 
+# Team 12 Week 9 Log(October 30th - November 5th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* Added logout features, working on password encryption.
+
+* Working on adding profile page for users, connecting AWS s3 to BE for user picture and video storage.
+
+* Working to improve CI/CD pipeline, hosting BE to work on AWS.
+
+* Working on adding more tests (automated and unit tests).
+
+### Burnup Chart
+
+![Burn Up Chart](images/week9_burnup.png)
+
+### Kanban board - Tasks identified this week
+
+![Kanban tasks](images/week9_kanban1.png)
+
+![Kanban tasks continued](images/week9_kanban2.png)
+
+![Tests](images/TestingRunBE.png)
+
+More tests are being worked on.
