@@ -10,9 +10,11 @@
     display: flex;
     background-color: white;
     border-radius: 10px;
-    height: 650px;
+    height: 650px; 
     overflow: auto; 
-    
+    margin-top: 20px;
+    margin-bottom: 20px;
+
     .left {
       flex: 1;
       background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
@@ -66,6 +68,7 @@
           border-bottom: 1px solid lightgray;
           padding: 20px 10px;
         }
+
         button {
           width: 50%;
           padding: 10px;
@@ -84,9 +87,9 @@
           border-radius: 4px;
           outline: none;
         }
-
+        
         .user-type-select:focus {
-          border: 1px solid #007BFF;
+          border: 1px solid #007BFF; 
         }
       }
     }
