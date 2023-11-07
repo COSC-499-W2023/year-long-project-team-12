@@ -18,8 +18,8 @@ import {useAuth} from "./context/authContext";
 
 
 function App() {
-  const currentUser = useAuth();
   
+  const { isCustomerAuthenticated } = useAuth();
   const Layout = () =>{
     return (
       <div className="app">
@@ -27,34 +27,25 @@ function App() {
         <Outlet/>
         <Footer/>
       </div>
-    )
-  }
+    );
+  };
 
   const ProtectedRoute = ({children}) =>{
-    if(!currentUser){
+    
+    
+    if(!isCustomerAuthenticated()){
       return <Navigate to="/login"/>
     }
 
-    return children
-  }
+    return children;
+  };
   
   const router = createBrowserRouter([
     {
       path:"/",
-      element:<ProtectedRoute><Layout/> </ProtectedRoute> ,
+      element: (<ProtectedRoute><Layout/> </ProtectedRoute> ),
       children:[
-        {
-          path:"/",
-          element:<Home/>
-        },
-        {
-          path:"/register",
-          element:<Register/>
-        },
-        {
-          path:"/login",
-          element:<Login/>
-        },
+
         {
           path:"/profile",
           element:<Profile/>
@@ -67,20 +58,39 @@ function App() {
           path:"/upload",
           element:<Uploader />
         },
-        {
-          path:"*",
-          element:<DoesNotExist />
-        }
-      ]
+        
+      ],
+    },
+    {
+      path:"/",
+      element:<Layout/>,
+      children:[
+
+    {
+      path:"/home",
+      element:<Home/>
+    },
+    {
+      path:"/register",
+      element:<Register/>
+    },
+    {
+      path:"/login",
+      element:<Login/>
+    },
+    {
+      path:"*",
+      element:<DoesNotExist />
     }
     
-   
+  ]}
   
-  ])
+  ]);
   
   
   return ( 
-  <div>
+  <div className="app">
+  
     <RouterProvider router={router}/>
   </div> 
   );

@@ -4,22 +4,27 @@ import {login as performLogin} from "../services/ClientAPI.js"
 
 const AuthContext = createContext({});
 export const AuthContextProvider = ({ children }) => {
-    const [currentUser,setCurrentUser] = useState(null);
+    const [currentUser,setCurrentUser] = useState(
+        JSON.parse(localStorage.getItem("user")) || null
+      );
     
     const setCurrentUserFromToken = () => {
         let token = localStorage.getItem("access_token");
+        
         if(token) {
             token = jwtDecode(token);
             console.log(token)
             setCurrentUser({
-                username: token.sub
+                username: token.sub,
             })
         }
     }
 
+
     useEffect(() => {
-        setCurrentUserFromToken()
-    }, [])
+        localStorage.setItem("user", JSON.stringify(currentUser));
+        //setCurrentUserFromToken();
+    }, [currentUser]);
 
     const login = async (usernameAndPassword) => {
         return new Promise((resolve, reject) => {
@@ -28,10 +33,20 @@ export const AuthContextProvider = ({ children }) => {
                 localStorage.setItem("access_token", jwtToken);
                 console.log(res)
                 const decodedToken = jwtDecode(jwtToken);
-                console.log(decodedToken)
+                console.log(decodedToken);
+                // localStorage.setItem("user", JSON.stringify({
+                //     username: decodedToken.sub,
+                //     firstname: res.data.userDetailsDTO.firstName,
+                    
+                // }))
                 setCurrentUser({
-                    username: decodedToken.sub
-                })
+                    username: decodedToken.sub,
+                    firstname: res.data.userDetailsDTO.firstName,
+                    lastname: res.data.userDetailsDTO.lastName,
+                    email : res.data.userDetailsDTO.email,
+                    
+
+                 })
                 resolve(res);
             }).catch(err => {
                 reject(err);
@@ -41,6 +56,7 @@ export const AuthContextProvider = ({ children }) => {
 
     const logOut = () => {
         localStorage.removeItem("access_token")
+        localStorage.removeItem("user")
         setCurrentUser(null);
     }
 

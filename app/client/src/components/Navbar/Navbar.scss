@@ -13,6 +13,18 @@
             display: flex;
             align-items: center;
             font-size:  20px;
+
+            button{
+                text-decoration: none;
+                
+                color: white;
+                
+                background-color: black;
+                transition: width .35s;
+                -webkit-transition: width .35s;
+                overflow: hidden
+
+            }
         }
 
         .left{
