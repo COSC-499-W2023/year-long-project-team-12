@@ -21,6 +21,7 @@ const Login = () => {
             console.log(token)
         })
         redirect("/jobs")
+        navigate("/jobs")
     };
 
     return (

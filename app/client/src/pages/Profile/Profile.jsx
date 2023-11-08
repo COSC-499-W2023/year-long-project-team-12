@@ -13,7 +13,9 @@ import {useAuth} from "../../context/authContext";
 
 const Profile = () => {
 
-  const { currentUser } = useAuth();
+
+  const {  currentUser } = useAuth();
+    
   return (
     <div className="profile">
       <div className="images">
@@ -23,7 +25,7 @@ const Profile = () => {
           className="cover"
         />
         <img
-          src={currentUser.profilePic}
+          src=""
           alt=""
           className="profilePic"
         />
@@ -32,11 +34,11 @@ const Profile = () => {
         <div className="uInfo">
           
           <div className="center">
-            <span>{currentUser.name}</span>
+            <span>{currentUser.firstname} {currentUser.lastname}</span>
             <div className="info">
               <div className="item">
                 <PlaceIcon />
-                <span>{currentUser.userType}</span>
+                <span></span>
               </div>
               <div className="item">
                 <LanguageIcon />
