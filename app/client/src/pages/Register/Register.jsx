@@ -129,6 +129,10 @@ const Register = () => {
         password,
         userType,
       };
+
+      const formData = new FormData(event.target)
+      formData.forEach((value, key) => object[key] = value);
+
       const currentUser = JSON.stringify(object);
       let token;
       saveCurrentUser(currentUser)
