@@ -1,16 +1,30 @@
 import "./Login.scss"
 import { useAuth } from "../../context/authContext"
-import {redirect, useNavigate} from "react-router-dom";
+import {redirect, useNavigate,Navigate,} from "react-router-dom";
+import { useState } from "react";
+
+
 
 const Login = () => {
-    const { login } = useAuth()
+    const { login, isCustomerAuthenticated } = useAuth();
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     let navigate = useNavigate();
+
+    if(isCustomerAuthenticated()){
+        return <Navigate to="/jobs"/>
+      }
+
     const toggleRegister = () => {
         navigate("/register")
     };
 
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault()
+        setLoading(true);
+        try {
         const object= {}
         const formData = new FormData(event.target)
         formData.forEach((value, key) => object[key] = value);
@@ -20,8 +34,12 @@ const Login = () => {
             navigate("/jobs");
             console.log(token)
         })
-        redirect("/jobs")
-        navigate("/jobs")
+        } catch {
+            setError(true);
+        }
+        setLoading(false);
+        redirect("/jobs");
+        navigate("/jobs");
     };
 
     return (
@@ -38,9 +56,14 @@ const Login = () => {
                 <div className="right">
                     <h1>Login</h1>
                     <form onSubmit={handleLogin}>
-                        <input type="text" name="username" placeholder="Email or username"/>
-                        <input type="password" name="password" placeholder="Password"/>
-                        <button type="submit">Login</button>
+                        <input type="text" name="username" placeholder="Email or username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                        <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                        <button disabled={!username || !password} type="submit">{loading ? "please wait" : "Login"}</button>
+                        <span
+                         data-testid="error"
+                         style={{visibility:error? "visible":"hidden"}}
+                        >Something went wrong!
+                        </span>
                     </form>
 
                 </div>
@@ -49,4 +72,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;

@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import './Register.scss';
 import {useAuth} from '../../context/authContext.js';
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { saveCurrentUser } from "../../services/ClientAPI";
 
 const Register = () => {
-  const {currentUser, setCurrentUserFromToken} = useAuth();
+
+  const {currentUser, setCurrentUserFromToken, isCustomerAuthenticated} = useAuth();
   const [userType, setUserType] = useState('interviewee'); // Default to 'interviewee'
   const [username, setUsername] = useState('');
   let navigate = useNavigate();
+
+
+  if(isCustomerAuthenticated()){
+    return <Navigate to="/jobs"/>
+  }
 
   const toggleLogin = () => {
      navigate("/login")
