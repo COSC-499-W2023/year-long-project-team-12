@@ -13,21 +13,21 @@ const Register = () => {
   useEffect(() => {
     let isMounted = true;
 
-    let direction = 1; // 1 for scrolling down, -1 for scrolling up
+    let direction = 1; 
 
     const scrollingInterval = setInterval(() => {
       const card = document.querySelector('.card');
       if (card && isMounted) {
-        card.scrollTop += direction * 5; // Adjust the scroll speed by changing the multiplier
+        card.scrollTop += direction * 15; 
       }
-    }, 50); // Adjust the interval for smoother scrolling
+    }, 50); 
 
-    // Change the direction after 2.5 seconds to scroll up
+    
     setTimeout(() => {
       direction = -1;
     }, 2500);
 
-    // Clear the interval after 5 seconds
+    
     setTimeout(() => {
       clearInterval(scrollingInterval);
       isMounted && (isMounted = false);
