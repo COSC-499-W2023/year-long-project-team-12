@@ -73,3 +73,20 @@ Group member username:
 I started work on tasks 2 and 3, while task 6 was already in progress. Task 7 is done but in review. Testing is still WIP for task 5.
 
 ![Hameed Tasks](images/Hameed/HameedWeek9Tasks.png)
+
+## Week 10 Log (November 6th - November 12th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Working on automated testing, and additional unit tests.
+* Working on setting up docker image for new DB (local environment and production).
+* Handling authentication errors on the BE to be shown on the FE.
+* Handling JWT token security on BE.
+* Working on data caching, to reduce calls made to DB.
+* Improving CI/CD pipeline, to host both FE and BE.
+* Working on AWS s3 setup, to store user profile image.
+
+![Hameed Tasks](images/Hameed/HameedWeek10WLtasks.png)
+
+![Hameed Tasks](images/Hameed/HameedWeek10Tasks.png)

@@ -221,5 +221,3 @@ Group member usernames:
 ![Kanban tasks continued](images/wk10_2.png)
 
 ![Tests](images/testing_week10.png)
-
-
