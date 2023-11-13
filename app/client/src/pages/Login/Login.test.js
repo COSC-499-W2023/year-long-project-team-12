@@ -1,7 +1,12 @@
-import {render,screen, fireEvent} from "@testing-library/react";
-import Login from "./pages/Login/Login";
-import { MemoryRouter, Routes, Route, BrowserRouter } from 'react-router-dom'
-import {AuthContextProvider} from './context/authContext';
+import {render,screen, fireEvent, waitFor} from "@testing-library/react";
+import Login from "./Login";
+import { MemoryRouter, Routes, Route, BrowserRouter, createMemoryRouter } from 'react-router-dom'
+import AuthContext, {AuthContextProvider} from '../../context/authContext';
+import React from "react";
+
+
+
+
 
 const Mocktest =()=>{
     return(
@@ -12,7 +17,6 @@ const Mocktest =()=>{
       </AuthContextProvider>
     )
   };
-
 
 
 
@@ -98,3 +102,41 @@ test("Login button should be rendered", () => {
 
 
 
+// test("user should be moved to the sign up page when sign up button is clicked", async ()=>{
+  
+//   render(
+//         <Routes>
+//           <Route path="/login" element={<Login/>}/>
+//           <Route  path="/register" element={<Register/>}/>
+//         </Routes>,
+//         <MemoryRouter>
+//           <Login/>
+//           <Register />
+//         </MemoryRouter>
+//   );
+  
+//   // userEvent.click(screen.getAllByText("Register")[0]);
+//   // await waitFor(()=>{
+//   // expect(screen.getByPlaceholderText(/First Name/i)).toBeInTheDocument()
+//   // }
+//   // )
+
+//   userEvent.click(screen.getAllByText("Register")[0]);
+//   await screen.getByPlaceholderText(/First Name/i)
+  
+
+// });
+
+
+// test('invalid path should redirect to 404', () => {
+//  const user = {isCustomerAuthenticated:true}
+//   render(
+//     <AuthContextProvider value={user}>
+//       <BrowserRouter>
+//       <Login/>
+//       </BrowserRouter>
+//     </AuthContextProvider>
+//   )
+
+//   //expect(wrapper.find(DoesNotExist)).toHaveLength(1);
+// });

@@ -10,16 +10,16 @@ function Post({post}) {
             <div className='jobInfo'>
                 <div className="details">
                 
-                <span className='jobTitle'>{post.jobTitle}</span>
-                <span className='companyName'>{post.companyName}</span>
-                <span className='location'>{post.location}</span>
+                <span data-testid="jobTitle" className='jobTitle'>{post.jobTitle}</span>
+                <span data-testid="companyName" className='companyName'>{post.companyName}</span>
+                <span data-testid="location" className='location'>{post.location}</span>
                 </div>
             </div>
         </div>
         <div className='content'>
             <p>{post.description}</p>
             <div className="logo">
-              <img  src={post.logo} alt=""/>
+              <img  src={post.logo} alt="confidential"/>
             </div>  
         </div>
         <div className='info'>

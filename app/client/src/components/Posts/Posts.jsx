@@ -24,7 +24,7 @@ function Posts() {
 
         },
         {
-            id:1,
+            id:3,
             jobTitle:"Electrical Engineer",
             companyName:"Boeing",
             logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Boeing_full_logo_%28variant%29.svg/1280px-Boeing_full_logo_%28variant%29.svg.png",
@@ -33,7 +33,7 @@ function Posts() {
 
         },
         {
-            id:1,
+            id:4,
             jobTitle:"Web Developer",
             companyName:"Google",
             logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png",
