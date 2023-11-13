@@ -35,3 +35,13 @@ Group member: Tyler Grant @tmg-repo
 * Created weekly team log.
 
 ![week 8 tasks](/docs/weekly%20logs/images/week8_ind.png)
+
+## Week 10 Log (November 6th - November 12th)
+
+* Responded to issues on the Kanban board.
+* Added user input error validation to register pages, improving the UI.
+* Resized the register page responding to another issue.
+* Created testing for the abovementioned issues.
+* Created weekly team log.
+
+![week 10 tasks](/docs/weekly%20logs/images/tyler_ssht.png)

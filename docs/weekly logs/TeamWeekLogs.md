@@ -183,3 +183,41 @@ Group member usernames:
 ![Tests](images/TestingRunBE.png)
 
 More tests are being worked on.
+
+# Team 12 Week 10 Log(November 6th - November 12th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* UI edits made to pages on the front end.
+
+* Working on adding profile page for users, connecting AWS s3 to BE for user picture and video storage.
+
+* Working to improve CI/CD pipeline, hosting BE to work on AWS.
+
+* Added testing for front and backend processes.
+
+* Login functionality added to reduce unneccessary API requests.
+
+### Burnup Chart
+
+![Burn Up Chart](images/week10bu.png)
+
+### Kanban board - Tasks identified this week
+
+![Kanban tasks](images/wk10_1.png)
+
+![Kanban tasks continued](images/wk10_2.png)
+
+![Tests](images/testing_week10.png)
