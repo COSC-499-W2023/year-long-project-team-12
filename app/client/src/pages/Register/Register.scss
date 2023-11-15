@@ -27,7 +27,7 @@
     overflow: auto;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--body_background);
     border-radius: 10px;
 
     .left {
@@ -84,7 +84,7 @@
           width: 50%;
           padding: 10px;
           border: none;
-          background-color: #938eef;
+          background-color: var(--body_background);
           color: white;
           font-weight: bold;
           cursor: pointer;
