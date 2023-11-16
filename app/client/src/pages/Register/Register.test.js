@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Register from './Register';
 import { AuthContextProvider } from '../../context/authContext';
 import { BrowserRouter } from 'react-router-dom';
@@ -91,4 +91,57 @@ describe('Register Component', () => {
     expect(confirmPasswordInput.value).toBe('');
   });
 
+  test("First Name input should change", () => {
+    render(<MockRegister />);
+    const firstNameInputEl = screen.getByPlaceholderText(/First Name/i);
+    const testValue = "test";
+
+    fireEvent.change(firstNameInputEl, { target: { value: testValue } });
+    expect(firstNameInputEl.value).toBe(testValue);
+  });
+
+  test("Last Name input should change", () => {
+    render(<MockRegister />);
+    const lastNameInputEl = screen.getByPlaceholderText(/Last Name/i);
+    const testValue = "test";
+
+    fireEvent.change(lastNameInputEl, { target: { value: testValue } });
+    expect(lastNameInputEl.value).toBe(testValue);
+  });
+
+  test("Email input should change", () => {
+    render(<MockRegister />);
+    const emailInputEl = screen.getByPlaceholderText(/Email/i);
+    const testValue = "test@example.com";
+
+    fireEvent.change(emailInputEl, { target: { value: testValue } });
+    expect(emailInputEl.value).toBe(testValue);
+  });
+
+  test("Username input should change", () => {
+    render(<MockRegister />);
+    const usernameInputEl = screen.getByPlaceholderText(/Username/i);
+    const testValue = "testuser";
+
+    fireEvent.change(usernameInputEl, { target: { value: testValue } });
+    expect(usernameInputEl.value).toBe(testValue);
+  });
+
+  test("Password input should change", () => {
+    render(<MockRegister />);
+    const passwordInputEl = screen.getByPlaceholderText(/Password/i);
+    const testValue = "testpassword";
+
+    fireEvent.change(passwordInputEl, { target: { value: testValue } });
+    expect(passwordInputEl.value).toBe(testValue);
+  });
+
+  test("Confirm Password input should change", () => {
+    render(<MockRegister />);
+    const confirmPasswordInputEl = screen.getByPlaceholderText(/Confirm/i);
+    const testValue = "testpassword";
+
+    fireEvent.change(confirmPasswordInputEl, { target: { value: testValue } });
+    expect(confirmPasswordInputEl.value).toBe(testValue);
+  });
 });
