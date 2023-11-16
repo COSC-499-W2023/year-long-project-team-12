@@ -120,7 +120,7 @@ const Register = () => {
             </div>
 
             <input type="password" placeholder="Password" />
-            <input type="password" name="password" placeholder="Confirm Password" />
+            <input type="password" name="password" placeholder="Confirm" />
 
             <button type="submit">Register</button>
           </form>
