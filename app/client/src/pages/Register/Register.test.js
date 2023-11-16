@@ -19,6 +19,42 @@ describe('Register Component', () => {
     expect(registerElement).toBeInTheDocument();
   });
 
+  test('renders First Name input', () => {
+    render(<MockRegister />);
+    const firstNameInput = screen.getByPlaceholderText(/First Name/i);
+    expect(firstNameInput).toBeInTheDocument();
+  });
+
+  test('renders Last Name input', () => {
+    render(<MockRegister />);
+    const lastNameInput = screen.getByPlaceholderText(/Last Name/i);
+    expect(lastNameInput).toBeInTheDocument();
+  });
+
+  test('renders Email input', () => {
+    render(<MockRegister />);
+    const emailInput = screen.getByPlaceholderText(/Email/i);
+    expect(emailInput).toBeInTheDocument();
+  });
+
+  test('renders Username input', () => {
+    render(<MockRegister />);
+    const usernameInput = screen.getByPlaceholderText(/Username/i);
+    expect(usernameInput).toBeInTheDocument();
+  });
+
+  test('renders Password input', () => {
+    render(<MockRegister />);
+    const passwordInput = screen.getByPlaceholderText(/Password/i);
+    expect(passwordInput).toBeInTheDocument();
+  });
+
+  test('renders Confirm Password input', () => {
+    render(<MockRegister />);
+    const confirmPasswordInput = screen.getByPlaceholderText(/Confirm/i);
+    expect(confirmPasswordInput).toBeInTheDocument();
+  });
+
   test('First Name input starts empty', () => {
     render(<MockRegister />);
     const firstNameInput = screen.getByPlaceholderText(/First Name/i);
