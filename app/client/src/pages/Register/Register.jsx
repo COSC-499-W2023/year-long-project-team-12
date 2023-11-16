@@ -109,16 +109,18 @@ const Register = () => {
     formData.forEach((value, key) => (object[key] = value));
     const currentUser = JSON.stringify(object);
 
-    try {
-      const resp = await saveCurrentUser(currentUser);
-      const token = resp.headers['authorization'];
-      localStorage.setItem('access_token', token);
-      setCurrentUserFromToken();
-      navigate('/jobs');
-      console.log(token);
-    } catch (err) {
-      console.log(err);
-    }
+    let token;
+    saveCurrentUser(currentUser)
+      .then((resp) => {
+        token = resp.headers['authorization'];
+        localStorage.setItem('access_token', token);
+        setCurrentUserFromToken();
+        navigate('/jobs');
+        console.log(token);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
