@@ -5,7 +5,7 @@ import SwitchAccountIcon from '@mui/icons-material/SwitchAccount';
 import WorkIcon from '@mui/icons-material/Work';
 import { useAuth } from "../../context/authContext"
 import logo from "./logo.png";
-import {redirect, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import "./Navbar.scss";
 
 const Navbar = () => {
@@ -25,10 +25,12 @@ const Navbar = () => {
     
     <div className='navbar'>
         <div className="wrapper">
+            <Link to="/home">
+                <div className='left'>
+                    <img src={logo} alt="logo"></img>
+                </div>
+             </Link>
             
-            <div className='left'>
-               <img src={logo} alt="logo"></img>
-            </div>
             
             <div className='center'>
                 
@@ -59,10 +61,12 @@ const Navbar = () => {
 
     <div className='navbar'>
         <div className="wrapper">
-            
+            <Link to="/home">
             <div className='left'>
                <img src={logo} alt="logo"></img>
             </div>
+            </Link>
+            
             
             <div className='center'>
                 <Link className='link' to="/home">EX-ZBT</Link>

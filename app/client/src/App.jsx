@@ -51,6 +51,10 @@ function App() {
           element:<Profile/>
         },
         {
+          path:"/",
+          element:<Home/>
+        },
+        {
           path:"/jobs",
           element:<JobPostings/>
         },
@@ -68,6 +72,10 @@ function App() {
 
     {
       path:"/home",
+      element:<Home/>
+    },
+    {
+      path:"/",
       element:<Home/>
     },
     {
