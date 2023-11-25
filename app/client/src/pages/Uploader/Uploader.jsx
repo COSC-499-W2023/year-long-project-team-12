@@ -10,10 +10,10 @@ function Uploader() {
     const [fileName, setFileName] = useState("No Selected File");
   return (
     <main className='upload-main'>
-        <form className='upload-form'
+        <form data-testid="upload-form" className='upload-form'
         onClick={()=> document.querySelector('.input-field').click()}
         >
-            <input type='file' accept='video/*' className='input-field' hidden
+            <input data-testid="upload-input" type='file' accept='video/*' className='input-field' hidden
             onChange={({target:{files}}) =>{
                 files[0] && setFileName(files[0].name)
                 if(files){
@@ -25,7 +25,7 @@ function Uploader() {
         <video src={video} width={200} height={200} alt={fileName} />    
         :
         <>
-        <MdCloudUpload color='#1475cf' size={60}/>
+        <MdCloudUpload data-testid="upload-image" color='#1475cf' size={60}/>
         <p>Browse Files to upload</p>
         </>
         }
@@ -42,7 +42,7 @@ function Uploader() {
                 />
             </span>
         </section>
-        <button className='upload-button'>Upload</button>
+        <button data-testid="upload-button" className='upload-button'>Upload</button>
     </main>
   )
 }
