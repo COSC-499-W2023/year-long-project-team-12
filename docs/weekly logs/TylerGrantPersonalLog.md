@@ -45,3 +45,12 @@ Group member: Tyler Grant @tmg-repo
 * Created weekly team log.
 
 ![week 10 tasks](/docs/weekly%20logs/images/tyler_ssht.png)
+
+
+## Week 12 Log (November 6th - November 12th)
+
+Responded to issues on the Kanban board, namely:
+* to add testing to various pages on the front end. I added manual testing.
+* Synchronized UI changes across pages to ensure they look the same and have uniformity.
+
+![week 12 tasks](/docs/weekly%20logs/images/week12_t.png)
