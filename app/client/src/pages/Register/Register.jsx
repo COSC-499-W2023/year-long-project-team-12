@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './Register.scss';
 import { useAuth } from '../../context/authContext.js';
 import { useNavigate, Navigate } from 'react-router-dom';
-import { saveCurrentUser } from '../../services/ClientAPI';
 
 const Register = () => {
-  const { currentUser, setCurrentUserFromToken, isCustomerAuthenticated } = useAuth();
-  const [userType, setUserType] = useState('interviewee');
+  const { register, isCustomerAuthenticated } = useAuth();
+  const [userType, setUserType] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -97,30 +96,26 @@ const Register = () => {
   };
 
   const handleRegister = async (event) => {
-    event.preventDefault();
+      event.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+      if (!validateForm()) {
+        return;
+      }
 
-    const formData = new FormData(event.target);
-    const object = {};
+      try{
+        const formData = new FormData(event.target);
+        const object = {};
 
-    formData.forEach((value, key) => (object[key] = value));
-    const currentUser = JSON.stringify(object);
-
-    let token;
-    saveCurrentUser(currentUser)
-      .then((resp) => {
-        token = resp.headers['authorization'];
-        localStorage.setItem('access_token', token);
-        setCurrentUserFromToken();
+      formData.forEach((value, key) => (object[key] = value));
+      const currentUser = JSON.stringify(object);
+      console.log(currentUser)
+      let token;
+      register(currentUser).then(resp => {
         navigate('/jobs');
-        console.log(token);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      } catch  {
+
+      }
   };
 
   return (
@@ -174,8 +169,9 @@ const Register = () => {
               <label>
                 <input
                   type="radio"
-                  value="interviewee"
-                  checked={userType === 'interviewee'}
+                  name="userRole"
+                  value="Candidate"
+                  checked={userType === 'Candidate'}
                   onChange={handleUserTypeChange}
                 />
                 Interviewee
@@ -183,8 +179,9 @@ const Register = () => {
               <label>
                 <input
                   type="radio"
-                  value="interviewer"
-                  checked={userType === 'interviewer'}
+                  name="userRole"
+                  value="Hiring"
+                  checked={userType === 'Hiring'}
                   onChange={handleUserTypeChange}
                 />
                 Interviewer
