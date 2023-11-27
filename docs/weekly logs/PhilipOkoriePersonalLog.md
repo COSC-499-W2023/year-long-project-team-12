@@ -38,3 +38,18 @@ Group member: Philip Okorie
 
   <img width="1440" alt="Screenshot 2023-10-22 at 11 11 28 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/1f506072-54b0-4351-a3e9-554b44e43f43">
 
+  
+## Week 11 and 12 Log (November 12th - November 26th)
+
+Group member: Philip Okorie
+
+* Working on AWS S3 setup
+* Implemented Darkmode on the Frontend
+* Working on password encryption
+* Working on tests for darkmode implementation
+
+  
+<img width="1440" alt="Screenshot 2023-11-26 at 6 50 11 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/9e954344-42bd-4fcd-add2-b820accfa544">
+
+  
+
