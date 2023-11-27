@@ -1,16 +1,16 @@
 import { createContext,useContext,useEffect,useState } from "react";
 import {jwtDecode} from "jwt-decode";
-import {login as performLogin} from "../services/ClientAPI.js"
+import {login as performLogin, saveCurrentUser} from "../services/ClientAPI.js"
 
 const AuthContext = createContext({});
 export const AuthContextProvider = ({ children }) => {
     const [currentUser,setCurrentUser] = useState(
         JSON.parse(localStorage.getItem("user")) || null
       );
-    
+
     const setCurrentUserFromToken = () => {
         let token = localStorage.getItem("access_token");
-        
+
         if(token) {
             token = jwtDecode(token);
             console.log(token)
@@ -20,11 +20,31 @@ export const AuthContextProvider = ({ children }) => {
         }
     }
 
-
     useEffect(() => {
         localStorage.setItem("user", JSON.stringify(currentUser));
         //setCurrentUserFromToken();
     }, [currentUser]);
+
+    const register = async (currentUser) => {
+        return new Promise((resolve, reject) => {
+            saveCurrentUser(currentUser).then((resp) => {
+                const jwtToken = resp.headers['authorization'];
+                localStorage.setItem('access_token', jwtToken);
+                console.log(resp);
+                const decodedToken = jwtDecode(jwtToken);
+                setCurrentUser({
+                    username: decodedToken.sub,
+                    firstname: resp.data.userDetailsDTO.firstName,
+                    lastname: resp.data.userDetailsDTO.lastName,
+                    email: resp.data.userDetailsDTO.email,
+                })
+                resolve(resp);
+            }).catch(err => {
+                reject(err);
+            })
+        })
+    }
+
 
     const login = async (usernameAndPassword) => {
         return new Promise((resolve, reject) => {
@@ -34,19 +54,12 @@ export const AuthContextProvider = ({ children }) => {
                 console.log(res)
                 const decodedToken = jwtDecode(jwtToken);
                 console.log(decodedToken);
-                // localStorage.setItem("user", JSON.stringify({
-                //     username: decodedToken.sub,
-                //     firstname: res.data.userDetailsDTO.firstName,
-                    
-                // }))
                 setCurrentUser({
                     username: decodedToken.sub,
                     firstname: res.data.userDetailsDTO.firstName,
                     lastname: res.data.userDetailsDTO.lastName,
                     email : res.data.userDetailsDTO.email,
-                    
-
-                 })
+                })
                 resolve(res);
             }).catch(err => {
                 reject(err);
@@ -76,6 +89,7 @@ export const AuthContextProvider = ({ children }) => {
     return (
         <AuthContext.Provider value={{
             currentUser,
+            register,
             login,
             logOut,
             isCustomerAuthenticated,

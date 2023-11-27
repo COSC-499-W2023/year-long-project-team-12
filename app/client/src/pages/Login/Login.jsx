@@ -4,7 +4,6 @@ import {redirect, useNavigate,Navigate,} from "react-router-dom";
 import { useState } from "react";
 
 
-
 const Login = () => {
     const { login, isCustomerAuthenticated } = useAuth();
     const [error, setError] = useState(false);
@@ -32,7 +31,6 @@ const Login = () => {
         let token;
         login(usernameAndPassword).then(resp => {
             navigate("/jobs");
-            console.log(token)
         })
         } catch {
             setError(true);
