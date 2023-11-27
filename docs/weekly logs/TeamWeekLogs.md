@@ -221,3 +221,44 @@ Group member usernames:
 ![Kanban tasks continued](images/wk10_2.png)
 
 ![Tests](images/testing_week10.png)
+
+
+
+# Team 12 Week 10 Log(November 12th - November 26th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+
+
+## Features for Milestone
+
+* Working on front end designing to enhance the look of the app.
+
+* Added testing to pages and synchronized UI changes.
+
+
+### Burnup Chart
+
+![Screenshot 2023-11-26 at 9 18 03 PM](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/35a3c917-776d-4957-87cc-a528cf860382)
+
+### Kanban board - Tasks identified this week
+
+![Screenshot 2023-11-26 at 9 32 04 PM](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/0798202d-19c6-4c3d-a10d-fc5f15a57e95)
+
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/8ef61ad1-a672-4732-9683-b0ff9ec25770)
+
+
+
+
+
+
