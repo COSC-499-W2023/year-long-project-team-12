@@ -48,7 +48,7 @@ Group Member : Jusnoor Kaur Sachdeva
 
 
 <h3>Week 11 and 12 log (November 12th - November 26th )</h3>
-
+Group Member : Jusnoor Kaur Sachdeva 
 * Team discussion 
 * Working on adding the preview of video on upload page
 * Completed the weekly log
