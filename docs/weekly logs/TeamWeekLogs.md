@@ -259,3 +259,7 @@ Group member usernames:
 ![kanban tasks1](images/week1112_kanban2.png)
 
 ![kanban tasks2](images/week1112_kanban1.png)
+
+### Testing
+
+![Tests](images/testing_week1112.png)
