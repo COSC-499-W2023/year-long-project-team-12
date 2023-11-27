@@ -61,3 +61,7 @@
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/18c56d90-6e3d-45a5-b117-7bf61d3a6c85)
 
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/44d3fd6b-6fd5-4ae1-a640-0b8188bd5214)
+
+## Week 11 and 12 November 13th - November 26th
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/0f370cae-1e06-4ef9-9271-b1efdfde857b)
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/4f31c7ff-23a9-4b95-91a7-fb91c3ccaa98)

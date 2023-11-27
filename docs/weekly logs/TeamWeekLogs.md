@@ -221,3 +221,45 @@ Group member usernames:
 ![Kanban tasks continued](images/wk10_2.png)
 
 ![Tests](images/testing_week10.png)
+
+
+
+# Team 12 Week 11-12 Log(November 12th - November 26th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+
+## Features for Milestone
+
+* Front end edits to fix issue with registering user and page re-direction.
+
+* Added testing to FE and BE including pages and synchronized UI changes.
+
+* Users can now be registered as an interviewer or interviewee.
+
+* Darkmode feature, s3 and docker containerization.
+
+
+### Burnup Chart
+
+![Kanban tasks](images/week1112bu.png)
+
+### Kanban board - Tasks identified this week
+
+![kanban tasks1](images/week1112_kanban2.png)
+
+![kanban tasks2](images/week1112_kanban1.png)
+
+### Testing
+
+![Tests](images/testing_week1112.png)

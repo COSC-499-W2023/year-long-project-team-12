@@ -1,6 +1,6 @@
 .navbar{
     height: 60px;
-
+    background-color: var(--body_background);
     .wrapper{
         padding: 10px 20px;
         display: flex;
@@ -8,6 +8,7 @@
         justify-content: space-between;
         font-family: Garamond;
         font-weight: bold;
+        
 
         .item{
             display: flex;
@@ -17,9 +18,9 @@
             button{
                 text-decoration: none;
                 
-                color: white;
+                color: var(--body_background);
                 
-                background-color: black;
+                background-color: var(--body_background);
                 transition: width .35s;
                 -webkit-transition: width .35s;
                 overflow: hidden

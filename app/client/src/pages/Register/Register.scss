@@ -27,7 +27,7 @@
     overflow: auto;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--body_background);
     border-radius: 10px;
 
     .left {
@@ -78,6 +78,10 @@
           border: none;
           border-bottom: 1px solid lightgray;
           padding: 20px 10px;
+        }
+
+        .error {
+          color: red;
         }
 
         button {

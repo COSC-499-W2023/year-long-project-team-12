@@ -9,7 +9,7 @@
 
         width: 50%;
         display: flex;
-        background-color: white;
+        background-color: var(--body_background);
         border-radius: 10px;
         min-height: 600px;
         overflow: hidden;
@@ -40,7 +40,7 @@
                 width: 50%;
                 padding: 10px;
                 border: none;
-                background-color: white;
+                background-color: var(--body_background);
                 color: rebeccapurple;
                 font-weight: bold;
                 cursor: pointer;
@@ -79,7 +79,7 @@
                     padding: 10px;
                     border: none;
                     background-color: #938eef;
-                    color: white;
+                    color: var(--body-color);
                     font-weight: bold;
                     cursor: pointer;
                 }
