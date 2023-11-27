@@ -90,3 +90,18 @@ Group member username:
 ![Hameed Tasks](images/Hameed/HameedWeek10WLtasks.png)
 
 ![Hameed Tasks](images/Hameed/HameedWeek10Tasks.png)
+
+## Week 11-12 Log (November 13th - November 26th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Working on automated testing, and additional unit tests.
+* Working on setting up docker image for new DB (local environment and production).
+* Fixed issue with registering users where profile was not being generated correctly.
+* Handled user creation, where both candidate and hiring users can both be created.
+* Reworked UI, to save currentUser and call register API on React FE.
+
+![Hameed Tasks](images/Hameed/HameedWeek1112WLtasks.png)
+
+![Hameed Tasks](images/Hameed/HameedWeek1112Tasks.png)
