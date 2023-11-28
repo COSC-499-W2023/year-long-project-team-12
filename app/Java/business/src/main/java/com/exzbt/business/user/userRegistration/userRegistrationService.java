@@ -1,8 +1,11 @@
 package com.exzbt.business.user.userRegistration;
 
+import com.exzbt.business.user.security.jwt.JWTUtil;
+import com.exzbt.business.user.shared.AuthenticationResponse;
 import com.exzbt.business.user.shared.UserDetailRequest;
+import com.exzbt.business.user.shared.UserDetailsDTO;
 import com.exzbt.usertransaction.appuser.api.UserTransactions;
-import com.exzbt.usertransaction.appuser.impl.CandidateUser;
+import com.exzbt.usertransaction.appuser.impl.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,30 +13,24 @@ import org.springframework.stereotype.Service;
 public class userRegistrationService {
     @Autowired
     private UserTransactions userTransactions;
+    @Autowired
+    private JWTUtil jwtUtil;
 
-    public UserDetailRequest register(UserDetailRequest userDetailRequest){
-        CandidateUser candidateUser = userTransactions.save(convertFromDTO(userDetailRequest));
-        return convertToDTO(candidateUser);
+    public AuthenticationResponse register(UserDetailRequest userDetailRequest){
+        AppUser user = userTransactions.save(convertFromDTO(userDetailRequest));
+        String token = jwtUtil.issueToken(user.getUsername());
+        return new AuthenticationResponse(token, new UserDetailsDTO().convertDTO(user));
     }
 
-    private CandidateUser convertFromDTO(UserDetailRequest userDetailRequest) {
-        CandidateUser candidateUser = new CandidateUser();
-        candidateUser.setFirstName(userDetailRequest.getFirstName());
-        candidateUser.setLastName(userDetailRequest.getLastName());
-        candidateUser.setEmail(userDetailRequest.getEmail());
-        candidateUser.setUsername(userDetailRequest.getUsername());
-        candidateUser.setPassword(userDetailRequest.getPassword());
+    private AppUser convertFromDTO(UserDetailRequest userDetailRequest) {
+        AppUser AppUser = new AppUser();
+        AppUser.setFirstName(userDetailRequest.getFirstName());
+        AppUser.setLastName(userDetailRequest.getLastName());
+        AppUser.setEmail(userDetailRequest.getEmail());
+        AppUser.setUsername(userDetailRequest.getUsername());
+        AppUser.setPassword(userDetailRequest.getPassword());
+        AppUser.setUserRole(userDetailRequest.getUserRole());
 
-        return candidateUser;
-    }
-    private UserDetailRequest convertToDTO(CandidateUser candidateUser) {
-        UserDetailRequest userDetailRequest = new UserDetailRequest();
-        userDetailRequest.setFirstName(candidateUser.getFirstName());
-        userDetailRequest.setLastName(candidateUser.getLastName());
-        userDetailRequest.setEmail(candidateUser.getEmail());
-        userDetailRequest.setUsername(candidateUser.getUsername());
-        userDetailRequest.setPassword(candidateUser.getPassword());
-
-        return userDetailRequest;
+        return AppUser;
     }
 }

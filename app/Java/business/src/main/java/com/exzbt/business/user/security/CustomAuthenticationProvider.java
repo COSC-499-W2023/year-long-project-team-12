@@ -1,7 +1,7 @@
 package com.exzbt.business.user.security;
 
 import com.exzbt.business.user.UserService;
-import com.exzbt.usertransaction.appuser.impl.CandidateUser;
+import com.exzbt.usertransaction.appuser.impl.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -25,7 +25,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
 
-        CandidateUser user = userService.findUserByUsernameLogin(username);
+        AppUser user = userService.findUserByUsernameLogin(username);
         if (user == null) {
             throw new UsernameNotFoundException("User not found");
         }

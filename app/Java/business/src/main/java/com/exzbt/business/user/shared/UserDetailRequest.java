@@ -14,5 +14,6 @@ public class UserDetailRequest {
     private String email;
     private String password;
     private String username;
+    private String userRole;
 }
 
