@@ -4,9 +4,8 @@ import com.exzbt.business.user.shared.UserDetailRequest;
 import com.exzbt.business.user.shared.UserDetailsDTO;
 import com.exzbt.usertransaction.appuser.api.UserDetails;
 import com.exzbt.usertransaction.appuser.api.UserTransactions;
-import com.exzbt.usertransaction.appuser.impl.CandidateUser;
+import com.exzbt.usertransaction.appuser.impl.AppUser;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +19,7 @@ public class UserService  {
     private UserTransactions userTransaction;
 
     public UserDetailsDTO findUserByUsername(String username) throws UsernameNotFoundException {
-        CandidateUser user = userTransaction.findByUsername(username)
+        AppUser user = userTransaction.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException(
                         String.format(USER_NOT_FOUND, username)));
 
@@ -33,12 +32,11 @@ public class UserService  {
 
         return userDetailsDTO;
     }
-    public CandidateUser findUserByUsernameLogin(String username) throws UsernameNotFoundException {
+    public AppUser findUserByUsernameLogin(String username) throws UsernameNotFoundException {
         return userTransaction.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException(
                         String.format(USER_NOT_FOUND, username)));
     }
-
 
     public UserDetails findUserByFirstName(String firstname) throws UsernameNotFoundException {
         return userTransaction.findByFirstName(firstname)
@@ -48,7 +46,7 @@ public class UserService  {
 
 
     public List<UserDetailRequest> findAllUsers() {
-        List<CandidateUser> users = userTransaction.findAll();
+        List<AppUser> users = userTransaction.findAll();
         return users.stream().map(user -> {
             UserDetailRequest userDetails = new UserDetailRequest();
             userDetails.setFirstName(user.getFirstName());

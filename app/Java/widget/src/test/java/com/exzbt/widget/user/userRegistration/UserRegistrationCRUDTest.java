@@ -29,6 +29,7 @@ public class UserRegistrationCRUDTest {
     @Test
     public void createUser_whenEmptyUser_thenReturnAnEmptyResponseBody() {
         AuthenticationResponse expected = new AuthenticationResponse();
+
         when(registrationService.register(any(UserDetailRequest.class)))
                 .thenReturn(expected);
         ResponseEntity<?> response = underTest.createUser(new UserDetailRequest());

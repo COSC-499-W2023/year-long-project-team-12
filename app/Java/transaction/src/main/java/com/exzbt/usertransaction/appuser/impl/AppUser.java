@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @Getter
 @Setter
-public class CandidateUser implements UserDetails {
+public class AppUser implements UserDetails {
     @Id
     private String userId;
     private String firstName;

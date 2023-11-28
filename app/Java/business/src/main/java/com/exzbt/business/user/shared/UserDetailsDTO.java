@@ -1,6 +1,6 @@
 package com.exzbt.business.user.shared;
 
-import com.exzbt.usertransaction.appuser.impl.CandidateUser;
+import com.exzbt.usertransaction.appuser.impl.AppUser;
 import lombok.*;
 
 @AllArgsConstructor
@@ -15,15 +15,16 @@ public class UserDetailsDTO {
     private String lastName;
     private String email;
     private String username;
+    private String userRole;
 
-    public UserDetailsDTO convertDTO(CandidateUser user) {
-        UserDetailsDTO userDTO =  new UserDetailsDTO();
-        userDTO.setId(user.getUserId());
-        userDTO.setUsername(user.getUsername());
-        userDTO.setFirstName(user.getFirstName());
-        userDTO.setLastName(user.getLastName());
-        userDTO.setEmail(user.getEmail());
+    public UserDetailsDTO convertDTO(AppUser user) {
+        this.setId(user.getUserId());
+        this.setUsername(user.getUsername());
+        this.setFirstName(user.getFirstName());
+        this.setLastName(user.getLastName());
+        this.setEmail(user.getEmail());
+        this.setUserRole(user.getUserRole());
 
-        return userDTO;
+        return this;
     }
 }

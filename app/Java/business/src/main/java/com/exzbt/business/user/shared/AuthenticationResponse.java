@@ -1,6 +1,5 @@
 package com.exzbt.business.user.shared;
 
-import com.exzbt.usertransaction.appuser.impl.CandidateUser;
 import lombok.*;
 
 @AllArgsConstructor
