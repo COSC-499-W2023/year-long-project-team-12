@@ -32,5 +32,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './app/client/package-lock.json'
+    - run: npm install @emotion/react 
+    - run: npm install @emotion/styled
     - run: npm ci
     - run: npm test
