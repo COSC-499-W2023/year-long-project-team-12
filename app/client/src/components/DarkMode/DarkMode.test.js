@@ -27,7 +27,7 @@ test("Clicking on the darkmode switch enables darkmode", () => {
     fireEvent.click(darkModeSwitch);
     
     const selectedTheme = localStorage.getItem("selectedTheme");
-    console.log(selectedTheme)
+
     expect(selectedTheme).toBe("light");
   });
  

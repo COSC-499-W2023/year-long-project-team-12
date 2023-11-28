@@ -37,7 +37,6 @@ const DarkMode = () => {
             /> 
             <label data-testid="darkModeLabel" className='dark_mode_label' htmlFor='darkmode-toggle'>
                 <Sun />
-                {selectedTheme}
                 <Moon />
             </label>
         </div>
