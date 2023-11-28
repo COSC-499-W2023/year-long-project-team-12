@@ -18,14 +18,13 @@ public class UserDetailsDTO {
     private String userRole;
 
     public UserDetailsDTO convertDTO(AppUser user) {
-        UserDetailsDTO userDTO =  new UserDetailsDTO();
-        userDTO.setId(user.getUserId());
-        userDTO.setUsername(user.getUsername());
-        userDTO.setFirstName(user.getFirstName());
-        userDTO.setLastName(user.getLastName());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setUserRole(user.getUserRole());
+        this.setId(user.getUserId());
+        this.setUsername(user.getUsername());
+        this.setFirstName(user.getFirstName());
+        this.setLastName(user.getLastName());
+        this.setEmail(user.getEmail());
+        this.setUserRole(user.getUserRole());
 
-        return userDTO;
+        return this;
     }
 }
