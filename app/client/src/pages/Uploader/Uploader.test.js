@@ -74,7 +74,7 @@ test("Upload page is rendered correctly with the upload form", () => {
     const input = screen.getByTestId(/upload-input/i);
     await userEvent.upload(input,file);
 
-    //console.log(input.files[0].type)
+ 
     expect(input.files[0]).toStrictEqual(file);
   });
 

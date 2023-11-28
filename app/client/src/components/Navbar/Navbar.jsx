@@ -6,6 +6,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import { useAuth } from "../../context/authContext"
 import logo from "./logo.png";
 import { useNavigate} from "react-router-dom";
+import DarkMode from '../DarkMode/DarkMode';
 import "./Navbar.scss";
 
 const Navbar = () => {
@@ -25,15 +26,18 @@ const Navbar = () => {
     
     <div className='navbar'>
         <div className="wrapper">
-            <Link to="/home">
+            
                 <div className='left'>
+                    <Link to="/home">
                     <img src={logo} alt="logo"></img>
+                    </Link>
+                    <DarkMode/>
                 </div>
-             </Link>
+             
             
             
             <div className='center'>
-                
+            
             </div>
 
             <div className='right'>
@@ -61,15 +65,19 @@ const Navbar = () => {
 
     <div className='navbar'>
         <div className="wrapper">
-            <Link to="/home">
+            
             <div className='left'>
-               <img src={logo} alt="logo"></img>
+                <Link to="/home">
+                    <img src={logo} alt="logo"></img>
+               </Link>
+               <DarkMode/>
             </div>
-            </Link>
+           
             
             
             <div className='center'>
                 <Link className='link' to="/home">EX-ZBT</Link>
+                
             </div>
 
             <div className='right'>

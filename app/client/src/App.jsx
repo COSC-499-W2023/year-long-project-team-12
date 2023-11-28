@@ -15,7 +15,7 @@ import Uploader from "./pages/Uploader/Uploader";
 import DoesNotExist from "./pages/DoesNotExist/DoesNotExist";
 import "./app.scss";
 import {useAuth} from "./context/authContext";
-import DarkMode from "./components/DarkMode/DarkMode";
+
 
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
     return (
       <div className="app">
         <Navbar/>
-       <DarkMode/>
         <Outlet/>
         <Footer/>
       </div>

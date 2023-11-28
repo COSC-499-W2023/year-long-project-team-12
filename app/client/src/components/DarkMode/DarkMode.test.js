@@ -1,23 +1,34 @@
+import {render,screen, fireEvent, waitFor, prettyDOM} from "@testing-library/react";
+import { MemoryRouter, Routes, Route, BrowserRouter, createMemoryRouter } from 'react-router-dom'
+import AuthContext, {AuthContextProvider} from '../../context/authContext';
+import React from "react";
+import DarkMode from "./DarkMode";
 
 
+test("That the darkmode switch exists on the page", () => {
+    render(<DarkMode/>);
+    const darkModeSwitch = screen.getByTestId(/darkModeSwitch/i);
 
-function toggleDarkMode() {
-    const darkModeEnabled = document.body.classList.contains('dark-mode');
-    document.body.classList.toggle('dark-mode', !darkModeEnabled);
-    localStorage.setItem('darkMode', !darkModeEnabled);
-}
+    expect(darkModeSwitch).toBeInTheDocument();
+  });
 
-
-function setInitialMode() {
-    const darkModePreference = localStorage.getItem('darkMode');
-
-
-    if (darkModePreference !== null) {
-        document.body.classList.toggle('dark-mode', darkModePreference === 'true');
-    }
-}
-
-document.getElementById('darkmode-toggle').addEventListener('click', toggleDarkMode);
+test("Clicking on the darkmode switch enables darkmode", () => {
+    render(<DarkMode/>);
+    const darkModeSwitch = screen.getByTestId(/darkModeSwitch/i);
+    fireEvent.click(darkModeSwitch);
+    const selectedTheme = localStorage.getItem("selectedTheme")
+    expect(selectedTheme).toBe("dark");
+  });
 
 
-document.addEventListener('DOMContentLoaded', setInitialMode);
+  test("Clicking on the darkmode again should default back to light mode", () => {
+    render(<DarkMode/>);
+    const darkModeSwitch = screen.getByTestId(/darkModeSwitch/i);
+    fireEvent.click(darkModeSwitch);
+    
+    const selectedTheme = localStorage.getItem("selectedTheme");
+
+    expect(selectedTheme).toBe("light");
+  });
+ 
+  
