@@ -30,13 +30,14 @@ export const AuthContextProvider = ({ children }) => {
             saveCurrentUser(currentUser).then((resp) => {
                 const jwtToken = resp.headers['authorization'];
                 localStorage.setItem('access_token', jwtToken);
-                console.log(resp);
+               // console.log(resp);
                 const decodedToken = jwtDecode(jwtToken);
                 setCurrentUser({
                     username: decodedToken.sub,
                     firstname: resp.data.userDetailsDTO.firstName,
                     lastname: resp.data.userDetailsDTO.lastName,
                     email: resp.data.userDetailsDTO.email,
+                    role: resp.data.userDetailsDTO.userRole,
                 })
                 resolve(resp);
             }).catch(err => {
@@ -51,14 +52,15 @@ export const AuthContextProvider = ({ children }) => {
             performLogin(usernameAndPassword).then(res => {
                 const jwtToken = res.headers["authorization"];
                 localStorage.setItem("access_token", jwtToken);
-                console.log(res)
+               // console.log(res)
                 const decodedToken = jwtDecode(jwtToken);
-                console.log(decodedToken);
+              //  console.log(decodedToken);
                 setCurrentUser({
                     username: decodedToken.sub,
                     firstname: res.data.userDetailsDTO.firstName,
                     lastname: res.data.userDetailsDTO.lastName,
                     email : res.data.userDetailsDTO.email,
+                    role: res.data.userDetailsDTO.userRole,
                 })
                 resolve(res);
             }).catch(err => {

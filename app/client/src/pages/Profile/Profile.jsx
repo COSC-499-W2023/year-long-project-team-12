@@ -39,7 +39,7 @@ const Profile = () => {
             <div className="info">
               <div className="item">
                 <PlaceIcon />
-                <span></span>
+                <span>{currentUser.role}</span>
               </div>
               <div className="item">
                 <LanguageIcon />
