@@ -3,6 +3,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--body_background);
+    color: var(--body_color);
 }
 .upload-form{
     display: flex;
@@ -13,6 +15,7 @@
     height: 300px;
     width: 500px;
     cursor: pointer;
+    color: var(--body_color);
     border-radius: 5px;
 }
 
@@ -25,7 +28,8 @@
     align-items: center;
     padding: 15px 20px;
     border-radius: 5px;
-    background-color: #e9f0ff;
+    background-color: var(--body_background);
+    color: var(--body_color);
 
 }
 
@@ -39,8 +43,8 @@
     width: 80px;
     padding: 10px;
     border: none;
-    background-color: e9f0ff;
-    color: rebeccapurple;
+    background-color: rebeccapurple;
+    color: var(--body_color);
     font-weight: bold;
     cursor: pointer;
 }

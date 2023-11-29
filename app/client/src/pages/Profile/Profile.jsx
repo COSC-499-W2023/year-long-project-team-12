@@ -15,6 +15,7 @@ const Profile = () => {
 
 
   const {  currentUser } = useAuth();
+  console.log(currentUser);
     
   return (
     <div className="profile">

@@ -66,13 +66,14 @@
       justify-content: center;
 
       h1 {
-        color: #555;
+        color: var(--body_color);
       }
 
       form {
         display: flex;
         flex-direction: column;
         gap: 30px;
+        color: var(--body_color);
 
         input {
           border: none;
@@ -89,7 +90,7 @@
           padding: 10px;
           border: none;
           background-color: #938eef;
-          color: white;
+          color: var(--body_color);
           font-weight: bold;
           cursor: pointer;
         }

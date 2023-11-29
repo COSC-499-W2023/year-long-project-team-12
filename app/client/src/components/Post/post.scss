@@ -6,7 +6,7 @@
     -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
     box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
     border-radius: 20px;
-    color: #000;
+    color: var(--body_color);
    
 
 
@@ -75,7 +75,7 @@
                 padding: 10px;
                 border: none;
                 background-color: #762e2e5c;
-                color: rebeccapurple;
+                color: var(--body_color);
                 font-weight: bold;
                 cursor: pointer;
             }
