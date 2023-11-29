@@ -13,15 +13,15 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Uploader from "./pages/Uploader/Uploader";
 import DoesNotExist from "./pages/DoesNotExist/DoesNotExist";
+import Interviewer from "./pages/Interviewer/Interviewer";
 import "./app.scss";
 import {useAuth} from "./context/authContext";
 
 
 
 function App() {
-  
   const { isCustomerAuthenticated } = useAuth();
-  const Layout = () =>{
+const Layout = () =>{
     return (
       <div className="app">
         <Navbar/>
@@ -37,19 +37,25 @@ function App() {
     if(!isCustomerAuthenticated()){
       return <Navigate to="/login"/>
     }
-
     return children;
   };
-  
+
   const router = createBrowserRouter([
     {
-      path:"/",
-      element: (<ProtectedRoute><Layout/> </ProtectedRoute> ),
-      children:[
-
+      path: "/",
+      element: (
+        <ProtectedRoute>
+          <Layout />
+        </ProtectedRoute>
+      ),
+      children: [
         {
-          path:"/profile",
-          element:<Profile/>
+          path: "/profile",
+          element: <Profile />
+        },
+        {
+          path: "/interviewer", 
+          element: <Interviewer />
         },
         {
           path:"/",
@@ -71,37 +77,36 @@ function App() {
       element:<Layout/>,
       children:[
 
-    {
-      path:"/home",
-      element:<Home/>
-    },
-    {
-      path:"/",
-      element:<Home/>
-    },
-    {
-      path:"/register",
-      element:<Register/>
-    },
-    {
-      path:"/login",
-      element:<Login/>
-    },
-    {
-      path:"*",
-      element:<DoesNotExist />
-    }
-    
+        {
+          path:"/home",
+          element:<Home/>
+        },
+        {
+          path:"/",
+          element:<Home/>
+        },
+        {
+          path:"/register",
+          element:<Register/>
+        },
+        {
+          path:"/login",
+          element:<Login/>
+        },
+        {
+          path:"*",
+          element:<DoesNotExist />
+        }
+      
   ]}
   
   ]);
-  
-  
-  return ( 
-  <div className="app">
-  
+
+  return (
+    <div className="app">
+      
     <RouterProvider router={router}/>
-  </div> 
+    </div>
   );
 }
 
