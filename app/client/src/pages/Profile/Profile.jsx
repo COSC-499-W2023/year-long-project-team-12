@@ -15,6 +15,7 @@ const Profile = () => {
 
 
   const {  currentUser } = useAuth();
+  console.log(currentUser);
     
   return (
     <div className="profile">
@@ -38,7 +39,7 @@ const Profile = () => {
             <div className="info">
               <div className="item">
                 <PlaceIcon />
-                <span></span>
+                <span>{currentUser.role}</span>
               </div>
               <div className="item">
                 <LanguageIcon />

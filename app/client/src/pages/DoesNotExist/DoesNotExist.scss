@@ -1,5 +1,11 @@
+.doesNotExistContainer{
+    height: 500px;
+    background-color: var(--body_background);
+    color: var(--body_color);
+}
 .header{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 500px;
 }
