@@ -15,32 +15,6 @@ const Register = () => {
   const [formErrors, setFormErrors] = useState({});
   let navigate = useNavigate();
 
-  useEffect(() => {
-    let isMounted = true;
-    let direction = 1;
-
-    const scrollingInterval = setInterval(() => {
-      const card = document.querySelector('.card');
-      if (card && isMounted) {
-        card.scrollTop += direction * 15;
-      }
-    }, 50);
-
-    setTimeout(() => {
-      direction = -1;
-    }, 2500);
-
-    setTimeout(() => {
-      clearInterval(scrollingInterval);
-      isMounted && (isMounted = false);
-    }, 5000);
-
-    return () => {
-      clearInterval(scrollingInterval);
-      isMounted && (isMounted = false);
-    };
-  }, []);
-
   if (isCustomerAuthenticated()) {
     return <Navigate to="/jobs" />;
   }
