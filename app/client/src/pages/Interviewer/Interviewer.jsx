@@ -31,7 +31,7 @@ const Interviewer = () => {
     <div className="interviewer">
       <div className="card">
         <div className="right">
-          <h1>Welcome, Interviewer!</h1>
+          <h1>Add a job posting</h1>
           <form>
            
             <input
