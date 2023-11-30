@@ -9,7 +9,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {useAuth} from "../../context/authContext";
-
+import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
 
 const Profile = () => {
 
@@ -50,8 +50,13 @@ const Profile = () => {
           </div>
           
         </div>
-      
       </div>
+
+        <div className="jobsAppliedToContainer">
+          <h1>Jobs You Have Applied To</h1>
+          <MockJobsAppliedTo />
+        </div>
+
     </div>
   );
 };
