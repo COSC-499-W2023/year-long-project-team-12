@@ -11,19 +11,15 @@ const Interviewer = () => {
 
   const handleAddJobPosting = () => {
     
-    console.log('Job Posting Added:', {
-      jobTitle,
-      companyName,
-      location,
-      jobDescription,
-      image,
-    });
+   
 
     setJobTitle('');
     setCompanyName('');
     setLocation('');
     setJobDescription('');
     setImage(null);
+
+    //unsure of how to proceed with this functino of handling adding the job posting.
   };
 
   const handleImageChange = (e) => {
@@ -70,13 +66,15 @@ const Interviewer = () => {
             ></textarea>
 
             
-            <input
-              type="file"
-              accept="image/*"
-              name="image"
-              onChange={handleImageChange}
-            />
-            
+              <label htmlFor="logoUpload">Add your company logo:</label>
+              <input
+                type="file"
+                accept="image/*"
+                id="logoUpload"
+                name="image"
+                onChange={handleImageChange}
+              />
+
             <button type="button" onClick={handleAddJobPosting}>
               Add Job Posting
             </button>
