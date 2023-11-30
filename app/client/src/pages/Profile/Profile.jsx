@@ -10,12 +10,24 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {useAuth} from "../../context/authContext";
 import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
+import { useState } from "react";
 
 const Profile = () => {
 
 
   const {  currentUser } = useAuth();
-  console.log(currentUser);
+  const [open, setOpen] = useState(false);
+  const[text, setText]  = useState("Show");
+  const toggle = () => {
+    setOpen(!open);
+    if (!open){
+      setText("Hide")
+    }
+    else{
+      setText("Show")
+    }
+  };
+
     
   return (
     <div className="profile">
@@ -46,16 +58,23 @@ const Profile = () => {
                 <span>{currentUser.email}</span>
               </div>
             </div>
-            
+            <button onClick={toggle} className="toggleJobsAppliedTo">{text} Jobs you have applied to...</button>
           </div>
           
         </div>
       </div>
+      
+       
+          
+          {open && (
+            <div className="jobsAppliedToContainer">
+            <h1>Jobs You Have Applied To</h1>
+            <MockJobsAppliedTo />
 
-        <div className="jobsAppliedToContainer">
-          <h1>Jobs You Have Applied To</h1>
-          <MockJobsAppliedTo />
-        </div>
+            </div>
+          )
+          }
+        
 
     </div>
   );

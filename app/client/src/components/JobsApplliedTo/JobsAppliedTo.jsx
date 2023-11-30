@@ -4,8 +4,8 @@ import "./JobsAppliedTo.scss";
 function JobsAppliedTo({jobs}) {
   return (
     
-      <div class="work">
-          <div class="primary">
+      <div className="work">
+          <div className="primary">
           <div className="logo">
               <img data-testid="jobLogo" src={jobs.logo} alt="confidential"/>
             </div> 

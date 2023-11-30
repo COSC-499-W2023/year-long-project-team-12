@@ -78,6 +78,16 @@
               }
             }
           }
+
+          .toggleJobsAppliedTo{
+            padding: 10px;
+            border: none;
+            background-color: var(--body_color);
+            color: var(--body_background);
+            font-weight: bold;
+            cursor: pointer;
+
+          }
          
         }
 
