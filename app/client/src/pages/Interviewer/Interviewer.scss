@@ -1,0 +1,60 @@
+.interviewer {
+  height: 100vh;
+  background-color: rgb(193, 190, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .card {
+    width: 50%;
+    max-height: 80vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body_background);
+    border-radius: 10px;
+
+    .right {
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      justify-content: center;
+
+      h1 {
+        color: var(--body_color);
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        color: var(--body_color);
+
+        input,
+        textarea {
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
+          background-color: transparent;
+          margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+          margin-bottom: 20px;
+        }
+
+        button {
+          width: 50%;
+          padding: 10px;
+          border: none;
+          background-color: #938eef;
+          color: var(--body_color);
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
