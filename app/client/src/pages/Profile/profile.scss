@@ -78,11 +78,31 @@
               }
             }
           }
+
+          .toggleJobsAppliedTo{
+            padding: 10px;
+            border: none;
+            background-color: var(--body_color);
+            color: var(--body_background);
+            font-weight: bold;
+            cursor: pointer;
+
+          }
          
         }
 
        
       }
+      
     }
+    .jobsAppliedToContainer{
+      h1{
+        text-align: center;
+        color: var(--body_color);
+      }
+
+    }
+
+
   
 }
