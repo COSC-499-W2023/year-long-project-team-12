@@ -1,15 +1,8 @@
-FROM node:12
-
+FROM node:19-alpine
 WORKDIR /client
-
-COPY package*.json ./
-
-RUN npm install
-
+ENV PATH /client/node_modules/.bin:$PATH
+COPY package*.json .
+RUN npm i --install
 COPY . .
-
-ENV PORT=8080
-
-EXPOSE 8080
-
+EXPOSE 3000
 CMD [ "npm", "start" ]

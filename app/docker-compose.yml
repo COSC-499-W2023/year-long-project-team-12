@@ -1,0 +1,42 @@
+services:
+  db: 
+    container_name: exzbt-mongodb
+    image: mongo:7.0
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=exzbtadmin
+      - MONGO_INITDB_ROOT_PASSWORD=exzbtmyskills
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+  exzbt-api:
+    container_name: exzbt-api
+    image: exzbt-api:0.0.1
+    build:
+      context: Java
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING.PROFILES.ACTIVE=default
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  exzbt-ui:
+    container_name: exzbt-ui
+    image: exzbt-ui:0.0.1
+    build:
+      context: client
+    ports:
+      - "3000:3000"
+    volumes:
+      - /client/node_modules
+      - ./client:/client
+    restart: unless-stopped
+    depends_on:
+      - exzbt-api
+
+volumes:
+  mongo-data:
