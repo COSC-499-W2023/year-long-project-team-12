@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Interviewer.scss';
 import { useAuth } from '../../context/authContext';
+import logo from "../../components/Navbar/logo.png";
 
 const Interviewer = () => {
   const [jobTitle, setJobTitle] = useState('');
@@ -30,6 +31,13 @@ const Interviewer = () => {
   return (
     <div className="interviewer">
       <div className="card">
+      <div className="logo-container">
+          <img
+            src={logo}
+            alt="Logo"
+            className="logo"
+          />
+        </div>
         <div className="right">
           <h1>Add a job posting</h1>
           <form>
