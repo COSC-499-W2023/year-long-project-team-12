@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Interviewer.scss';
 import { useAuth } from '../../context/authContext';
+import {saveJobPosting} from '../../services/ClientAPI';
 import logo from "../../components/Navbar/logo.png";
 
 const Interviewer = () => {
@@ -10,29 +11,29 @@ const Interviewer = () => {
   const [jobDescription, setJobDescription] = useState('');
   const [expirationDate, setExpirationDate] = useState(''); 
   const [image, setImage] = useState(null);
-  const {saveJobPosting} = useAuth();
+  const {saveJobPosting} = saveJobPosting();
 
 
   const handleAddJobPosting = async (event) => {
     
-    event.preventDefault();
+    // event.preventDefault();
     
-    try {
-      const formData = new FormData(event.target);
-      const jobData = {};
+    // try {
+    //   const formData = new FormData(event.target);
+    //   const jobData = {};
   
-      formData.forEach((value, key) => (jobData[key] = value));
+    //   formData.forEach((value, key) => (jobData[key] = value));
   
-      const jobDataJson = JSON.stringify(jobData);
-      console.log(jobDataJson);
+    //   const jobDataJson = JSON.stringify(jobData);
+    //   console.log(jobDataJson);
   
     
-      saveJobPosting(jobDataJson).then((resp) => {
+    //   saveJobPosting(jobDataJson).then((resp) => {
        
-      });
-    } catch (error) {
-      console.error("Error");
-    }
+    //   });
+    // } catch (error) {
+    //   console.error("Error");
+    // }
 
     setJobTitle('');
     setCompanyName('');

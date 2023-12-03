@@ -60,14 +60,14 @@ export const login = async (usernameAndPassword) => {
 }
 //from interviewer page
 // export const saveJobPosting = async (jobData) => {
-//     try {
-//       return await axios.post(
-//         `${host_address}/api/`,
-//         jobData,
-//         getAuthConfig()
-//       );
-//     } catch (e) {
-//       throw e;
-//     }
+    // try {
+    //   return await axios.post(
+    //     `${host_address}/api/`,
+    //     jobData,
+    //     getAuthConfig()
+    //   );
+    // } catch (e) {
+    //   throw e;
+    // }
 //   }; 
 //start of function for saving a new job posting
