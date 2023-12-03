@@ -11,7 +11,7 @@ const Interviewer = () => {
   const [jobDescription, setJobDescription] = useState('');
   const [expirationDate, setExpirationDate] = useState(''); 
   const [image, setImage] = useState(null);
-  const {saveJobPosting} = saveJobPosting();
+  // const {saveJobPosting} = saveJobPosting();
 
 
   const handleAddJobPosting = async (event) => {
