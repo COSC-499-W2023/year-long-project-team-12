@@ -11,7 +11,7 @@ import DarkMode from '../DarkMode/DarkMode';
 import "./Navbar.scss";
 
 const Navbar = () => {
-    const { isCustomerAuthenticated,currentUser, logOut } = useAuth();
+    const { isCustomerAuthenticated,currentUser, logOut, isHiring} = useAuth();
     let navigate = useNavigate();
 
     const handleLogout = (event) => {
@@ -48,10 +48,12 @@ const Navbar = () => {
                     <Link className='link' to="/profile">{currentUser.username}</Link>
                 </div>
 
-                <div className="item">
-                    <AddIcon />
-                    <Link className='link' to="/interviewer">Add a Job</Link>
-                </div>
+                {isHiring(currentUser) && (
+            <div className="item">
+              <AddIcon />
+              <Link className='link' to="/interviewer">Add a Job</Link>
+            </div>
+          )}
 
                 <div className="item">
                     <WorkIcon />
