@@ -8,19 +8,18 @@ const Interviewer = () => {
   const [companyName, setCompanyName] = useState('');
   const [location, setLocation] = useState('');
   const [jobDescription, setJobDescription] = useState('');
-  const [image, setImage] = useState(null); 
+  const [expirationDate, setExpirationDate] = useState(''); 
+  const [image, setImage] = useState(null);
 
   const handleAddJobPosting = () => {
-    
-   
-
     setJobTitle('');
     setCompanyName('');
     setLocation('');
     setJobDescription('');
+    setExpirationDate(''); 
     setImage(null);
 
-    //unsure of how to proceed with this functino of handling adding the job posting.
+    
   };
 
   const handleImageChange = (e) => {
@@ -31,7 +30,7 @@ const Interviewer = () => {
   return (
     <div className="interviewer">
       <div className="card">
-      <div className="logo-container">
+        <div className="logo-container">
           <img
             src={logo}
             alt="Logo"
@@ -41,7 +40,6 @@ const Interviewer = () => {
         <div className="right">
           <h1>Add a job posting</h1>
           <form>
-           
             <input
               type="text"
               name="jobTitle"
@@ -73,15 +71,23 @@ const Interviewer = () => {
               onChange={(e) => setJobDescription(e.target.value)}
             ></textarea>
 
-            
-              <label htmlFor="logoUpload">Add your company logo:</label>
-              <input
-                type="file"
-                accept="image/*"
-                id="logoUpload"
-                name="image"
-                onChange={handleImageChange}
-              />
+            <label htmlFor="expirationDate">Job Expiration Date:</label>
+            <input
+              type="date"
+              id="expirationDate"
+              name="expirationDate"
+              value={expirationDate}
+              onChange={(e) => setExpirationDate(e.target.value)}
+            />
+
+            <label htmlFor="logoUpload">Add your company logo:</label>
+            <input
+              type="file"
+              accept="image/*"
+              id="logoUpload"
+              name="image"
+              onChange={handleImageChange}
+            />
 
             <button type="button" onClick={handleAddJobPosting}>
               Add Job Posting
