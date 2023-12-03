@@ -88,6 +88,18 @@ export const AuthContextProvider = ({ children }) => {
         return true;
     }
 
+    const isCandidate = (currentUser) => {
+        return currentUser && currentUser.role === 'candidate';
+    };
+
+    const isHirer = (currentUser) => {
+        return currentUser && currentUser.role === 'hirer';
+    };
+
+    const canAccessInterviewerPage = () => {
+        return isHirer(currentUser);
+    };
+
     return (
         <AuthContext.Provider value={{
             currentUser,
@@ -95,7 +107,10 @@ export const AuthContextProvider = ({ children }) => {
             login,
             logOut,
             isCustomerAuthenticated,
-            setCurrentUserFromToken
+            setCurrentUserFromToken, 
+            isCandidate,
+            canAccessInterviewerPage,
+            isHirer
             }}>
             { children }
         </AuthContext.Provider>
