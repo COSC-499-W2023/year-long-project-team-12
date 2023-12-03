@@ -10,17 +10,38 @@ const Interviewer = () => {
   const [jobDescription, setJobDescription] = useState('');
   const [expirationDate, setExpirationDate] = useState(''); 
   const [image, setImage] = useState(null);
+  const {saveJobPosting} = useAuth();
 
-  const handleAddJobPosting = () => {
+
+  const handleAddJobPosting = async (event) => {
+    
+    event.preventDefault();
+    
+    try {
+      const formData = new FormData(event.target);
+      const jobData = {};
+  
+      formData.forEach((value, key) => (jobData[key] = value));
+  
+      const jobDataJson = JSON.stringify(jobData);
+      console.log(jobDataJson);
+  
+    
+      saveJobPosting(jobDataJson).then((resp) => {
+       
+      });
+    } catch (error) {
+      console.error("Error");
+    }
+
     setJobTitle('');
     setCompanyName('');
     setLocation('');
     setJobDescription('');
     setExpirationDate(''); 
     setImage(null);
-
-    
   };
+  
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
