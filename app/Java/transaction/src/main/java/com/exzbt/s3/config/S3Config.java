@@ -11,7 +11,7 @@ import java.util.Objects;
 
 @Configuration
 public class S3Config {
-    @Value("${aws.region}")
+    @Value("${cloud.aws.region}")
     private String awsRegion;
 
     @Value("${application.environment}")
