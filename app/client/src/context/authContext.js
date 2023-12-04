@@ -88,6 +88,10 @@ export const AuthContextProvider = ({ children }) => {
         return true;
     }
 
+    const isHiring = () => {
+        return currentUser?.role === 'HIRING';
+      };
+
     return (
         <AuthContext.Provider value={{
             currentUser,
@@ -95,7 +99,8 @@ export const AuthContextProvider = ({ children }) => {
             login,
             logOut,
             isCustomerAuthenticated,
-            setCurrentUserFromToken
+            setCurrentUserFromToken, 
+            isHiring
             }}>
             { children }
         </AuthContext.Provider>

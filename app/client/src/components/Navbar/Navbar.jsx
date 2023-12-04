@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginIcon from '@mui/icons-material/Login';
+import AddIcon from '@mui/icons-material/Add';
 import SwitchAccountIcon from '@mui/icons-material/SwitchAccount';
 import WorkIcon from '@mui/icons-material/Work';
 import { useAuth } from "../../context/authContext"
@@ -10,7 +11,7 @@ import DarkMode from '../DarkMode/DarkMode';
 import "./Navbar.scss";
 
 const Navbar = () => {
-    const { isCustomerAuthenticated,currentUser, logOut } = useAuth();
+    const { isCustomerAuthenticated,currentUser, logOut, isHiring} = useAuth();
     let navigate = useNavigate();
 
     const handleLogout = (event) => {
@@ -46,6 +47,13 @@ const Navbar = () => {
                     <SwitchAccountIcon />
                     <Link className='link' to="/profile">{currentUser.username}</Link>
                 </div>
+
+                {isHiring(currentUser) && (
+            <div className="item">
+              <AddIcon />
+              <Link className='link' to="/interviewer">Add a Job</Link>
+            </div>
+          )}
 
                 <div className="item">
                     <WorkIcon />
