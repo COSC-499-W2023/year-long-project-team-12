@@ -1,0 +1,93 @@
+#dependencies
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
+</dependency>
+
+<!-- Spring Data JPA -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+
+<!-- Spring Web -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+<!-- Spring Security (for user authentication) -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+<!-- H2 Database (for simplicity; use a real database in production) -->
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <scope>runtime</scope>
+</dependency>
+
+<!-- AWS SDK (for video storage on S3, if needed) -->
+<!-- Add this dependency if you want to store videos on Amazon S3 -->
+<!--
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-s3</artifactId>
+</dependency>
+-->
+
+
+#setting up controllers
+@RestController
+@RequestMapping("/videos")
+public class VideoController {
+    @Autowired
+    private VideoService videoService;
+
+    @PostMapping("/record")
+    public ResponseEntity<String> recordVideo(@RequestParam("userId") Long userId, @RequestParam("jobPostingId") Long jobPostingId) {
+        // Implement video recording logic and return the video URL
+        String videoUrl = videoService.recordAndSaveVideo(userId, jobPostingId);
+        return ResponseEntity.ok(videoUrl);
+    }
+
+    @PostMapping("/submit")
+    public ResponseEntity<String> submitVideo(@RequestParam("videoUrl") String videoUrl, @RequestParam("jobPostingId") Long jobPostingId) {
+        // Implement video submission logic
+        videoService.submitVideo(videoUrl, jobPostingId);
+        return ResponseEntity.ok("Video submitted successfully.");
+    }
+}
+
+
+#implmentng video server class
+public class VideoService {
+    @Autowired
+    private VideoRepository videoRepository;
+
+    // Implement video recording and saving logic
+    public String recordAndSaveVideo(Long userId, Long jobPostingId) {
+        // Your implementation here, e.g., using a library like FFmpeg or native Java APIs
+        // Save the video to a storage service (e.g., Amazon S3)
+        String videoUrl = "s3://your-bucket/video.mp4"; // Replace with actual URL
+
+        // Create a Video entity and save it to the database
+        Video video = new Video();
+        video.setUrl(videoUrl);
+        video.setUserId(userId);
+        video.setJobPostingId(jobPostingId);
+        videoRepository.save(video);
+
+        return videoUrl;
+    }
+
+    // Implement video submission logic
+    public void submitVideo(String videoUrl, Long jobPostingId) {
+        // Your implementation here, e.g., marking the video as submitted in the database
+        // You may also want to implement checks for duplicate submissions, etc.
+    }
+}
+
+
