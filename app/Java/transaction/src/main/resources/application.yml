@@ -1,0 +1,8 @@
+application:
+  environment: "dev"
+
+cloud:
+  aws:
+    region: us-east-1
+    s3:
+      buckets:
