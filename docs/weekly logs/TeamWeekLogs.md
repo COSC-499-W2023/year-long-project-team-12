@@ -263,3 +263,51 @@ Group member usernames:
 ### Testing
 
 ![Tests](images/testing_week1112.png)
+
+
+# Team 12 Week 13 Log (November 27th - December 3rd)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+
+## Features for Milestone
+
+* Dockerization of FE and BE - using containers to run the application.
+
+* Increasing workflow of FE actions for hiring user (posting a job, viewing profile)
+
+* GitHub Actions to run automated tests on every pull request.
+
+* Creating production and local S3 instances, to enable media storage.
+
+* Adding more database tables, working on continous deployment for BE.
+
+* Researching how to use Redis in place of local storage.
+
+### Burnup Chart
+
+![Kanban tasks](images/week13_burnup.png)
+
+### Kanban board - Tasks identified this week
+
+![kanban tasks1](images/week13_kanban1.png)
+
+![kanban tasks2](images/week13_kanban2.png)
+
+### Testing
+
+![Tests](images/testing_week13.png)
+
+![Tests](images/testing_week13BE.png)
+
+
