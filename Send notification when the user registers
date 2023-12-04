@@ -1,0 +1,79 @@
+ #dependecies 
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mail</artifactId>
+</dependency>
+
+
+#properties 
+spring.mail.host=smtp.example.com
+spring.mail.port=587
+spring.mail.username=your-email@example.com
+spring.mail.password=your-password
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+#sendingmails
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class EmailService {
+
+    @Autowired
+    private JavaMailSender mailSender;
+
+    public void sendConfirmationEmail(String to, String token) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("noreply@example.com");
+        message.setTo(to);
+        message.setSubject("Account Confirmation");
+        message.setText("Please confirm your account using this token: " + token);
+        mailSender.send(message);
+    }
+}
+
+
+#implementing controller
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/account")
+public class AccountController {
+
+    @Autowired
+    private EmailService emailService;
+
+    // Method to handle account creation
+    @PostMapping("/create")
+    public String createAccount(@RequestParam String email) {
+        // Logic to create account and generate a token
+        String token = generateToken();
+        emailService.sendConfirmationEmail(email, token);
+        return "Confirmation email sent";
+    }
+
+    // Method to validate account
+    @GetMapping("/validate")
+    public String validateAccount(@RequestParam String token) {
+        // Logic to validate the token and activate the account
+        if (validateToken(token)) {
+            return "Account validated successfully";
+        } else {
+            return "Invalid token";
+        }
+    }
+
+    // Dummy methods for token generation and validation
+    private String generateToken() {
+        return "123456"; // Replace with actual token generation logic
+    }
+
+    private boolean validateToken(String token) {
+        return "123456".equals(token); // Replace with actual validation logic
+    }
+}
+
