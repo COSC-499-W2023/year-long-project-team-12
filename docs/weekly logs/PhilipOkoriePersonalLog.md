@@ -51,5 +51,15 @@ Group member: Philip Okorie
   
 <img width="1440" alt="Screenshot 2023-11-26 at 6 50 11 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/9e954344-42bd-4fcd-add2-b820accfa544">
 
-  
+## Week 13 Log (November 26th - December 3rd)
+
+Group member: Philip Okorie
+
+* Working on implementing comment section
+* Asking for confirmation before Logout
+* Reviewed tests for darkmode implementation
+
+
+  <img width="1440" alt="Screenshot 2023-12-03 at 9 03 13 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/7b4c9e42-848b-4434-999e-344a85f2d2c7">
+
 

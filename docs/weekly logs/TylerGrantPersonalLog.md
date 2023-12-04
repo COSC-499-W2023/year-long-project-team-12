@@ -47,10 +47,20 @@ Group member: Tyler Grant @tmg-repo
 ![week 10 tasks](/docs/weekly%20logs/images/tyler_ssht.png)
 
 
-## Week 12 Log (November 6th - November 12th)
+## Week 12 Log (November 13th - November 20th)
 
 Responded to issues on the Kanban board, namely:
 * to add testing to various pages on the front end. I added manual testing.
 * Synchronized UI changes across pages to ensure they look the same and have uniformity.
 
 ![week 12 tasks](/docs/weekly%20logs/images/week12_t.png)
+
+## Week 13 Log (November 21st - December 3rd)
+
+* COMPLETED: Created an interviewer page, that was completed and merged. Job postings are added from here.
+* Added testing for said interviewer page to cover unit testing. 
+* Edited navbar to render based off of user type (hiring or candidate).
+* Made video for design document for team.
+* IN PROGRESS: password encryption and decryption was worked on for more secure application, testing still needed in order to merge change.
+
+![week 13 tasks](/docs/weekly%20logs/images/week13tyler.png)

@@ -144,4 +144,34 @@ describe('Register Component', () => {
     fireEvent.change(confirmPasswordInputEl, { target: { value: testValue } });
     expect(confirmPasswordInputEl.value).toBe(testValue);
   });
+
+  test('displays error messages for invalid inputs', () => {
+    render(<MockRegister />);
+
+    fireEvent.submit(screen.getByRole('button', { name: /Register/i }));
+
+    expect(screen.getByText(/First Name is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/Last Name is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/Email is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/Username is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/Password is required/i)).toBeInTheDocument();
+
+    fireEvent.change(screen.getByPlaceholderText(/First Name/i), { target: { value: '' } });
+    fireEvent.change(screen.getByPlaceholderText(/Last Name/i), { target: { value: '' } });
+    fireEvent.change(screen.getByPlaceholderText(/Email/i), { target: { value: 'invalid-email' } });
+    fireEvent.change(screen.getByPlaceholderText(/Username/i), { target: { value: '' } });
+    fireEvent.change(screen.getByPlaceholderText(/Password/i), { target: { value: '' } });
+    fireEvent.change(screen.getByPlaceholderText(/Confirm/i), { target: { value: 'mismatch' } });
+
+    fireEvent.submit(screen.getByRole('button', { name: /Register/i }));
+
+    expect(screen.getByText(/First Name is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/Last Name is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/Invalid email format/i)).toBeInTheDocument();
+    expect(screen.getByText(/Username is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/Password is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/Passwords do not match/i)).toBeInTheDocument();
+    expect(screen.getByText(/Invalid email format/i)).toBeInTheDocument();
+    
+  });
 });

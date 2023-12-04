@@ -1,5 +1,6 @@
 package com.exzbt.widget.user.userRegistration;
 
+import com.exzbt.business.user.shared.AuthenticationResponse;
 import com.exzbt.business.user.shared.UserDetailRequest;
 import com.exzbt.business.user.UserService;
 import com.exzbt.business.user.shared.UserDetailsDTO;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/")
-public class userRegistrationCRUD {
+public class UserRegistrationCRUD {
     @Autowired
     private userRegistrationService registrationService;
     @Autowired
@@ -27,13 +28,11 @@ public class userRegistrationCRUD {
 
     @PostMapping
     public ResponseEntity<?> createUser(@RequestBody UserDetailRequest request) {
-        UserDetailRequest userDetailRequest = registrationService.register(request);
-        String jwtToken = jwtUtil.issueToken(request.getEmail());
+        AuthenticationResponse response = registrationService.register(request);
 
-        ResponseEntity entity = ResponseEntity.ok()
-                .header(HttpHeaders.AUTHORIZATION, jwtToken)
-                .build();
-        return entity;
+        return ResponseEntity.ok()
+                .header(HttpHeaders.AUTHORIZATION, response.getToken())
+                .body(response);
     }
 
     public Object deleteUser(Object userAttempt) {

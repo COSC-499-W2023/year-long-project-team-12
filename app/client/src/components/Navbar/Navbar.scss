@@ -1,6 +1,7 @@
 .navbar{
     height: 60px;
     background-color: var(--body_background);
+    color: var(--body_color);
     .wrapper{
         padding: 10px 20px;
         display: flex;
@@ -18,7 +19,7 @@
             button{
                 text-decoration: none;
                 
-                color: var(--body_background);
+                color: var(--body_color);
                 
                 background-color: var(--body_background);
                 transition: width .35s;
@@ -47,11 +48,12 @@
             display: flex;
             align-items: center;
             gap: 25px;
+            color: var(--body_color);
 
             .icons{
                 display: flex;
                 gap: 15px;
-                color: #777;
+                color: var(--body_color);
                 cursor: pointer;
             }
         }

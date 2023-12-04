@@ -41,7 +41,7 @@
                 padding: 10px;
                 border: none;
                 background-color: var(--body_background);
-                color: rebeccapurple;
+                color: var(--body_color);
                 font-weight: bold;
                 cursor: pointer;
 
@@ -58,7 +58,7 @@
             justify-content: center;
 
             h1{
-                color: #555;
+                color: var(--body_color);
 
             }
             form {

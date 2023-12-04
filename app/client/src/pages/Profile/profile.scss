@@ -37,8 +37,8 @@
         -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
         box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
         border-radius: 20px;
-        background-color: themed("bg");
-        color: themed("textColor");
+        background-color: var(--body_background);
+        color: var(--body_color);
         padding: 50px;
         display: flex;
         align-items: center;
@@ -71,18 +71,38 @@
               display: flex;
               align-items: center;
               gap: 5px;
-              color: #555;
+              color: var(--body_color);
 
               span {
                 font-size: 12px;
               }
             }
           }
+
+          .toggleJobsAppliedTo{
+            padding: 10px;
+            border: none;
+            background-color: var(--body_color);
+            color: var(--body_background);
+            font-weight: bold;
+            cursor: pointer;
+
+          }
          
         }
 
        
       }
+      
     }
+    .jobsAppliedToContainer{
+      h1{
+        text-align: center;
+        color: var(--body_color);
+      }
+
+    }
+
+
   
 }

@@ -1,7 +1,9 @@
 .app {
-    height: auto;
+    min-height: 500px;
+    display: block;
     .link{
         color: inherit;
         text-decoration: none;
     }
+   
 }
