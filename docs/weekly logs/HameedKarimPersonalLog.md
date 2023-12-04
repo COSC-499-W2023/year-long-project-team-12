@@ -105,3 +105,18 @@ Group member username:
 ![Hameed Tasks](images/Hameed/HameedWeek1112WLtasks.png)
 
 ![Hameed Tasks](images/Hameed/HameedWeek1112Tasks.png)
+
+## Week 13 Log (November 27th - December 3rd)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Configured dockerfiles and docker compose files to build containers for FE, BE and Database.
+* Automated front end code autobuild during local development (hotswapping).
+* Created Job Posting class and Database object.
+* Setup AWS S3 local development and production instances.
+* Worked on Design Document sections - System Architecture and Database Design.
+
+![Hameed Tasks](images/Hameed/HameedWeek13WLtasks.png)
+
+![Hameed Tasks](images/Hameed/HameedWeek13Tasks.png)
