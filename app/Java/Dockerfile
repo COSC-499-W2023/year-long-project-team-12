@@ -7,11 +7,11 @@ COPY transaction/pom.xml transaction/pom.xml
 COPY pom.xml pom.xml
 
 RUN mvn -q -ntp -B -pl transaction -am dependency:go-offline
-COPY transaction transaction
+COPY transaction/src transaction/src
 RUN mvn -q -ntp -B -pl business -am dependency:go-offline
-COPY business business
+COPY business/src business/src
 RUN mvn -q -ntp -B -pl widget -am dependency:go-offline
-COPY widget widget
+COPY widget/src widget/src
 RUN mvn -q -ntp -B -pl transaction,business,widget package
 
 RUN mkdir -p /jar-layers
