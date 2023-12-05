@@ -60,6 +60,19 @@ Group Member : Jusnoor Kaur Sachdeva
 <img width="1440" alt="Screenshot 2023-11-26 at 8 56 40 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/37e91551-ee69-4d3b-8b7b-40913fc4a75b">
 
 
+<h3> Week 13 log ( October 29th  - November 5th)</h3>
+Group Member : Jusnoor Kaur Sachdeva
+
+
+* Team meetings 
+* Worked on the contact info of the app
+* Send a notification to the user when registered
+* Add a video upload page
+  
+
+
+
+<img width="1440" alt="Screenshot 2023-12-04 at 1 32 40 AM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/dabb4a10-9182-4290-a0e2-fc85c4ac6685">
 
 
 
