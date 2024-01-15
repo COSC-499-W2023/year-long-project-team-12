@@ -345,6 +345,10 @@ Group member usernames:
 
 <img width="1127" alt="Screenshot 2024-01-14 at 10 04 43 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/12354eb2-dac2-401e-95d6-d4eb68f773bf">
 
+### Testing
+
+![Tests](images/FETestWk1S2.png)
+
 
 
 
