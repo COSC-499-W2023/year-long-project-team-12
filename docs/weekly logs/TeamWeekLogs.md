@@ -311,3 +311,42 @@ Group member usernames:
 ![Tests](images/testing_week13BE.png)
 
 
+# Team 12 Term2 Week 1 Log(January 7th - January 14th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+  No tests this week
+
+## Features for Milestone
+
+* Beginning of term meetings: The team just got back from the holidays, with one member coming back next week
+  
+* AWS research
+  
+* Troubleshooting and prep work based on our new schedules for the semester
+  
+* Creating and assigning new tasks based on client feedback, etc
+
+## Burnup Chart
+
+<img width="1132" alt="Screenshot 2024-01-14 at 10 06 06 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/df36035a-301f-4707-ae37-8f4ae65f0bc0">
+
+ 
+
+### Kanban board - Tasks identified this week
+
+<img width="1127" alt="Screenshot 2024-01-14 at 10 04 43 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/12354eb2-dac2-401e-95d6-d4eb68f773bf">
+
+
+
+
+
