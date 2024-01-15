@@ -68,7 +68,7 @@ Group member: Philip Okorie
 
 * Troubleshooting AWS
 * Altering EX-ZBT based on the client feedback
-* Attending the first team meeting of thr new semester
+* Attending the first team meeting of the new semester
 
   <img width="1148" alt="Screenshot 2024-01-14 at 10 09 48 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/69f2bbd7-87d4-4a5d-9011-66249d800bcc">
 
