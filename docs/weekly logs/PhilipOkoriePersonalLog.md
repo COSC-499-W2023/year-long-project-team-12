@@ -62,4 +62,16 @@ Group member: Philip Okorie
 
   <img width="1440" alt="Screenshot 2023-12-03 at 9 03 13 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/7b4c9e42-848b-4434-999e-344a85f2d2c7">
 
+## Term 2 Week 1 Log (January 7th - January 14th)
+
+Group member: Philip Okorie
+
+* Troubleshooting AWS
+* Altering EX-ZBT based on the client feedback
+* Attending the first team meeting of the new semester
+
+  <img width="1148" alt="Screenshot 2024-01-14 at 10 09 48 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/69f2bbd7-87d4-4a5d-9011-66249d800bcc">
+
+
+  
 
