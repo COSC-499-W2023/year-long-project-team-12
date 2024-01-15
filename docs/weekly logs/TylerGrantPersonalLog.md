@@ -64,3 +64,20 @@ Responded to issues on the Kanban board, namely:
 * IN PROGRESS: password encryption and decryption was worked on for more secure application, testing still needed in order to merge change.
 
 ![week 13 tasks](/docs/weekly%20logs/images/week13tyler.png)
+
+## Week 13 Log (November 21st - December 3rd)
+
+* COMPLETED: Created an interviewer page, that was completed and merged. Job postings are added from here.
+* Added testing for said interviewer page to cover unit testing. 
+* Edited navbar to render based off of user type (hiring or candidate).
+* Made video for design document for team.
+* IN PROGRESS: password encryption and decryption was worked on for more secure application, testing still needed in order to merge change.
+
+## T2 Week 1 Log (January 8th-January14th)
+
+* COMPLETED: Project management and redesigning the layout and intention of the appplication with regards to feedback. Modifying code to change and reflect these changes before moving forward.
+* IN PROGRESS: notification systen integreating alerts for users and ticketed on the Pm software.
+
+![T2 Week 1](./images/t2_wk1Tyler.png)
+
+
