@@ -120,3 +120,19 @@ Group member username:
 ![Hameed Tasks](images/Hameed/HameedWeek13WLtasks.png)
 
 ![Hameed Tasks](images/Hameed/HameedWeek13Tasks.png)
+
+# Semester 2
+
+## Week 1 Log (January 8th - January 14th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Working on changing DB from Mongo to AWS RDS.
+* Using client feedback, reworking from Job Board application to a general Request application.
+* Setting up production and developement instances using AWS services.
+* Working on camera/video functionality setup (researching).
+
+![Hameed Tasks](images/Hameed/Wk1S2IssuesWL.png)
+
+![Hameed Tasks](images/Hameed/Wk1S2Tasks.png)
