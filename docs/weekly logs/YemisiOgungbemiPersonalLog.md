@@ -71,3 +71,6 @@
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/5695d90a-c557-49ac-af1f-6311200c00dd)
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/02831c88-0b75-497e-a166-48c298c85c2a)
 
+# Semester 2
+## Week 1 January 7th - January 13th
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/bf8bb54c-af7f-4647-bc6b-61d8bf29f05d)
