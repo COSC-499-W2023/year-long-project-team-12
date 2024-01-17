@@ -13,7 +13,7 @@ const Login = () => {
     let navigate = useNavigate();
 
     if(isCustomerAuthenticated()){
-        return <Navigate to="/jobs"/>
+        return <Navigate to="/profile"/>
       }
 
     const toggleRegister = () => {
@@ -30,14 +30,14 @@ const Login = () => {
         const usernameAndPassword = JSON.stringify(object)
         let token;
         login(usernameAndPassword).then(resp => {
-            navigate("/jobs");
+            navigate("/profile");
         })
         } catch {
             setError(true);
         }
         setLoading(false);
-        redirect("/jobs");
-        navigate("/jobs");
+        redirect("/profile");
+        navigate("/profile");
     };
 
     return (
