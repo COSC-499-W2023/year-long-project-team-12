@@ -35,8 +35,6 @@ services:
       - /client/node_modules
       - ./client:/client
     restart: unless-stopped
-    environment:
-      - WATCHPACK_POLLING=true
     depends_on:
       - exzbt-api
 
