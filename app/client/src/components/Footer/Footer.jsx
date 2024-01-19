@@ -16,8 +16,8 @@ const Footer = () => {
                 <div className="item">
                     <h1>About</h1>
                     <span data-testid="about">
-                    The purpose of the software is to provide a video sharing platform specifically designed for job interviews.
-                     It allows users to register, create profiles, upload and share videos for job interviews, and receive feedback/hiring decisions based on their video submissions.
+                    The purpose of the software is to provide a video sharing platform 
+                     It allows users to register, create profiles, upload and share videos and receive feedback based on their video submissions.
                     
                     </span>
                 </div>
@@ -25,13 +25,11 @@ const Footer = () => {
                 <div className="item">
                     <h1>Contact</h1>
                     <span data-testid="contact">
-                    The purpose of the software is to provide a video sharing platform specifically designed for job interviews.
-                     It allows users to register, create profiles, upload and share videos for job interviews, and receive feedback/hiring decisions based on their video submissions.                    
+                   The purpose of the software is to provide a video sharing platform 
+                     It allows users to register, create profiles, upload and share videos and receive feedback based on their video submissions.               
                     </span>
                 </div>
             </div>
-            
-
         </div>
     </div>
   )

@@ -13,7 +13,7 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Uploader from "./pages/Uploader/Uploader";
 import DoesNotExist from "./pages/DoesNotExist/DoesNotExist";
-import Interviewer from "./pages/Interviewer/Interviewer";
+import Admin from "./pages/Admin/Admin";
 import "./app.scss";
 import {useAuth} from "./context/authContext";
 
@@ -54,8 +54,8 @@ const Layout = () =>{
           element: <Profile />
         },
         {
-          path: "/interviewer", 
-          element: <Interviewer />
+          path: "/admin", 
+          element: <Admin />
         },
         {
           path:"/",

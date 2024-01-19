@@ -51,13 +51,13 @@ const Navbar = () => {
                 {isHiring(currentUser) && (
             <div className="item">
               <AddIcon />
-              <Link className='link' to="/interviewer">Add a Job</Link>
+              <Link className='link' to="/admin">Add a Request</Link>
             </div>
           )}
 
                 <div className="item">
                     <WorkIcon />
-                    <Link className='link' to="/jobs">Jobs</Link>
+                    <Link className='link' to="/jobs">Requests</Link>
                 </div>
                 
         

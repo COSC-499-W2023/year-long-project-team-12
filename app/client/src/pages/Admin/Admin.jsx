@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import './Interviewer.scss';
+import './Admin.scss';
 import { useAuth } from '../../context/authContext';
 import {saveJobPosting} from '../../services/ClientAPI';
 import logo from "../../components/Navbar/logo.png";
 
-const Interviewer = () => {
-  const [jobTitle, setJobTitle] = useState('');
-  const [companyName, setCompanyName] = useState('');
-  const [location, setLocation] = useState('');
-  const [jobDescription, setJobDescription] = useState('');
+const Admin = () => {
+  const [requestTitle, setRequestTitle] = useState('');
+  const [requestDescription, setRequestDescription] = useState('');
   const [expirationDate, setExpirationDate] = useState(''); 
   const [image, setImage] = useState(null);
   // const {saveJobPosting} = saveJobPosting();
@@ -35,10 +33,8 @@ const Interviewer = () => {
     //   console.error("Error");
     // }
 
-    setJobTitle('');
-    setCompanyName('');
-    setLocation('');
-    setJobDescription('');
+    setRequestTitle('');
+    setRequestDescription('');
     setExpirationDate(''); 
     setImage(null);
   };
@@ -60,40 +56,28 @@ const Interviewer = () => {
           />
         </div>
         <div className="right">
-          <h1>Add a job posting</h1>
+          <h1>Add a Request</h1>
           <form>
             <input
               type="text"
-              name="jobTitle"
-              placeholder="Job Title"
-              value={jobTitle}
-              onChange={(e) => setJobTitle(e.target.value)}
+              name="requestTitle"
+              placeholder="Request Title"
+              value={requestTitle}
+              onChange={(e) => setRequestTitle(e.target.value)}
             />
 
-            <input
-              type="text"
-              name="companyName"
-              placeholder="Company Name"
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
-            />
+           
 
-            <input
-              type="text"
-              name="location"
-              placeholder="Location"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-            />
+  
 
             <textarea
-              name="jobDescription"
-              placeholder="Job Description"
-              value={jobDescription}
-              onChange={(e) => setJobDescription(e.target.value)}
+              name="requestDescription"
+              placeholder="Request Description"
+              value={requestDescription}
+              onChange={(e) => setRequestDescription(e.target.value)}
             ></textarea>
 
-            <label htmlFor="expirationDate">Job Expiration Date:</label>
+            <label htmlFor="expirationDate">Request Expiration Date:</label>
             <input
               type="date"
               id="expirationDate"
@@ -102,17 +86,10 @@ const Interviewer = () => {
               onChange={(e) => setExpirationDate(e.target.value)}
             />
 
-            <label htmlFor="logoUpload">Add your company logo:</label>
-            <input
-              type="file"
-              accept="image/*"
-              id="logoUpload"
-              name="image"
-              onChange={handleImageChange}
-            />
+           
 
             <button type="button" onClick={handleAddJobPosting}>
-              Add Job Posting
+              Add Request 
             </button>
           </form>
         </div>
@@ -121,4 +98,4 @@ const Interviewer = () => {
   );
 };
 
-export default Interviewer;
+export default Admin;
