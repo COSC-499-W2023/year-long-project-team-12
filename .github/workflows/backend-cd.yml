@@ -4,12 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches: [ "master", "develop" ]
-    paths:
-      - backend/**
   pull_request:
     branches: [ "master", "develop" ]
-    paths:
-      - backend/**
+    
   
 permissions:
       id-token: write 
