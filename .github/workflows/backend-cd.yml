@@ -3,7 +3,7 @@ name: Deployment from GitHub to AWS
 on:
   workflow_dispatch:
   push:
-    branches: [ "master", "develop" ]
+    branches: [ "master" ]
     paths:
       - app/Java/**
   
