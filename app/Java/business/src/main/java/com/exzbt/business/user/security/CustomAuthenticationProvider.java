@@ -1,7 +1,7 @@
 package com.exzbt.business.user.security;
 
 import com.exzbt.business.user.UserService;
-import com.exzbt.usertransaction.appuser.impl.AppUser;
+import com.exzbt.transaction.appuser.impl.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

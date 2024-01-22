@@ -13,7 +13,7 @@ const Login = () => {
     let navigate = useNavigate();
 
     if(isCustomerAuthenticated()){
-        return <Navigate to="/jobs"/>
+        return <Navigate to="/profile"/>
       }
 
     const toggleRegister = () => {
@@ -30,14 +30,14 @@ const Login = () => {
         const usernameAndPassword = JSON.stringify(object)
         let token;
         login(usernameAndPassword).then(resp => {
-            navigate("/jobs");
+            navigate("/profile");
         })
         } catch {
             setError(true);
         }
         setLoading(false);
-        redirect("/jobs");
-        navigate("/jobs");
+        redirect("/profile");
+        navigate("/profile");
     };
 
     return (
@@ -46,8 +46,8 @@ const Login = () => {
                 <div className="left">
                     <h1>EX-ZBT</h1>
                     <p>
-                        The purpose of the software is to provide a video sharing platform specifically designed for job interviews.
-                        It allows users to register, create profiles, upload and share videos for job interviews, and receive feedback/hiring decisions based on their video submissions.
+                    The purpose of the software is to provide a video sharing platform 
+                     It allows users to register, create profiles, upload and share videos and receive feedback based on their video submissions.
                     </p>
                     <button onClick={toggleRegister}>Register</button>
                 </div>

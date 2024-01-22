@@ -3,7 +3,7 @@ package com.exzbt.business.user.userLogin;
 import com.exzbt.business.user.security.CustomAuthenticationProvider;
 import com.exzbt.business.user.security.jwt.JWTUtil;
 import com.exzbt.business.user.shared.*;
-import com.exzbt.usertransaction.appuser.impl.AppUser;
+import com.exzbt.transaction.appuser.impl.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

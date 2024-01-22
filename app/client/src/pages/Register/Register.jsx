@@ -16,11 +16,11 @@ const Register = () => {
   let navigate = useNavigate();
 
   if (isCustomerAuthenticated()) {
-    return <Navigate to="/jobs" />;
+    return <Navigate to="/profile" />;
   }
 
   const toggleLogin = () => {
-    navigate('/login');
+    navigate('/profile');
   };
 
   const validateForm = () => {
@@ -85,7 +85,7 @@ const Register = () => {
       console.log(currentUser)
       let token;
       register(currentUser).then(resp => {
-        navigate('/jobs');
+        navigate('/profile');
       })
       } catch  {
 
@@ -148,7 +148,7 @@ const Register = () => {
                   checked={userType === 'Candidate'}
                   onChange={handleUserTypeChange}
                 />
-                Interviewee
+                User
               </label>
               <label>
                 <input
@@ -158,7 +158,7 @@ const Register = () => {
                   checked={userType === 'Hiring'}
                   onChange={handleUserTypeChange}
                 />
-                Interviewer
+                Admin
               </label>
             </div>
 

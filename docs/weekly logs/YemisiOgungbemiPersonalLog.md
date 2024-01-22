@@ -71,3 +71,17 @@
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/5695d90a-c557-49ac-af1f-6311200c00dd)
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/02831c88-0b75-497e-a166-48c298c85c2a)
 
+# Semester 2
+## Week 1 January 7th - January 13th
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/bf8bb54c-af7f-4647-bc6b-61d8bf29f05d)
+
+## Week 2 January 14th - Jan 21st 
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/e750800e-4c62-4280-b807-907744a989d8)
+- Switched from interviewer and Interviewee on all pages
+- Change the description of the app on all pages
+- Change from add jobs to requests
+- Rewrite the tests functions to conform with a requests system
+- Switching the landing page after login to profile page.
+- ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/49d728e9-560e-44b9-88eb-b9aee72fc045)-> 
+
+

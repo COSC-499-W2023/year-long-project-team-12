@@ -1,14 +1,16 @@
 services:
   db: 
-    container_name: exzbt-mongodb
-    image: mongo:7.0
+    container_name: exzbt-postgres
+    image: postgres:16.1
     ports:
-      - 27017:27017
+      - 5432:5432
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=exzbtadmin
-      - MONGO_INITDB_ROOT_PASSWORD=exzbtmyskills
+      POSTGRES_USER: exzbtadmin
+      POSTGRES_PASSWORD: exzbtmyskills
+      POSTGRES_DB: EXZBT_DATA
+      PGDATA: /data/db
     volumes:
-      - mongo-data:/data/db
+      - postgresDB:/data/db
     restart: unless-stopped
 
   exzbt-api:
@@ -19,7 +21,10 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING.PROFILES.ACTIVE=default
+      - SPRING_PROFILES_ACTIVE=default
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://exzbt-postgres:5432/EXZBT_DATA
+      - SPRING_DATASOURCE_USERNAME=exzbtadmin
+      - SPRING_DATASOURCE_PASSWORD=exzbtmyskills
     depends_on:
       - db
     restart: unless-stopped
@@ -29,14 +34,18 @@ services:
     image: exzbt-ui:0.0.1
     build:
       context: client
+      args:
+        - REACT_APP_EXZBT_API_URL=http://localhost:8080
     ports:
       - "3000:3000"
+    environment:
+      - WATCHPACK_POLLING=true
     volumes:
       - /client/node_modules
-      - ./client:/client
+      - './client:/client'
     restart: unless-stopped
     depends_on:
       - exzbt-api
 
 volumes:
-  mongo-data:
+  postgresDB:
