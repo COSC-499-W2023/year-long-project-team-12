@@ -349,6 +349,42 @@ Group member usernames:
 
 ![Tests](images/FETestWk1S2.png)
 
+# Team 12 Term2 Week 2 Log(January 15th - January 21st)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+  No tests this week
+
+## Features for Milestone
+
+* Pivoting on the front end from video uploading to a requesting system. Changes were made visually as well as site changes around user functionality.
+* There were changes from using Mongo to now using Postgres.
+* Backend changes made for the switchover from Mongo to Postgres as well as having a prod instance setup.
+* Notification system setting up for the site to indicate video requests.
+
+## Burnup Chart
+
+![BU chart](./images/burnupchartweek2t2.png)
+
+
+### Kanban board - Tasks identified this week
+
+![Kanban ](./images/kanban1_t2w2.png)
+![Kanban 2](./images/kanban2_t2w2.png)
+
+### Testing
+
+![FE Tests](./images/FEtestingweek2T2.png)
+
 
 
 
