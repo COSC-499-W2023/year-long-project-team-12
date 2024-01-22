@@ -80,4 +80,12 @@ Responded to issues on the Kanban board, namely:
 
 ![T2 Week 1](./images/t2_wk1Tyler.png)
 
+## T2 Week 2 Log (January 8th-January14th)
+
+* COMPLETED: pivoting to a requests system on the front end as opposed to the video upload submissions, and closed the issue assigned to me.
+* creating a notification system for the frontend side.
+* changing the copy and aesthetics to fit the new system.
+
+![T2 Week 2](./images/tyler_week2_T2.png)
+
 
