@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const host_address = "http://localhost:8080"
+const host_address = process.env.REACT_APP_EXZBT_API_URL;
 
 const getAuthConfig = () => ({
     headers: {
