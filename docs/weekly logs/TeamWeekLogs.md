@@ -374,6 +374,7 @@ Group member usernames:
 ## Burnup Chart
 
 ![BU chart](./images/burnupchartweek2t2.png)
+![BU chart](./images/Wk2BurnUp.png)
 
 
 ### Kanban board - Tasks identified this week
@@ -384,6 +385,7 @@ Group member usernames:
 ### Testing
 
 ![FE Tests](./images/FEtestingweek2T2.png)
+![BE Tests](./images/Wk2BETestReport.png)
 
 
 
