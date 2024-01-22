@@ -38,6 +38,8 @@ services:
         - REACT_APP_EXZBT_API_URL=http://localhost:8080
     ports:
       - "3000:3000"
+    environment:
+      - WATCHPACK_POLLING=true
     volumes:
       - /client/node_modules
       - './client:/client'
