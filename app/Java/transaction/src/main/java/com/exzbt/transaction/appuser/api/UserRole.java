@@ -1,4 +1,4 @@
-package com.exzbt.usertransaction.appuser.api;
+package com.exzbt.transaction.appuser.api;
 
 public enum UserRole {
     CANDIDATE,

@@ -4,8 +4,8 @@ import com.exzbt.business.user.security.jwt.JWTUtil;
 import com.exzbt.business.user.shared.AuthenticationResponse;
 import com.exzbt.business.user.shared.UserDetailRequest;
 import com.exzbt.business.user.shared.UserDetailsDTO;
-import com.exzbt.usertransaction.appuser.api.UserTransactions;
-import com.exzbt.usertransaction.appuser.impl.AppUser;
+import com.exzbt.transaction.appuser.api.UserTransactions;
+import com.exzbt.transaction.appuser.impl.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

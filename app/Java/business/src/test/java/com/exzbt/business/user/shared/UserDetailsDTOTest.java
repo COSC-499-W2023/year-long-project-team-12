@@ -1,7 +1,7 @@
 package com.exzbt.business.user.shared;
 
-import com.exzbt.usertransaction.appuser.api.UserRole;
-import com.exzbt.usertransaction.appuser.impl.AppUser;
+import com.exzbt.transaction.appuser.api.UserRole;
+import com.exzbt.transaction.appuser.impl.AppUser;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

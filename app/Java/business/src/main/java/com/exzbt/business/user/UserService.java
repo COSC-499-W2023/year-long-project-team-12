@@ -2,9 +2,9 @@ package com.exzbt.business.user;
 
 import com.exzbt.business.user.shared.UserDetailRequest;
 import com.exzbt.business.user.shared.UserDetailsDTO;
-import com.exzbt.usertransaction.appuser.api.UserDetails;
-import com.exzbt.usertransaction.appuser.api.UserTransactions;
-import com.exzbt.usertransaction.appuser.impl.AppUser;
+import com.exzbt.transaction.appuser.api.UserDetails;
+import com.exzbt.transaction.appuser.api.UserTransactions;
+import com.exzbt.transaction.appuser.impl.AppUser;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
