@@ -1,6 +1,6 @@
 package com.exzbt.business.user.shared;
 
-import com.exzbt.usertransaction.appuser.impl.AppUser;
+import com.exzbt.transaction.appuser.impl.AppUser;
 import lombok.*;
 
 @AllArgsConstructor

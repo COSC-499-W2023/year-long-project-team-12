@@ -1,0 +1,9 @@
+application:
+  environment: prod
+
+cloud:
+  aws:
+    region: us-east-1
+    s3:
+      buckets:
+        appUser: exzbtS3
