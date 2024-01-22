@@ -136,3 +136,20 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk1S2IssuesWL.png)
 
 ![Hameed Tasks](images/Hameed/Wk1S2Tasks.png)
+
+## Week 2 Log (January 15th - January 21st)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Completed changes to switch from Mongo to Postgres, allowing use for AWS RDS.
+* Created Request Class, allowing users to create requests instead of jobs.
+* Created Production Instance, using ECS and EB for deployment. Fully functional CI/CD is used to publish new build images.
+* Cleaned up unnecessary files from repository
+* Working on profile pic persistence and creating/uploading video submissions. 
+
+![Hameed Tasks](images/Hameed/Wk2S2IssuesWL1.png)
+
+![Hameed Tasks](images/Hameed/Wk2S2IssuesWL2.png)
+
+![Hameed Tasks](images/Hameed/Wk2S2Tasks.png)
