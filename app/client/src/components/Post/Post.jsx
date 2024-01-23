@@ -28,7 +28,7 @@ function Post({post}) {
           </Link>
         </div>
         <div className='info'>
-          <Link to="/upload">
+          <Link to="/recording">
           <button >Record</button>
           </Link>
         </div>

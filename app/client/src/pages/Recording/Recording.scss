@@ -1,0 +1,35 @@
+.recording-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .recording-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  video {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .recording-content {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .recording-content p {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .recorded-row {
+    margin-top: 10px;
+  }
+  
