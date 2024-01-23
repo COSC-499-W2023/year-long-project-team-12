@@ -69,6 +69,10 @@ const Layout = () =>{
           path:"/upload",
           element:<Uploader />
         },
+        {
+          path:"/recording",
+          element:<Recording />
+        },
         
       ],
     },
