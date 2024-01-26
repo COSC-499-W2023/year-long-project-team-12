@@ -28,8 +28,7 @@
     }
     .profileContainer {
       padding: 20px 70px;
-
-    
+     
 
       .uInfo {
         height: 180px;
@@ -88,6 +87,51 @@
             cursor: pointer;
 
           }
+          .myRequestsButton {
+            margin-left: -600px;
+            border: none;
+            background-color: var(--body_color);
+            color: var(--body_background);
+            font-weight: bold;
+            cursor: pointer;
+          }
+        
+          .recordedVideosButton{
+            margin-left: 600px;
+            border: none;
+            background-color: var(--body_color);
+            color: var(--body_background);
+            font-weight: bold;
+            cursor: pointer;
+          }
+
+          .notificationsButton {
+             position: fixed;
+             top: 90px; 
+            right: 20px; 
+            background: none;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+
+            }
+
+          .notificationsButton img {
+            width: 30px; 
+            height: auto;
+          }
+
+          .notificationCount {
+            position: absolute;
+            top: -5px; 
+            right: -5px; 
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 12px;
+           }
+
          
         }
 
@@ -103,6 +147,5 @@
 
     }
 
-
-  
+    
 }

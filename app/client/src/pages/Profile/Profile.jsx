@@ -11,6 +11,9 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {useAuth} from "../../context/authContext";
 import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
+import NotificationBell from "./NotificationBell.png";
+
 
 const Profile = () => {
 
@@ -18,6 +21,7 @@ const Profile = () => {
   const {  currentUser } = useAuth();
   const [open, setOpen] = useState(false);
   const[text, setText]  = useState("Show");
+  const [notificationCount, setNotificationCount] = useState(0);
   const toggle = () => {
     setOpen(!open);
     if (!open){
@@ -27,7 +31,23 @@ const Profile = () => {
       setText("Show")
     }
   };
+   
+  const handleMyRequestsClick = () => {
+    console.log("My Requests button clicked!");
+  };
 
+  const handleRecordedVideosClick = () => {
+     console.log("Recorded Videos button clicked!");
+  };
+
+  const handleNotificationsClick = () => {
+    console.log("Notifications button clicked!");
+    setNotificationCount(0);
+  };
+
+  const handleNewRequest = () => {
+    setNotificationCount(notificationCount + 1);
+  };
     
   return (
     <div className="profile">
@@ -58,7 +78,18 @@ const Profile = () => {
                 <span>{currentUser.email}</span>
               </div>
             </div>
-            <button onClick={toggle} className="toggleJobsAppliedTo">{text} Jobs you have applied to...</button>
+            <button onClick={toggle} className="toggleJobsAppliedTo">{text} Requests Assigned...</button> 
+            <button onClick={handleMyRequestsClick} className="myRequestsButton"> <Link className='link' to="/jobs">My Requests</Link>
+            {notificationCount >0 && (
+              <span className="notificationCount">{notificationCount}</span>)}</button>  
+             <button onClick={handleRecordedVideosClick} className="recordedVideosButton">Recorded Videos</button>
+             <button onClick={handleNotificationsClick} className="notificationsButton">
+              <img src={NotificationBell} alt="Notifications"></img>
+            {notificationCount > 0 && (
+              <span className="notificationCount">{notificationCount}</span>
+            )}
+          </button>
+              
           </div>
           
         </div>
@@ -68,7 +99,7 @@ const Profile = () => {
           
           {open && (
             <div className="jobsAppliedToContainer">
-            <h1>Jobs You Have Applied To</h1>
+            <h1>Requests Assigned to you</h1>
             <MockJobsAppliedTo />
 
             </div>
