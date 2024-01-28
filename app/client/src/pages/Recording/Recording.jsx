@@ -62,7 +62,7 @@ const Recording = () => {
 
   return (
     <div className="recording-container">
-      <Webcam audio={true} ref={webcamRef}  />
+      <Webcam audio={false} ref={webcamRef} height={400} width={500} />
       <div>
         {capturing ? (
           <>
@@ -93,6 +93,9 @@ const Recording = () => {
           </button>
           <button className="btn btn-warning" onClick={reRecord}>
             Re-record
+          </button>
+          <button className="btn btn-info" onClick={downloadVideo}>
+            Download Video
           </button>
         </div>
       )}
