@@ -29,21 +29,17 @@ const Recording = () => {
     }
   };
 
-  const playRecording = () => {
-    setIsPlaying(true);
-  };
-
   const stopPlayback = () => {
     setIsPlaying(false);
   };
 
   const approveVideo = () => {
-    // Implement logic to handle approved video
-    alert("Video approved!");
+    
   };
 
-  const reRecord = () => {
+  const deleteVideo = () => {
     setRecordedChunks([]);
+    setIsPlaying(false); 
   };
 
   const downloadVideo = () => {
@@ -63,60 +59,49 @@ const Recording = () => {
   return (
     <div className="recording-container">
       <Webcam audio={false} ref={webcamRef} height={400} width={500} />
-      <div>
-        {capturing ? (
-          <>
-            <button className="btn btn-danger" onClick={stopRecording}>
-              Stop Capture
-            </button>
-            <button className="btn btn-success" onClick={playRecording}>
-              Play Recording
-            </button>
-          </>
-        ) : (
-          <button className="btn btn-danger" onClick={startRecording}>
-            Start Capture
-          </button>
-        )}
-      </div>
-      {isPlaying && (
-        <div>
-          <button className="btn btn-danger" onClick={stopPlayback}>
-            Stop Playback
-          </button>
-        </div>
+      
+      {!capturing && recordedChunks.length === 0 && (
+        <button className="btn btn-primary" onClick={startRecording}>
+          Start Capture
+        </button>
       )}
+
+      {capturing && (
+        <button className="btn btn-danger" onClick={stopRecording}>
+          Stop Capture
+        </button>
+      )}
+
       {recordedChunks.length > 0 && (
         <div>
-          <button className="btn btn-primary" onClick={approveVideo}>
-            Approve Video
+          <button className="btn btn-success" onClick={approveVideo}>
+            Keep Video
           </button>
-          <button className="btn btn-warning" onClick={reRecord}>
-            Re-record
-          </button>
-          <button className="btn btn-info" onClick={downloadVideo}>
-            Download Video
+          <button className="btn btn-danger" onClick={deleteVideo}>
+            Delete Video
           </button>
         </div>
       )}
-      <video
-        id="video-replay"
-        className={isPlaying ? "recording-video" : "recording-video hidden"}
-        height="400"
-        width="500"
-        controls
-        autoPlay={isPlaying}
-        onEnded={stopPlayback}
-      >
-        {recordedChunks.length > 0 && (
+
+      {recordedChunks.length > 0 && (
+        <video
+          id="video-replay"
+          className={isPlaying ? "recording-video" : "recording-video hidden"}
+          height="400"
+          width="500"
+          controls
+          autoPlay={isPlaying}
+          onEnded={stopPlayback}
+        >
           <source
             src={URL.createObjectURL(new Blob(recordedChunks, { type: "video/webm" }))}
             type="video/webm"
           />
-        )}
-      </video>
+        </video>
+      )}
     </div>
   );
 };
 
 export default Recording;
+
