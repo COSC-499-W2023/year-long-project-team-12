@@ -66,9 +66,9 @@ const Recording = () => {
   // };
 
   
-  // const deleteVideo = () => {
-  //   setRecordedChunks([]);
-  //   setIsPlaying(false); 
+  const deleteVideo = () => {
+    setRecordedChunks([]);
+    setIsPlaying(false); 
   };
 
   return (
