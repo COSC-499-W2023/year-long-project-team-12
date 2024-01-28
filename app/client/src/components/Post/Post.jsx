@@ -22,7 +22,7 @@ function Post({post}) {
               <img  src={post.logo} alt="confidential"/>
             </div>  
         </div>
-        <div className='info'>
+        <div className='info' id="uploadb">
           <Link to="/upload">
           <button >Upload</button>
           </Link>
