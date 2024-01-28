@@ -29,46 +29,52 @@ const Recording = () => {
     }
   };
 
-  const playRecording = () => {
-    setIsPlaying(true);
-  };
-
   const stopPlayback = () => {
     setIsPlaying(false);
   };
 
-  const approveVideo = () => {
-    // Implement logic to handle approved video
-    alert("Video approved!");
-  };
+  //approve video function for the submissoin of the video
+  
+  const approveVideo = async () => {
+  //   if (recordedChunks.length) {
+      
+  //     const formData = new FormData();
+  //     formData.append("video", new Blob(recordedChunks, { type: "video/webm" }), "recorded-video.webm");
 
-  const reRecord = () => {
-    setRecordedChunks([]);
-  };
+  //     try {
+        
+  //       const response = await axios.post("YOUR_SERVER_API_ENDPOINT", formData, {
+  //         headers: {
+  //           "Content-Type": "multipart/form-data",
+  //         },
+  //       });
 
-  const deleteVideo = () => {
-    setRecordedChunks([]);
-    setIsPlaying(false); // Stop playback if it's currently playing
-  };
+        
+  //       console.log("Video uploaded successfully:", response.data);
 
-  const downloadVideo = () => {
-    if (recordedChunks.length) {
-      const blob = new Blob(recordedChunks, { type: "video/webm" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      document.body.appendChild(a);
-      a.style = "display: none";
-      a.href = url;
-      a.download = "recorded-video.webm";
-      a.click();
-      window.URL.revokeObjectURL(url);
-    }
+    
+  //       alert("Video uploaded successfully!");
+  //     } catch (error) {
+        
+  //       console.error("Error uploading video:", error.message);
+  //       alert("Error uploading video. Please try again.");
+  //     }
+  //   } else {
+  
+  //     alert("No recorded video to approve.");
+  //   }
+  // };
+
+  
+  // const deleteVideo = () => {
+  //   setRecordedChunks([]);
+  //   setIsPlaying(false); 
   };
 
   return (
     <div className="recording-container">
       <h2>Record your video</h2>
-      <Webcam audio={true} ref={webcamRef} height={400} width={500} />
+      <Webcam audio={false} ref={webcamRef} height={400} width={500} />
       
       {!capturing && recordedChunks.length === 0 && (
         <button className="btn btn-primary" onClick={startRecording}>
@@ -84,12 +90,6 @@ const Recording = () => {
 
       {recordedChunks.length > 0 && (
         <div>
-          <button className="btn btn-success" onClick={approveVideo}>
-            Keep Video
-          </button>
-          <button className="btn btn-danger" onClick={deleteVideo}>
-            Delete Video
-          </button>
         </div>
       )}
 
@@ -110,6 +110,12 @@ const Recording = () => {
               type="video/webm"
             />
           </video>
+          <button className="btn btn-approve" onClick={approveVideo}>
+            Approve and submit video
+          </button>
+          <button className="btn btn-danger" onClick={deleteVideo}>
+            Delete Video
+          </button>
         </>
       )}
     </div>
