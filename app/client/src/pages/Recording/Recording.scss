@@ -1,35 +1,20 @@
-.recording-main {
+/* Styling for the video playback */
+#video-replay {
+    width: 100%; /* Set the video width to 100% of the container */
+    max-width: 500px; /* Set a maximum width for the video */
+    border: 20px black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  }
+  
+  /* Styling for the recording container */
+  .recording-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    justify-content: center;
+    height: 100vh; /* Set the container to 100% of the viewport height */
+    background-color: #f0f0f0; /* Add a background color for better visibility */
   }
   
-  .recording-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  video {
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .recording-content {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .recording-content p {
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  
-  .recorded-row {
-    margin-top: 10px;
-  }
+  /* Add any additional styling for buttons or other elements within the container */
   
