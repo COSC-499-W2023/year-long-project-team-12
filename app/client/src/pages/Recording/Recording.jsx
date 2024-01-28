@@ -29,17 +29,26 @@ const Recording = () => {
     }
   };
 
+  const playRecording = () => {
+    setIsPlaying(true);
+  };
+
   const stopPlayback = () => {
     setIsPlaying(false);
   };
 
   const approveVideo = () => {
-    
+    // Implement logic to handle approved video
+    alert("Video approved!");
+  };
+
+  const reRecord = () => {
+    setRecordedChunks([]);
   };
 
   const deleteVideo = () => {
     setRecordedChunks([]);
-    setIsPlaying(false); 
+    setIsPlaying(false); // Stop playback if it's currently playing
   };
 
   const downloadVideo = () => {
@@ -58,6 +67,7 @@ const Recording = () => {
 
   return (
     <div className="recording-container">
+      <h2>Record your video</h2>
       <Webcam audio={false} ref={webcamRef} height={400} width={500} />
       
       {!capturing && recordedChunks.length === 0 && (
@@ -84,20 +94,23 @@ const Recording = () => {
       )}
 
       {recordedChunks.length > 0 && (
-        <video
-          id="video-replay"
-          className={isPlaying ? "recording-video" : "recording-video hidden"}
-          height="400"
-          width="500"
-          controls
-          autoPlay={isPlaying}
-          onEnded={stopPlayback}
-        >
-          <source
-            src={URL.createObjectURL(new Blob(recordedChunks, { type: "video/webm" }))}
-            type="video/webm"
-          />
-        </video>
+        <>
+          <h2>Recorded video for submission</h2>
+          <video
+            id="video-replay"
+            className={isPlaying ? "recording-video" : "recording-video hidden"}
+            height="400"
+            width="500"
+            controls
+            autoPlay={isPlaying}
+            onEnded={stopPlayback}
+          >
+            <source
+              src={URL.createObjectURL(new Blob(recordedChunks, { type: "video/webm" }))}
+              type="video/webm"
+            />
+          </video>
+        </>
       )}
     </div>
   );
