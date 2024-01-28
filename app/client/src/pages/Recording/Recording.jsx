@@ -68,7 +68,7 @@ const Recording = () => {
   return (
     <div className="recording-container">
       <h2>Record your video</h2>
-      <Webcam audio={false} ref={webcamRef} height={400} width={500} />
+      <Webcam audio={true} ref={webcamRef} height={400} width={500} />
       
       {!capturing && recordedChunks.length === 0 && (
         <button className="btn btn-primary" onClick={startRecording}>
