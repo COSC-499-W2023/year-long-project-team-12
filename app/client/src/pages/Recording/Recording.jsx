@@ -63,7 +63,7 @@ const Recording = () => {
   
   //     alert("No recorded video to approve.");
   //   }
-  // };
+  };
 
   
   const deleteVideo = () => {
