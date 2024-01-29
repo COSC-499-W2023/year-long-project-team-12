@@ -1,6 +1,7 @@
 package com.exzbt.s3.transactions;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import software.amazon.awssdk.core.ResponseInputStream;
 import software.amazon.awssdk.core.sync.RequestBody;
@@ -14,6 +15,8 @@ import java.io.IOException;
 @Component
 @AllArgsConstructor
 public class S3Actions {
+    
+    @Autowired
     private final S3Client s3;
 
     public void putObject(String bucketName, String key, byte[] object) {
