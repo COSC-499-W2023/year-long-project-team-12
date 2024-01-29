@@ -88,4 +88,12 @@ Responded to issues on the Kanban board, namely:
 
 ![T2 Week 2](./images/tyler_week2_T2.png)
 
+## T2 Week 2 Log (January 8th-January14th)
+
+* COMPLETED: finishing the ability to create a video submission.
+* added testing for multiple files changes, so added three new testing suites.
+
+
+![T2 Week 3](./images/wk3t2tyler.png)
+
 
