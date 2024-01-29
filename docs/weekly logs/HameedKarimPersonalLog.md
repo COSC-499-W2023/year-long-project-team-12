@@ -153,3 +153,17 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk2S2IssuesWL2.png)
 
 ![Hameed Tasks](images/Hameed/Wk2S2Tasks.png)
+
+## Week 3 Log (January 22nd - January 28th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Enabling functionality to upload videos to s3 (prod) or file folder (dev).
+* Enable functionality to create/view requests for generic user and admin users.
+* Improving user workflow on FE and BE for processing, viewing and responding to requests.
+* Created and cleaned up BE APIs, which will be consumed on FE development.
+
+![Hameed Tasks](images/Hameed/Wk3S2IssuesWL.png)
+
+![Hameed Tasks](images/Hameed/Wk3S2Tasks.png)
