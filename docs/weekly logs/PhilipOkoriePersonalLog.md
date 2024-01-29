@@ -73,5 +73,18 @@ Group member: Philip Okorie
   <img width="1148" alt="Screenshot 2024-01-14 at 10 09 48 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/69f2bbd7-87d4-4a5d-9011-66249d800bcc">
 
 
+
+## Week 2 Log(January 14th- January 21st)
+
+Group member: Philip Okorie
+
+* Changing Jobs section to requests on the Profile page
+* Adding a notification system to the frontend
+* Adding a recoreded videos page
+* Cosmetic changes to the profile(adding +sign to the notifications)
   
+<img width="1410" alt="Screenshot 2024-01-21 at 9 11 10 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/42f0c01b-ce52-4fcc-9c21-576a1c2716b4">
+
+
+<img width="1314" alt="Screenshot 2024-01-22 at 5 41 42 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/385cd242-8c09-4d99-973e-fa715d4e80eb">
 

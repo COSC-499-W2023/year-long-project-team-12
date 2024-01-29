@@ -63,8 +63,13 @@ test("Post component is rendered correctly with image alt ", () => {
     expect(testImage.alt).toContain("confidential");
   }); 
 
-  test("Post component is rendered correctly with apply button that should direct the user tho the upload page ", () => {
-    render(<Mocktest/>)
-    const link = screen.getByRole('link', { name: /Apply/i });
-    expect(link.getAttribute('href')).toBe('/upload');
-  }); 
+  test("Post component is rendered correctly with apply button that should direct the user to the upload page", async () => {
+    render(<Mocktest />);
+    const button = document.querySelector("button");
+  
+    fireEvent.click(button);
+  
+    await waitFor(() => {
+      expect(window.location.pathname).toBe('/upload');
+    });
+  });
