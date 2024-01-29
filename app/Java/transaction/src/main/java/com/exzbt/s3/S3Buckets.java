@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 @Configuration
 @Component
 public class S3Buckets {
-
     @Value("${cloud.aws.s3.buckets.appUser}")
     private String appUser;
 
