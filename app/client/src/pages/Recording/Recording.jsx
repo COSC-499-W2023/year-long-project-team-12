@@ -1,13 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import Webcam from "react-webcam";
 import "./Recording.scss";
+import {useAuth} from "../../context/authContext";
+import {uploadRequestVideo} from "../../services/ClientAPI";
+import {useNavigate} from "react-router-dom";
 
 const Recording = () => {
+  const { currentRequest } = useAuth();
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    return () => {
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state === "recording") {
+        mediaRecorderRef.current.stop();
+      }
+    };
+  }, []);
 
   const startRecording = () => {
     setCapturing(true);
@@ -32,40 +45,29 @@ const Recording = () => {
   const stopPlayback = () => {
     setIsPlaying(false);
   };
-
-  //approve video function for the submissoin of the video
   
   const approveVideo = async () => {
-  //   if (recordedChunks.length) {
-      
-  //     const formData = new FormData();
-  //     formData.append("video", new Blob(recordedChunks, { type: "video/webm" }), "recorded-video.webm");
+    if (recordedChunks === []) {
+      return;
+    }
 
-  //     try {
-        
-  //       const response = await axios.post("YOUR_SERVER_API_ENDPOINT", formData, {
-  //         headers: {
-  //           "Content-Type": "multipart/form-data",
-  //         },
-  //       });
+    const blob = new Blob(recordedChunks, { type: "video/webm" })
 
-        
-  //       console.log("Video uploaded successfully:", response.data);
+    try{
+      const requestObject = new FormData();
+      requestObject.append('requestId', currentRequest.requestId)
+      requestObject.append('video', blob)
+      requestObject.append('created', new Date())
+      requestObject.append('userId', currentRequest.assigneeId)
 
-    
-  //       alert("Video uploaded successfully!");
-  //     } catch (error) {
-        
-  //       console.error("Error uploading video:", error.message);
-  //       alert("Error uploading video. Please try again.");
-  //     }
-  //   } else {
-  
-  //     alert("No recorded video to approve.");
-  //   }
-  };
+      uploadRequestVideo(currentRequest.requestId, requestObject).then(resp => {
+        navigate('/jobs');
+      })
+    } catch  {
 
-  
+    }
+  }
+
   const deleteVideo = () => {
     setRecordedChunks([]);
     setIsPlaying(false); 
@@ -74,7 +76,7 @@ const Recording = () => {
   return (
     <div className="recording-container">
       <h2>Record your video</h2>
-      <Webcam audio={false} ref={webcamRef} height={400} width={500} />
+      <Webcam muted={true} audio={true} ref={webcamRef} height={400} width={500} />
       
       {!capturing && recordedChunks.length === 0 && (
         <button className="btn btn-primary" onClick={startRecording}>
