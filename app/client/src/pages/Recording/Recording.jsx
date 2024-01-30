@@ -110,12 +110,14 @@ const Recording = () => {
               type="video/webm"
             />
           </video>
+          <div className="btnsection">
           <button className="btn btn-approve" onClick={approveVideo}>
             Approve and submit video
           </button>
           <button className="btn btn-danger" onClick={deleteVideo}>
             Delete Video
           </button>
+          </div>
         </>
       )}
     </div>

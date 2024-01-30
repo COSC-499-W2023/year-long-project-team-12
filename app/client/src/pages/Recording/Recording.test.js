@@ -1,7 +1,5 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import axios from "axios";
 import Recording from "./Recording";
 
 jest.mock("axios");
@@ -19,7 +17,7 @@ describe("Recording component", () => {
     expect(startRecordingButton).toBeInTheDocument();
   });
 
-
+//commented out for actually passing data through. this is done on actual recording too.
 //   test("approves and sends the recorded video", async () => {
 //     axios.post.mockResolvedValue({ data: "Video approved!" });
 
