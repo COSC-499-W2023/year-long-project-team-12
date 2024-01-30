@@ -83,7 +83,7 @@ const Register = () => {
       formData.forEach((value, key) => (object[key] = value));
       const currentUser = JSON.stringify(object);
       console.log(currentUser)
-      let token;
+
       register(currentUser).then(resp => {
         navigate('/profile');
       })
@@ -144,8 +144,8 @@ const Register = () => {
                 <input
                   type="radio"
                   name="userRole"
-                  value="Candidate"
-                  checked={userType === 'Candidate'}
+                  value="User"
+                  checked={userType === 'User'}
                   onChange={handleUserTypeChange}
                 />
                 User
@@ -154,8 +154,8 @@ const Register = () => {
                 <input
                   type="radio"
                   name="userRole"
-                  value="Hiring"
-                  checked={userType === 'Hiring'}
+                  value="Admin"
+                  checked={userType === 'Admin'}
                   onChange={handleUserTypeChange}
                 />
                 Admin

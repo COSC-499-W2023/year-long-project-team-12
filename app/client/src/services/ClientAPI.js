@@ -8,6 +8,15 @@ const getAuthConfig = () => ({
     }
 })
 
+export const getUserById = async (userId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/users/${userId}`
+        )
+    } catch (e) {
+        throw e;
+    }
+}
+
 export const getCurrentUsers = async () => {
     try {
         return await axios.get(`${host_address}/api/v1/user/get/all/1`
@@ -25,6 +34,52 @@ export const saveCurrentUser = async (currentUser) => {
         throw e;
     }
 }
+
+export const uploadRequestVideo = async (requestId, request) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/requests/${requestId}/submit`,
+            request,  {headers: {'Content-Type': 'multipart/form-data'}})
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const saveRequest = async (request) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/requests/create`,
+            request, {headers: {'Content-Type': 'application/json'}})
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const getUserRequests = async (userId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/requests/created/${userId}`)
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const getAssignedRequests = async (userId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/requests/assigned/${userId}`)
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const getVideoDetailsByRequestId = async (requestId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/video/${requestId}/videoInfo`)
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const getVideoByVideoId = (videoId) =>
+    `${host_address}/api/v1/video/${videoId}/video`;
+
 
 export const updateCustomer = async (id, update) => {
     try {
