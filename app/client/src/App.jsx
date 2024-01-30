@@ -17,6 +17,7 @@ import Admin from "./pages/Admin/Admin";
 import Recording from "./pages/Recording/Recording";
 import "./app.scss";
 import {useAuth} from "./context/authContext";
+import ViewVideo from "./pages/ViewVideo/ViewVideo";
 
 
 
@@ -33,8 +34,6 @@ const Layout = () =>{
   };
 
   const ProtectedRoute = ({children}) =>{
-    
-    
     if(!isCustomerAuthenticated()){
       return <Navigate to="/login"/>
     }
@@ -74,6 +73,10 @@ const Layout = () =>{
           path:"/recording",
           element:<Recording />
         },
+        {
+          path:"/viewVideo",
+          element:<ViewVideo />
+        }
         
       ],
     },

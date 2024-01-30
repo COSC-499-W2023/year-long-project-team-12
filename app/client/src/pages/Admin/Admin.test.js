@@ -45,9 +45,6 @@ describe('Admin Component', () => {
   });
 
 
-
-
-
   test('Request Description input can be changed', () => {
     render(<MockAdmin />);
     const requestDescriptionInputEl = screen.getByPlaceholderText(/Request Description/i);
