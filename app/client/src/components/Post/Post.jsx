@@ -22,11 +22,15 @@ function Post({post}) {
               <img  src={post.logo} alt="confidential"/>
             </div>  
         </div>
-        <div className='info'>
+        <div className='info' id="uploadb">
           <Link to="/upload">
-          <button >Apply</button>
+          <button >Upload</button>
           </Link>
-        
+        </div>
+        <div className='info'>
+          <Link to="/recording">
+          <button >Record</button>
+          </Link>
         </div>
     </div>
     </div>

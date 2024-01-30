@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Uploader from "./pages/Uploader/Uploader";
 import DoesNotExist from "./pages/DoesNotExist/DoesNotExist";
 import Admin from "./pages/Admin/Admin";
+import Recording from "./pages/Recording/Recording";
 import "./app.scss";
 import {useAuth} from "./context/authContext";
 
@@ -68,6 +69,10 @@ const Layout = () =>{
         {
           path:"/upload",
           element:<Uploader />
+        },
+        {
+          path:"/recording",
+          element:<Recording />
         },
         
       ],
