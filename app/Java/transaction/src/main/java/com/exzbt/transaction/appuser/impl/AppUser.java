@@ -13,6 +13,7 @@ import org.hibernate.annotations.GenericGenerator;
 @AllArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 public class AppUser implements UserDetails {
     @Id
     @GeneratedValue(generator = "UUID")
@@ -41,6 +42,8 @@ public class AppUser implements UserDetails {
     @Setter(AccessLevel.NONE)
     @Enumerated(EnumType.STRING)
     private UserRole role;
+    
+    private String profileImageId;
 
     public void setUserRole(String userRoleEntry) {
         this.role = UserRole.valueOf(userRoleEntry.toUpperCase());

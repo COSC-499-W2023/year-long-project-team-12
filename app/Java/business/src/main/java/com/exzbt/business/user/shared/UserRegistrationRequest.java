@@ -9,8 +9,7 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode
 @Setter
-public class UserDetailRequest {
-    private String userId;
+public class UserRegistrationRequest {
     private String firstName;
     private String lastName;
     private String email;
@@ -20,7 +19,6 @@ public class UserDetailRequest {
 
     public AppUser convertFromDTO() {
         AppUser AppUser = new AppUser();
-        AppUser.setUserId(this.getUserId());
         AppUser.setFirstName(this.getFirstName());
         AppUser.setLastName(this.getLastName());
         AppUser.setEmail(this.getEmail());
