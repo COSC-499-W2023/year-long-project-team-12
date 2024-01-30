@@ -7,6 +7,22 @@ export const AuthContextProvider = ({ children }) => {
     const [currentUser,setCurrentUser] = useState(
         JSON.parse(localStorage.getItem("user")) || null
       );
+    const [currentRequest,setRequest] = useState(
+        JSON.parse(localStorage.getItem("currentRequest")) || null
+    );
+
+    const setCurrentRequest = (request) => {
+        setRequest({
+            requestId: request.requestId,
+            creatorId: request.creatorId,
+            title: request.title,
+            description: request.description,
+            assigneeId: currentUser.userId,
+            created: request.created,
+            expiration: request.expiration,
+            submitted: request.submitted
+        });
+    };
 
     const setCurrentUserFromToken = () => {
         let token = localStorage.getItem("access_token");
@@ -22,8 +38,12 @@ export const AuthContextProvider = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem("user", JSON.stringify(currentUser));
-        //setCurrentUserFromToken();
     }, [currentUser]);
+
+
+    useEffect(() => {
+        localStorage.setItem("currentRequest", JSON.stringify(currentRequest));
+    }, [currentRequest]);
 
     const register = async (currentUser) => {
         return new Promise((resolve, reject) => {
@@ -34,6 +54,7 @@ export const AuthContextProvider = ({ children }) => {
                 const decodedToken = jwtDecode(jwtToken);
                 setCurrentUser({
                     username: decodedToken.sub,
+                    userId: resp.data.userDetailsDTO.userId,
                     firstname: resp.data.userDetailsDTO.firstName,
                     lastname: resp.data.userDetailsDTO.lastName,
                     email: resp.data.userDetailsDTO.email,
@@ -57,6 +78,7 @@ export const AuthContextProvider = ({ children }) => {
               //  console.log(decodedToken);
                 setCurrentUser({
                     username: decodedToken.sub,
+                    userId: res.data.userDetailsDTO.userId,
                     firstname: res.data.userDetailsDTO.firstName,
                     lastname: res.data.userDetailsDTO.lastName,
                     email : res.data.userDetailsDTO.email,
@@ -89,15 +111,17 @@ export const AuthContextProvider = ({ children }) => {
     }
 
     const isHiring = () => {
-        return currentUser?.role === 'HIRING';
-      };
+        return currentUser?.role === 'ADMIN';
+    };
 
     return (
         <AuthContext.Provider value={{
             currentUser,
+            currentRequest,
             register,
             login,
             logOut,
+            setCurrentRequest,
             isCustomerAuthenticated,
             setCurrentUserFromToken, 
             isHiring

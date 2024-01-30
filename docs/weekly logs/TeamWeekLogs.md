@@ -387,6 +387,43 @@ Group member usernames:
 ![FE Tests](./images/FEtestingweek2T2.png)
 ![BE Tests](./images/Wk2BETestReport.png)
 
+# Team 12 Term2 Week 3 Log(January 22nd - January 28th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+  No tests this week
+
+## Features for Milestone
+
+* Allowing admin user to create request and generic user to view request.
+* Enabling saving video functionality via file upload.
+* Enabling video recording functionality via webcam.
+* Improving user workflow, working on full time deployment on AWS
+
+## Burnup Chart
+
+![BU chart](./images/Wk3BurnUp.png)
+
+
+### Kanban board - Tasks identified this week
+
+![Kanban ](./images/Wk3KanbanTasks.png)
+
+
+### Testing
+
+![FE Tests](./images/Wk3FeTests.png)
+![BE Tests](./images/Wk3BETests.png)
+
 
 
 

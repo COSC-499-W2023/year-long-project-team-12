@@ -16,10 +16,10 @@ public class UserDetailsDTOTest {
     @Test
     public void convertDTO_whenAppUserIsValid_thenReturnUserDetailsDTO() {
         AppUser user = new AppUser("1L", "firstName", 
-                "lastName", "username", "email", "password", UserRole.HIRING);
+                "lastName", "username", "email", "password", UserRole.ADMIN, null);
 
         UserDetailsDTO expected = new UserDetailsDTO("1L", "firstName",
-                "lastName", "email", "username", "HIRING");
+                "lastName", "email", "username", "ADMIN", null);
 
         UserDetailsDTO actual = underTest.convertDTO(user);
         assertEquals(expected, actual);

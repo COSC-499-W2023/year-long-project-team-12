@@ -35,8 +35,9 @@ public class AuthenticationServiceTest {
         AuthenticationRequest request = new AuthenticationRequest("email", "username", "password");
         AuthenticationResponse response = new AuthenticationResponse("token", new UserDetailsDTO());
         AppUser user = new AppUser("1L", "firstName",
-                "lastName", "username", "email", "password", UserRole.HIRING);
-        UserDetailsDTO userDetailsDTO = new UserDetailsDTO("1L", "firstName", "lastName", "email", "username", "HIRING");
+                "lastName", "username", "email", "password", UserRole.ADMIN, null);
+        UserDetailsDTO userDetailsDTO = new UserDetailsDTO("1L", "firstName", "lastName", "email",
+                "username", "ADMIN", null);
 
         when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class)))
                 .thenReturn(new UsernamePasswordAuthenticationToken(

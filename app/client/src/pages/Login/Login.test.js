@@ -5,9 +5,6 @@ import AuthContext, {AuthContextProvider} from '../../context/authContext';
 import React from "react";
 
 
-
-
-
 const Mocktest =()=>{
     return(
     <AuthContextProvider>

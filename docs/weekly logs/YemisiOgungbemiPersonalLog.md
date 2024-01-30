@@ -85,3 +85,9 @@
 - ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/49d728e9-560e-44b9-88eb-b9aee72fc045)-> 
 
 
+## Week 3 Jan 22nd - Jan 28th
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/cd853c24-7ff6-4d54-85e6-df75af60074a)
+- reviewed my team members prs.
+- Cleaning out the backlog of the kanban board -> removing old tasks.
+- researching AWS Deployment of the front end.
+

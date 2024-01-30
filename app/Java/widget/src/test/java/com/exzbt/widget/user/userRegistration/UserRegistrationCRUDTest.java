@@ -2,8 +2,8 @@ package com.exzbt.widget.user.userRegistration;
 
 import com.exzbt.business.user.UserService;
 import com.exzbt.business.user.shared.AuthenticationResponse;
-import com.exzbt.business.user.shared.UserDetailRequest;
 import com.exzbt.business.user.shared.UserDetailsDTO;
+import com.exzbt.business.user.shared.UserRegistrationRequest;
 import com.exzbt.business.user.userRegistration.userRegistrationService;
 
 import org.junit.Test;
@@ -30,9 +30,9 @@ public class UserRegistrationCRUDTest {
     public void createUser_whenEmptyUser_thenReturnAnEmptyResponseBody() {
         AuthenticationResponse expected = new AuthenticationResponse();
 
-        when(registrationService.register(any(UserDetailRequest.class)))
+        when(registrationService.register(any(UserRegistrationRequest.class)))
                 .thenReturn(expected);
-        ResponseEntity<?> response = underTest.createUser(new UserDetailRequest());
+        ResponseEntity<?> response = underTest.createUser(new UserRegistrationRequest());
         assertEquals(expected, response.getBody());
     }
 
@@ -40,9 +40,9 @@ public class UserRegistrationCRUDTest {
     public void createUser_whenValidUser_thenReturnValidResponseBody() {
         AuthenticationResponse expected = new AuthenticationResponse(
                "token",new UserDetailsDTO());
-        when(registrationService.register(any(UserDetailRequest.class)))
+        when(registrationService.register(any(UserRegistrationRequest.class)))
                 .thenReturn(expected);
-        ResponseEntity<?> response = underTest.createUser(new UserDetailRequest());
+        ResponseEntity<?> response = underTest.createUser(new UserRegistrationRequest());
         assertEquals(expected, response.getBody());
     }
 }

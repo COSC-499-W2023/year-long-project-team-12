@@ -10,8 +10,6 @@ const MockProfilePage = ({open,text}) =>{
     firstname :"Rasmus",
     lastname : "Hojlund",
   };
-  
-  
 
   return(
     <>
@@ -32,14 +30,8 @@ const MockProfilePage = ({open,text}) =>{
 
 
   test("Profile page is rendered with firstname", () => {
-
-    
-
     const renderer  = render(<MockProfilePage open={false} text={"Show"}/>)
-
     expect(screen.getByTestId("firstname")).toHaveTextContent("Rasmus")
-   
-   
   });
 
 

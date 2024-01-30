@@ -1,52 +1,45 @@
 import React, { useState } from 'react';
 import './Admin.scss';
 import { useAuth } from '../../context/authContext';
-import {saveJobPosting} from '../../services/ClientAPI';
+import {saveRequest} from '../../services/ClientAPI';
 import logo from "../../components/Navbar/logo.png";
+import {useNavigate} from "react-router-dom";
 
 const Admin = () => {
-  const [requestTitle, setRequestTitle] = useState('');
-  const [requestDescription, setRequestDescription] = useState('');
-  const [expirationDate, setExpirationDate] = useState(''); 
-  const [image, setImage] = useState(null);
-  // const {saveJobPosting} = saveJobPosting();
+  let navigate = useNavigate();
+  const {currentUser} = useAuth();
+  const [title, setRequestTitle] = useState('');
+  const [description, setRequestDescription] = useState('');
+  const [assigneeEmail, setAssigneeEmail] = useState('');
+  const [expirationDate, setExpirationDate] = useState('');
 
+  const handleSubmitRequest = async (event) => {
+    event.preventDefault();
 
-  const handleAddJobPosting = async (event) => {
-    
-    // event.preventDefault();
-    
-    // try {
-    //   const formData = new FormData(event.target);
-    //   const jobData = {};
-  
-    //   formData.forEach((value, key) => (jobData[key] = value));
-  
-    //   const jobDataJson = JSON.stringify(jobData);
-    //   console.log(jobDataJson);
-  
-    
-    //   saveJobPosting(jobDataJson).then((resp) => {
-       
-    //   });
-    // } catch (error) {
-    //   console.error("Error");
-    // }
+    try {
+      const requestData = new FormData();
+      requestData.append("title", title)
+      requestData.append("description", description)
+      requestData.append("assigneeEmail", assigneeEmail)
+      requestData.append("created", new Date().toISOString())
+      requestData.append("creatorId", currentUser.userId)
+      requestData.append("expiration", new Date(expirationDate).toISOString())
 
-    setRequestTitle('');
-    setRequestDescription('');
-    setExpirationDate(''); 
-    setImage(null);
-  };
-  
+      const object = {};
+      requestData.forEach((value, key) => (object[key] = value));
+      const requestDataObject = JSON.stringify(object);
 
-  const handleImageChange = (e) => {
-    const selectedImage = e.target.files[0];
-    setImage(selectedImage);
+      saveRequest(requestDataObject).then(resp => {
+        navigate('/jobs');
+      })
+
+    } catch  {
+
+    }
   };
 
   return (
-    <div className="interviewer">
+    <div className="adminUser">
       <div className="card">
         <div className="logo-container">
           <img
@@ -57,23 +50,27 @@ const Admin = () => {
         </div>
         <div className="right">
           <h1>Add a Request</h1>
-          <form>
+          <form onSubmit={handleSubmitRequest}>
             <input
               type="text"
-              name="requestTitle"
+              name="title"
               placeholder="Request Title"
-              value={requestTitle}
+              value={title}
               onChange={(e) => setRequestTitle(e.target.value)}
             />
 
-           
-
-  
+            <input
+                type="text"
+                name="Assignee"
+                placeholder="Assign to: (Email Address)"
+                value={assigneeEmail}
+                onChange={(e) => setAssigneeEmail(e.target.value)}
+            />
 
             <textarea
               name="requestDescription"
               placeholder="Request Description"
-              value={requestDescription}
+              value={description}
               onChange={(e) => setRequestDescription(e.target.value)}
             ></textarea>
 
@@ -86,9 +83,7 @@ const Admin = () => {
               onChange={(e) => setExpirationDate(e.target.value)}
             />
 
-           
-
-            <button type="button" onClick={handleAddJobPosting}>
+            <button type="submit">
               Add Request 
             </button>
           </form>
