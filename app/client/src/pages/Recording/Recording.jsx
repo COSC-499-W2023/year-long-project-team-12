@@ -3,7 +3,7 @@ import Webcam from "react-webcam";
 import "./Recording.scss";
 import {useAuth} from "../../context/authContext";
 import {uploadRequestVideo} from "../../services/ClientAPI";
-import {useNavigate} from "react-router-dom";
+import {Navigate} from "react-router-dom";
 
 const Recording = () => {
   const { currentRequest } = useAuth();
@@ -12,7 +12,6 @@ const Recording = () => {
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
-  let navigate = useNavigate();
 
   useEffect(() => {
     return () => {
@@ -61,7 +60,7 @@ const Recording = () => {
       requestObject.append('userId', currentRequest.assigneeId)
 
       uploadRequestVideo(currentRequest.requestId, requestObject).then(resp => {
-        navigate('/jobs');
+        return <Navigate to="/jobs"/>
       })
     } catch  {
 

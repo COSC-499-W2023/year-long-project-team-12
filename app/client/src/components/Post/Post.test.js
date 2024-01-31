@@ -4,12 +4,17 @@ import Post from "./Post";
 import { BrowserRouter } from "react-router-dom";
 import * as PropTypes from "prop-types";
 
+jest.mock('../../context/authContext', () => ({
+    useAuth: () => ({
+        setCurrentRequest: jest.fn(),
+        currentUser: { role: 'ADMIN' }
+    }),
+}));
 
 const Mocktest =()=>{
     const request =  {
         id:3,
         title:"Test Request",
-        companyName:"Boeing",
         expiration:new Date(2024, 1, 1),
         description:"",
     };
@@ -55,11 +60,11 @@ test("Post component is rendered correctly with image alt ", () => {
 
   test("Post component is rendered correctly with apply button that should direct the user to the upload page", async () => {
     render(<Mocktest />);
-    const button = document.querySelector("button");
+    const upload = screen.getByText("View");
   
-    fireEvent.click(button);
+    fireEvent.click(upload);
   
     await waitFor(() => {
-      expect(window.location.pathname).toBe('/upload');
+      expect(window.location.pathname).toBe('/viewVideo');
     });
   });
