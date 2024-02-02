@@ -16,7 +16,7 @@ function Post({request}) {
             })
             setExpirationDate(new Date(request.expiration).toString())
         } catch (error) {
-            console.error('Error fetching user details:', error);
+
         }
     };
 
