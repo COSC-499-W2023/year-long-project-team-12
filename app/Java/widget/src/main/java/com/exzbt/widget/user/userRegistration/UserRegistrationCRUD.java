@@ -1,9 +1,9 @@
 package com.exzbt.widget.user.userRegistration;
 
 import com.exzbt.business.user.shared.AuthenticationResponse;
-import com.exzbt.business.user.shared.UserDetailRequest;
 import com.exzbt.business.user.UserService;
 import com.exzbt.business.user.shared.UserDetailsDTO;
+import com.exzbt.business.user.shared.UserRegistrationRequest;
 import com.exzbt.business.user.userRegistration.userRegistrationService;
 import com.exzbt.business.user.security.jwt.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class UserRegistrationCRUD {
     }
 
     @PostMapping
-    public ResponseEntity<?> createUser(@RequestBody UserDetailRequest request) {
+    public ResponseEntity<?> createUser(@RequestBody UserRegistrationRequest request) {
         AuthenticationResponse response = registrationService.register(request);
 
         return ResponseEntity.ok()
@@ -35,7 +35,7 @@ public class UserRegistrationCRUD {
                 .body(response);
     }
 
-    public Object deleteUser(Object userAttempt) {
-        return null;
+    public void deleteUser(Object userAttempt) {
+       //TODO: implement user deletion
     }
 }

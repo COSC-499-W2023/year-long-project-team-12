@@ -3,7 +3,6 @@ import { useAuth } from "../../context/authContext"
 import {redirect, useNavigate,Navigate,} from "react-router-dom";
 import { useState } from "react";
 
-
 const Login = () => {
     const { login, isCustomerAuthenticated } = useAuth();
     const [error, setError] = useState(false);
@@ -28,7 +27,7 @@ const Login = () => {
         const formData = new FormData(event.target)
         formData.forEach((value, key) => object[key] = value);
         const usernameAndPassword = JSON.stringify(object)
-        let token;
+
         login(usernameAndPassword).then(resp => {
             navigate("/profile");
         })

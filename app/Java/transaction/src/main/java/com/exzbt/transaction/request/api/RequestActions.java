@@ -9,9 +9,8 @@ import java.util.Optional;
 
 @Component
 public interface RequestActions extends JpaRepository<Request, String> {
-    Optional<Request> findByRequestId(String requestId);
+    Optional<Request> findRequestByRequestId(String requestId);
     List<Request> findByCreatorId(String creatorId);
     List<Request> findByAssigneeId(String assigneeId);
-    List<Request> findByLocation(String location);
 
 }

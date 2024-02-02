@@ -2,6 +2,7 @@ package com.exzbt.transaction.request.impl;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Date;
 
@@ -12,13 +13,38 @@ import java.util.Date;
 @Getter
 @Setter
 public class Request {
-
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
     private String requestId;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(nullable = false)
     private String creatorId;
-    private String location;
+
+    @Column(nullable = false)
+    private String description;
+
+    @Column(nullable = false)
     private String assigneeId;
+
+    @Column(nullable = false)
     private Date created;
-    private Date expired;
+
+    @Column(nullable = false)
+    private Date expiration;
+
+    @Getter(AccessLevel.NONE)
+    @Column(nullable = false)
+    private Boolean submitted;
+
+    public Boolean isSubmitted() {
+        return this.submitted;
+    }
 
 }

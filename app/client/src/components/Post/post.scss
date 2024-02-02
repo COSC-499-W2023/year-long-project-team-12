@@ -1,5 +1,3 @@
-
-
 .post {
     width: 600px;
     -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
@@ -8,12 +6,14 @@
     border-radius: 20px;
     color: var(--body_color);
    
-
-
-   
-   
-    .container{
+   .container{
         padding: 20px;
+        .info {
+            margin-right: 20px;
+            justify-content: center;
+            border: null; 
+            display: inline-block; 
+          }
         
 
         .job{
@@ -33,7 +33,7 @@
 
                 .jobTitle{
                     font-weight: 700;
-                    font-size: 45px;
+                    font-size: 30px;
                 }
 
 
@@ -65,11 +65,6 @@
             }
         }
 
-        .info{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
             button{
                 width: 100px;
                 padding: 10px;
@@ -81,4 +76,3 @@
             }
         }
     }
-}
