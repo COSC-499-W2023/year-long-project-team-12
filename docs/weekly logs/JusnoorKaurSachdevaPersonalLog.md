@@ -49,6 +49,8 @@ Group Member : Jusnoor Kaur Sachdeva
 
 <h3>Week 11 and 12 log (November 12th - November 26th )</h3>
 Group Member : Jusnoor Kaur Sachdeva 
+
+
 * Team discussion 
 * Working on adding the preview of video on upload page
 * Completed the weekly log
@@ -63,6 +65,8 @@ Group Member : Jusnoor Kaur Sachdeva
 <h1 >** SEMESTER 2 **</h1>
 
 <h3>Week 2 log (January 15th - January 21st )</h3>
+
+
 Group Member : Jusnoor Kaur Sachdeva 
 * Team discussion 
 * Caught up with the team regarding the progress
@@ -71,6 +75,8 @@ Group Member : Jusnoor Kaur Sachdeva
 
 <h3>Week 3 log (January 22nd - January 28th)</h3>
 Group Member : Jusnoor Kaur Sachdeva 
+
+
 * Team discussions
 * Peer testing and evaluations
 * assigned some tasks to myself regarding the designing and socumentation of the app
