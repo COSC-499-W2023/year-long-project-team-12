@@ -49,12 +49,20 @@
           border: none;
           border-bottom: 1px solid lightgray;
           padding: 20px 10px;
-          background-color: transparent;
+          background-color: var(--body_background);
           margin-bottom: 10px;
+          color: var(--body_color);
         }
 
         input[type="file"] {
           margin-bottom: 20px;
+        }
+        ::placeholder{
+          color: var(--body_color);
+        }
+
+        #expirationDate{
+          color: var(--body_color);
         }
 
         button {
