@@ -23,7 +23,7 @@ function Posts() {
 
             })
         }
-    };
+    };  
 
     useEffect(() => {
         getMyRequests();
@@ -31,13 +31,24 @@ function Posts() {
 
 
   return (
-    <div className='posts'>
-        {
-            myRequests.map(request=>(
-                <Post request={request} key={request.requestId}/>
-            ))
-        }
+    <div>
+    {
+       
+myRequests.length===0 ?
+    <div className='norequests'>
+    There is no request for you at the moment!
     </div>
+    :
+    
+    <div className='posts'>
+    {
+        myRequests.map(request=>(
+            <Post request={request} key={request.requestId}/>
+        ))
+    }
+</div>
+}
+</div>
   )
 }
 
