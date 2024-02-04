@@ -37,9 +37,9 @@ function Post({request}) {
             <div className='jobInfo'>
                 <div className="details">
 
-                <span data-testid="jobTitle" className='jobTitle'>Request Title: {request.title}</span>
-                <span data-testid="companyName" className='companyName'>Request is from: {requestCreator}</span>
-                <span data-testid="expiration" className='location'>Request Expiration: {expirationDate}</span>
+                <span data-testid="jobTitle" className='jobTitle'>Title: {request.title}</span>
+                <span data-testid="companyName" className='companyName'>From: {requestCreator}</span>
+                <span data-testid="expiration" className='location'>Expiration: {expirationDate}</span>
                 </div>
             </div>
         </div>
