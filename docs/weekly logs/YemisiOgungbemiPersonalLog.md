@@ -91,3 +91,14 @@
 - Cleaning out the backlog of the kanban board -> removing old tasks.
 - researching AWS Deployment of the front end.
 
+
+## Week 4 Jan 29th - Feb 4th
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/1b0caa3f-5aa3-4e2d-8937-503c9a4b3c49)
+- Added delete button to each user/admins request
+- changed the darkmode text color in the "Add a request page" for admins
+- Made the request mage more informative
+- Added a "no request" page for users and adminst that have no requests assigned to them.
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/ef3dd4c5-5b29-4fb5-86bf-f2729e8f5037)
+
+
+

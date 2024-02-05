@@ -16,7 +16,7 @@ function Post({request}) {
             })
             setExpirationDate(new Date(request.expiration).toString())
         } catch (error) {
-            console.error('Error fetching user details:', error);
+
         }
     };
 
@@ -37,9 +37,9 @@ function Post({request}) {
             <div className='jobInfo'>
                 <div className="details">
 
-                <span data-testid="jobTitle" className='jobTitle'>{request.title}</span>
-                <span data-testid="companyName" className='companyName'>{requestCreator}</span>
-                <span data-testid="expiration" className='location'>{expirationDate}</span>
+                <span data-testid="jobTitle" className='jobTitle'>Title: {request.title}</span>
+                <span data-testid="companyName" className='companyName'>From: {requestCreator}</span>
+                <span data-testid="expiration" className='location'>Expiration: {expirationDate}</span>
                 </div>
             </div>
         </div>
@@ -60,6 +60,11 @@ function Post({request}) {
                                     <button onClick={handleRequestContext}>View</button>
                                 </Link>
                             </div>
+                            <div className='info'>
+                                <Link to="#">
+                                    <button onClick={handleRequestContext}>Delete</button>
+                                </Link>
+                            </div>
                         </div>
                     )
                 } else if (request.submitted === true) {
@@ -73,6 +78,11 @@ function Post({request}) {
                             <div className='info'>
                                 <Link to="/viewVideo">
                                     <button onClick={handleRequestContext}>View</button>
+                                </Link>
+                            </div>
+                            <div className='info'>
+                                <Link to="#">
+                                    <button onClick={handleRequestContext}>Delete</button>
                                 </Link>
                             </div>
                         </div>
