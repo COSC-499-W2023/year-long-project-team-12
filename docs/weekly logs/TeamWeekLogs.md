@@ -456,15 +456,15 @@ Group member usernames:
 
 ### Kanban board - Tasks identified this week
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/1f679f91-3fed-4746-9455-4c3a84023f2a)
-![Kanban ](![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/7dea60cb-88f4-4e00-8c59-d65793af92b1))
+![Kanban ](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/7dea60cb-88f4-4e00-8c59-d65793af92b1)
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/9444bb6f-fa2c-4a76-a6b9-609f73065fc6)
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/dfcad637-78b1-4b3d-830e-09880f8c04c2)
 
 
 ### Testing
 
-![FE Tests](![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/023eb47c-e37e-4b86-86a7-10b48dd3c829))
-![BE Tests](![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/a530b7e2-c876-46ef-83ca-ba4221fe9325))
+![FE Tests](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/023eb47c-e37e-4b86-86a7-10b48dd3c829)
+![BE Tests](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/a530b7e2-c876-46ef-83ca-ba4221fe9325)
 
 
 
