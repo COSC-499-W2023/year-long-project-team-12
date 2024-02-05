@@ -45,6 +45,12 @@ public class UserService  {
                         String.format(USER_NOT_FOUND, username)));
     }
 
+    public AppUser findUserByEmailLogin(String email) throws UsernameNotFoundException {
+        return userTransaction.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException(
+                        String.format(USER_NOT_FOUND, email)));
+    }
+
     public UserDetailsDTO findUserByEmail(String email) throws UsernameNotFoundException {
         return userTransaction.findByEmail(email)
                 .map(user -> new UserDetailsDTO().convertDTO(user))
