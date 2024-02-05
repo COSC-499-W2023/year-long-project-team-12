@@ -34,8 +34,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new AuthenticationException("Invalid credentials") {};
         }
 
-        return new UsernamePasswordAuthenticationToken(
-                user, password, Collections.emptyList());
+        return new UsernamePasswordAuthenticationToken(user, password, Collections.emptyList());
     }
 
     public Authentication authenticateByEmail(Authentication authentication) throws AuthenticationException {
@@ -51,8 +50,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new AuthenticationException("Invalid credentials") {};
         }
 
-        return new UsernamePasswordAuthenticationToken(
-                user, password, Collections.emptyList());
+        return new UsernamePasswordAuthenticationToken(user, password, Collections.emptyList());
     }
 
     @Override
