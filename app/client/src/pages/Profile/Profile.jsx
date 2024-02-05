@@ -13,6 +13,10 @@ import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import NotificationBell from "./NotificationBell.png";
+import Avatar from '@mui/material/Avatar';
+import Settings from "./Settings.png";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 
 
 const Profile = () => {
@@ -48,6 +52,25 @@ const Profile = () => {
   const handleNewRequest = () => {
     setNotificationCount(notificationCount + 1);
   };
+
+  const handleSettingsClick = () => {
+    document.getElementById("myDropdown").classList.toggle("show");
+    window.onclick = function(event){
+      if (!event.target.matches('.settingsbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+     }
+  }
+     
+
+    
     
   return (
     <div className="profile">
@@ -67,6 +90,8 @@ const Profile = () => {
         <div className="uInfo">
           
           <div className="center">
+            <Avatar size={64} icon="user" />
+      
             <span>{currentUser.firstname} {currentUser.lastname}</span>
             <div className="info">
               <div className="item">
@@ -78,7 +103,6 @@ const Profile = () => {
                 <span>{currentUser.email}</span>
               </div>
             </div>
-            <button onClick={toggle} className="toggleJobsAppliedTo">{text} Requests Assigned...</button> 
             <button onClick={handleMyRequestsClick} className="myRequestsButton"> <Link className='link' to="/jobs">My Requests</Link>
             {notificationCount >0 && (
               <span className="notificationCount">{notificationCount}</span>)}</button>  
@@ -89,7 +113,16 @@ const Profile = () => {
               <span className="notificationCount">{notificationCount}</span>
             )}
           </button>
-              
+           <div class = "dropdown">
+              <button onClick= {handleSettingsClick} className="settingsbtn">
+              <img src={Settings} alt="Settings" className="settingsbtn"></img>
+              </button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#">Change Profile Name</a>
+                <a href="#">Change Background photo</a>
+                <a href= "#">Change Password</a>
+              </div>
+              </div>
           </div>
           
         </div>
