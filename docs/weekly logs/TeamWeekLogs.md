@@ -424,6 +424,47 @@ Group member usernames:
 ![FE Tests](./images/Wk3FeTests.png)
 ![BE Tests](./images/Wk3BETests.png)
 
+# Team 12 Term2 Week 4 Log(January 28th - Feb 4th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+  No tests this week
+
+## Features for Milestone
+
+* Allow users to login with username and email.
+* Made an empty page for users with no requests.
+* Made the requests a bit more informative.
+* Changed the darkmode text on the "Add a request page" to white.
+* Added a delete button to the requests.
+* Synced admin and generic user request flows
+  
+
+## Burnup Chart
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/b3fc8247-e0f4-490c-a350-01ef1e6e8562)
+
+
+
+### Kanban board - Tasks identified this week
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/1f679f91-3fed-4746-9455-4c3a84023f2a)
+![Kanban ](![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/7dea60cb-88f4-4e00-8c59-d65793af92b1))
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/9444bb6f-fa2c-4a76-a6b9-609f73065fc6)
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/dfcad637-78b1-4b3d-830e-09880f8c04c2)
+
+
+### Testing
+
+![FE Tests](![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/023eb47c-e37e-4b86-86a7-10b48dd3c829))
+![BE Tests](![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/a530b7e2-c876-46ef-83ca-ba4221fe9325))
 
 
 
