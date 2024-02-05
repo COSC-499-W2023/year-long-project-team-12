@@ -34,9 +34,25 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new AuthenticationException("Invalid credentials") {};
         }
 
-        Authentication authenticated = new UsernamePasswordAuthenticationToken(
+        return new UsernamePasswordAuthenticationToken(
                 user, password, Collections.emptyList());
-        return authenticated;
+    }
+
+    public Authentication authenticateByEmail(Authentication authentication) throws AuthenticationException {
+        String email = authentication.getName();
+        String password = authentication.getCredentials().toString();
+
+        AppUser user = userService.findUserByEmailLogin(email);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found");
+        }
+
+        if (!password.equals(user.getPassword())) {
+            throw new AuthenticationException("Invalid credentials") {};
+        }
+
+        return new UsernamePasswordAuthenticationToken(
+                user, password, Collections.emptyList());
     }
 
     @Override
