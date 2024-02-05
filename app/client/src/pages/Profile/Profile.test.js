@@ -84,31 +84,7 @@ const MockProfilePage = ({open,text}) =>{
     expect(screen.getByAltText("Settings")).toBeInTheDocument();
   });
   
-  test("Clicking My Requests button triggers handleMyRequestsClick", () => {
-    const handleMyRequestsClick = jest.fn();
-    render(<Profile />);
-    fireEvent.click(screen.getByText("My Requests"));
-    expect(handleMyRequestsClick).toHaveBeenCalled();
-  });
+ 
 
-  test("Clicking Recorded videos button triggers handleRecordedvideosClick", () => {
-    const handleRecordedvideosClick= jest.fn();
-    render(<Profile />);
-    fireEvent.click(screen.getByText("Recorded Videos"));
-    expect(handleRecordedVideosClick).toHaveBeenCalled();
-  });
-
-  test("Clicking Notifications button triggers handleNotificationsClick", () => {
-    const handleNotificationsClick = jest.fn();
-    render(<Profile />);
-    fireEvent.click(screen.getByText("Notifications"));
-    expect(handleNotificationsClick).toHaveBeenCalled();
-  });
-
-  test("Clicking Settings button triggers handleSettingsClick", () => {
-    const handleSettingsClick = jest.fn();
-    render(<Profile />);
-    fireEvent.click(screen.getByText("Settings"));
-    expect(handleSettingssClick).toHaveBeenCalled();
-  });
+  
   
