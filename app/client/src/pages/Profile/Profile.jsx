@@ -12,10 +12,10 @@ import {useAuth} from "../../context/authContext";
 import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-import NotificationBell from "./NotificationBell.png";
 import Avatar from '@mui/material/Avatar';
-import Settings from "./Settings.png";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import SettingsIcon from '@mui/icons-material/Settings';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 
 
@@ -68,8 +68,10 @@ const Profile = () => {
       }
      }
   }
-     
 
+
+  
+     
     
     
   return (
@@ -90,7 +92,10 @@ const Profile = () => {
         <div className="uInfo">
           
           <div className="center">
-            <Avatar size={64} icon="user" />
+            <Avatar className="profilepic" 
+            sx={{width: 150, height: 150}}
+            src="/broken-image.jpg"
+            />
       
             <span>{currentUser.firstname} {currentUser.lastname}</span>
             <div className="info">
@@ -108,14 +113,16 @@ const Profile = () => {
               <span className="notificationCount">{notificationCount}</span>)}</button>  
              <button onClick={handleRecordedVideosClick} className="recordedVideosButton">Recorded Videos</button>
              <button onClick={handleNotificationsClick} className="notificationsButton">
-              <img src={NotificationBell} alt="Notifications"></img>
+             <NotificationsIcon fontSize="large"
+             className="notificationsButton"/>
             {notificationCount > 0 && (
               <span className="notificationCount">{notificationCount}</span>
             )}
           </button>
            <div class = "dropdown">
               <button onClick= {handleSettingsClick} className="settingsbtn">
-              <img src={Settings} alt="Settings" className="settingsbtn"></img>
+                   <SettingsIcon fontSize="large"
+                   className="settingsbtn"/> 
               </button>
               <div id="myDropdown" class="dropdown-content">
                 <a href="#">Change Profile Name</a>
