@@ -167,3 +167,17 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk3S2IssuesWL.png)
 
 ![Hameed Tasks](images/Hameed/Wk3S2Tasks.png)
+
+## Week 4 Log (January 29th - February 4th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Deploying prod instance on AWS EB.
+* Enabling full userworkflow on FE and BE.
+* Allowing a user to login with both username and email. 
+* Updating tests, and creating new tasks based on user feedback from peer testing.
+
+![Hameed Tasks](images/Hameed/Wk4S2IssuesWL.png)
+
+![Hameed Tasks](images/Hameed/Wk4S2Tasks.png)
