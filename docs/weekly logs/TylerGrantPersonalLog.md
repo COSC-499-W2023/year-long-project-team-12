@@ -73,14 +73,14 @@ Responded to issues on the Kanban board, namely:
 * Made video for design document for team.
 * IN PROGRESS: password encryption and decryption was worked on for more secure application, testing still needed in order to merge change.
 
-## T2 Week 1 Log (January 8th-January14th)
+## T2 Week 1 Log (January 8th-January 14th)
 
 * COMPLETED: Project management and redesigning the layout and intention of the appplication with regards to feedback. Modifying code to change and reflect these changes before moving forward.
 * IN PROGRESS: notification systen integreating alerts for users and ticketed on the Pm software.
 
 ![T2 Week 1](./images/t2_wk1Tyler.png)
 
-## T2 Week 2 Log (January 8th-January14th)
+## T2 Week 2 Log (January 15th-January 21st)
 
 * COMPLETED: pivoting to a requests system on the front end as opposed to the video upload submissions, and closed the issue assigned to me.
 * creating a notification system for the frontend side.
@@ -88,12 +88,20 @@ Responded to issues on the Kanban board, namely:
 
 ![T2 Week 2](./images/tyler_week2_T2.png)
 
-## T2 Week 2 Log (January 8th-January14th)
+## T2 Week 2 Log (January 22nd-January 28th)
 
 * COMPLETED: finishing the ability to create a video submission.
 * added testing for multiple files changes, so added three new testing suites.
 
 
 ![T2 Week 3](./images/wk3t2tyler.png)
+
+## T2 Week 4 Log (January29th-February 4th)
+
+* COMPLETED: the UI was bad for requests so I conformed with rest of website stylings and applied it to this page so that it looked better. Changed buttons, screen positions. Did the coding of new request pages with issues logged to be able to edit the video better in progress.
+
+
+
+![T2 Week 4](./images/wk4t2Tyler.png)
 
 
