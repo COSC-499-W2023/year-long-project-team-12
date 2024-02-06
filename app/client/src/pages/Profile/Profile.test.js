@@ -4,6 +4,9 @@ import React, { createContext, useState } from "react";
 import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
 import userEvent from '@testing-library/user-event'
 import { act } from 'react-dom/test-utils';
+import { render, fireEvent } from '@testing-library/react';
+import Profile from './Profile.jsx';
+
 
 const MockProfilePage = ({open,text}) =>{
   const currentUser ={
@@ -76,13 +79,49 @@ const MockProfilePage = ({open,text}) =>{
    
   });
 
-  test("Profile component renders correctly", () => {
-    render(<Profile />);
-    expect(screen.getByText("My Requests")).toBeInTheDocument();
-    expect(screen.getByText("Recorded Videos")).toBeInTheDocument();
-    expect(screen.getByAltText("Notifications")).toBeInTheDocument();
-    expect(screen.getByAltText("Settings")).toBeInTheDocument();
-  });
+  test('handleMyRequestsClick is called when My Requests button is clicked', () => {
+  const { getByText } = render(<Profile />);
+  const myRequestsButton = getByText('My Requests');
+  const consoleSpy = jest.spyOn(console, 'log');
+
+  fireEvent.click(myRequestsButton);
+
+  expect(consoleSpy).toHaveBeenCalledWith('My Requests button clicked!');
+});
+
+test('handleRecordedVideosClick is called when Recorded Videos button is clicked', () => {
+  const { getByText } = render(<Profile />);
+  const recordedVideosButton = getByText('Recorded Videos');
+  const consoleSpy = jest.spyOn(console, 'log');
+
+  fireEvent.click(recordedVideosButton);
+
+  expect(consoleSpy).toHaveBeenCalledWith('Recorded Videos button clicked!');
+});
+
+test('handleNotificationsClick is called when Notifications button is clicked', () => {
+  const { getByText } = render(<Profile />);
+  const notificationsButton = getByText('Notifications');
+  const consoleSpy = jest.spyOn(console, 'log');
+
+  fireEvent.click(notificationsButton);
+
+  expect(consoleSpy).toHaveBeenCalledWith('Notifications button clicked!');
+});
+
+test('handleSettingsClick toggles dropdown visibility when settings button is clicked', () => {
+  const { getByRole, getByText } = render(<Profile />);
+  const settingsButton = getByRole('button', { name: /settings/i });
+  const dropdown = getByText('Change Profile Name'); 
+  expect(dropdown).not.toBeVisible(); 
+
+  fireEvent.click(settingsButton);
+  expect(dropdown).toBeVisible(); 
+
+  fireEvent.click(settingsButton);
+  expect(dropdown).not.toBeVisible(); 
+});
+
   
  
 
