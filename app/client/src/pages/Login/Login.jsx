@@ -7,7 +7,7 @@ const Login = () => {
     const { login, isCustomerAuthenticated } = useAuth();
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [username, setUsername] = useState("");
+    const [loginParam, setLoginParam] = useState("");
     const [password, setPassword] = useState("");
     let navigate = useNavigate();
 
@@ -19,18 +19,32 @@ const Login = () => {
         navigate("/register")
     };
 
+    const isValidEmail = (value) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(value);
+    };
+
     const handleLogin = async (event) => {
         event.preventDefault()
         setLoading(true);
         try {
-        const object= {}
-        const formData = new FormData(event.target)
-        formData.forEach((value, key) => object[key] = value);
-        const usernameAndPassword = JSON.stringify(object)
+            const object= {};
+            const formData = new FormData();
 
-        login(usernameAndPassword).then(resp => {
-            navigate("/profile");
-        })
+            if(isValidEmail(loginParam)){
+                formData.append("email", loginParam)
+            }else {
+                formData.append("username", loginParam)
+            }
+            formData.append("password", password)
+
+            formData.forEach((value, key) => object[key] = value);
+            const loginParamAndPassword = JSON.stringify(object)
+            console.log(loginParamAndPassword)
+            
+            login(loginParamAndPassword).then(resp => {
+                navigate("/profile");
+            })
         } catch {
             setError(true);
         }
@@ -53,9 +67,9 @@ const Login = () => {
                 <div className="right">
                     <h1>Login</h1>
                     <form onSubmit={handleLogin}>
-                        <input type="text" name="username" placeholder="Email or username" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                        <input type="text" name="loginParam" placeholder="Email or username" value={loginParam} onChange={(e) => setLoginParam(e.target.value)}/>
                         <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                        <button disabled={!username || !password} type="submit">{loading ? "please wait" : "Login"}</button>
+                        <button disabled={!loginParam || !password} type="submit">{loading ? "please wait" : "Login"}</button>
                         <span
                          data-testid="error"
                          style={{visibility:error? "visible":"hidden"}}

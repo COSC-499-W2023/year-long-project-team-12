@@ -31,9 +31,28 @@ public class AuthenticationServiceTest {
     private AuthenticationService underTest;
 
     @Test
-    public void login_whenRequestIsValid_thenReturnValidResponse() {
-        AuthenticationRequest request = new AuthenticationRequest("email", "username", "password");
-        AuthenticationResponse response = new AuthenticationResponse("token", new UserDetailsDTO());
+    public void login_whenEmailIsValidAndUsernameIsNotValid_thenReturnValidResponse() {
+        AuthenticationRequest request = new AuthenticationRequest("email", null, "password");
+        AppUser user = new AppUser("1L", "firstName",
+                "lastName", "username", "email", "password", UserRole.ADMIN, null);
+        UserDetailsDTO userDetailsDTO = new UserDetailsDTO("1L", "firstName", "lastName", "email",
+                "username", "ADMIN", null);
+
+        when(authenticationManager.authenticateByEmail(any(UsernamePasswordAuthenticationToken.class)))
+                .thenReturn(new UsernamePasswordAuthenticationToken(
+                        user, "password", Collections.emptyList()));
+
+        when(jwtUtil.issueToken(eq(user.getUsername()))).thenReturn("token");
+
+        AuthenticationResponse expected = new AuthenticationResponse("token", userDetailsDTO);
+        AuthenticationResponse actual = underTest.login(request);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void login_whenUsernameIsValidAndEmailIsNotValid_thenReturnValidResponse() {
+        AuthenticationRequest request = new AuthenticationRequest(null, "username", "password");
         AppUser user = new AppUser("1L", "firstName",
                 "lastName", "username", "email", "password", UserRole.ADMIN, null);
         UserDetailsDTO userDetailsDTO = new UserDetailsDTO("1L", "firstName", "lastName", "email",
