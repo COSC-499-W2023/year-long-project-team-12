@@ -9,6 +9,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class AuthenticationService {
     @Autowired
@@ -17,13 +19,27 @@ public class AuthenticationService {
     private JWTUtil jwtUtil;
 
     public AuthenticationResponse login(AuthenticationRequest request) {
-        String loginParam = request.getEmail() == null? request.getUsername() : request.getEmail();
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        loginParam,
-                        request.getPassword()
-                )
-        );
+        String loginParam = "";
+        Authentication authentication = null;
+
+        if(Objects.isNull(request.getEmail())){
+            loginParam = request.getUsername();
+            authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            loginParam,
+                            request.getPassword()
+                    )
+            );
+        }else {
+            loginParam = request.getEmail();
+            authentication = authenticationManager.authenticateByEmail(
+                    new UsernamePasswordAuthenticationToken(
+                            loginParam,
+                            request.getPassword()
+                    )
+            );
+        }
+
         AppUser user = (AppUser) authentication.getPrincipal();
         String token = jwtUtil.issueToken(user.getUsername());
         return new AuthenticationResponse(token, new UserDetailsDTO().convertDTO(user));
