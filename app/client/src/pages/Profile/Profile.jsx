@@ -11,6 +11,13 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import {useAuth} from "../../context/authContext";
 import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
+import Avatar from '@mui/material/Avatar';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import SettingsIcon from '@mui/icons-material/Settings';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+
+
 
 const Profile = () => {
 
@@ -18,6 +25,7 @@ const Profile = () => {
   const {  currentUser } = useAuth();
   const [open, setOpen] = useState(false);
   const[text, setText]  = useState("Show");
+  const [notificationCount, setNotificationCount] = useState(0);
   const toggle = () => {
     setOpen(!open);
     if (!open){
@@ -27,7 +35,44 @@ const Profile = () => {
       setText("Show")
     }
   };
+   
+  const handleMyRequestsClick = () => {
+    console.log("My Requests button clicked!");
+  };
 
+  const handleRecordedVideosClick = () => {
+     console.log("Recorded Videos button clicked!");
+  };
+
+  const handleNotificationsClick = () => {
+    console.log("Notifications button clicked!");
+    setNotificationCount(0);
+  };
+
+  const handleNewRequest = () => {
+    setNotificationCount(notificationCount + 1);
+  };
+
+  const handleSettingsClick = () => {
+    document.getElementById("myDropdown").classList.toggle("show");
+    window.onclick = function(event){
+      if (!event.target.matches('.settingsbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+     }
+  }
+
+
+  
+     
+    
     
   return (
     <div className="profile">
@@ -47,6 +92,11 @@ const Profile = () => {
         <div className="uInfo">
           
           <div className="center">
+            <Avatar className="profilepic" 
+            sx={{width: 150, height: 150}}
+            src="/broken-image.jpg"
+            />
+      
             <span>{currentUser.firstname} {currentUser.lastname}</span>
             <div className="info">
               <div className="item">
@@ -58,7 +108,28 @@ const Profile = () => {
                 <span>{currentUser.email}</span>
               </div>
             </div>
-            <button onClick={toggle} className="toggleJobsAppliedTo">{text} Jobs you have applied to...</button>
+            <button onClick={handleMyRequestsClick} className="myRequestsButton"> <Link className='link' to="/jobs">My Requests</Link>
+            {notificationCount >0 && (
+              <span className="notificationCount">{notificationCount}</span>)}</button>  
+             <button onClick={handleRecordedVideosClick} className="recordedVideosButton">Recorded Videos</button>
+             <button onClick={handleNotificationsClick} className="notificationsButton">
+             <NotificationsIcon fontSize="large"
+             className="notificationsButton"/>
+            {notificationCount > 0 && (
+              <span className="notificationCount">{notificationCount}</span>
+            )}
+          </button>
+           <div class = "dropdown">
+              <button onClick= {handleSettingsClick} className="settingsbtn">
+                   <SettingsIcon fontSize="large"
+                   className="settingsbtn"/> 
+              </button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#">Change Profile Name</a>
+                <a href="#">Change Background photo</a>
+                <a href= "#">Change Password</a>
+              </div>
+              </div>
           </div>
           
         </div>
@@ -68,7 +139,7 @@ const Profile = () => {
           
           {open && (
             <div className="jobsAppliedToContainer">
-            <h1>Jobs You Have Applied To</h1>
+            <h1>Requests Assigned to you</h1>
             <MockJobsAppliedTo />
 
             </div>
