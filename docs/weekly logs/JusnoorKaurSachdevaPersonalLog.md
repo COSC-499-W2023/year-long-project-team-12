@@ -79,12 +79,19 @@ Group Member : Jusnoor Kaur Sachdeva
 
 * Team discussions
 * Peer testing and evaluations
-* assigned some tasks to myself regarding the designing and socumentation of the app
+* assigned some tasks to myself regarding the designing and documentation of the app
 
 
 
+<h3>Week 3 log (January 29th - February 4th)</h3>
+Group Member : Jusnoor Kaur Sachdeva 
 
+* Team discussions
+* assigned some tasks to myself regarding the designing and documentation of the app
+* Researched about unit testing
+* tried learning about java testing watching videos and links
 
+![Screenshot 2024-02-06 at 11 48 05 PM](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/12248600-177f-42b2-99ca-a1d3ccb79ae5)
 
 
 
