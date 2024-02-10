@@ -59,8 +59,8 @@ jobs:
         IMAGE_TAG: ${{ steps.build-number.outputs.BUILD_NUMBER }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-         docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$LATEST_IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$LATEST_IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$LATEST_IMAGE_TAG
 
     - name: Deploy to Elastic Beanstalk
