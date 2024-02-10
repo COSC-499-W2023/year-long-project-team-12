@@ -28,8 +28,7 @@
     }
     .profileContainer {
       padding: 20px 70px;
-
-    
+     
 
       .uInfo {
         height: 180px;
@@ -45,7 +44,7 @@
         justify-content: space-between;
         margin-bottom: 20px;
 
-        
+      
 
         
 
@@ -88,9 +87,139 @@
             cursor: pointer;
 
           }
-         
-        }
+          .myRequestsButton {
+            border: none;
+            background-color: var(--body_color);
+            color: var(--body_background);
+            cursor: pointer;
+            display: inline-block;
+            outline: 0;
+            padding: 0 56px;
+            height: 45px;
+            line-height: 45px;
+            border-radius: 7px;
+            background-color: turquoise;
+            font-weight: 400;
+            font-size: 16px;
+            box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+            transition: background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease;
 
+:hover{
+  background: rgba(0,118,255,0.9);
+  box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
+}
+          }
+        
+          .recordedVideosButton{
+            border: none;
+            background-color: var(--body_color);
+            color: var(--body_background);
+            cursor: pointer;
+            display: inline-block;
+            outline: 0;
+            padding: 0 56px;
+            height: 45px;
+            line-height: 45px;
+            border-radius: 7px;
+            background-color: tourquoise;
+            font-weight: 400;
+            font-size: 16px;
+            box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+            transition: background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease;
+
+:hover{
+  background: rgba(0,118,255,0.9);
+  box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
+}
+          }
+
+          .notificationsButton {
+             position: fixed;
+             top: 90px; 
+            right: 20px; 
+            background: none;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+
+            }
+
+          .notificationsButton img {
+            width: 30px; 
+            height: auto;
+          }
+
+          .notificationCount {
+            position: absolute;
+            top: -5px; 
+            right: -5px; 
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 12px;
+           }
+
+          .settingsbtn img{
+            width: 30px; 
+            height: auto;
+          }
+   
+
+          .settingsbtn{
+            position: fixed;
+            top: 140px; 
+           right: 20px; 
+           background: none;
+           border: none;
+           padding: 5px;
+           cursor: pointer;
+          }
+
+          /* Dropdown button on hover & focus */
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: fixed;
+  top: 200px; 
+  right: 20px; 
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.profilePic{
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+       
+          }
        
       }
       
@@ -103,6 +232,4 @@
 
     }
 
-
-  
-}
+    }  

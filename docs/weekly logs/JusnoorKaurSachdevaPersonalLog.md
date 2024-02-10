@@ -49,6 +49,8 @@ Group Member : Jusnoor Kaur Sachdeva
 
 <h3>Week 11 and 12 log (November 12th - November 26th )</h3>
 Group Member : Jusnoor Kaur Sachdeva 
+
+
 * Team discussion 
 * Working on adding the preview of video on upload page
 * Completed the weekly log
@@ -60,7 +62,36 @@ Group Member : Jusnoor Kaur Sachdeva
 <img width="1440" alt="Screenshot 2023-11-26 at 8 56 40 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/37e91551-ee69-4d3b-8b7b-40913fc4a75b">
 
 
+<h1 >** SEMESTER 2 **</h1>
 
+<h3>Week 2 log (January 15th - January 21st )</h3>
+
+
+Group Member : Jusnoor Kaur Sachdeva 
+* Team discussion 
+* Caught up with the team regarding the progress
+* Took the initiative of working on the desiogning of the application
+
+
+<h3>Week 3 log (January 22nd - January 28th)</h3>
+Group Member : Jusnoor Kaur Sachdeva 
+
+
+* Team discussions
+* Peer testing and evaluations
+* assigned some tasks to myself regarding the designing and documentation of the app
+
+
+
+<h3>Week 3 log (January 29th - February 4th)</h3>
+Group Member : Jusnoor Kaur Sachdeva 
+
+* Team discussions
+* assigned some tasks to myself regarding the designing and documentation of the app
+* Researched about unit testing
+* tried learning about java testing watching videos and links
+
+![Screenshot 2024-02-06 at 11 48 05 PM](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/12248600-177f-42b2-99ca-a1d3ccb79ae5)
 
 
 
