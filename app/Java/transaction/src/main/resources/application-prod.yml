@@ -7,3 +7,9 @@ cloud:
     s3:
       buckets:
         appUser: exzbtS3
+
+spring:
+  datasource:
+    url: jdbc-secretsmanager:postgresql://exzbt-postgres.c7kunlzmr59l.us-east-1.rds.amazonaws.com:5432/EXZBT_DATA
+    username: prod/exzbt/postgres
+    driver-class-name: com.amazonaws.secretsmanager.sql.AWSSecretsManagerPostgreSQLDriver
