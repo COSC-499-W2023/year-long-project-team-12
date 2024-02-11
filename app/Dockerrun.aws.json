@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
           "name": "exzbt-api",
-          "image": "330327637968.dkr.ecr.us-east-1.amazonaws.com/exzbt/latest",
+          "image": "330327637968.dkr.ecr.us-east-1.amazonaws.com/exzbt:latest",
           "essential": true,
           "memory": 512,
           "portMappings": [
