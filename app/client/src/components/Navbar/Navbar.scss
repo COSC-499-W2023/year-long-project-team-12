@@ -43,17 +43,18 @@
         .center{          
             font-size: 30px;
             letter-spacing: 2px;
+            color: turquoise;
         }
         .right{
             display: flex;
             align-items: center;
             gap: 25px;
-            color: var(--body_color);
+            color: turquoise;
 
             .icons{
                 display: flex;
                 gap: 15px;
-                color: var(--body_color);
+                color: turquoise;
                 cursor: pointer;
             }
         }
