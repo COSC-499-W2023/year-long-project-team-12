@@ -88,3 +88,20 @@ Group member: Philip Okorie
 
 <img width="1314" alt="Screenshot 2024-01-22 at 5 41 42 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/385cd242-8c09-4d99-973e-fa715d4e80eb">
 
+
+## Week 5 Log(Feb 4th- Feb 11th)
+
+Group member: Philip Okorie
+
+* Front end testing
+* Cosmetic changes on the Profile page
+* Styled buttons and added some function to the settings button
+
+<img width="1405" alt="Screenshot 2024-02-11 at 11 06 41 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/61026972-183d-4bfd-9df4-605690714f21">
+<img width="1351" alt="Screenshot 2024-02-11 at 11 11 39 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/38317f9f-9b29-4902-8c05-1a0d3296b3c2">
+<img width="1259" alt="Screenshot 2024-02-11 at 11 10 35 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/3982668e-6293-4ae7-a4ed-5f9ed844bfc2">
+
+
+
+  
+
