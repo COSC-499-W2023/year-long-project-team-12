@@ -469,7 +469,7 @@ Group member usernames:
 
 
 
-# Team 12 Term2 Week 4 Log(Feb 4th - Feb 11th)
+# Team 12 Term2 Week 5 Log(Feb 4th - Feb 11th)
 
 Group member usernames:
 
@@ -488,7 +488,7 @@ Group member usernames:
 * API creation for video blurring
 * FE cosmetic changes
 * Added Notifications and settings to the Profile page
-* Fixed recording(Camera doesn't turn on without asking you first)
+* Changed theme of login, register and profile page
 * Added favicon with title
 
 
