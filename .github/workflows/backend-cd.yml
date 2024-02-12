@@ -46,14 +46,32 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
+    - name: Set build number
+      id: build-number
+      run: echo "BUILD_NUMBER=$(date '+%d.%m.%Y.%H.%M.%S')" >> $GITHUB_OUTPUT
+
     - name: Build, Tag, and Push the Image to Amazon ECR
       id: build-image
       env:
         ECR_REGISTRY:  ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY:  ${{ secrets.ECR_REPOSITORY }}
-        IMAGE_TAG: latest
+        LATEST_IMAGE_TAG: latest
+        IMAGE_TAG: ${{ steps.build-number.outputs.BUILD_NUMBER }}
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker build -t "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" .
+        docker push "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        docker tag "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" "$ECR_REGISTRY/$ECR_REPOSITORY:$LATEST_IMAGE_TAG"
+        docker push "$ECR_REGISTRY/$ECR_REPOSITORY:$LATEST_IMAGE_TAG"
 
-      
+    - name: Deploy to Elastic Beanstalk
+      uses: einaregilsson/beanstalk-deploy@v21
+      with:
+        aws_access_key: ${{ env.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+        existing_bucket_name: exzbt-deployment-s3
+        application_name: ${{ secrets.EB_APPLICATION_NAME }}
+        environment_name: ${{ secrets.EB_ENVIRONMENT_NAME }}
+        version_label: ${{ steps.build-number.outputs.BUILD_NUMBER }}
+        version_description: ${{ github.SHA }}
+        region: ${{ secrets.AWS_REGION }}
+        deployment_package: app/Dockerrun.aws.json

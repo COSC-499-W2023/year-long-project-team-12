@@ -469,5 +469,45 @@ Group member usernames:
 
 
 
+# Team 12 Term2 Week 4 Log(Feb 4th - Feb 11th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+  No tests this week
+
+  ## Features for Milestone
+* AWS BE and FE deployment
+* API creation for video blurring
+* FE cosmetic changes
+* Added Notifications and settings to the Profile page
+* Fixed recording(Camera doesn't turn on without asking you first)
+* Added favicon with title
+
+
+
+## Burnup Chart
+
+<img width="1015" alt="Screenshot 2024-02-11 at 6 29 07 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/7bf410bf-35e1-4fb5-95e9-4421ce58a315">
+
+
+### Kanban board - Tasks identified this week
+<img width="953" alt="Screenshot 2024-02-11 at 6 38 07 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/d456bb91-991c-4512-9def-1bf82c0022c1">
+<img width="971" alt="Screenshot 2024-02-11 at 6 43 14 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/f3ef06d2-2135-4259-9b5d-ff764ba8ed97">
+<img width="853" alt="Screenshot 2024-02-11 at 6 42 50 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/dbb34cc7-134b-4bb3-9c1d-8dbfe3d2746a">
+<img width="969" alt="Screenshot 2024-02-11 at 6 38 22 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/1b64985c-aa81-4858-a5a7-efe06d6f9a77">
+
+
+
+ 
+
 
 
