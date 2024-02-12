@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -36,8 +37,20 @@ public class VideoCRUD {
     )
     public void saveCreatedVideo(
             @PathVariable("creatorId") String creatorId,
+            @RequestPart("video") MultipartFile file,
+            @RequestParam("created") Date created) {
+        videoService.saveCreatedVideo(creatorId, file, created);
+    }
+
+    @PostMapping(
+            value = "{creatorId}/blurVideo",
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = "video/mp4"
+    )
+    public byte[] blurCreatedVideo(
+            @PathVariable("creatorId") String creatorId,
             @RequestPart("video") MultipartFile file) {
-        videoService.saveCreatedVideo(creatorId, file);
+        return videoService.blurCreatedVideo(creatorId, file);
     }
 
     @GetMapping(

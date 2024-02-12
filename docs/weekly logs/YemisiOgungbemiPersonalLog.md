@@ -101,4 +101,8 @@
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/ef3dd4c5-5b29-4fb5-86bf-f2729e8f5037)
 
 
+## Week 5 Feb 5th - Feb 11
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/4dc0431f-6ec9-4621-91c9-53c439426cbc)
+- Changed the theme of the app to match with the logo.
+
 

@@ -104,4 +104,12 @@ Responded to issues on the Kanban board, namely:
 
 ![T2 Week 4](./images/wk4t2Tyler.png)
 
+## T2 Week 5 Log (February 5th-February 11th)
 
+* COMPLETED: added favicon to website.
+
+* IN PROGRESS: testing and added functionality for recording for privacy, improved experience etc. Not able to merge this week due to failing tests, plan to include it as part of next weeks log.
+
+
+
+![T2 Week 5](./images/wk5t2Tyler.png)

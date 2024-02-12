@@ -181,3 +181,17 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk4S2IssuesWL.png)
 
 ![Hameed Tasks](images/Hameed/Wk4S2Tasks.png)
+
+## Week 5 Log (February 5th - February 11th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Creating EB instance for BE to connect to AWS S3.
+* Hosting FE and BE altogether in AWS.
+* Changing request payload to include date for saving user videos.
+* Creating controller and API for face blurring.
+
+![Hameed Tasks](images/Hameed/Wk5S2IssuesWL.png)
+
+![Hameed Tasks](images/Hameed/Wk5S2Tasks.png)
