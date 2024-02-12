@@ -482,7 +482,6 @@ Group member usernames:
 * @jusnoorkaur - Jusnoor Kaur Sachdeva
 
 * @tmg-repo - Tyler Grant
-  No tests this week
 
   ## Features for Milestone
 * AWS BE and FE deployment
