@@ -76,42 +76,57 @@
 
 .confirmation-dialog {
     position: fixed; 
-    top: 12%; 
+    top: 8%; 
     right: 10%; 
     z-index: 9999; 
-    width: 350px; 
+    width: 400px; 
     background-color: white; 
     border: 1px solid #ccc; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
     padding: 20px; 
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    border-radius: 10px; 
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
+    .button-container { 
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        border: none;
+        background-color: var(--body_color);
+        color: var(--body_background);
+        cursor: pointer;
+        display: inline-block;
+        outline: 0;
+        padding: 0 56px;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 7px; 
+        background-color: turquoise;
+        font-weight: 400;
+        font-size: 16px;
+        box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        margin: 0 10px; 
+        z-index: 9999; 
+    }
+
+    button:hover {
+        background-color: var(--body_color);
+        color: var(--body_background);
+        box-shadow: none;
+    }
 }
 
-button {
-    border: none;
-    background-color: var(--body_color);
-    color: var(--body_background);
-    cursor: pointer;
-    display: inline-block;
-    outline: 0;
-    padding: 0 56px;
-    height: 45px;
-    line-height: 45px;
-    border-radius: 7px;
-    background-color: turquoise;
-    font-weight: 400;
-    font-size: 16px;
-    box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
-    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-    margin-left: 10px; 
-    z-index: 9999; 
+.confirmation-dialog p {
+    text-align: center; 
+    margin: 0 0 20px; 
 }
-
-button:hover {
-    background-color: var(--body_color);
-    color: var(--body_background);
-    box-shadow: none;
-}
-

@@ -116,8 +116,12 @@ const Navbar = () => {
             {showConfirmation &&
                 <div className="confirmation-dialog">
                     <p>Are you sure you want to logout?</p>
-                    <button onClick={confirmLogout}>Yes</button>
-                    <button onClick={cancelLogout}>No</button>
+
+                    <div className="button-container">
+                        <button onClick={confirmLogout}>Yes</button>
+                        <button onClick={cancelLogout}>No</button>
+                    </div>
+                
                 </div>
             }
 
