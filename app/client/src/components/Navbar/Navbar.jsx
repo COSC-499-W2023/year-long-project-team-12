@@ -19,6 +19,14 @@ const Navbar = () => {
         logOut()
         navigate("/home");
     };
+
+    const confirmLogout = () => {
+        handleLogout();
+    }
+
+    const cancelLogout = () => {
+        setShowConfirmation(false);
+    }
     
 
   return (
