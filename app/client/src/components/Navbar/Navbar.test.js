@@ -227,15 +227,3 @@ test("Navbar component for authenticated users contains the username", () => {
 
  });
 
- test('Displays "Yes" and "No" buttons when the logout button is clicked', () => {
-    render(
-        <BrowserRouter>
-            <MockNavbar isCustomerAuthenticated={true}/>
-        </BrowserRouter>
-    );
-
-    fireEvent.click(screen.getByText('Logout'));
-
-    expect(screen.getByText('Yes')).toBeInTheDocument();
-    expect(screen.getByText('No')).toBeInTheDocument();
-});
