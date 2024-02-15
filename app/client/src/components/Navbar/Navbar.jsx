@@ -29,92 +29,100 @@ const Navbar = () => {
     }
     
 
-  return (
-    <div>
-        {
-    isCustomerAuthenticated() ?
-    
-    <div className='navbar'>
-        <div className="wrapper">
-            
-                <div className='left'>
-                    <Link to="/home">
-                    <img src={logo} alt="logo"></img>
-                    </Link>
-                    <DarkMode/>
+    return (
+        <div>
+            {isCustomerAuthenticated() ?
+
+                <div className='navbar'>
+                    <div className="wrapper">
+
+                        <div className='left'>
+                            <Link to="/home">
+                                <img src={logo} alt="logo"></img>
+                            </Link>
+                            <DarkMode />
+                        </div>
+
+
+
+                        <div className='center'>
+
+                        </div>
+
+                        <div className='right'>
+
+                            <div className="item">
+                                <SwitchAccountIcon />
+                                <Link className='link' to="/profile">{currentUser.username}</Link>
+                            </div>
+
+                            {isHiring(currentUser) && (
+                                <div className="item">
+                                    <AddIcon />
+                                    <Link className='link' to="/admin">Add a Request</Link>
+                                </div>
+                            )}
+
+                            <div className="item">
+                                <WorkIcon />
+                                <Link className='link' to="/jobs">Requests</Link>
+                            </div>
+
+
+                            <div className="item">
+                                <LoginIcon />
+
+                                <button onClick={handleLogout}>Logout</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> :
+
+                <div className='navbar'>
+                    <div className="wrapper">
+
+                        <div className='left'>
+                            <Link to="/home">
+                                <img src={logo} alt="logo"></img>
+                            </Link>
+                            <DarkMode />
+                        </div>
+
+
+
+                        <div className='center'>
+                            <Link className='link' to="/home">EX-ZBT</Link>
+
+                        </div>
+
+                        <div className='right'>
+
+                            <div className="item">
+                                <SwitchAccountIcon />
+                                <Link className='link' to="/register">Register</Link>
+                            </div>
+
+                            <div className="item">
+                                <LoginIcon />
+                                <Link className='link' to="/login">Login</Link>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-             
-            
-            
-            <div className='center'>
-            
-            </div>
+            }
 
-            <div className='right'>
-
-                <div className="item">
-                    <SwitchAccountIcon />
-                    <Link className='link' to="/profile">{currentUser.username}</Link>
+            {showConfirmation &&
+                <div className="confirmation-dialog">
+                    <p>Are you sure you want to logout?</p>
+                    <button onClick={confirmLogout}>Yes</button>
+                    <button onClick={cancelLogout}>No</button>
                 </div>
+            }
 
-                {isHiring(currentUser) && (
-            <div className="item">
-              <AddIcon />
-              <Link className='link' to="/admin">Add a Request</Link>
-            </div>
-          )}
-
-                <div className="item">
-                    <WorkIcon />
-                    <Link className='link' to="/jobs">Requests</Link>
-                </div>
-                
-        
-                <div className="item">
-                    <LoginIcon/>
-                    
-                    <button onClick={handleLogout}>Logout</button>
-                </div>
-
-            </div>
         </div>
-    </div> :
-
-    <div className='navbar'>
-        <div className="wrapper">
-            
-            <div className='left'>
-                <Link to="/home">
-                    <img src={logo} alt="logo"></img>
-               </Link>
-               <DarkMode/>
-            </div>
-           
-            
-            
-            <div className='center'>
-                <Link className='link' to="/home">EX-ZBT</Link>
-                
-            </div>
-
-            <div className='right'>
-
-                <div className="item">
-                    <SwitchAccountIcon />
-                    <Link className='link' to="/register">Register</Link>
-                </div>
-
-                <div className="item">
-                    <LoginIcon/>
-                    <Link  className='link' to="/login">Login</Link>
-                </div>
-
-            </div>
-        </div>
-    </div>
-}
-    </div>
-  )
+    )
 }
 
 export default Navbar;
