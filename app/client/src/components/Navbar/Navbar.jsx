@@ -13,13 +13,14 @@ import "./Navbar.scss";
 const Navbar = () => {
     const { isCustomerAuthenticated,currentUser, logOut, isHiring} = useAuth();
     let navigate = useNavigate();
+    const [showConfirmation, setShowConfirmation] = useState(false);
 
     const handleLogout = (event) => {
         logOut()
         navigate("/home");
     };
-    // console.log(currentUser);
-    // console.log(isCustomerAuthenticated());
+    
+
   return (
     <div>
         {
