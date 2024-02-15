@@ -16,12 +16,12 @@ const Navbar = () => {
     const [showConfirmation, setShowConfirmation] = useState(false);
 
     const handleLogout = (event) => {
-        logOut()
-        navigate("/home");
+        setShowConfirmation(true);
     };
 
     const confirmLogout = () => {
-        handleLogout();
+        logOut()
+        navigate("/home");
     }
 
     const cancelLogout = () => {
