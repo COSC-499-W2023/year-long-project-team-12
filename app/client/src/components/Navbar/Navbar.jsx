@@ -20,7 +20,7 @@ const Navbar = () => {
     };
 
     const confirmLogout = () => {
-        logOut()
+        logOut();
         navigate("/home");
     }
 
