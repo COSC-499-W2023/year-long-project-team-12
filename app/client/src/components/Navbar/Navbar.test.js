@@ -226,6 +226,4 @@ test("Navbar component for authenticated users contains the username", () => {
    expect(screen.queryByText("Logout")).not.toBeInTheDocument();
 
  });
-  
-
 
