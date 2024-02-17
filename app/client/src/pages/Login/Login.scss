@@ -91,8 +91,9 @@
 
 .error-popup {
     position: fixed; 
-    top: 8%; 
-    right: 10%; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
     z-index: 9999; 
     width: 400px; 
     background-color: white; 
@@ -109,7 +110,7 @@
 
     button {
         border: none;
-        background-color: var(--body_color);
+        background-color: turquoise;
         color: var(--body_background);
         cursor: pointer;
         display: inline-block;
@@ -117,13 +118,12 @@
         padding: 0 56px;
         height: 45px;
         line-height: 45px;
-        border-radius: 7px; 
-        background-color: turquoise;
+        border-radius: 7px;
         font-weight: 400;
         font-size: 16px;
         box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
         transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-        margin: 0 10px; 
+        margin: 0 10px;
         z-index: 9999; 
     }
 
