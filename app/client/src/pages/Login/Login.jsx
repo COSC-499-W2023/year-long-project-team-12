@@ -73,7 +73,7 @@ const Login = () => {
                     <form onSubmit={handleLogin}>
                         <input type="text" name="loginParam" placeholder="Email or username" value={loginParam} onChange={(e) => setLoginParam(e.target.value)}/>
                         <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                        <button disabled={!loginParam || !password} type="submit">{loading ? "please wait" : "Login"}</button>
+                        <button disabled={!loginParam || !password} type="submit">{loading ? "Please wait" : "Login"}</button>
                         <span
                          data-testid="error"
                          style={{visibility:error? "visible":"hidden"}}
