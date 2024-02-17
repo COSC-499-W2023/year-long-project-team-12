@@ -1,11 +1,12 @@
-.login {
+.login{
     height: 100vh;
     background-color: turquoise;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .card {
+    .card{
+
         width: 50%;
         display: flex;
         background-color: var(--body_background);
@@ -13,9 +14,10 @@
         min-height: 600px;
         overflow: hidden;
 
-        .left {
+
+        .left{
             flex: 1;
-            background: linear-gradient(rgba(11, 73, 96, 0.5), turquoise), url("https://images.pexels.com/photos/9830108/pexels-photo-9830108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
+            background:linear-gradient(rgba(11, 73, 96, 0.5), turquoise), url("https://images.pexels.com/photos/9830108/pexels-photo-9830108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
             background-size: cover;
             padding: 50px;
             display: flex;
@@ -23,7 +25,18 @@
             gap: 30px;
             color: white;
 
-            button {
+            h1{
+                font-size: 70px;
+                line-height: 0px;
+
+            }
+            p{
+
+            }
+            span{
+                font-size: 14px;
+            }
+            button{
                 width: 50%;
                 padding: 10px;
                 border: none;
@@ -31,10 +44,12 @@
                 color: var(--body_color);
                 font-weight: bold;
                 cursor: pointer;
+
             }
+
         }
 
-        .right {
+        .right{
             flex: 1;
             padding: 50px;
             display: flex;
@@ -42,17 +57,24 @@
             gap: 50px;
             justify-content: center;
 
-            h1, form {
+            h1{
                 color: var(--body_color);
-            }
 
+            }
             form {
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
 
 
-                button {
+                input{
+                    border: none;
+                    border-bottom: 1px solid lightgray;
+                    padding: 20px 10px;
+
+                }
+
+                button{
                     width: 50%;
                     padding: 10px;
                     border: none;
@@ -61,63 +83,8 @@
                     font-weight: bold;
                     cursor: pointer;
                 }
+               
             }
         }
-    }
-}
-
-.error-popup {
-    position: fixed; 
-    top: 8%; 
-    right: 10%; 
-    z-index: 9999; 
-    width: 400px; 
-    background-color: white; 
-    border: 1px solid #ccc; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    padding: 20px; 
-    box-sizing: border-box;
-    border-radius: 10px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .button-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    button {
-        border: none;
-        background-color: turquoise;
-        color: white; 
-        cursor: pointer;
-        display: inline-block;
-        outline: 0;
-        padding: 0 56px;
-        height: 45px;
-        line-height: 45px;
-        border-radius: 7px; 
-        font-weight: 400;
-        font-size: 16px;
-        box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
-        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-        margin: 0 10px; 
-        z-index: 9999; 
-
-        &:hover {
-            background-color: var(--body_color);
-            color: var(--body_background);
-            box-shadow: none;
-        }
-    }
-
-    p {
-        text-align: center; 
-        margin: 0 0 20px; 
     }
 }
