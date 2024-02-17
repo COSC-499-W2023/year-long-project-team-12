@@ -89,7 +89,7 @@ const Login = () => {
             
             {show403ErrorPopup && (
                 <div className="error-popup">
-                    Access denied. You do not have permission to perform this action.
+                    <p>Incorrect login details, ensure your username/email and password are entered correctly. Register an account if new to the site!</p>
                     <button onClick={() => setShow403ErrorPopup(false)}>Close</button>
                 </div>
             )}
