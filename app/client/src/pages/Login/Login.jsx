@@ -46,13 +46,16 @@ const Login = () => {
             login(loginParamAndPassword).then(resp => {
                 navigate("/profile");
             })
-        } catch {
-            setError(true);
+        } catch (error) {
+            setLoading(false); 
+        
+            if (error.response && error.response.status === 403){
+                setShow403ErrorPopup(true);
+            } else {
+                setError(true); 
+            }
         }
-        setLoading(false);
-        redirect("/profile");
-        navigate("/profile");
-    };
+    }
 
     return (
         <div className="login">
