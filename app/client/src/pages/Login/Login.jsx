@@ -26,36 +26,39 @@ const Login = () => {
     };
 
     const handleLogin = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
         setLoading(true);
+        setError(false); 
+        setShow403ErrorPopup(false); 
+    
         try {
-            const object= {};
+            const object = {};
             const formData = new FormData();
-
-            if(isValidEmail(loginParam)){
-                formData.append("email", loginParam)
-            }else {
-                formData.append("username", loginParam)
+    
+            if (isValidEmail(loginParam)) {
+                formData.append("email", loginParam);
+            } else {
+                formData.append("username", loginParam);
             }
-            formData.append("password", password)
-
-            formData.forEach((value, key) => object[key] = value);
-            const loginParamAndPassword = JSON.stringify(object)
-            console.log(loginParamAndPassword)
-            
-            login(loginParamAndPassword).then(resp => {
+            formData.append("password", password);
+    
+            formData.forEach((value, key) => (object[key] = value));
+            const loginParamAndPassword = JSON.stringify(object);
+            console.log(loginParamAndPassword);
+    
+            await login(loginParamAndPassword).then(resp => {
                 navigate("/profile");
-            })
+            });
         } catch (error) {
-            setLoading(false); 
-        
-            if (error.response.status === 403){
+            setLoading(false);
+    
+            if (error.response && error.response.status === 403) {
                 setShow403ErrorPopup(true);
             } else {
-                setError(true); 
+                setError(true);
             }
         }
-    }
+    };
 
     return (
         <div className="login">
