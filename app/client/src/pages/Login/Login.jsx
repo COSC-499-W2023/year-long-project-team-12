@@ -80,7 +80,17 @@ const Login = () => {
 
                 </div>
             </div>
+            
+            {show403ErrorPopup && (
+                <div className="error-popup">
+                    Access denied. You do not have permission to perform this action.
+                    <button onClick={() => setShow403ErrorPopup(false)}>Close</button>
+                </div>
+            )}
+
         </div>
+
+        
     )
 }
 
