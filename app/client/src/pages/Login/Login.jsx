@@ -9,6 +9,7 @@ const Login = () => {
     const [loading, setLoading] = useState(false);
     const [loginParam, setLoginParam] = useState("");
     const [password, setPassword] = useState("");
+    const [show403ErrorPopup, setShow403ErrorPopup] = useState(false);
     let navigate = useNavigate();
 
     if(isCustomerAuthenticated()){
