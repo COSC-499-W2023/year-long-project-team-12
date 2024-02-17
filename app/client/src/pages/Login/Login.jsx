@@ -49,7 +49,7 @@ const Login = () => {
         } catch (error) {
             setLoading(false); 
         
-            if (error.response && error.response.status === 403){
+            if (error.response.status === 403){
                 setShow403ErrorPopup(true);
             } else {
                 setError(true); 
