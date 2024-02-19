@@ -512,7 +512,39 @@ Group member usernames:
 
  ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/c69a1ae6-0bcb-43c3-8bc1-cf9d37721ac0)
 
+ # Team 12 Term2 Week 6 Log(Feb 12th - Feb 18th)
 
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* login error catch
+* logout confirmation check
+* S3 blurring on production
+* navigation button adds
+* comments section on requests
+* status of requests
+* search bar for the requests
+
+## Kanban board tasks identified this week:
+
+![kanban tasks](./images/kanban_wk6team.png)
+
+
+
+## Testing
+
+![image](./images/Tests_week6team.png)
 
 
 
