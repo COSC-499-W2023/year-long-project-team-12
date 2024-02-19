@@ -14,4 +14,6 @@ public class S3Buckets {
     @Value("${cloud.aws.s3.buckets.appUser}")
     private String appUser;
 
+    @Value("${cloud.aws.s3.buckets.blur}")
+    private String blurS3;
 }

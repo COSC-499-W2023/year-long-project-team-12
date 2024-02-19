@@ -3,9 +3,18 @@ import Posts from '../../components/Posts/Posts'
 import "./jobPostings.scss";
 function JobPostings() {
   return (
+    <div>
+      <div className='searchBar'>
+            <input type="text" placeholder='Search...' className="search" />
+            <button>Search</button>
+          </div>
     <div data-testid="jobPosting" className='jobs'>
-        <Posts  />
+          
+            <Posts  />
+        </div>
+
     </div>
+    
   )
 }
 

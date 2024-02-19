@@ -106,3 +106,10 @@
 - Changed the theme of the app to match with the logo.
 
 
+## Week 6 Feb 12th - Feb 18th 
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/7345c95d-9077-4077-8fc9-bcc9ce4a1b0f)
+- Adding search bar to requests page.
+- Adding borders to each requests.
+- Adding the status of a request to each request.
+- Adding Back button to the nav bar.
+- Adding comment section to each request.

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import { useState } from 'react';
 import "./ViewVideo.scss";
 import {useAuth} from "../../context/authContext";
+import Comments from '../../components/Comments/Comments';
 import {getVideoDetailsByRequestId, getVideoByVideoId} from "../../services/ClientAPI";
 
 function ViewVideo() {
@@ -37,14 +38,20 @@ return (
     <main className='upload-main'>
         <form className='upload-form'>
             {video ?
+            <>
                 <video controls width="600" height="500">
                     <source src={video} type="video/mp4" />
                 </video>
+               
+            </>
+                
+            
         :
         <>
         <p><i>No video submissions</i></p>
         </>
         }
+         <Comments />
         </form>
     </main>
   )

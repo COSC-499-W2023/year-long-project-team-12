@@ -1,5 +1,6 @@
 package com.exzbt.business.video;
 
+import com.exzbt.business.s3.RekognitionActions;
 import com.exzbt.business.video.mappers.VideoDetailsDTO;
 import com.exzbt.business.video.mappers.VideoDetailsRequest;
 import com.exzbt.s3.S3Buckets;
@@ -24,6 +25,9 @@ public class VideoService {
     private VideoActions videoActions;
     @Autowired
     private S3Actions s3Actions;
+
+    @Autowired
+    private RekognitionActions rekognitionActions;
 
     private S3Buckets s3Buckets;
 
@@ -83,7 +87,19 @@ public class VideoService {
         );
     }
 
-    public byte[] blurCreatedVideo(String creatorId, MultipartFile file) {
-        return null;
+    public List<String> blurCreatedVideo(String creatorId, MultipartFile file) {
+        String videoKey = "blurVideos/%s".formatted(creatorId);
+        try {
+            s3Actions.putObject(
+                    s3Buckets.getBlurS3(),
+                    videoKey,
+                    file.getBytes()
+            );
+        } catch (IOException e) {
+            throw new RuntimeException("failed to upload video to S3", e);
+        }
+
+        String startJobId = rekognitionActions.startFaceDetection(s3Buckets.getBlurS3(), videoKey);
+        return rekognitionActions.getFaceResults(startJobId);
     }
 }
