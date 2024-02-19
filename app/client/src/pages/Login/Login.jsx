@@ -89,7 +89,7 @@ const Login = () => {
             
             {show403ErrorPopup && (
                 <div className="error-popup">
-                    <p>Incorrect login details, ensure your username/email and password are entered correctly. Register an account if new to the site!</p>
+                    <p>Incorrect login details, ensure your username/email and password are entered correctly. </p>
                     <button onClick={() => setShow403ErrorPopup(false)}>Close</button>
                 </div>
             )}
