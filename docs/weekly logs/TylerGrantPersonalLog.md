@@ -113,3 +113,15 @@ Responded to issues on the Kanban board, namely:
 
 
 ![T2 Week 5](./images/wk5t2Tyler.png)
+
+## T2 Week 6 Log (February 12th-February 18th)
+
+* COMPLETED: logout confirmation check.
+
+* COMPLETED: login error check(valid entry but wrong details)
+
+* COMPLETED: updated footer info with email link (small change that might be revised further on for "branding", good placeholder for now)
+
+* IN PROGRESS: still carrying over record changes as mentioned, decided to work on other stuff to feel like I was moving forward, and giving myself reading week to try make changes that look a good finished product.
+
+![T2 Week 6](./images/week6_t2_ty.png)
