@@ -7,6 +7,7 @@ cloud:
     s3:
       buckets:
         appUser: devInstanceS3
+        blur: devInstanceBlur
 
 spring:
   datasource: # Defined in Docker Run config file
