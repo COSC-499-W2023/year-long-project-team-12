@@ -122,4 +122,4 @@ Responded to issues on the Kanban board, namely:
 
 * IN PROGRESS: still carrying over record changes as mentioned, decided to work on other stuff to feel like I was moving forward, and giving myself reading week to try make changes that look a good finished product.
 
-![T2 Week 6](./images/week6_t2_ty.png)
+![T2 Week 6](./images/week6_t2ty.png)
