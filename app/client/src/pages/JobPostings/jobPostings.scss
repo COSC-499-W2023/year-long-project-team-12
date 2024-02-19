@@ -7,3 +7,26 @@
         justify-content: center;
     
 }
+
+
+.searchBar{
+        background-color: var(--body_background);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.searchBar input{
+        height: 25px;
+        width: 500px;
+}
+.searchBar button{
+        width: 100px;
+        height: 25px;
+        margin-left:30px ;
+        border: none;
+        background-color: turquoise;
+        color:var(--body_color) ;
+        font-weight: bold;
+        cursor: pointer;
+}

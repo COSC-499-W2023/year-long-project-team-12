@@ -1,9 +1,10 @@
 import React, { useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import LoginIcon from '@mui/icons-material/Login';
 import AddIcon from '@mui/icons-material/Add';
 import SwitchAccountIcon from '@mui/icons-material/SwitchAccount';
 import WorkIcon from '@mui/icons-material/Work';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useAuth } from "../../context/authContext"
 import logo from "./logo.png";
 import { useNavigate} from "react-router-dom";
@@ -14,6 +15,8 @@ const Navbar = () => {
     const { isCustomerAuthenticated,currentUser, logOut, isHiring} = useAuth();
     let navigate = useNavigate();
     const [showConfirmation, setShowConfirmation] = useState(false);
+
+
 
     const handleLogout = (event) => {
         setShowConfirmation(true);
@@ -46,7 +49,8 @@ const Navbar = () => {
 
 
                         <div className='center'>
-
+                        <div onClick={()=> navigate(-1)} className='goBack'><ArrowBackIcon /> Go back</div>
+                        
                         </div>
 
                         <div className='right'>

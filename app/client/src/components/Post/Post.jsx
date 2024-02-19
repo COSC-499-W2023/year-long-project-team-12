@@ -9,6 +9,7 @@ function Post({request}) {
     const [requestCreator, setRequestCreator] = useState(null);
     const [expirationDate, setExpirationDate] = useState(null);
 
+
     const fetchRequestCreator = async () => {
         try {
             getUserById(request.creatorId).then(resp => {
@@ -38,6 +39,12 @@ function Post({request}) {
                 <div className="details">
 
                 <span data-testid="jobTitle" className='jobTitle'>Title: {request.title}</span>
+                { (request.submitted === true)?
+                <span style={{color:"green"}}>Status: Submitted</span>:
+                <span style={{color:"red"}}>Status: Not Submitted</span>
+                
+                }
+                <span></span>
                 <span data-testid="companyName" className='companyName'>From: {requestCreator}</span>
                 <span data-testid="expiration" className='location'>Expiration: {expirationDate}</span>
                 </div>
