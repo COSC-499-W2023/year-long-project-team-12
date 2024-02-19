@@ -110,8 +110,6 @@ Responded to issues on the Kanban board, namely:
 
 * IN PROGRESS: testing and added functionality for recording for privacy, improved experience etc. Not able to merge this week due to failing tests, plan to include it as part of next weeks log.
 
-
-
 ![T2 Week 5](./images/wk5t2Tyler.png)
 
 ## T2 Week 6 Log (February 12th-February 18th)
