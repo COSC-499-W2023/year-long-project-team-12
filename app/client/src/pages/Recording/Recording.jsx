@@ -12,6 +12,7 @@ const Recording = () => {
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isInitialButtonPressed, setIsInitialButtonPressed] = useState(false);
 
   useEffect(() => {
     return () => {
@@ -71,6 +72,16 @@ const Recording = () => {
     setRecordedChunks([]);
     setIsPlaying(false); 
   };
+
+  if (!isInitialButtonPressed) {
+    return (
+      <div className="recording-container">
+        <button className="btn btn-primary" onClick={() => setIsInitialButtonPressed(true)}>
+          Press to turn on camera
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="recording-container">
