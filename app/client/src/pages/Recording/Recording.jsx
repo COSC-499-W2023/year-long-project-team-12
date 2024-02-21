@@ -84,7 +84,7 @@ const Recording = () => {
   }
 
   return (
-    <div className="recording-container">
+    <div className="recording-container-initial">
       <h2>Record your video</h2>
       <Webcam muted={true} audio={true} ref={webcamRef} height={400} width={500} />
       
