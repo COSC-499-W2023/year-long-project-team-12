@@ -34,7 +34,7 @@
     justify-content: center; 
     align-items: center; 
     height: 100vh;
-}
+
 
 .button-container { 
     display: flex;
@@ -67,5 +67,7 @@ button:hover {
     background-color: var(--body_color);
     color: var(--body_background);
     box-shadow: none;
+}
+
 }
 
