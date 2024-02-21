@@ -74,8 +74,9 @@ const Recording = () => {
   };
 
   if (!isInitialButtonPressed) {
+
     return (
-      <div className="recording-container">
+      <div className="recording-container-initial">
         <button className="btn btn-primary" onClick={() => setIsInitialButtonPressed(true)}>
           Press to turn on camera
         </button>
@@ -84,7 +85,7 @@ const Recording = () => {
   }
 
   return (
-    <div className="recording-container-initial">
+    <div className="recording-container">
       <h2>Record your video</h2>
       <Webcam muted={true} audio={true} ref={webcamRef} height={400} width={500} />
       

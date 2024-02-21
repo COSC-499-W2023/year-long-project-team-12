@@ -27,3 +27,38 @@
 .recording-video {
     margin-top: 20px;
 }
+
+.recording-container-initial {
+    .button-container { 
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        border: none;
+        background-color: var(--body_color);
+        color: var(--body_background);
+        cursor: pointer;
+        display: inline-block;
+        outline: 0;
+        padding: 0 56px;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 7px; 
+        background-color: turquoise;
+        font-weight: 400;
+        font-size: 16px;
+        box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        margin: 0 10px; 
+        z-index: 9999; 
+    }
+
+    button:hover {
+        background-color: var(--body_color);
+        color: var(--body_background);
+        box-shadow: none;
+    }
+}
