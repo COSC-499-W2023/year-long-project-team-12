@@ -134,9 +134,9 @@
           }
 
           .notificationsButton {
-             position: fixed;
-             top: 90px; 
-            right: 20px; 
+            position: absolute;
+            top: 210px; 
+           right: 60px; 
             background: none;
             border: none;
             padding: 5px;
@@ -151,8 +151,8 @@
 
           .notificationCount {
             position: absolute;
-            top: -5px; 
-            right: -5px; 
+            top: 210px; 
+           right: 60px;
             background-color: red;
             color: white;
             border-radius: 50%;
@@ -167,9 +167,9 @@
    
 
           .settingsbtn{
-            position: fixed;
-            top: 140px; 
-           right: 20px; 
+            position: absolute;
+            top: -50px; 
+           right: -297px; 
            background: none;
            border: none;
            padding: 5px;
@@ -189,7 +189,7 @@
 .dropdown-content {
   display: none;
   position: fixed;
-  top: 200px; 
+  top: 400px; 
   right: 20px; 
   background-color: #f1f1f1;
   min-width: 160px;
@@ -210,6 +210,24 @@
   align-items: center;
 }
 
+
+
+.img-display-before{
+  height: 100px;
+  width: 100px;
+  margin-left: 35px;
+  cursor: pointer;
+}
+
+.img-display-after{
+  top: 50px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%; 
+  object-fit: cover;
+  opacity: 1; 
+  cursor: pointer;
+}
 
 
 
