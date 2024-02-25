@@ -113,3 +113,8 @@
 - Adding the status of a request to each request.
 - Adding Back button to the nav bar.
 - Adding comment section to each request.
+
+## Week 7 Feb 19th - Feb 25th 
+- Configured cypress which would help with integreation testing in the future
+- Made the slider slide automatically after 3 seconds
+- Added tests for the Comments and Slider components.
