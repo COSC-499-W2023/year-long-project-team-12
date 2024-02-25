@@ -25,7 +25,7 @@ const Profile = () => {
   const {  currentUser } = useAuth();
   const [open, setOpen] = useState(false);
   const[text, setText]  = useState("Show");
-  const [notificationCount, setNotificationCount] = useState(2);
+  const [notificationCount, setNotificationCount] = useState(0);
   const toggle = () => {
     setOpen(!open);
     if (!open){
@@ -85,11 +85,6 @@ const Profile = () => {
           src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt=""
           className="cover"
-        />
-        <img
-          src=""
-          alt=""
-          className="profilePic"
         />
       </div>
       <div className="profileContainer">
