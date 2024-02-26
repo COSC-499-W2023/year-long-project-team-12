@@ -9,22 +9,15 @@
       position: relative;
 
       .cover {
+        position: relative;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        z-index: 1;
+        overflow: hidden;
       }
 
-      .profilePic {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        top: 200px;
-      }
+      
     }
     .profileContainer {
       padding: 20px 70px;
@@ -45,7 +38,7 @@
         margin-bottom: 20px;
 
       
-
+       
         
 
         .center {
@@ -134,9 +127,9 @@
           }
 
           .notificationsButton {
-             position: fixed;
-             top: 90px; 
-            right: 20px; 
+            position: absolute;
+            top: 210px; 
+           right: 60px; 
             background: none;
             border: none;
             padding: 5px;
@@ -151,8 +144,8 @@
 
           .notificationCount {
             position: absolute;
-            top: -5px; 
-            right: -5px; 
+            top: 210px; 
+           right: 60px;
             background-color: red;
             color: white;
             border-radius: 50%;
@@ -167,9 +160,9 @@
    
 
           .settingsbtn{
-            position: fixed;
-            top: 140px; 
-           right: 20px; 
+            position: absolute;
+            top: -50px; 
+           right: -297px; 
            background: none;
            border: none;
            padding: 5px;
@@ -189,7 +182,7 @@
 .dropdown-content {
   display: none;
   position: fixed;
-  top: 200px; 
+  top: 400px; 
   right: 20px; 
   background-color: #f1f1f1;
   min-width: 160px;
@@ -204,10 +197,29 @@
   text-decoration: none;
   display: block;
 }
-
 .profilePic{
   justify-content: center;
   align-items: center;
+}
+
+
+
+.img-display-before{
+  height: 100px;
+  width: 100px;
+  margin-left: 35px;
+  cursor: pointer;
+}
+
+.img-display-after{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%; 
+  object-fit: cover;
+  opacity: 100; 
+  cursor: pointer;
+  z-index: 1099;
+  position: relative;
 }
 
 

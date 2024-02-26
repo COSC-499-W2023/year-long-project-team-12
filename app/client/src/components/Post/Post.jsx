@@ -3,6 +3,7 @@ import "./post.scss";
 import { Link } from 'react-router-dom';
 import {useAuth} from "../../context/authContext";
 import {getUserById} from "../../services/ClientAPI";
+import handleNewRequest from "../../pages/Profile/Profile"
 
 function Post({request}) {
     const {setCurrentRequest, currentUser} = useAuth();
@@ -14,6 +15,7 @@ function Post({request}) {
         try {
             getUserById(request.creatorId).then(resp => {
                 setRequestCreator(resp.data.lastName + ', ' + resp.data.firstName)
+                
             })
             setExpirationDate(new Date(request.expiration).toString())
         } catch (error) {
@@ -24,10 +26,12 @@ function Post({request}) {
     const handleRequestContext = () => {
         setCurrentRequest(request);
     };
-
+  
+    
 
     useEffect(() => {
         fetchRequestCreator();
+        
     }, []);
 
 

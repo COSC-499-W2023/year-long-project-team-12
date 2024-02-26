@@ -13,15 +13,15 @@ import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import ProfilePicChanger from "./profilepicchanger.js";
 
 
 
 const Profile = () => {
 
-
+  const [image, setImage] = useState(null);
   const {  currentUser } = useAuth();
   const [open, setOpen] = useState(false);
   const[text, setText]  = useState("Show");
@@ -71,6 +71,10 @@ const Profile = () => {
 
 
   
+
+  
+
+  
      
     
     
@@ -82,21 +86,14 @@ const Profile = () => {
           alt=""
           className="cover"
         />
-        <img
-          src=""
-          alt=""
-          className="profilePic"
-        />
       </div>
       <div className="profileContainer">
         <div className="uInfo">
           
           <div className="center">
-            <Avatar className="profilepic" 
-            sx={{width: 150, height: 150}}
-            src="/broken-image.jpg"
-            />
-      
+          
+            <ProfilePicChanger />
+          
             <span>{currentUser.firstname} {currentUser.lastname}</span>
             <div className="info">
               <div className="item">
@@ -109,8 +106,7 @@ const Profile = () => {
               </div>
             </div>
             <button onClick={handleMyRequestsClick} className="myRequestsButton"> <Link className='link' to="/jobs">My Requests</Link>
-            {notificationCount >0 && (
-              <span className="notificationCount">{notificationCount}</span>)}</button>  
+            </button>  
              <button onClick={handleRecordedVideosClick} className="recordedVideosButton">Recorded Videos</button>
              <button onClick={handleNotificationsClick} className="notificationsButton">
              <NotificationsIcon fontSize="large"
