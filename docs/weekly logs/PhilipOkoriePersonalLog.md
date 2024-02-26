@@ -102,6 +102,13 @@ Group member: Philip Okorie
 <img width="1259" alt="Screenshot 2024-02-11 at 11 10 35 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/3982668e-6293-4ae7-a4ed-5f9ed844bfc2">
 
 
+## Week 6-7 Log(Feb 11th- Feb 25th)
 
+Group member: Philip Okorie
+
+* Testing
+* Adding a dynamic profile pic feature(to enable users upload their pictures)
+* Fixing button positioning
+  
   
 
