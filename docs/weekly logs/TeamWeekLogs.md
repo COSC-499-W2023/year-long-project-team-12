@@ -469,7 +469,7 @@ Group member usernames:
 
 
 
-# Team 12 Term2 Week 4 Log(Feb 4th - Feb 11th)
+# Team 12 Term2 Week 5 Log(Feb 4th - Feb 11th)
 
 Group member usernames:
 
@@ -512,6 +512,44 @@ Group member usernames:
 
  ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/c69a1ae6-0bcb-43c3-8bc1-cf9d37721ac0)
 
+ # Team 12 Term2 Week 6 Log(Feb 12th - Feb 18th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* login error catch - error handling notifications
+* logout confirmation check = notification popups
+* S3 blurring on production - BE changes on prod instance
+* navigation button adds - navigation workflow
+* comments section on requests - requests page change
+* status of requests - requests page change
+* search bar for the requests - requests page change
+
+## Burnup Chart 
+
+![Burnup chart](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/72ca3c1f-ed40-432a-ab4f-5fb00eaf6340)
+
+
+## Kanban board tasks identified this week:
+
+![kanban tasks](./images/kanban_wk6team.png)
+
+
+## Testing
+
+![image](./images/Tests_week6team.png)
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/84a4e0b5-ed2e-4a28-a7c1-357b33f519e4)
 
 
 

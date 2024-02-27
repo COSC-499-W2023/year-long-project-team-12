@@ -8,6 +8,7 @@ import Profile from './Profile.jsx';
 
 
 
+
 const MockProfilePage = ({open,text}) =>{
   const currentUser ={
     firstname :"Rasmus",
@@ -23,6 +24,7 @@ const MockProfilePage = ({open,text}) =>{
     <button data-testid="NotificationsBtn" className="NotificationsBtn"></button>
     <button data-testid="RecordedVideosBtn" className="RecordedVideosBtn"></button>
     <button data-testid="SettingsBtn" className="SettingsBtn"></button>
+    
     {open && (
             <div className="jobsAppliedToContainer">
             <h1>Jobs You Have Applied To</h1>
@@ -72,6 +74,7 @@ test('handleSettingsClick logs message when "Settings" button is clicked', () =>
   render(<MockProfilePage open={false} text={"Show"}/>)
  expect(screen.getByTestId("SettingsBtn")).toBeInTheDocument();
 });
+
 
       
      

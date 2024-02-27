@@ -195,3 +195,17 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk5S2IssuesWL.png)
 
 ![Hameed Tasks](images/Hameed/Wk5S2Tasks.png)
+
+## Week 6 Log (February 12th - February 18th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* SSL and HTTPS encryption for EB instance.
+* BE changes to accomodate blurring using face scanning results.
+* Diagnosing and fixing an issue with video submission after recording.
+* Utilizing user feedback to improve UI - themes, usability, accessibility.
+
+![Hameed Tasks](images/Hameed/Wk6S2IssuesWL.png)
+
+![Hameed Tasks](images/Hameed/Wk6S2Tasks.png)

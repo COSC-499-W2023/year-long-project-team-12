@@ -4,9 +4,9 @@ function Comments() {
   return (
     <div className='comments-main'>
         <div className='comments-flexbox'>
-            <h3>Comments</h3>
-            <textarea/>
-            <button>Submit</button>
+            <h3 data-testid="header">Comments</h3>
+            <textarea data-testid="textArea"/>
+            <button data-testid="submitButton">Submit</button>
         </div>
        
     </div>

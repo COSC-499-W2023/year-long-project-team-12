@@ -9,6 +9,7 @@ const Login = () => {
     const [loading, setLoading] = useState(false);
     const [loginParam, setLoginParam] = useState("");
     const [password, setPassword] = useState("");
+    const [show403ErrorPopup, setShow403ErrorPopup] = useState(false);
     let navigate = useNavigate();
 
     if(isCustomerAuthenticated()){
@@ -25,32 +26,38 @@ const Login = () => {
     };
 
     const handleLogin = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
         setLoading(true);
+        setError(false); 
+        setShow403ErrorPopup(false); 
+    
         try {
-            const object= {};
+            const object = {};
             const formData = new FormData();
-
-            if(isValidEmail(loginParam)){
-                formData.append("email", loginParam)
-            }else {
-                formData.append("username", loginParam)
+    
+            if (isValidEmail(loginParam)) {
+                formData.append("email", loginParam);
+            } else {
+                formData.append("username", loginParam);
             }
-            formData.append("password", password)
-
-            formData.forEach((value, key) => object[key] = value);
-            const loginParamAndPassword = JSON.stringify(object)
-            console.log(loginParamAndPassword)
-            
-            login(loginParamAndPassword).then(resp => {
+            formData.append("password", password);
+    
+            formData.forEach((value, key) => (object[key] = value));
+            const loginParamAndPassword = JSON.stringify(object);
+            console.log(loginParamAndPassword);
+    
+            await login(loginParamAndPassword).then(resp => {
                 navigate("/profile");
-            })
-        } catch {
-            setError(true);
+            });
+        } catch (error) {
+            setLoading(false);
+    
+            if (error.response && error.response.status === 403) {
+                setShow403ErrorPopup(true);
+            } else {
+                setError(true);
+            }
         }
-        setLoading(false);
-        redirect("/profile");
-        navigate("/profile");
     };
 
     return (
@@ -69,7 +76,7 @@ const Login = () => {
                     <form onSubmit={handleLogin}>
                         <input type="text" name="loginParam" placeholder="Email or username" value={loginParam} onChange={(e) => setLoginParam(e.target.value)}/>
                         <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                        <button disabled={!loginParam || !password} type="submit">{loading ? "please wait" : "Login"}</button>
+                        <button disabled={!loginParam || !password} type="submit">{loading ? "Please wait" : "Login"}</button>
                         <span
                          data-testid="error"
                          style={{visibility:error? "visible":"hidden"}}
@@ -79,7 +86,17 @@ const Login = () => {
 
                 </div>
             </div>
+            
+            {show403ErrorPopup && (
+                <div className="error-popup">
+                    <p>Incorrect login details, ensure your username/email and password are entered correctly. </p>
+                    <button onClick={() => setShow403ErrorPopup(false)}>Close</button>
+                </div>
+            )}
+
         </div>
+
+        
     )
 }
 
