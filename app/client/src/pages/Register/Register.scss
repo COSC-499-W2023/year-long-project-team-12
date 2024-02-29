@@ -1,6 +1,6 @@
 .register {
   height: 100vh;
-  background-color: turquoise;
+  background-color: #35a6b4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@
 
     .left {
       flex: 1;
-      background: linear-gradient(rgba(39, 11, 96, 0.5), turquoise),
+      background: linear-gradient(rgba(39, 11, 96, 0.5), #35a6b4),
         url("https://images.pexels.com/photos/9830108/pexels-photo-9830108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
       background-size: cover;
       padding: 50px;
@@ -51,9 +51,11 @@
         padding: 10px;
         border: none;
         background-color: white;
-        color: turquoise;
+        color: #35a6b4;
         font-weight: bold;
         cursor: pointer;
+        border-radius: 10px;
+        font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
     }
 
@@ -89,10 +91,12 @@
           width: 50%;
           padding: 10px;
           border: none;
-          background-color: turquoise;
+          background-color: #35a6b4;
           color: var(--body_color);
           font-weight: bold;
           cursor: pointer;
+          border-radius: 10px; 
+          font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
       }
     }
