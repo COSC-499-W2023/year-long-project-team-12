@@ -17,7 +17,7 @@ export const AuthContextProvider = ({ children }) => {
             creatorId: request.creatorId,
             title: request.title,
             description: request.description,
-            assigneeId: currentUser.userId,
+            assigneeId: request.assigneeId,
             created: request.created,
             expiration: request.expiration,
             submitted: request.submitted

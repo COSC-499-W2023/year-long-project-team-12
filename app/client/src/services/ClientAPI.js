@@ -2,6 +2,20 @@ import axios from 'axios';
 
 const host_address = process.env.REACT_APP_EXZBT_API_URL;
 
+const getAuthConfigJSON = () => ({
+    headers: {
+        Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        'Content-Type': 'application/json'
+    }
+})
+
+const getAuthConfigMultiPart = () => ({
+    headers: {
+        Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        'Content-Type': 'multipart/form-data'
+    }
+})
+
 const getAuthConfig = () => ({
     headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`
@@ -10,7 +24,18 @@ const getAuthConfig = () => ({
 
 export const getUserById = async (userId) => {
     try {
-        return await axios.get(`${host_address}/api/v1/users/${userId}`
+        return await axios.get(`${host_address}/api/v1/users/${userId}`,
+            getAuthConfig()
+        )
+    } catch (e) {
+        throw e;
+    }
+}
+
+export const getUserByEmail = async (email) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/users/request/${email}`,
+            getAuthConfig()
         )
     } catch (e) {
         throw e;
@@ -19,7 +44,7 @@ export const getUserById = async (userId) => {
 
 export const getCurrentUsers = async () => {
     try {
-        return await axios.get(`${host_address}/api/v1/user/get/all/1`
+        return await axios.get(`${host_address}/api/v1/users`
         )
     } catch (e) {
         throw e;
@@ -29,7 +54,7 @@ export const getCurrentUsers = async () => {
 export const saveCurrentUser = async (currentUser) => {
     try {
         return await axios.post(`${host_address}/api/v1/`,
-            currentUser,  {headers: {'Content-Type': 'application/json'}})
+            currentUser,{headers: {'Content-Type': 'application/json'}})
     }catch (e) {
         throw e;
     }
@@ -38,7 +63,7 @@ export const saveCurrentUser = async (currentUser) => {
 export const uploadRequestVideo = async (requestId, request) => {
     try {
         return await axios.post(`${host_address}/api/v1/requests/${requestId}/submit`,
-            request,  {headers: {'Content-Type': 'multipart/form-data'}})
+            request,  getAuthConfigMultiPart())
     }catch (e) {
         throw e;
     }
@@ -47,7 +72,25 @@ export const uploadRequestVideo = async (requestId, request) => {
 export const saveRequest = async (request) => {
     try {
         return await axios.post(`${host_address}/api/v1/requests/create`,
-            request, {headers: {'Content-Type': 'application/json'}})
+            request, getAuthConfigJSON())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const updateRequest = async (requestId, request) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/requests/edit/${requestId}`,
+            request, getAuthConfigJSON())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const deleteRequest = async (requestId) => {
+    try {
+        return await axios.delete(`${host_address}/api/v1/requests/${requestId}`,
+            getAuthConfigJSON())
     }catch (e) {
         throw e;
     }
@@ -55,7 +98,7 @@ export const saveRequest = async (request) => {
 
 export const getUserRequests = async (userId) => {
     try {
-        return await axios.get(`${host_address}/api/v1/requests/created/${userId}`)
+        return await axios.get(`${host_address}/api/v1/requests/created/${userId}`, getAuthConfig())
     }catch (e) {
         throw e;
     }
@@ -63,7 +106,7 @@ export const getUserRequests = async (userId) => {
 
 export const getAssignedRequests = async (userId) => {
     try {
-        return await axios.get(`${host_address}/api/v1/requests/assigned/${userId}`)
+        return await axios.get(`${host_address}/api/v1/requests/assigned/${userId}`, getAuthConfig())
     }catch (e) {
         throw e;
     }
@@ -71,7 +114,7 @@ export const getAssignedRequests = async (userId) => {
 
 export const getVideoDetailsByRequestId = async (requestId) => {
     try {
-        return await axios.get(`${host_address}/api/v1/video/${requestId}/videoInfo`)
+        return await axios.get(`${host_address}/api/v1/video/${requestId}/videoInfo`, getAuthConfig())
     }catch (e) {
         throw e;
     }
@@ -113,16 +156,3 @@ export const login = async (usernameAndPassword) => {
         throw e;
     }
 }
-//from interviewer page
-// export const saveJobPosting = async (jobData) => {
-    // try {
-    //   return await axios.post(
-    //     `${host_address}/api/`,
-    //     jobData,
-    //     getAuthConfig()
-    //   );
-    // } catch (e) {
-    //   throw e;
-    // }
-//   }; 
-//start of function for saving a new job posting

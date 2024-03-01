@@ -1,32 +1,59 @@
+.bodyContainer {
+        background: var(--requests_background);
+        padding-top: 20px;
 
-.jobs{
-        padding: 20px 70px;
-        background-color: var(--body_background);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
+        .jobs{
+                padding: 20px 70px;
+                display: flex;
+                min-height: 600px;
+                justify-content: center;
+        }
+        
+        .searchContainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                .searchBar{
+                        background-color: var(--body_background);
+                        border: 3px solid lightgrey;
+                        padding: 0px 5px 0px 20px;
+                        width: 40%;
+                        height: 45px;
+                        border-radius: 30px;
+                        display: flex;
+                        align-items: center;
+                        margin: auto;
+                }
+                
+                .searchBar input{
+                        height: 25px;
+                        padding: 0px 10px;
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                        font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        background-color: var(--body_background);
+                        color: var(--body_color);
+                }
+                
+                .searchBar button{
+                        width: 120px;
+                        height: 40px;
+                        border-radius: 30px;
+                        border: none;
+                        background-color: #35a6b4;
+                        color:var(--body_color) ;
+                        font-weight: bold;
+                        font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        cursor: pointer;
+                
+                        &:hover {
+                                background-color: var(--body_color);
+                                color: var(--body_background);
+                        }
+                }
+        }
 }
 
 
-.searchBar{
-        background-color: var(--body_background);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-}
-
-.searchBar input{
-        height: 25px;
-        width: 500px;
-}
-.searchBar button{
-        width: 100px;
-        height: 25px;
-        margin-left:30px ;
-        border: none;
-        background-color: turquoise;
-        color:var(--body_color) ;
-        font-weight: bold;
-        cursor: pointer;
-}

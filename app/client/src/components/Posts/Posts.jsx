@@ -7,17 +7,16 @@ import {useAuth} from "../../context/authContext";
 function Posts() {
     const {currentUser} = useAuth();
     const [myRequests, setMyRequests] = useState([]);
+
     const getMyRequests = () => {
         if(currentUser.role === 'ADMIN') {
             getUserRequests(currentUser.userId).then(resp => {
-                console.log(resp)
                 setMyRequests(resp.data)
             }).catch(err => {
 
             })
         }else {
             getAssignedRequests(currentUser.userId).then(resp => {
-                console.log(resp)
                 setMyRequests(resp.data)
             }).catch(err => {
 
@@ -32,23 +31,22 @@ function Posts() {
 
   return (
     <div>
-    {
-       
-myRequests.length===0 ?
-    <div className='norequests'>
-    There is no request for you at the moment!
+    {       
+        myRequests.length===0 ?
+            <div className='norequests'>
+            There is no request for you at the moment!
+            </div>
+            :
+            
+            <div className='posts'>
+            {
+                myRequests.map(request=>(
+                    <Post request={request} key={request.requestId}/>
+                ))
+            }
+        </div>
+        }
     </div>
-    :
-    
-    <div className='posts'>
-    {
-        myRequests.map(request=>(
-            <Post request={request} key={request.requestId}/>
-        ))
-    }
-</div>
-}
-</div>
   )
 }
 
