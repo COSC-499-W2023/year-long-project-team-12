@@ -2,7 +2,12 @@ import React from 'react';
 import "./Footer.scss";
 
 
+
+
 const Footer = () => {
+
+    const emailAddress = 'exzbt@exzbt.com';
+    
   return (
     <div className='footer'>
         <div className='bottom'> 
@@ -16,8 +21,8 @@ const Footer = () => {
                 <div className="item">
                     <h1>About</h1>
                     <span data-testid="about">
-                    The purpose of the software is to provide a video sharing platform 
-                     It allows users to register, create profiles, upload and share videos and receive feedback based on their video submissions.
+                   <p>Where sending and receiving video requests is as simple as it gets. Our platform prioritizes your privacy with end-to-end encryption and facial blurring technology, ensuring your security every step of the way. Experience the ease and peace of mind knowing that your interactions are safeguarded while maintaining the utmost simplicity.
+                    </p> 
                     
                     </span>
                 </div>
@@ -25,8 +30,11 @@ const Footer = () => {
                 <div className="item">
                     <h1>Contact</h1>
                     <span data-testid="contact">
-                   The purpose of the software is to provide a video sharing platform 
-                     It allows users to register, create profiles, upload and share videos and receive feedback based on their video submissions.               
+                    <p>
+                        Have questions or feedback? Feel free to email us at{' '}
+                        <a href={`mailto:${emailAddress}`}>{emailAddress}</a>. We value your input and strive to improve our experience constantly.
+                    </p>
+                                 
                     </span>
                 </div>
             </div>
