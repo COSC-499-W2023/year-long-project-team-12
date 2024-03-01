@@ -15,6 +15,10 @@ jest.mock('../../context/authContext', () => ({
   })  
 }));
 
+jest.spyOn(require('../../services/ClientAPI'), 'getUserById').mockResolvedValue({
+  data: { lastName: 'LastName', firstName: 'FirstName' },
+});
+
 const MockEdit = () => (
     <BrowserRouter>
       <Edit />
