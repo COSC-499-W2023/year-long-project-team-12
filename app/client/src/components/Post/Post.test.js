@@ -18,6 +18,7 @@ const Mocktest =()=>{
         title:"Test Request",
         expiration:new Date(2024, 1, 1),
         description:"",
+        submitted: true
     };
 
     return(
@@ -35,14 +36,14 @@ test("Post component is rendered correctly with title", () => {
   });
 
 
-test("Post component is rendered correctly with location", async () => {
+test("Post component is rendered correctly with status", async () => {
     jest.spyOn(require('../../services/ClientAPI'), 'getUserById').mockResolvedValue({
         data: { lastName: 'LastName', firstName: 'FirstName' },
     });
 
     render(<Mocktest/>)
-    await waitFor(() => expect(screen.getByTestId(/expiration/i))
-        .toHaveTextContent(new Date(2024, 1, 1).toString()));
+    await waitFor(() => expect(screen.getByTestId(/status/i))
+        .toHaveTextContent("Status: Submitted"));
 });
 
   test("Post component is rendered correctly with apply button that should direct the user to the upload page", async () => {
