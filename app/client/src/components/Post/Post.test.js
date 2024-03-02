@@ -11,6 +11,10 @@ jest.mock('../../context/authContext', () => ({
     }),
 }));
 
+jest.spyOn(require('../../services/ClientAPI'), 'getUserById').mockResolvedValue({
+  data: { lastName: 'LastName', firstName: 'FirstName' },
+});
+
 
 const Mocktest =()=>{
     const request =  {
@@ -37,10 +41,6 @@ test("Post component is rendered correctly with title", () => {
 
 
 test("Post component is rendered correctly with status", async () => {
-    jest.spyOn(require('../../services/ClientAPI'), 'getUserById').mockResolvedValue({
-        data: { lastName: 'LastName', firstName: 'FirstName' },
-    });
-
     render(<Mocktest/>)
     await waitFor(() => expect(screen.getByTestId(/status/i))
         .toHaveTextContent("Status: Submitted"));
