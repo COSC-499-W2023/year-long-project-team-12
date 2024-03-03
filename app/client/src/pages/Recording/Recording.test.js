@@ -1,18 +1,27 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Recording from "./Recording";
+import { BrowserRouter } from "react-router-dom";
 
 jest.mock("axios");
 
 describe("Recording component", () => {
   test("renders headings", () => {
-    render(<Recording />);
+    render(
+      <BrowserRouter>
+            <Recording />
+        </BrowserRouter>
+    );
     const mainHeading = screen.getByRole("heading", { name: /record your video/i });
     expect(mainHeading).toBeInTheDocument();
   });
 
   test("renders buttons", () => {
-    render(<Recording />);
+    render(
+      <BrowserRouter>
+            <Recording />
+        </BrowserRouter>
+    );
     const startRecordingButton = screen.getByRole("button", { name: /start capture/i });
     expect(startRecordingButton).toBeInTheDocument();
   });

@@ -236,10 +236,42 @@
       }
       
     }
-    .jobsAppliedToContainer{
+    .collapsibleContainer{
       h1{
         text-align: center;
         color: var(--body_color);
+      }
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+      max-width: 600px;
+
+      .myRequestsButton {
+        border: none;
+        background-color: var(--body_color);
+        color: var(--body_background);
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 30px;
+        outline: 0;
+        padding: 0 56px;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 7px;
+        background-color: turquoise;
+        font-weight: 400;
+        font-size: 16px;
+        box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+        transition: background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease;
+
+:hover{
+background: rgba(0,118,255,0.9);
+box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
+}
       }
 
     }

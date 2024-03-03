@@ -16,7 +16,7 @@ import Avatar from '@mui/material/Avatar';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ProfilePicChanger from "./profilepicchanger.js";
-
+import Posts from "../../components/Posts/Posts.jsx";
 
 
 const Profile = () => {
@@ -24,6 +24,7 @@ const Profile = () => {
   const [image, setImage] = useState(null);
   const {  currentUser } = useAuth();
   const [open, setOpen] = useState(false);
+  const [showRequests, setShowRequests] = useState(false);
   const[text, setText]  = useState("Show");
   const [notificationCount, setNotificationCount] = useState(0);
   const toggle = () => {
@@ -36,9 +37,12 @@ const Profile = () => {
     }
   };
    
-  const handleMyRequestsClick = () => {
-    console.log("My Requests button clicked!");
-  };
+
+    const handleMyRequestsClick = () => {
+     // console.log("clicked!!")
+      setShowRequests(!showRequests);
+    };
+  
 
   const handleRecordedVideosClick = () => {
      console.log("Recorded Videos button clicked!");
@@ -105,8 +109,8 @@ const Profile = () => {
                 <span>{currentUser.email}</span>
               </div>
             </div>
-            <button onClick={handleMyRequestsClick} className="myRequestsButton"> <Link className='link' to="/jobs">My Requests</Link>
-            </button>  
+            <button onClick={handleMyRequestsClick} className="myRequestsButton"> {showRequests ? 'Hide My Requests' : 'Show My Requests'}</button>  
+            
              <button onClick={handleRecordedVideosClick} className="recordedVideosButton">Recorded Videos</button>
              <button onClick={handleNotificationsClick} className="notificationsButton">
              <NotificationsIcon fontSize="large"
@@ -141,6 +145,17 @@ const Profile = () => {
             </div>
           )
           }
+
+          {showRequests && (
+              <div className="collapsibleContainer">
+                <h2>My Requests</h2>
+                <div className="collapsibleLists">
+                <Posts displayLimit={5} />
+                </div>
+                <Link to="/jobs"><button  class="myRequestsButton"> Show More</button>  </Link>
+  
+              </div>
+                    )}
         
 
     </div>
