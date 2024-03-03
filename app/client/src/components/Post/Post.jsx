@@ -44,7 +44,7 @@ function Post({request}) {
 
                 <span data-testid="jobTitle" className='jobTitle'>Title: {request.title}</span>
                 { (request.submitted === true)?
-                <span style={{color:"green"}}>Status: Submitted</span>:
+                <span class="submittedPost" >Status: Submitted</span>:
                 <span style={{color:"red"}}>Status: Not Submitted</span>
                 
                 }

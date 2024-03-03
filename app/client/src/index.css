@@ -3,12 +3,14 @@
 --body_color: black;
 --link_color: navy;
 --requests_background: linear-gradient(rgb(162 197 210 / 63%), #73d8e4);
+--post_color: green;
 }
 
 [data-theme="dark"]{
   --body_background: #282c34;
   --body_color: #fff;
   --link_color: #0ff;
+  --post_color:lightgreen;
   --requests_background: linear-gradient(rgba(3, 26, 34, 0.63), #011f23);
 }
 * {
