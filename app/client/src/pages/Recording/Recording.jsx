@@ -3,9 +3,10 @@ import Webcam from "react-webcam";
 import "./Recording.scss";
 import {useAuth} from "../../context/authContext";
 import {uploadRequestVideo} from "../../services/ClientAPI";
-import {Navigate} from "react-router-dom";
+import {Navigate, useNavigate} from "react-router-dom";
 
 const Recording = () => {
+  let navigate = useNavigate();
   const { currentRequest } = useAuth();
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
@@ -46,21 +47,17 @@ const Recording = () => {
   };
   
   const approveVideo = async () => {
-    if (recordedChunks === []) {
-      return;
-    }
-
     const blob = new Blob(recordedChunks, { type: "video/webm" })
-
+    
     try{
       const requestObject = new FormData();
       requestObject.append('requestId', currentRequest.requestId)
       requestObject.append('video', blob)
       requestObject.append('created', new Date())
       requestObject.append('userId', currentRequest.assigneeId)
-
+      
       uploadRequestVideo(currentRequest.requestId, requestObject).then(resp => {
-        return <Navigate to="/jobs"/>
+        navigate("/jobs");
       })
     } catch  {
 

@@ -57,7 +57,7 @@ describe('Admin Component', () => {
   test('Expiration Date input can be changed', () => {
     render(<MockAdmin />);
     const expirationDateInputEl = screen.getByLabelText(/Request Expiration Date:/i);
-    const testValue = "2023-12-31";
+    const testValue = "2023-12-31T19:30";
 
     fireEvent.change(expirationDateInputEl, { target: { value: testValue } });
     expect(expirationDateInputEl.value).toBe(testValue);
