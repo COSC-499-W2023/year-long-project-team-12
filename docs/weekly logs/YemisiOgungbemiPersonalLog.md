@@ -113,3 +113,13 @@
 - Adding the status of a request to each request.
 - Adding Back button to the nav bar.
 - Adding comment section to each request.
+
+
+## Week 7 and 8  Feb 19th - Mar 3rd
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/4e38f074-027d-47d0-995e-99bbafe20c76)
+- Added cypress for the future integration testing
+- Made the slider slide automatically after 3 seconds
+- Added tests for the comments and slider component
+- Adding a limit of requests on the profile page with a collapsible container.
+
+
