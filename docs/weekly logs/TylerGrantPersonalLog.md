@@ -123,3 +123,11 @@ Responded to issues on the Kanban board, namely:
 * IN PROGRESS: still carrying over record changes as mentioned, decided to work on other stuff to feel like I was moving forward, and giving myself reading week to try make changes that look a good finished product.
 
 ![T2 Week 6](./images/week6_t2ty.png)
+
+## T2 Week 7&8 Log (February 19th - March 3rd)
+
+* Coded over reading week. No coding completed this week, just reviewing of code.
+
+* Reading week code was on a later branch that needs to now be added to newer code with newer themes and integrated together.
+
+![T2 Week 6](./images/week6_t2ty.png)
