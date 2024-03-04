@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Uploader from "./pages/Uploader/Uploader";
 import DoesNotExist from "./pages/DoesNotExist/DoesNotExist";
 import Admin from "./pages/Admin/Admin";
+import Edit from "./pages/Admin/EditRequest";
 import Recording from "./pages/Recording/Recording";
 import "./app.scss";
 import {useAuth} from "./context/authContext";
@@ -76,8 +77,11 @@ const Layout = () =>{
         {
           path:"/viewVideo",
           element:<ViewVideo />
-        }
-        
+        },
+        {
+          path:"/editRequest",
+          element:<Edit />
+        }        
       ],
     },
     {

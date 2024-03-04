@@ -1,6 +1,26 @@
 .adminUser {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  * {
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
   height: 100vh;
-  background-color: turquoise;
+  background: var(--requests_background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,9 +43,6 @@
       right: 10px; 
     }
     
-
-    
-
     .right {
       flex: 1;
       padding: 50px;
@@ -54,6 +71,48 @@
           color: var(--body_color);
         }
 
+        .emailBox {
+          margin-bottom: 0px;
+        }
+
+        .errorUser {
+          .findUserWarning{
+            font-size: small;
+            color: red;
+          }
+        }
+
+        .recipients {
+          display: flex;
+          margin-top: 10px;
+          gap: 10px;
+          
+          
+          .userBox{
+            border: 1px solid #35a6b4;
+            border-radius: 30px;
+            font-size: small;
+            padding: 8px;
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+          
+            .close {
+              left: -5px;
+              font-size: 16px;
+              margin-left: 3px;
+              
+              :hover {
+                cursor: pointer;
+                color: #35a6b4;
+              }
+            }
+          }
+        }
+        
+        
+
         input[type="file"] {
           margin-bottom: 20px;
         }
@@ -66,13 +125,20 @@
         }
 
         button {
-          width: 50%;
+          width: 40%;
           padding: 10px;
           border: none;
-          background-color: turquoise;
+          background-color: #35a6b4;
           color: var(--body_color);
           font-weight: bold;
           cursor: pointer;
+          border-radius: 10px;
+
+          &:hover {
+              background-color: var(--body_color);
+              color: var(--body_background);
+              transition: all ease 0.3s;
+          }
         }
       }
     }

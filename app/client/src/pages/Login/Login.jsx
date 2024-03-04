@@ -40,12 +40,11 @@ const Login = () => {
             } else {
                 formData.append("username", loginParam);
             }
-            formData.append("password", password);
-    
-            formData.forEach((value, key) => (object[key] = value));
-            const loginParamAndPassword = JSON.stringify(object);
-            console.log(loginParamAndPassword);
-    
+            formData.append("password", password)
+
+            formData.forEach((value, key) => object[key] = value);
+            const loginParamAndPassword = JSON.stringify(object)
+            
             await login(loginParamAndPassword).then(resp => {
                 navigate("/profile");
             });

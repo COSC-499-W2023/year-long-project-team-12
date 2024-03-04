@@ -552,5 +552,47 @@ Group member usernames:
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/84a4e0b5-ed2e-4a28-a7c1-357b33f519e4)
 
 
+ # Team 12 Term2 Week 7 and 8 Log (Feb 19th - Mar 3rd)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* Fixing issues with route navigation after submitting video recording.
+* Transition to a new user interface design.
+* S3 testing, for user and production instances.
+* Streamlining user profile page, creating new features and design.
+* Enabling multi create for user requests.
+* Integrating and fully scaling spring security, to provide jwt authentication on data server.
+* Integrating cypress for integration testing.
+  
+## Burnup Chart 
+
+![BurnUp chart](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/0538150e-0c64-4ae4-976a-e01ef6d0dd35)
+
+
+## Kanban board tasks identified this week:
+
+![kanbanTasks1](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/8d083748-ecf9-4480-b9af-bf8cc15ccc37)
+
+![kanbanTasks2](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/437b49c1-4ab1-441c-8352-9b9a33982c80)
+
+
+## Testing
+
+![FETests](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/20a4b2ce-34ad-46c4-96de-31dc67a2ad26)
+
+![BETests](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/5bcca78c-65eb-41a5-8a07-6d1e543d0e9e)
+
 
 

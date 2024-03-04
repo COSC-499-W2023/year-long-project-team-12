@@ -209,3 +209,18 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk6S2IssuesWL.png)
 
 ![Hameed Tasks](images/Hameed/Wk6S2Tasks.png)
+
+
+## Week 7-8 Log (February 19th - March 3rd)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Debugging and fixing issue with EB instance to allow communication with S3 bucket.
+* Revamping and re-designing UI, using new themes and colors to match.
+* Creating new API and allowing a multi-create function for user requests.
+* Enabled security filter chain config, to fully utilize jwt authentication token.
+
+![Hameed Tasks](images/Hameed/Wk78S2IssuesWL.png)
+
+![Hameed Tasks](images/Hameed/Wk78S2Tasks.png)
