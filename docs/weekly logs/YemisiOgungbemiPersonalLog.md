@@ -121,5 +121,3 @@
 - Made the slider slide automatically after 3 seconds
 - Added tests for the comments and slider component
 - Adding a limit of requests on the profile page with a collapsible container.
-
-
