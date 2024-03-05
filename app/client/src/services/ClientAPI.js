@@ -69,6 +69,16 @@ export const uploadRequestVideo = async (requestId, request) => {
     }
 }
 
+export const updateProfileImage = async (userId, request) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/users/${userId}/profileImage`,
+            request,  getAuthConfigMultiPart())
+    }catch (e) {
+        throw e;
+    }
+}
+
+
 export const saveRequest = async (request) => {
     try {
         return await axios.post(`${host_address}/api/v1/requests/create`,
@@ -111,6 +121,10 @@ export const getAssignedRequests = async (userId) => {
         throw e;
     }
 }
+
+export const getUserProfileImage = (userId) => 
+    `${host_address}/api/v1/users/${userId}/profileImage`;
+
 
 export const getVideoDetailsByRequestId = async (requestId) => {
     try {

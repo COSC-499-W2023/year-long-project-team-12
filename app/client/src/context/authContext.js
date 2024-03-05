@@ -24,16 +24,16 @@ export const AuthContextProvider = ({ children }) => {
         });
     };
 
-    const setCurrentUserFromToken = () => {
-        let token = localStorage.getItem("access_token");
-
-        if(token) {
-            token = jwtDecode(token);
-            console.log(token)
-            setCurrentUser({
-                username: token.sub,
-            })
-        }
+    const updateContextCurrentUser = (currentUser) => {
+        setCurrentUser({
+            username: currentUser.username,
+            userId: currentUser.userId,
+            firstname: currentUser.firstName,
+            lastname: currentUser.lastName,
+            email : currentUser.email,
+            role: currentUser.userRole,
+            profileImageId: currentUser.profileImageId
+        })
     }
 
     useEffect(() => {
@@ -59,6 +59,7 @@ export const AuthContextProvider = ({ children }) => {
                     lastname: resp.data.userDetailsDTO.lastName,
                     email: resp.data.userDetailsDTO.email,
                     role: resp.data.userDetailsDTO.userRole,
+                    profileImageId: resp.data.userDetailsDTO.profileImageId
                 })
                 resolve(resp);
             }).catch(err => {
@@ -83,6 +84,7 @@ export const AuthContextProvider = ({ children }) => {
                     lastname: res.data.userDetailsDTO.lastName,
                     email : res.data.userDetailsDTO.email,
                     role: res.data.userDetailsDTO.userRole,
+                    profileImageId: res.data.userDetailsDTO.profileImageId
                 })
                 resolve(res);
             }).catch(err => {
@@ -123,7 +125,7 @@ export const AuthContextProvider = ({ children }) => {
             logOut,
             setCurrentRequest,
             isCustomerAuthenticated,
-            setCurrentUserFromToken, 
+            updateContextCurrentUser, 
             isHiring
             }}>
             { children }

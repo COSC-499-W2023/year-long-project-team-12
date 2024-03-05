@@ -1,20 +1,25 @@
-.upload-main{
+.view-main{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--body_background);
     color: var(--body_color);
+    min-height: 800px;
+    padding: 40px;
+    background: var(--requests_background);
 }
-.upload-form{
+.view-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px dashed #1475cf;
-    height: 600px;
-    width: 800px;
+    min-height: 600px;
+    min-width: 800px;
     cursor: pointer;
     color: var(--body_color);
     border-radius: 5px;
+    padding: 30px;
+    background-color: var(--body_background);
 }
+
+

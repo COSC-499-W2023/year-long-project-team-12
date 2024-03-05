@@ -35,8 +35,8 @@ function ViewVideo() {
 
 
 return (
-    <main className='upload-main'>
-        <form className='upload-form'>
+    <main className='view-main'>
+        <form className='view-form'>
             {video ?
             <>
                 <video controls width="600" height="500">
