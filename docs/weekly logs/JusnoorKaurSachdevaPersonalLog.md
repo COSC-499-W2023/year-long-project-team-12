@@ -83,7 +83,7 @@ Group Member : Jusnoor Kaur Sachdeva
 
 
 
-<h3>Week 3 log (January 29th - February 4th)</h3>
+<h3>Week 4 log (January 29th - February 4th)</h3>
 Group Member : Jusnoor Kaur Sachdeva 
 
 * Team discussions
@@ -92,6 +92,15 @@ Group Member : Jusnoor Kaur Sachdeva
 * tried learning about java testing watching videos and links
 
 ![Screenshot 2024-02-06 at 11 48 05 PM](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/12248600-177f-42b2-99ca-a1d3ccb79ae5)
+
+
+<h3>Week 7-8 log (February 19th - March 3rd)</h3> 
+Group Member : Jusnoor Kaur Sachdeva 
+
+* Team discussions
+* assigned some tasks to myself regarding the designing and documentation of the app
+* tried learning about java testing watching videos and links
+* an attemp to look for code refinement tasks
 
 
 
