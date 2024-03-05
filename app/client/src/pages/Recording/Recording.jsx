@@ -57,7 +57,7 @@ const Recording = () => {
       requestObject.append('userId', currentRequest.assigneeId)
       
       uploadRequestVideo(currentRequest.requestId, requestObject).then(resp => {
-        navigate("/jobs");
+        navigate("/profile");
       })
     } catch  {
 
