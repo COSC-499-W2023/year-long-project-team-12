@@ -1,23 +1,46 @@
 import * as React from 'react';
-import { useRef, useState } from 'react';
+import { useState, useEffect } from 'react';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import "./profile.scss";
 import { Input } from '@mui/base/Input';
 import {useAuth} from "../../context/authContext";
+import {getUserProfileImage, updateProfileImage, getUserById} from "../../services/ClientAPI"
 import SettingsIcon from '@mui/icons-material/Settings';
 
 
 const ProfilePicChanger = () => {
-    const {  currentUser } = useAuth();
+    const { currentUser, updateContextCurrentUser } = useAuth();
     const [image, setImage] = useState(null);
-    const localStorageKey = `profileImage_${currentUser.email}`; // Dynamic key based on user ID
-  
   
     const handleImageChange = (event) => {
       const selectedImage = event.target.files[0];
-      const imageUrl = URL.createObjectURL(selectedImage);
-      setImage(imageUrl);
-      localStorage.setItem(localStorageKey, imageUrl); // Save image URL to local storage
+
+      try{
+        const requestObject = new FormData();
+        requestObject.append('image', selectedImage);
+
+        updateProfileImage(currentUser.userId, requestObject).then(resp => {
+          setImage(URL.createObjectURL(selectedImage));
+
+          getUserById(currentUser.userId).then(res => {
+            updateContextCurrentUser(res.data)
+          })
+        });
+      } catch  {
+
+      }
+    };
+
+    const retrieveUserProfileImage = async () => {
+      try {
+        if(currentUser.profileImageId){
+          const imageURL = await getUserProfileImage(currentUser.userId);
+          console.log(currentUser);
+          setImage(imageURL);
+        }
+      } catch (err) {
+          console.error('Error fetching profile image:', err);
+      }
     };
   
     const handleButtonClick = () => {
@@ -25,13 +48,9 @@ const ProfilePicChanger = () => {
       document.getElementById('fileInput').click();
     };
   
-    // Retrieve profile image URL from local storage on component mount
-    useState(() => {
-      const storedImage = localStorage.getItem(localStorageKey);
-      if (storedImage) {
-        setImage(storedImage);
-      }
-    }, []);
+    useEffect(() => {
+      retrieveUserProfileImage();
+    }, []); 
   
     return (
       <div className='profilepicchanger'>
