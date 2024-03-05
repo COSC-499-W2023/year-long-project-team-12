@@ -19,6 +19,7 @@ public class RequestDetailsRequest {
     private String title;
     private String description;
     private String assigneeId;
+    private String assigneeEmail;
     private Date created;
     private Date expiration;
 

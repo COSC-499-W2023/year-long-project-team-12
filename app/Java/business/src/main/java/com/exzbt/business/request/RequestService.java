@@ -78,13 +78,20 @@ public class RequestService {
 
         //TODO: exception throw
 
-        if(Objects.isNull(updateRequest) || Objects.equals(request, updateRequest.convertFromDTO())) {
+        if(Objects.isNull(updateRequest)) {
             //TODO: exception throw
             return null;
         }
 
-        Request updatedRequest = updateRequest.convertFromDTO();
-        return new RequestDetailsDTO().convertDTO(requestActions.save(updatedRequest));
+        UserDetailsDTO assignedUser = userService.findUserByEmail(updateRequest.getAssigneeEmail());
+        updateRequest.setAssigneeId(assignedUser.getUserId());
+
+        request.setTitle(updateRequest.getTitle());
+        request.setDescription(updateRequest.getDescription());
+        request.setAssigneeId(updateRequest.getAssigneeId());
+        request.setExpiration(updateRequest.getExpiration());
+
+        return new RequestDetailsDTO().convertDTO(requestActions.save(request));
     }
 
     public void deleteRequestByRequestId(String requestId) {

@@ -26,6 +26,11 @@ public class UserCRUD {
         return userService.getUser(id);
     }
 
+    @GetMapping("request/{email}")
+    public UserDetailsDTO getUserByEmail(@PathVariable("email") String email) {
+        return userService.findUserByEmail(email);
+    }
+
     @PostMapping("{id}")
     public UserDetailsDTO saveChanges(@PathVariable("id") String id,
             @RequestBody UserDetailRequest updateRequest) {
