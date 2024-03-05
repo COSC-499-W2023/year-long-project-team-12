@@ -10,10 +10,10 @@ import org.springframework.security.config.annotation.authentication.configurati
 @Configuration
 public class AuthConfig {
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration
-    ) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
     }
+
     @Bean
     public AuthenticationProvider authenticationProvider(UserService userService) {
         return new CustomAuthenticationProvider(userService);
