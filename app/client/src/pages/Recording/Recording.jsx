@@ -13,6 +13,7 @@ const Recording = () => {
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [cameraEnabled, setCameraEnabled] = useState(false);
 
   useEffect(() => {
     return () => {
@@ -47,34 +48,46 @@ const Recording = () => {
   };
   
   const approveVideo = async () => {
-    const blob = new Blob(recordedChunks, { type: "video/webm" })
+    const blob = new Blob(recordedChunks, { type: "video/webm" });
     
     try{
       const requestObject = new FormData();
-      requestObject.append('requestId', currentRequest.requestId)
-      requestObject.append('video', blob)
-      requestObject.append('created', new Date())
-      requestObject.append('userId', currentRequest.assigneeId)
+      requestObject.append('requestId', currentRequest.requestId);
+      requestObject.append('video', blob);
+      requestObject.append('created', new Date());
+      requestObject.append('userId', currentRequest.assigneeId);
       
       uploadRequestVideo(currentRequest.requestId, requestObject).then(resp => {
         navigate("/profile");
-      })
+      });
     } catch  {
 
     }
-  }
+  };
 
   const deleteVideo = () => {
     setRecordedChunks([]);
     setIsPlaying(false); 
   };
 
+  const enableCamera = () => {
+    setCameraEnabled(true); 
+  };
+
   return (
     <div className="recording-container">
       <h2>Record your video</h2>
-      <Webcam muted={true} audio={true} ref={webcamRef} height={400} width={500} />
+
+      {!cameraEnabled && (
+        <button className="btn btn-primary" onClick={enableCamera}>
+          Turn on Camera
+        </button>
+      )}
+      {cameraEnabled && (
+        <Webcam muted={true} audio={true} ref={webcamRef} height={400} width={500} />
+      )}
       
-      {!capturing && recordedChunks.length === 0 && (
+      {!capturing && recordedChunks.length === 0 && cameraEnabled && ( 
         <button className="btn btn-primary" onClick={startRecording}>
           Start Capture
         </button>
@@ -123,4 +136,3 @@ const Recording = () => {
 };
 
 export default Recording;
-
