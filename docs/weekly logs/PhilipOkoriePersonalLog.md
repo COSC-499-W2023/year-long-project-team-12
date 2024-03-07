@@ -109,6 +109,17 @@ Group member: Philip Okorie
 * Testing
 * Adding a dynamic profile pic feature(to enable users upload their pictures)
 * Fixing button positioning
-  
+
+  ## Week 8 log(Feb 25th-Mar 3rd)
+
+  Group member: Philip Okorie
+
+  * Reviewing other's code
+  * Working on cropping feature for the profile picture and background image
+  * Working on linking notifications to requests from the backend
+  * Fixng some docker issues with new modules being imported
+ 
+    <img width="1405" alt="Screenshot 2024-02-11 at 11 06 41 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/61026972-183d-4bfd-9df4-605690714f21">
+   
   
 
