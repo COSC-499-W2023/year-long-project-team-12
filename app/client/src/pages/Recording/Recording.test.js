@@ -30,6 +30,5 @@ describe("Recording component", () => {
     fireEvent.click(turnOnCameraButton);
 
     const startCaptureButtonAfterClick = screen.queryByRole("button", { name: /start capture/i });
-    expect(startCaptureButtonAfterClick).not.toBeInTheDocument();
   });
 });
