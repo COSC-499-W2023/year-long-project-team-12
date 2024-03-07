@@ -32,3 +32,28 @@ describe("Recording component", () => {
     const startCaptureButtonAfterClick = screen.queryByRole("button", { name: /start capture/i });
   });
 });
+
+//commented out for actually passing data through. this is done on actual recording too.
+ //   test("approves and sends the recorded video", async () => {
+ //     axios.post.mockResolvedValue({ data: "Video approved!" });
+
+ //     render(<Recording />);
+ //     const startButton = screen.getByRole("button", { name: /start capture/i });
+ //     fireEvent.click(startButton);
+
+ //     const stopButton = screen.getByRole("button", { name: /stop capture/i });
+ //     fireEvent.click(stopButton);
+
+ //     const approveButton = screen.getByRole("button", { name: /approve video/i });
+ //     fireEvent.click(approveButton);
+
+ //     await waitFor(() => {
+ //       expect(axios.post).toHaveBeenCalledWith(
+ //         "YOUR_SERVER_API_ENDPOINT",
+ //         expect.any(FormData),
+ //         expect.objectContaining({
+ //           headers: { "Content-Type": "multipart/form-data" },
+ //         })
+ //       );
+ //     });
+ //   });
