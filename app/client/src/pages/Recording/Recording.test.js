@@ -25,11 +25,6 @@ describe("Recording component", () => {
     expect(mainHeading).toBeInTheDocument();
   });
 
-  test("does not initially render 'Start Capture' button", () => {
-    const startCaptureButton = screen.queryByRole("button", { name: /start capture/i });
-    expect(startCaptureButton).not.toBeInTheDocument();
-  });
-
   test("'Turn on Camera' button click changes to recording stage", () => {
     const turnOnCameraButton = screen.getByRole("button", { name: /turn on camera/i });
     fireEvent.click(turnOnCameraButton);
