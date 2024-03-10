@@ -141,6 +141,11 @@ function Post({request}) {
                                     <button onClick={handleRequestContext}>Submit Video</button>
                                 </Link>
                             </div>
+                            <div className='info' id="submit">
+                                <Link to="/upload">
+                                    <button onClick={handleRequestContext}>Upload Video</button>
+                                </Link>
+                            </div>
 
                             {details && (
                                     <div className="modalContainer">
