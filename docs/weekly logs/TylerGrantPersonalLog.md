@@ -133,7 +133,7 @@ Responded to issues on the Kanban board, namely:
 ![T2 Week 7&8](./images/week6_t2ty.png)
 
 
-## T2 Week 7&8 Log (February 19th - March 3rd)
+## T2 Week 9 Log (March 3rd - March 10th)
 
 * COMPLETED: Implemented and added testing for the recording changes spoken about and done in some weeks previous too.
 
