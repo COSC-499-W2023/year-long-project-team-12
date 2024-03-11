@@ -121,6 +121,8 @@
 - Made the slider slide automatically after 3 seconds
 - Added tests for the comments and slider component
 - Adding a limit of requests on the profile page with a collapsible container.
+- 
+  
 
 ## Week 9 Mar 4th - Mar 10th
 <img width="1470" alt="image" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/c8fe86cf-7f3b-423f-98c0-03801860f225">
