@@ -5,7 +5,12 @@ import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
 jest.mock("axios");
-
+// Mock the MediaRecorder API
+global.MediaRecorder = jest.fn(() => ({
+  start: jest.fn(),
+  stop: jest.fn(),
+  addEventListener: jest.fn(),
+}));
 describe("Recording component", () => {
   beforeEach(() => {
     render(
@@ -31,6 +36,10 @@ describe("Recording component", () => {
 
     const startCaptureButtonAfterClick = screen.queryByRole("button", { name: /start capture/i });
   });
+
+ 
+
+
 });
 
 //commented out for actually passing data through. this is done on actual recording too.
