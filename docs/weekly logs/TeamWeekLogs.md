@@ -594,5 +594,36 @@ Group member usernames:
 
 ![BETests](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/5bcca78c-65eb-41a5-8a07-6d1e543d0e9e)
 
+ # Team 12 Term2 Week 9 Log (Mar 3rd - Mar 10th)
 
+Group member usernames:
 
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* Adding better and synchronized UI across the site.
+* Adding recording and uploading video changes.
+* T & C's needed to be approved, and improved privacy, plus better UI/UX of submission process.
+  
+## Burnup Chart 
+
+![BurnUp chart](./images/bup_wk9.png)
+
+## Kanban board tasks identified this week:
+
+![kanbanTasks1](./images/kanban_wk9.png)
+
+## Testing
+
+![FETests](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/20a4b2ce-34ad-46c4-96de-31dc67a2ad26)
+
+![BETests](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/5bcca78c-65eb-41a5-8a07-6d1e543d0e9e)
