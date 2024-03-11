@@ -224,3 +224,18 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk78S2IssuesWL.png)
 
 ![Hameed Tasks](images/Hameed/Wk78S2Tasks.png)
+
+## Week 9 Log (March 4th - March 10th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Reworking theme for upload video page.
+* Revamping user profile, to synchronize theme.
+* Enabling profile image update, synchronizing profile image API to save image on S3 bucket.
+* Fixing and updating navbar, comments box.
+* Working on Notifications API, Blur and save video features
+
+![Hameed Tasks](images/Hameed/Wk9S2IssuesWL.png)
+
+![Hameed Tasks](images/Hameed/Wk9S2Tasks.png)
