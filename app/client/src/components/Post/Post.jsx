@@ -138,7 +138,12 @@ function Post({request}) {
                             </div>
                             <div className='info' id="submit">
                                 <Link to="/recording">
-                                    <button onClick={handleRequestContext}>Submit Video</button>
+                                    <button onClick={handleRequestContext}>Record Video</button>
+                                </Link>
+                            </div>
+                            <div className='info' id="submit">
+                                <Link to="/upload">
+                                    <button onClick={handleRequestContext}>Upload Video</button>
                                 </Link>
                             </div>
 

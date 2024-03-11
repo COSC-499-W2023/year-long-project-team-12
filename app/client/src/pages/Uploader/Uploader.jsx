@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import "./Uploader.scss";
+import Modal from "react-modal";  
 import {MdCloudUpload, MdDelete} from 'react-icons/md';
 import {AiFillFileImage} from 'react-icons/ai'
 import {useAuth} from "../../context/authContext";
@@ -13,13 +14,21 @@ function Uploader() {
     const { currentRequest } = useAuth();
     let navigate = useNavigate();
     const [fileName, setFileName] = useState("No Selected File");
+    const [isTermsModalOpen, setTermsModalOpen] = useState(false); 
+    const [agreeTerms, setAgreeTerms] = useState(false);
+    const [errorLabel, setErrorLabel] = useState("");
+
 
     const handleUpload = async () => {
+        if (!agreeTerms) {
+            setErrorLabel("Please agree to the Terms of Agreement");
+            return;
+          }
         if (video == null) {
             return;
         }
 
-        console.log(currentRequest);
+        //console.log(currentRequest);
 
         try{
             const requestObject = new FormData();
@@ -35,6 +44,18 @@ function Uploader() {
 
         }
     };
+
+    const openTermsModal = () => {
+        setTermsModalOpen(true);
+      };
+    
+      const closeTermsModal = () => {
+        setTermsModalOpen(false);
+      };
+      const handleCheckboxChange = () => {
+        setAgreeTerms(!agreeTerms);
+        setErrorLabel("");
+      };
   return (
     <main className='upload-main'>
         <form data-testid="upload-form" className='upload-form'
@@ -74,7 +95,32 @@ function Uploader() {
                 />
             </span>
         </section>
-        <button data-testid="upload-button" className='upload-button' onClick={handleUpload}>Upload</button>
+        <div className="checkbox-container">
+            <label>
+              <input type="checkbox" checked={agreeTerms} onChange={handleCheckboxChange} />
+              I agree to the Terms of Agreement
+            </label>
+          </div>
+
+          {errorLabel && <p className="error-label">{errorLabel}</p>}
+        <div>
+        <button data-testid="upload-button" className='button' onClick={handleUpload}>Upload</button>
+        <button className="button" onClick={openTermsModal}>View Terms of agreement</button>
+        </div>
+        
+        <Modal isOpen={isTermsModalOpen} onRequestClose={closeTermsModal}>
+      <div className="termsOfAgreement">
+      <h2>Terms of Agreement:</h2>
+        {<p>
+          By using this service, you acknowledge and agree that we are not liable for any privacy breaches that may occur. 
+          While we take reasonable measures to protect your information, we cannot guarantee absolute security. 
+          You are solely responsible for safeguarding your personal data and using the service at your own risk.</p>}
+        <button className="btn btn-primary" onClick={closeTermsModal}>
+          Close
+        </button>
+      </div>
+        
+      </Modal>
     </main>
   )
 }
