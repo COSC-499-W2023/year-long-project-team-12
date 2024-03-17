@@ -129,3 +129,9 @@
 - Added a terms of agreement box for user that want to upload or submit a recorded video.
 - Add the option for users to upload a video instead of recording a video.
 - Increased the font of the the user info on the profile page.
+
+## Week 10 Mar11 - March March 17th
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/19288364-1f29-4183-bce8-aef9fd42cae7)
+- Researching on how to do use one component for multiple purposes e.g having a change user info component that can do the work of changing a password or changing full name based on what prop is passed in the argument. (it took hours to do but i couldnt figure it out, i ended up using two components but the same css file).
+- allowing users to change their fullname and password.
+- tests for the change name and password feature.
