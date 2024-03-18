@@ -2,7 +2,6 @@ import "./profile.scss";
 import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
 import {useAuth} from "../../context/authContext";
-import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -10,7 +9,12 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import ProfilePicChanger from "./profilepicchanger.js";
 import Posts from "../../components/Posts/Posts.jsx";
 
+
+
+
+
 const Profile = () => {
+  
 
   const [image, setImage] = useState(null);
   const { currentUser } = useAuth();
@@ -19,6 +23,7 @@ const Profile = () => {
   const [showSettings, setShowSettings] = useState(false);
   const [text, setText]  = useState("Show");
   const [notificationCount, setNotificationCount] = useState(2);
+  const [showModal, setShowModal] = useState(false);
   
   const toggle = () => {
     setOpen(!open);
@@ -29,6 +34,9 @@ const Profile = () => {
       setText("Show")
     }
   };
+
+
+ 
    
 
   const handleMyRequestsClick = () => {
@@ -47,22 +55,6 @@ const Profile = () => {
   const handleNewRequest = () => {
     setNotificationCount(notificationCount + 1);
   };
-
-  const handleSettingsClick = () => {
-    document.getElementById("myDropdown").classList.toggle("show");
-    window.onclick = function(event){
-      if (!event.target.matches('.settingsbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-     }
-  }
 
   const dropdownSettings = () => {
     setShowSettings(!showSettings);
@@ -112,12 +104,13 @@ const Profile = () => {
           {showSettings && 
             <div className = "dropdown">
                 <div id="myDropdown" className="dropdown-content">
-                  <a href="#">Change Profile Name</a>
+                  <Link to="/changename">Change Name</Link>
                   <a href="#">Change Background photo</a>
-                  <a href= "#">Change Password</a>
+                  <Link to="/changepassword">Change Password</Link>
                 </div>
             </div>
           }
+      
 
           </div>
         </div>
@@ -130,14 +123,9 @@ const Profile = () => {
                 <Posts displayLimit={5} />
                 </div>
                 <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
-  
               </div>
         )}
       </div>
-      
-
-        
-
     </div>
   );
 };
