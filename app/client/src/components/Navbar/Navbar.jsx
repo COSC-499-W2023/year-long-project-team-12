@@ -38,7 +38,7 @@ const Navbar = () => {
                     <div className="wrapper">
 
                         <div className='left'>
-                            <div className='goBack'><ArrowBackIcon onClick={()=> navigate(-1)} /><ArrowForwardIcon onClick={()=> navigate(1)} /></div>
+                            <div className='goBack'><ArrowBackIcon className="navArrow" onClick={()=> navigate(-1)} /><ArrowForwardIcon className="navArrow" onClick={()=> navigate(1)} /></div>
                             <Link to="/home">
                                 <img src={logo} alt="logo"></img>
                             </Link>
