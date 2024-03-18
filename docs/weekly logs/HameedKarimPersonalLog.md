@@ -239,3 +239,18 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk9S2IssuesWL.png)
 
 ![Hameed Tasks](images/Hameed/Wk9S2Tasks.png)
+
+## Week 10 Log (March 11th - March 17th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Reworking theme for upload video page.
+* Re-working upload and record pages, to improve user privacy agreement. 
+* Fix button and navigation issues with navbar.
+* Add a timer and save video functions to video recording.
+* Working on Notifications API and blur features.
+
+![Hameed Tasks](images/Hameed/Wk10S2IssuesWL.png)
+
+![Hameed Tasks](images/Hameed/Wk10S2Tasks.png)
