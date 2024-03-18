@@ -10,6 +10,8 @@ Group member usernames:
 
 * @tmg-repo - Tyler Grant
 
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
 ## Features for milestone
 
 * Completed project plan (defined project features, timeline, and some user scenarios)
