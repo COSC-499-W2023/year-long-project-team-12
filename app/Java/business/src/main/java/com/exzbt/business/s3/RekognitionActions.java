@@ -93,6 +93,7 @@ public class RekognitionActions {
 
                 for (FaceDetection face: faces) {
                     String box = face.face().boundingBox().toString();
+                    String timestamp = face.timestamp().toString();
                     facesBoxes.add(box);
                 }
             } while (faceDetectionResponse != null && faceDetectionResponse.nextToken() != null);
