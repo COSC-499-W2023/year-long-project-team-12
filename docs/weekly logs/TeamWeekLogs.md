@@ -627,3 +627,51 @@ Group member usernames:
 ![FETests](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/20a4b2ce-34ad-46c4-96de-31dc67a2ad26)
 
 ![BETests](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/5bcca78c-65eb-41a5-8a07-6d1e543d0e9e)
+
+
+
+
+ # Team 12 Term2 Week 10 Log (Mar 10th - Mar 17th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* UI changes to fix recording action - adding a recording timer, button state
+* New features to change username and password
+* Improving upload video page to match app theme
+* Enabling a user to save a recorded video
+* Console watch tests for every page to view render issues
+
+
+## Burnup Chart 
+
+![BurnUp chart](./images/bup_wk9.png)
+
+## Kanban board tasks identified this week:
+
+![kanbanTasks1](./images/kanban_wk9.png)
+
+## Testing
+
+![imagefrontend](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/91e6c73c-d66d-4f9e-9b95-043d8e004c04)
+
+
+![imagebackend](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/20b99ac8-2fd4-4556-adbd-0b90f6599e06)
+
+
+
+
+
+
+
