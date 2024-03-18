@@ -138,3 +138,9 @@ Responded to issues on the Kanban board, namely:
 * COMPLETED: Implemented and added testing for the recording changes spoken about and done in some weeks previous too.
 
 ![T2 Week 9](./images/tyler_wk9t2.png)
+
+## T2 Week 10 Log (March 11th - March 17th)
+
+* IN PROCESS: started work on some issues in backlog, no code to push as of yet. Will plan on getting bonus marks next week from the carry-over.
+
+![T2 Week 9](./images/tyler_wk10s.png)
