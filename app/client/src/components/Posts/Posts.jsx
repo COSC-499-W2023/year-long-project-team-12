@@ -18,8 +18,9 @@ function Posts({ displayLimit }) {
     } else {
       getAssignedRequests(currentUser.userId)
         .then((resp) => {
-          setMyRequests(resp.data);
-        })
+          let sorted = resp.data.sort((a,b) => b.created - a.created);  
+          setMyRequests(sorted);
+        })  
         .catch((err) => {});
     }
   };
@@ -27,7 +28,7 @@ function Posts({ displayLimit }) {
   useEffect(() => {
     getMyRequests();
   }, []);
-
+  
   const displayedRequests = displayLimit ? myRequests.slice(0, displayLimit) : myRequests;
 
   return (
@@ -38,7 +39,8 @@ function Posts({ displayLimit }) {
         <div className="posts">
           {displayedRequests.map((request) => (
             <Post request={request} key={request.requestId} />
-          ))}
+          ))
+          }
         </div>
       )}
     </div>

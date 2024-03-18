@@ -56,22 +56,6 @@ const Profile = () => {
     setNotificationCount(notificationCount + 1);
   };
 
-  const handleSettingsClick = () => {
-    document.getElementById("myDropdown").classList.toggle("show");
-    window.onclick = function(event){
-      if (!event.target.matches('.settingsbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-     }
-  }
-
   const dropdownSettings = () => {
     setShowSettings(!showSettings);
   }
@@ -139,14 +123,9 @@ const Profile = () => {
                 <Posts displayLimit={5} />
                 </div>
                 <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
-  
               </div>
         )}
       </div>
-      
-
-        
-
     </div>
   );
 };

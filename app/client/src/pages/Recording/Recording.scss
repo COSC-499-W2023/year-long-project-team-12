@@ -1,4 +1,4 @@
-.recording-container, .termsOfAgreement {
+.recording-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,37 +10,147 @@
     h2 {
         color: var(--body_color);
     }
-}
 
-.btnsection {
-    display: inline-flex;
-    margin-top: 10px; 
-}
-
- button {
-    min-width: 100px;
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: var(--body_background);
-    color: var(--body_color);
-    font-weight: bold;
-    cursor: pointer;
-    font-family: 'Open Sans';
-    border-radius: 10px;
+    .save-confirmation {
+        color: var(--body_color);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        width: 400px;
+        background-color: var(--body_background);
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
     
-    &:hover {
-        background-color: var(--body_color);
-        color: var(--body_background);
-    }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            border: none;
+            border-bottom: 1px solid #35a6b4;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            background-color: var(--body_background);
+            color: var(--body_color);
+            outline: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 10%;
+            right: 20px;
+
+            :hover{
+                color: #35a6b4;
+                cursor: pointer;
+            }
+        }
+    
+        .button-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        button {
+          border: none;
+          color: var(--body_background);
+          cursor: pointer;
+          outline: 0;
+          border-radius: 7px;
+          background-color: #35a6b4;
+          font-weight: 400;
+          font-size: 16px;
+          box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+          transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+          z-index: 9999;
+        }
+    
+        button:hover {
+          background-color: var(--body_color);
+          color: var(--body_background);
+          box-shadow: none;
+        }
+      }
 }
+
+.webcamVideo {
+    margin: 20px;
+    padding: 20px 30px;
+    background-color: var(--body_background);
+}
+
 .error-label{
     color: red;
+    font-size: 13px;
 }
 
-.recording-video {
-    margin-top: 20px;
+#recordingInfo {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
-.checkbox-container label{
-   color: var(--body_color);;
+
+#recordingSymbol {
+    color: red;
+    width: 50px;
+    height: 50px;
+}
+
+.termsOfAgreement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--requests_background);
+    min-height: 550px;
+    min-width: 200px;
+    padding: 10px;
+    color: var(--body_color);
+}
+
+.recording-container{
+    .btnsection {
+        display: inline-flex;
+        margin-top: 10px; 
+    }
+    
+     button {
+        min-width: 100px;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        background-color: var(--body_background);
+        color: var(--body_color);
+        font-weight: bold;
+        cursor: pointer;
+        font-family: 'Open Sans';
+        border-radius: 10px;
+        
+        &:hover {
+            background-color: var(--body_color);
+            color: var(--body_background);
+        }
+    }
+
+    .recording-video {
+        margin-top: 20px;
+    }
+    .checkbox-container {
+        margin: 10px;
+        margin-top: 25px;
+        label{
+            color: var(--body_color);;
+        }
+    }
 }

@@ -3,7 +3,6 @@ import "./post.scss";
 import { Link } from 'react-router-dom';
 import {useAuth} from "../../context/authContext";
 import {getUserById} from "../../services/ClientAPI";
-import handleNewRequest from "../../pages/Profile/Profile"
 import CloseIcon from '@mui/icons-material/Close';
 
 function Post({request}) {
