@@ -1,15 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Webcam from "react-webcam";
 import Modal from "react-modal";  
 import "./Recording.scss";
-import {useAuth} from "../../context/authContext";
-import {uploadRequestVideo} from "../../services/ClientAPI";
-import {Navigate, useNavigate} from "react-router-dom";
+import { useAuth } from "../../context/authContext";
+import { uploadRequestVideo } from "../../services/ClientAPI";
+import { useNavigate } from "react-router-dom";
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { useStopwatch } from 'react-timer-hook';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Recording = () => {
   let navigate = useNavigate();
   const { currentRequest } = useAuth();
-  const webcamRef = useRef(null);
+  const [webcamElement, setWebcamElement] = useState(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
@@ -18,6 +21,8 @@ const Recording = () => {
   const [isTermsModalOpen, setTermsModalOpen] = useState(false); 
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [errorLabel, setErrorLabel] = useState("");
+  const [namingVideoDialog, setNamingVideoDialog] = useState(false);
+  const {seconds,minutes,hours,start,pause,reset} = useStopwatch();
 
   useEffect(() => {
     return () => {
@@ -29,9 +34,11 @@ const Recording = () => {
 
   const startRecording = () => {
     setCapturing(true);
-    mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
+    start();
+    mediaRecorderRef.current = new MediaRecorder(webcamElement, {
       mimeType: "video/webm",
     });
+
     mediaRecorderRef.current.addEventListener("dataavailable", handleDataAvailable);
     mediaRecorderRef.current.start();
   };
@@ -39,6 +46,7 @@ const Recording = () => {
   const stopRecording = () => {
     mediaRecorderRef.current.stop();
     setCapturing(false);
+    pause();
     setStage('review');
   };
 
@@ -49,10 +57,6 @@ const Recording = () => {
   };
 
   const approveVideo = async () => {
-    if (!agreeTerms) {
-      setErrorLabel("Please agree to the Terms of Agreement");
-      return;
-    }
     const blob = new Blob(recordedChunks, { type: "video/webm" });
     try {
       const requestObject = new FormData();
@@ -70,10 +74,16 @@ const Recording = () => {
 
   const deleteVideo = () => {
     setRecordedChunks([]);
+    reset();
     setStage('record'); 
+    setWebcamElement(null);
   };
 
   const enableCamera = () => {
+    if (!agreeTerms) {
+      setErrorLabel("Please agree to the Terms of Agreement");
+      return;
+    }
     setCameraEnabled(true);
     setStage('record'); 
   };
@@ -84,29 +94,74 @@ const Recording = () => {
   const closeTermsModal = () => {
     setTermsModalOpen(false);
   };
+
   const handleCheckboxChange = () => {
     setAgreeTerms(!agreeTerms);
     setErrorLabel("");
   };
+
   return (
     <div className="recording-container">
       {(stage === 'setup' || stage === 'record') && <h2>Record your video</h2>}
 
       {stage === 'setup' && !cameraEnabled && (
-        <button className="btn btn-primary" onClick={enableCamera}>
-          Turn on Camera
-        </button>
+        <>
+          <button className="btn btn-primary" onClick={enableCamera}>
+            Turn on Camera
+          </button>
+
+          <div className="checkbox-container">  
+          <input type="checkbox" checked={agreeTerms} onChange={handleCheckboxChange} />
+            <label>
+              I have read and agree to the <span id='termsofAgreementLink' onClick={openTermsModal}>Terms of Agreement and Privacy Policy</span>
+            </label>
+          </div>
+
+          {errorLabel && <p className="error-label">{errorLabel}</p>}
+        </>
       )}
 
+      {namingVideoDialog &&
+          <div className='modalbackground'>
+              <div className="save-confirmation">
+                  <label>Save Video</label>
+                  <input type="text" placeholder="Video Name" className="videoName"/>
+
+                  <div className="button-container">
+                      <button>Save</button>
+                  </div>
+
+                  <div className='close'>   
+                      <CloseIcon onClick={() => setNamingVideoDialog(false)}/>
+                  </div> 
+              </div>
+          </div>
+      }
+          
       {stage === 'record' && cameraEnabled && (
         <>
-          <Webcam muted={true} audio={true} ref={webcamRef} height={400} width={500} />
-          {!capturing && recordedChunks.length === 0 && (
+          <Webcam
+            className="webcamVideo"
+            muted={true}
+            audio={true}
+            height={400}
+            width={500}
+            onUserMedia={(stream) => setWebcamElement(stream)}
+          />
+          {capturing && (
+            <div id="recordingInfo">
+              <FiberManualRecordIcon id="recordingSymbol"/>
+              <div>
+                <span>{String(hours).padStart(2, '0')}</span>:<span>{String(minutes).padStart(2, '0')}</span>:<span>{String(seconds).padStart(2, '0')}</span>
+              </div>
+            </div>
+          )}
+          {!capturing && recordedChunks.length === 0 && webcamElement && (
             <button className="btn btn-primary" onClick={startRecording}>
               Start Capture
             </button>
           )}
-          {capturing && (
+          {capturing && (          
             <button className="btn btn-danger" onClick={stopRecording}>
               Stop Capture
             </button>
@@ -119,7 +174,7 @@ const Recording = () => {
           <h2>Review your video</h2>
           <video
             id="video-replay"
-            className="recording-video"
+            className="recording-video webcamVideo"
             height="400"
             width="500"
             controls
@@ -131,24 +186,12 @@ const Recording = () => {
             />
           </video>
 
-          <div className="checkbox-container">
-            <label>
-              <input type="checkbox" checked={agreeTerms} onChange={handleCheckboxChange} />
-              I agree to the Terms of Agreement
-            </label>
-          </div>
-
-          {errorLabel && <p className="error-label">{errorLabel}</p>}
-          
           <div className="btnsection">
-          <button className="btn btn-approve" onClick={openTermsModal}>
-              View Terms of agreement
-            </button>
-            <button className="btn btn-approve" >
-              Save and Come back
+            <button className="btn btn-approve" onClick={() => setNamingVideoDialog(true)}>
+              Save Video
             </button>
             <button className="btn btn-approve" onClick={approveVideo} >
-              Approve and submit video
+              Submit
             </button>
             
             <button className="btn btn-danger" onClick={deleteVideo}>
@@ -176,5 +219,3 @@ const Recording = () => {
 };
 
 export default Recording;
-
-
