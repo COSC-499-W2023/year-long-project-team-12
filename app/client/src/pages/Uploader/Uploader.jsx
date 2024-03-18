@@ -58,6 +58,7 @@ function Uploader() {
       };
   return (
     <main className='upload-main'>
+        <div className='upload-container'>
         <form data-testid="upload-form" className='upload-form'
         onClick={() => {
                 if(video == null) {
@@ -85,8 +86,8 @@ function Uploader() {
         <section className='uploaded-row'>
             <AiFillFileImage color='#1475cf'/>
             <span className='upload-content'>
-                {fileName} - 
-                <MdDelete  
+                <span id='filename'>{fileName}</span> - 
+                <MdDelete id='deleteButton'
                 onClick={()=>{
                     setFileName("No Selected File")
                     setVideo(null)
@@ -98,15 +99,13 @@ function Uploader() {
         <div className="checkbox-container">
             <label>
               <input type="checkbox" checked={agreeTerms} onChange={handleCheckboxChange} />
-              I agree to the Terms of Agreement
+              I have read and agree to the <span id='termsofAgreementLink' onClick={openTermsModal}>Terms of Agreement and Privacy Policy</span>
             </label>
           </div>
 
           {errorLabel && <p className="error-label">{errorLabel}</p>}
-        <div>
-        <button data-testid="upload-button" className='button' onClick={handleUpload}>Upload</button>
-        <button className="button" onClick={openTermsModal}>View Terms of agreement</button>
-        </div>
+       
+        <button data-testid="upload-button" className='button' onClick={handleUpload}>Submit</button>
         
         <Modal isOpen={isTermsModalOpen} onRequestClose={closeTermsModal}>
       <div className="termsOfAgreement">
@@ -121,6 +120,7 @@ function Uploader() {
       </div>
         
       </Modal>
+      </div>
     </main>
   )
 }
