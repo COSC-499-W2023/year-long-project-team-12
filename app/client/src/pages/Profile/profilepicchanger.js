@@ -35,7 +35,6 @@ const ProfilePicChanger = () => {
       try {
         if(currentUser.profileImageId){
           const imageURL = await getUserProfileImage(currentUser.userId);
-          console.log(currentUser);
           setImage(imageURL);
         }
       } catch (err) {

@@ -2,7 +2,6 @@ import "./profile.scss";
 import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
 import {useAuth} from "../../context/authContext";
-import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -47,22 +46,6 @@ const Profile = () => {
   const handleNewRequest = () => {
     setNotificationCount(notificationCount + 1);
   };
-
-  const handleSettingsClick = () => {
-    document.getElementById("myDropdown").classList.toggle("show");
-    window.onclick = function(event){
-      if (!event.target.matches('.settingsbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-     }
-  }
 
   const dropdownSettings = () => {
     setShowSettings(!showSettings);
@@ -130,14 +113,9 @@ const Profile = () => {
                 <Posts displayLimit={5} />
                 </div>
                 <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
-  
               </div>
         )}
       </div>
-      
-
-        
-
     </div>
   );
 };
