@@ -25,7 +25,7 @@ const Footer = () => {
                 <div className="item">
                     <h1>Contact</h1>
                     <span data-testid="contact">
-                    Our team is dedicated to providing you with an exceptional experience. If you have questions or need assistance, our support team is always on standby. We ensure that every user gets the guidance they need to navigate our platform with ease. Your success is our priority, and we are here to support you every step of the way in your journey towards landing your ideal job.
+                    Our team is dedicated to providing you with an exceptional experience. If you have questions or need assistance, our support team is always on standby. We ensure that every user gets the guidance they need to navigate our platform with ease. Your success is our priority, and we are here to support you every step of the way in your journey towards landing your ideal job!
                     </span>
                 </div>
             </div>
