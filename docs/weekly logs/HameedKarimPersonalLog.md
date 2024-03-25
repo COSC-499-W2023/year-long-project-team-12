@@ -254,3 +254,18 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk10S2IssuesWL.png)
 
 ![Hameed Tasks](images/Hameed/Wk10S2Tasks.png)
+
+
+## Week 11 Log (March 18th - March 24th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* More changes to APIs - separate APIs for saved videos and request videos.
+* Fix request submission button issue, where button is now disabled.
+* Enabling front end changes to save and retrieve user videos.
+* Working on Notifications API and blur features.
+
+![Hameed Tasks](images/Hameed/Wk11S2IssuesWL.png)
+
+![Hameed Tasks](images/Hameed/Wk11S2Tasks.png)

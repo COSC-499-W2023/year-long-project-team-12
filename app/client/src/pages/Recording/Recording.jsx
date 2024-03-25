@@ -3,7 +3,7 @@ import Webcam from "react-webcam";
 import Modal from "react-modal";  
 import "./Recording.scss";
 import { useAuth } from "../../context/authContext";
-import { uploadRequestVideo } from "../../services/ClientAPI";
+import { uploadRequestVideo, saveCreatedVideo, getVideoDetailsByVideoName } from "../../services/ClientAPI";
 import { useNavigate } from "react-router-dom";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { useStopwatch } from 'react-timer-hook';
@@ -11,7 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const Recording = () => {
   let navigate = useNavigate();
-  const { currentRequest } = useAuth();
+  const { currentUser, currentRequest } = useAuth();
   const [webcamElement, setWebcamElement] = useState(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
@@ -23,7 +23,10 @@ const Recording = () => {
   const [errorLabel, setErrorLabel] = useState("");
   const [namingVideoDialog, setNamingVideoDialog] = useState(false);
   const {seconds,minutes,hours,start,pause,reset} = useStopwatch();
-
+  const [submitting, setSubmitting] = useState(false);
+  const [videoName, setVideoName] = useState("");
+  const [currentVideoId, setCurrentVideoId] = useState("");
+  
   useEffect(() => {
     return () => {
       if (mediaRecorderRef.current && mediaRecorderRef.current.state === "recording") {
@@ -57,17 +60,20 @@ const Recording = () => {
   };
 
   const approveVideo = async () => {
+    setSubmitting(true);
     const blob = new Blob(recordedChunks, { type: "video/webm" });
     try {
       const requestObject = new FormData();
+      requestObject.append('videoId', currentVideoId);
       requestObject.append('requestId', currentRequest.requestId);
       requestObject.append('video', blob);
       requestObject.append('created', new Date());
-      requestObject.append('userId', currentRequest.assigneeId);
+      requestObject.append('userId', currentUser.userId);
 
       await uploadRequestVideo(currentRequest.requestId, requestObject);
       navigate("/profile");
     } catch (error) {
+      setSubmitting(false);
       console.error('Error uploading video', error);
     }
   };
@@ -87,6 +93,35 @@ const Recording = () => {
     setCameraEnabled(true);
     setStage('record'); 
   };
+
+  const saveVideo = async () => {
+    const blob = new Blob(recordedChunks, { type: "video/webm" });
+    
+    try {
+      const resp = await getVideoDetailsByVideoName(videoName);
+      if(resp.data.videoName === videoName) {
+        return;
+      }
+    } catch (err) {
+        console.error('Error fetching video details');
+    }
+
+    try {
+      const saveVideoObject = new FormData();
+      saveVideoObject.append('video', blob);
+      saveVideoObject.append('created', new Date());
+      saveVideoObject.append('userId', currentUser.userId);
+      saveVideoObject.append('videoName', videoName);
+
+      await saveCreatedVideo(currentUser.userId, saveVideoObject).then(resp => {
+        setCurrentVideoId(resp.data);
+        setNamingVideoDialog(false);
+      });
+    } catch (error) {
+      console.error('Error saving video', error);
+    }
+  };
+
   const openTermsModal = () => {
     setTermsModalOpen(true);
   };
@@ -121,13 +156,13 @@ const Recording = () => {
         </>
       )}
 
-      {namingVideoDialog &&
+      {namingVideoDialog && 
           <div className='modalbackground'>
               <div className="save-confirmation">
                   <label>Save Video</label>
-                  <input type="text" placeholder="Video Name" className="videoName"/>
+                  <input type="text" placeholder="Video Name" className="videoName" value={videoName} onChange={(e) => setVideoName(e.target.value)}/>
 
-                  <div className="button-container">
+                  <div className="button-container" onClick={saveVideo}>
                       <button>Save</button>
                   </div>
 
@@ -185,18 +220,23 @@ const Recording = () => {
               type="video/webm"
             />
           </video>
-
+          
+          
           <div className="btnsection">
-            <button className="btn btn-approve" onClick={() => setNamingVideoDialog(true)}>
-              Save Video
-            </button>
-            <button className="btn btn-approve" onClick={approveVideo} >
-              Submit
-            </button>
-            
-            <button className="btn btn-danger" onClick={deleteVideo}>
-              Retry
-            </button>
+            {submitting? 
+            "Please Wait":
+            <>
+              <button className="btn btn-approve" onClick={() => setNamingVideoDialog(true)}>
+                Save Video
+              </button>
+              <button className="btn btn-approve" onClick={approveVideo} >
+                Submit
+              </button>
+              
+              <button className="btn btn-danger" onClick={deleteVideo}>
+                Retry
+              </button>
+            </>}
           </div>
         </>
       )}

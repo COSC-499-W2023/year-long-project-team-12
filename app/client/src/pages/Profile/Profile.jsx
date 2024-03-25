@@ -8,47 +8,27 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ProfilePicChanger from "./profilepicchanger.js";
 import Posts from "../../components/Posts/Posts.jsx";
-
-
-
+import Videos from "../../components/Videos/Videos.jsx";
 
 
 const Profile = () => {
-  
-
-  const [image, setImage] = useState(null);
   const { currentUser } = useAuth();
-  const [open, setOpen] = useState(false);
   const [showRequests, setShowRequests] = useState(false);
+  const [showVideos, setShowVideos] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [text, setText]  = useState("Show");
   const [notificationCount, setNotificationCount] = useState(2);
-  const [showModal, setShowModal] = useState(false);
   
-  const toggle = () => {
-    setOpen(!open);
-    if (!open){
-      setText("Hide")
-    }
-    else{
-      setText("Show")
-    }
-  };
-
-
- 
-   
-
   const handleMyRequestsClick = () => {
     setShowRequests(!showRequests);
+    setShowVideos(false);
   };
 
   const handleRecordedVideosClick = () => {
-     console.log("Recorded Videos button clicked!");
+    setShowVideos(!showVideos);
+    setShowRequests(false);
   };
 
   const handleNotificationsClick = () => {
-    console.log("Notifications button clicked!");
     setNotificationCount(0);
   };
 
@@ -87,8 +67,8 @@ const Profile = () => {
               </div>
             </div>
             
-            <button onClick={handleMyRequestsClick} className="myRequestsButton"> {showRequests ? 'Hide My Requests' : 'Show My Requests'} </button>  
-            <button onClick={handleRecordedVideosClick} className="recordedVideosButton">Recorded Videos</button>
+            <button onClick={handleMyRequestsClick} className="myRequestsButton"> {showRequests ? 'Hide My Requests' : 'View My Requests'} </button>  
+            <button onClick={handleRecordedVideosClick} className="recordedVideosButton">{showVideos ? 'Hide My Videos' : "Saved Videos"} </button>
             <button onClick={handleNotificationsClick} className="notificationsButton">
             <NotificationsIcon fontSize="large"
              className="notificationsButton"/>
@@ -121,6 +101,16 @@ const Profile = () => {
                 <h2>My Requests</h2>
                 <div className="collapsibleLists">
                 <Posts displayLimit={5} />
+                </div>
+                <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
+              </div>
+        )}
+
+        {showVideos && (
+              <div className="collapsibleContainer">
+                <h2>My Videos</h2>
+                <div className="collapsibleLists">
+                  <Videos />
                 </div>
                 <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
               </div>

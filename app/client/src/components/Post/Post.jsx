@@ -49,7 +49,7 @@ function Post({request}) {
                 <span data-testid="jobTitle" className='jobTitle'>Title: {request.title}</span>
                 <span></span>
                 {(() => {
-                    if(currentUser.role === 'ADMIN'){
+                    if(request.creatorId === currentUser.userId){
                         return (<span data-testid="companyName" className='companyName'>To: {requestAssignee}</span>)
                     }else {
                         return (<span data-testid="companyName" className='companyName'>From: {requestCreator}</span>)
@@ -66,7 +66,7 @@ function Post({request}) {
             </div>
             
             {(() => {
-                if (currentUser.role === 'ADMIN') {
+                if (request.creatorId === currentUser.userId) {
                     return (
                         <div className='buttonContainer'>
                             <div className='info' id="uploadb">

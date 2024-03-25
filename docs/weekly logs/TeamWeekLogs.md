@@ -673,6 +673,44 @@ Group member usernames:
 ![imagebackend](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/20b99ac8-2fd4-4556-adbd-0b90f6599e06)
 
 
+ # Team 12 Term2 Week 11 Log (Mar 18th - Mar 24th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* Extra UI changes to fix submitting action - disabling button after initial submit to avoid DB overwrite
+* Changing save video feature to check if video with same name already exists before saving
+* Feature to enable Admin user to both create and recieve requests
+* Profile page changes and error handling when user retrieves videos
+
+## Burnup Chart 
+
+![BurnUp chart]()
+
+## Kanban board tasks identified this week:
+
+![Kanban board issues]()
+
+![image]()
+
+
+## Testing
+
+![imagefrontend]()
+
+
+![imagebackend]()
 
 
 
