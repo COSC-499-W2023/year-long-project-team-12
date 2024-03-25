@@ -10,7 +10,6 @@ const Videos = () => {
   const getMyVideos = () => {
     getVideoDetailsListByCreatorId(currentUser.userId)
       .then((resp) => {
-        console.log(resp.data);
         setMyVideos(resp.data);
       })
       .catch((err) => {});
