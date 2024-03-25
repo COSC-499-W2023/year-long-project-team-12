@@ -696,23 +696,19 @@ Group member usernames:
 
 ## Burnup Chart 
 
-![BurnUp chart]()
+![BurnUp chart](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/773327ed-30f3-473e-806c-d74b133f7b6b)
 
 ## Kanban board tasks identified this week:
 
-![Kanban board issues]()
+![Kanban board issues](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/172502d5-a6eb-412c-9282-d1605f20126b)
 
-![image]()
-
+![UpdatedIssues](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/eaba58c9-4e46-4a7c-8386-92b575a9b93f)
 
 ## Testing
 
-![imagefrontend]()
+![imageFE](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/39361ad6-3b3c-4989-8821-fc0583e14100)
 
-
-![imagebackend]()
-
-
+![imageBE](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/8f28f6a0-40ce-420a-8611-1855bb194567)
 
 
 
