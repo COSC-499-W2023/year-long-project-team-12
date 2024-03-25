@@ -95,5 +95,34 @@ Group Member : Jusnoor Kaur Sachdeva
 
 
 
+<h3>Week 6 log (February 12th - February 18th)</h3>
+Group Member : Jusnoor Kaur Sachdeva 
+
+* Team discussions and meetings
+* personal log and check in
+* assigned some tasks to myself regarding the designing and documentation of the app
+* attempted unit testing to help in future
 
 
+
+![IMG_0123](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/be39962f-0c3f-4f17-b47a-e366afc6db58)
+
+
+<h3>Week 9 log (March 4th - March 10th)</h3>
+Group Member : Jusnoor Kaur Sachdeva 
+
+* Team discussions and meetings
+* peer testing review
+* analysed the pages to assign some changes regarding the designing of the pages
+
+![IMG_0122](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/b3978e78-772d-4d46-b854-a3a70e3589b7)
+
+<h3>Week 10 log (March 10th - March 17th)</h3>
+Group Member : Jusnoor Kaur Sachdeva 
+
+* Team discussions and meetings
+* completed the weekly log
+* attempts at editing the footer and the job postings page
+
+
+![IMG_0122](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/b3978e78-772d-4d46-b854-a3a70e3589b7)

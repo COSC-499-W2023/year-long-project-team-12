@@ -135,3 +135,8 @@
 - Researching on how to do use one component for multiple purposes e.g having a change user info component that can do the work of changing a password or changing full name based on what prop is passed in the argument. (it took hours to do but i couldnt figure it out, i ended up using two components but the same css file).
 - allowing users to change their fullname and password.
 - tests for the change name and password feature.
+
+
+## Week 11 Mar 17th - Mar 24th 
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/8731e41a-68e5-4cbc-a80e-84f6b2fe163f)
+
