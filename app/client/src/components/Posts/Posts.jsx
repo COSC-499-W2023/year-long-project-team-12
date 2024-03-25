@@ -10,9 +10,17 @@ function Posts({ displayLimit }) {
 
   const getMyRequests = () => {
     if (currentUser.role === 'ADMIN') {
+      let created;
+      let assigned;
       getUserRequests(currentUser.userId)
         .then((resp) => {
-          setMyRequests(resp.data);
+          created = resp.data;
+          getAssignedRequests(currentUser.userId)
+            .then((resp) => {
+              assigned = resp.data;
+              let sorted = created.concat(assigned).sort((a,b) => b.created - a.created); 
+              setMyRequests(sorted);
+            })
         })
         .catch((err) => {});
     } else {
