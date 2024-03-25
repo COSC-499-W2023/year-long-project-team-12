@@ -88,6 +88,15 @@ export const saveRequest = async (request) => {
     }
 }
 
+export const saveCreatedVideo = async (creatorId, videoObject) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/video/${creatorId}/saveVideo`,
+            videoObject,  getAuthConfigMultiPart())
+    }catch (e) {
+        throw e;
+    }
+}
+
 export const updateRequest = async (requestId, request) => {
     try {
         return await axios.post(`${host_address}/api/v1/requests/edit/${requestId}`,
@@ -134,9 +143,28 @@ export const getVideoDetailsByRequestId = async (requestId) => {
     }
 }
 
-export const getVideoByVideoId = (videoId) =>
-    `${host_address}/api/v1/video/${videoId}/video`;
+export const getVideoDetailsByVideoName = async (videoName) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/video/${videoName}/videoInfo`, getAuthConfig())
+    }catch (e) {
+        throw e;
+    }
+}
 
+
+export const getVideoDetailsListByCreatorId = async (creatorId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/video/${creatorId}/videos`, getAuthConfig())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const getRequestVideoByVideoId = (videoId) =>
+    `${host_address}/api/v1/video/${videoId}/requestVideo`;
+
+export const getSavedVideoByVideoId = (videoId) =>
+    `${host_address}/api/v1/video/${videoId}/savedVideo`;
 
 export const updateCustomer = async (id, update) => {
     try {
