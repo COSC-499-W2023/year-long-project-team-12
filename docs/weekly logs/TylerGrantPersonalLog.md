@@ -144,3 +144,7 @@ Responded to issues on the Kanban board, namely:
 * IN PROCESS: started work on some issues in backlog, no code to push as of yet. Will plan on getting bonus marks next week from the carry-over.
 
 ![T2 Week 9](./images/tyler_wk10s.png)
+
+## T2 Week 11 + 12 Log (March 18th - March 31st)
+
+![T2 Week 9](./images/week12_t2tyler.png)
