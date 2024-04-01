@@ -38,7 +38,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET,
                                 "/healthPing",
                                 "/api/v1/users/*/profileImage",
-                                "/api/v1/video/*/video",
+                                "/api/v1/video/*/requestVideo",
+                                "/api/v1/video/*/savedVideo",
                                 "/actuator/**")
                         .permitAll()
                         .anyRequest()
