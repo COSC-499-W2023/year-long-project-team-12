@@ -710,5 +710,39 @@ Group member usernames:
 
 ![imageBE](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/8f28f6a0-40ce-420a-8611-1855bb194567)
 
+ # Team 12 Term2 Week 11 Log (Mar 18th - Mar 24th)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* Backend changes for sending videos.
+* New data tables added.
+* Password? Forgot password features
+
+## Burnup Chart 
+
+![BurnUp chart](./images/burnupchart_12_2.png)
+
+## Kanban board tasks identified this week:
+
+![Kanban board issues](./images/kanban_wk12_2.png)
+
+## Testing
+
+![imageFE](./images/fetestsweek12.png)
+
+![imageBE](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/8f28f6a0-40ce-420a-8611-1855bb194567)
+
 
 
