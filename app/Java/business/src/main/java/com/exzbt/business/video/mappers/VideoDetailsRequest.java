@@ -13,16 +13,22 @@ import java.util.Date;
 @Setter
 public class VideoDetailsRequest {
     private String videoId;
-    private String requestId;
     private String creatorId;
+    private String videoName;
     private Date created;
+    @Getter(AccessLevel.NONE)
+    private Boolean saved;
+    public Boolean isSaved() {
+        return this.saved;
+    }
 
     public Video convertFromDTO() {
         Video video = new Video();
         video.setVideoId(this.getVideoId());
         video.setCreatorId(this.getCreatorId());
         video.setCreated(this.getCreated());
-        video.setRequestId(this.getRequestId());
+        video.setVideoName(this.getVideoName());
+        video.setSaved(this.isSaved());
         return video;
     }
 }
