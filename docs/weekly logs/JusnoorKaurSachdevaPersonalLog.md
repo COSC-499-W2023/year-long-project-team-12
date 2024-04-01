@@ -126,3 +126,17 @@ Group Member : Jusnoor Kaur Sachdeva
 
 
 ![IMG_0122](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/b3978e78-772d-4d46-b854-a3a70e3589b7)
+
+
+
+<h3>Week 10 log (March 10th - March 17th)</h3>
+Group Member : Jusnoor Kaur Sachdeva 
+
+* Team discussions
+* Team meetings
+* Completed the weekly log
+* attempts at editing job postings page
+* Learning to creat API for sending notification to user after registering
+
+![IMG_0122](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/b3978e78-772d-4d46-b854-a3a70e3589b7)
+
