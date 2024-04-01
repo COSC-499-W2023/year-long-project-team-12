@@ -83,7 +83,7 @@ Group Member : Jusnoor Kaur Sachdeva
 
 
 
-<h3>Week 3 log (January 29th - February 4th)</h3>
+<h3>Week 4 log (January 29th - February 4th)</h3>
 Group Member : Jusnoor Kaur Sachdeva 
 
 * Team discussions
@@ -100,8 +100,8 @@ Group Member : Jusnoor Kaur Sachdeva
 
 * Team discussions and meetings
 * personal log and check in
-* assigned some tasks to myself regarding the designing and documentation of the app
-* attempted unit testing to help in future
+* reserched and browsed for some tasks concerning the design and documentation of the app
+* tried some attempts of unit testing to get a better understanding 
 
 
 
@@ -112,8 +112,8 @@ Group Member : Jusnoor Kaur Sachdeva
 Group Member : Jusnoor Kaur Sachdeva 
 
 * Team discussions and meetings
-* peer testing review
-* analysed the pages to assign some changes regarding the designing of the pages
+* completed the peer testing review
+* went through the pages of the application to look for enhancement and tasks to uplift the look of the application
 
 ![IMG_0122](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/b3978e78-772d-4d46-b854-a3a70e3589b7)
 
@@ -121,8 +121,26 @@ Group Member : Jusnoor Kaur Sachdeva
 Group Member : Jusnoor Kaur Sachdeva 
 
 * Team discussions and meetings
-* completed the weekly log
-* attempts at editing the footer and the job postings page
+* completed the weekly log for our team 
+* made a few attempts at editing the footer
+* Tried to go over the job postings app to make changes to make it look better if needeed 
 
 
-![IMG_0122](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/b3978e78-772d-4d46-b854-a3a70e3589b7)
+![Screenshot 2024-03-20 at 11 22 07 PM](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/17b2347c-3bdf-4835-9c82-3b46a57af3ed)
+
+
+<h3>Week 11 log (March 17th - March 24th)</h3>
+Group Member : Jusnoor Kaur Sachdeva 
+
+* Participated in team discussions and meetings
+* edited the footer page to make changes to the contact information of the application
+* in progress of adding a registration page so that email notification is setup
+* aim to work on the API required for email notification to be sent to user when registered
+
+
+
+![Screenshot 2024-03-24 at 11 27 08 PM](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/93a6331e-6c72-4363-98c1-5cf6f6d2fb32)
+
+
+
+
