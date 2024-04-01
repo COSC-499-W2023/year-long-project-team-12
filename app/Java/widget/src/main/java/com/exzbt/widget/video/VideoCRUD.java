@@ -2,6 +2,8 @@ package com.exzbt.widget.video;
 
 import com.exzbt.business.video.VideoService;
 import com.exzbt.business.video.mappers.VideoDetailsDTO;
+import com.exzbt.business.video.mappers.VideoSubmissionDTO;
+import com.exzbt.transaction.video.impl.VideoSubmission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +23,19 @@ public class VideoCRUD {
         return videoService.getVideosByCreatorId(creatorId);
     }
 
-    @GetMapping("{requestId}/videoInfo")
-    public VideoDetailsDTO getVideoDetailsByRequestId(@PathVariable("requestId") String requestId) {
-        return videoService.getVideoByRequestId(requestId);
+    @GetMapping("{videoId}/videoDetails")
+    public VideoDetailsDTO getVideoDetailsByVideoId(@PathVariable("videoId") String videoId) {
+        return videoService.getVideoByVideoId(videoId);
+    }
+
+    @GetMapping("{videoName}/videoInfo")
+    public VideoDetailsDTO getVideoDetailsByVideoName(@PathVariable("videoName") String videoName) {
+        return videoService.getVideoByVideoName(videoName);
+    }
+
+    @GetMapping("{requestId}/videoSubmissions")
+    public List<VideoSubmissionDTO> getVideoSubmissionsByRequestId(@PathVariable("requestId") String requestId) {
+        return videoService.getVideoSubmissionsByRequestId(requestId);
     }
 
     @DeleteMapping("{videoId}")
@@ -35,11 +47,12 @@ public class VideoCRUD {
             value = "{creatorId}/saveVideo",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE
     )
-    public void saveCreatedVideo(
+    public String saveCreatedVideo(
             @PathVariable("creatorId") String creatorId,
             @RequestPart("video") MultipartFile file,
+            @RequestParam("videoName") String videoName,
             @RequestParam("created") Date created) {
-        videoService.saveCreatedVideo(creatorId, file, created);
+        return videoService.saveCreatedVideo(creatorId, videoName, file, created);
     }
 
     @PostMapping(
@@ -53,11 +66,21 @@ public class VideoCRUD {
     }
 
     @GetMapping(
-            value = "{videoId}/video",
+            value = "{videoId}/requestVideo",
             produces = "video/mp4"
     )
-    public byte[] getVideoByVideoId(@PathVariable("videoId") String videoId){
-        return videoService.getRequestVideoById(videoId);
+    public byte[] getRequestVideoByVideoId(
+            @PathVariable("videoId") String videoId,
+            @RequestParam("requestId") String requestId){
+        return videoService.getRequestVideoById(requestId, videoId);
+    }
+
+    @GetMapping(
+            value = "{videoId}/savedVideo",
+            produces = "video/mp4"
+    )
+    public byte[] getSavedVideoByVideoId(@PathVariable("videoId") String videoId){
+        return videoService.getSavedVideoById(videoId);
     }
 }
 

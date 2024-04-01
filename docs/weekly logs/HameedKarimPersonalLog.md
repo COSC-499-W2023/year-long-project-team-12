@@ -269,3 +269,18 @@ Group member username:
 ![Hameed Tasks](images/Hameed/Wk11S2IssuesWL.png)
 
 ![Hameed Tasks](images/Hameed/Wk11S2Tasks.png)
+
+## Week 12 Log (March 25th - March 31st)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* More changes to APIs and UI - user can save, name and view video, sorted according to dates. 
+* DB schema changes, adding video submission table.
+* Popup notifications enabled for successful API calls.
+* Working on Comments, Notifications, and blur APIs.
+
+![HameedTasks](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/f40fe59a-248b-4eee-b982-3bdad1f93236)
+
+![HameedTasks](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/3cc16ff8-9300-4ff0-a1cb-47f2febee726)
+
