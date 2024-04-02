@@ -23,6 +23,7 @@ const Profilepic = () => {
     }
   }, [avatarUrl]);
 
+
   return (
     <div className="flex flex-col items-center pt-12">
       <div className="relative">
@@ -30,6 +31,36 @@ const Profilepic = () => {
           src={avatarUrl || <PersonAddAltIcon fontSize="large" className='img-display-before' />}
           alt="Avatar"
           className="img-display-after"
+
+    const retrieveUserProfileImage = async () => {
+      try {
+        if(currentUser.profileImageId){
+          const imageURL = await getUserProfileImage(currentUser.userId);
+          setImage(imageURL);
+        }
+      } catch (err) {
+          console.error('Error fetching profile image:', err);
+      }
+    };
+  
+    const handleButtonClick = () => {
+      // Trigger click on hidden file input
+      document.getElementById('fileInput').click();
+    };
+  
+    useEffect(() => {
+      retrieveUserProfileImage();
+    }, []); 
+  
+    return (
+      <div className='profilepicchanger'>
+        <input
+          type="file"
+          id="fileInput"
+          accept="image/*"
+          onChange={handleImageChange}
+          style={{ display: 'none' }}
+
         />
         <button
           onClick={() => setModalOpen(true)}

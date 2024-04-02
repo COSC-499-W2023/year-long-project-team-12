@@ -4,6 +4,8 @@ import {
   Navigate,
   Outlet
 } from "react-router-dom";
+
+
 import Home from "./pages/Home/Home";
 import Register from "./pages/Register/Register";
 import JobPostings from "./pages/JobPostings/JobPostings";
@@ -19,6 +21,8 @@ import Recording from "./pages/Recording/Recording";
 import "./app.scss";
 import {useAuth} from "./context/authContext";
 import ViewVideo from "./pages/ViewVideo/ViewVideo";
+import ChangeName from "./pages/ChangeUserInfo/ChangeName";
+import ChangePassword from "./pages/ChangeUserInfo/ChangePassword";
 
 
 
@@ -65,6 +69,14 @@ const Layout = () =>{
         {
           path:"/jobs",
           element:<JobPostings/>
+        },
+        {
+          path:"/changename",
+          element:<ChangeName/>,
+        },
+        {
+          path:"/changePassword",
+          element:<ChangePassword/>,
         },
         {
           path:"/upload",

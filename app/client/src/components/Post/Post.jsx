@@ -3,7 +3,6 @@ import "./post.scss";
 import { Link } from 'react-router-dom';
 import {useAuth} from "../../context/authContext";
 import {getUserById} from "../../services/ClientAPI";
-import handleNewRequest from "../../pages/Profile/Profile"
 import CloseIcon from '@mui/icons-material/Close';
 
 function Post({request}) {
@@ -50,7 +49,7 @@ function Post({request}) {
                 <span data-testid="jobTitle" className='jobTitle'>Title: {request.title}</span>
                 <span></span>
                 {(() => {
-                    if(currentUser.role === 'ADMIN'){
+                    if(request.creatorId === currentUser.userId){
                         return (<span data-testid="companyName" className='companyName'>To: {requestAssignee}</span>)
                     }else {
                         return (<span data-testid="companyName" className='companyName'>From: {requestCreator}</span>)
@@ -67,7 +66,7 @@ function Post({request}) {
             </div>
             
             {(() => {
-                if (currentUser.role === 'ADMIN') {
+                if (request.creatorId === currentUser.userId) {
                     return (
                         <div className='buttonContainer'>
                             <div className='info' id="uploadb">
@@ -138,7 +137,12 @@ function Post({request}) {
                             </div>
                             <div className='info' id="submit">
                                 <Link to="/recording">
-                                    <button onClick={handleRequestContext}>Submit Video</button>
+                                    <button onClick={handleRequestContext}>Record Video</button>
+                                </Link>
+                            </div>
+                            <div className='info' id="submit">
+                                <Link to="/upload">
+                                    <button onClick={handleRequestContext}>Upload Video</button>
                                 </Link>
                             </div>
 

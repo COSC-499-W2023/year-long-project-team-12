@@ -54,6 +54,15 @@
 
             .goBack{
                 cursor: pointer;
+                display: flex;
+                gap: 15px;
+
+                .navArrow {
+
+                    &:hover{
+                        color: #35a6b4 ;
+                    }
+                } 
             }   
         }
 

@@ -2,13 +2,13 @@ import "./profile.scss";
 import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
 import {useAuth} from "../../context/authContext";
-import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ProfilePicChanger from "./profilepicchanger.js";
 import Posts from "../../components/Posts/Posts.jsx";
+
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 import handleSave from "./profilepicchanger.js";
@@ -17,11 +17,16 @@ import handleSave from "./profilepicchanger.js";
 
 function Profile() {
 
-  const [image, setImage] = useState(null);
+import Videos from "../../components/Videos/Videos.jsx";
+
+
+
+const Profile = () => {
   const { currentUser } = useAuth();
-  const [open, setOpen] = useState(false);
   const [showRequests, setShowRequests] = useState(false);
+  const [showVideos, setShowVideos] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+
   const [text, setText] = useState("Show");
   const [notificationCount, setNotificationCount] = useState(2);
   const [src, setSrc] = useState(null);
@@ -40,22 +45,30 @@ function Profile() {
   };
 
 
+  const [notificationCount, setNotificationCount] = useState(2);
+ 
   const handleMyRequestsClick = () => {
     setShowRequests(!showRequests);
+    setShowVideos(false);
   };
 
   const handleRecordedVideosClick = () => {
+
     console.log("Recorded Videos button clicked!");
+
+    setShowVideos(!showVideos);
+    setShowRequests(false);
+
   };
 
   const handleNotificationsClick = () => {
-    console.log("Notifications button clicked!");
     setNotificationCount(0);
   };
 
   const handleNewRequest = () => {
     setNotificationCount(notificationCount + 1);
   };
+
 
   const handleSettingsClick = () => {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -72,6 +85,7 @@ function Profile() {
       }
     };
   };
+
 
   const dropdownSettings = () => {
     setShowSettings(!showSettings);
@@ -139,8 +153,14 @@ function Profile() {
               </div>
             </div>
 
+
             <button onClick={handleMyRequestsClick} className="myRequestsButton"> {showRequests ? 'Hide My Requests' : 'Show My Requests'} </button>
             <button onClick={handleRecordedVideosClick} className="recordedVideosButton">Recorded Videos</button>
+
+            
+            <button onClick={handleMyRequestsClick} className="myRequestsButton"> {showRequests ? 'Hide My Requests' : 'View My Requests'} </button>  
+            <button onClick={handleRecordedVideosClick} className="recordedVideosButton">{showVideos ? 'Hide My Videos' : "Saved Videos"} </button>
+
             <button onClick={handleNotificationsClick} className="notificationsButton">
               <NotificationsIcon fontSize="large"
                 className="notificationsButton" />
@@ -156,6 +176,7 @@ function Profile() {
             {showSettings &&
               <div className="dropdown">
                 <div id="myDropdown" className="dropdown-content">
+
                   
                   <a href="#">Change Profile Name</a>
       
@@ -164,11 +185,20 @@ function Profile() {
                 </div>
               </div>}
 
+                  <Link to="/changename">Change Name</Link>
+                  <a href="#">Change Background photo</a>
+                  <Link to="/changepassword">Change Password</Link>
+                </div>
+            </div>
+          }
+
+
           </div>
         </div>
 
 
         {showRequests && (
+
           <div className="collapsibleContainer">
             <h2>My Requests</h2>
             <div className="collapsibleLists">
@@ -181,8 +211,25 @@ function Profile() {
       </div>
 
 
+      <div className="collapsibleContainer">
+                <h2>My Requests</h2>
+                <div className="collapsibleLists">
+                <Posts displayLimit={5} />
+                </div>
+                <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
+              </div>
+        )}
 
-
+        {showVideos && (
+              <div className="collapsibleContainer">
+                <h2>My Videos</h2>
+                <div className="collapsibleLists">
+                  <Videos />
+                </div>
+                <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
+              </div>
+        )}
+      </div>
     </div>
   );
 }

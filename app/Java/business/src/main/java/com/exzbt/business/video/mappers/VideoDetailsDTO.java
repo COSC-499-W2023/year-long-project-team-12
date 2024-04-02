@@ -14,15 +14,17 @@ import java.util.Date;
 @Setter
 public class VideoDetailsDTO {
     private String videoId;
-    private String requestId;
     private String creatorId;
+    private String videoName;
     private Date created;
+    private Boolean saved;
 
     public VideoDetailsDTO convertDTO(Video video) {
         this.setVideoId(video.getVideoId());
-        this.setRequestId(video.getVideoId());
+        this.setVideoName(video.getVideoName());
         this.setCreatorId(video.getCreatorId());
         this.setCreated(video.getCreated());
+        this.setSaved(video.isSaved());
 
         return this;
     }

@@ -17,10 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -122,11 +119,13 @@ public class RequestService {
 
         VideoDetailsRequest videoRequest = new VideoDetailsRequest();
         videoRequest.setVideoId(videoId);
-        videoRequest.setRequestId(requestId);
+        videoRequest.setVideoName(created.toString().concat("- RequestSubmission"));
         videoRequest.setCreatorId(userId);
         videoRequest.setCreated(created);
-
+        videoRequest.setSaved(Boolean.FALSE);
         videoService.createVideo(videoRequest);
+
+        videoService.submitVideo(videoId, requestId, userId, created);
 
         Request request = requestActions.findById(requestId)
                 .orElseThrow(RuntimeException::new);

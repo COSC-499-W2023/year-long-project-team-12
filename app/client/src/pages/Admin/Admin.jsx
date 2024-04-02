@@ -47,7 +47,7 @@ const Admin = () => {
   };
 
   const handleFindUser = async (email) => {
-    if(emailSearch!='') {
+    if(emailSearch!=='') {
       await getUserByEmail(email).then(resp => {
         setUserDetails([
           ...userDetails,
@@ -111,7 +111,7 @@ const Admin = () => {
             />
 
             {(() => {
-              if(userDetails.length!=0 && findUserMessage=='') {
+              if(userDetails.length!==0 && findUserMessage==='') {
                 return (
                   <div className='recipients'>
                           {userDetails.map(user => (
@@ -122,7 +122,7 @@ const Admin = () => {
                         ))}
                   </div>
                 )
-              }else if (findUserMessage!='' && emailSearch!=''){
+              }else if (findUserMessage!=='' && emailSearch!==''){
                 return (
                   <div className='errorUser'>
                       <span className='findUserWarning'>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "./ViewVideo.scss";
 import {useAuth} from "../../context/authContext";
 import Comments from '../../components/Comments/Comments';
-import {getVideoDetailsByRequestId, getVideoByVideoId} from "../../services/ClientAPI";
+import {getVideoDetailsByRequestId, getRequestVideoByVideoId} from "../../services/ClientAPI";
 
 function ViewVideo() {
     const [video, setVideo] = useState('');
@@ -26,7 +26,7 @@ function ViewVideo() {
     useEffect(() => {
         if (videoDetails) {
             const getVideo = async () => {
-                const videoUrl = await getVideoByVideoId(videoDetails.videoId);
+                const videoUrl = await getRequestVideoByVideoId(videoDetails.videoId);
                 setVideo(videoUrl);
             };
             getVideo();
@@ -44,8 +44,6 @@ return (
                 </video>
                
             </>
-                
-            
         :
         <>
         <p><i>No video submissions</i></p>
