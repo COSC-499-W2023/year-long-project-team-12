@@ -10,7 +10,7 @@ const MockProfilePage = ({open,text}) =>{
 
   return(
     <>
-    <div data-testid= "profilepicchanger" className='profilepicchanger'> </div>
+    <div data-testid= "imagecropper" className='imagecropper'> </div>
     </>
   );
 };
