@@ -11,10 +11,14 @@ const Profilepic = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2cc080134488e5fcd4bf6aa2a7662abd5e3b3875
   const updateAvatar = (imgSrc) => {
     setAvatarUrl(imgSrc);
     // Save the avatar URL to localStorage
     localStorage.setItem('avatarUrl', imgSrc);
+<<<<<<< HEAD
 =======
 const ProfilePicChanger = () => {
     const { currentUser, updateContextCurrentUser } = useAuth();
@@ -22,22 +26,25 @@ const ProfilePicChanger = () => {
   
     const handleImageChange = (event) => {
       const selectedImage = event.target.files[0];
+=======
+  };
+>>>>>>> 2cc080134488e5fcd4bf6aa2a7662abd5e3b3875
 
-      try{
-        const requestObject = new FormData();
-        requestObject.append('image', selectedImage);
+  useEffect(() => {
+    // Update the avatar URL when the component mounts
+    if (avatarUrl) {
+      localStorage.setItem('avatarUrl', avatarUrl);
+    }
+  }, [avatarUrl]);
 
-        updateProfileImage(currentUser.userId, requestObject).then(resp => {
-          setImage(URL.createObjectURL(selectedImage));
 
-          getUserById(currentUser.userId).then(res => {
-            updateContextCurrentUser(res.data)
-          })
-        });
-      } catch  {
-
-      }
-    };
+  return (
+    <div className="flex flex-col items-center pt-12">
+      <div className="relative">
+        <img
+          src={avatarUrl || <PersonAddAltIcon fontSize="large" className='img-display-before' />}
+          alt="Avatar"
+          className="img-display-after"
 
     const retrieveUserProfileImage = async () => {
       try {
@@ -67,6 +74,7 @@ const ProfilePicChanger = () => {
           accept="image/*"
           onChange={handleImageChange}
           style={{ display: 'none' }}
+<<<<<<< HEAD
         />
         <div onClick={handleButtonClick}>
           {image ? (
@@ -79,21 +87,9 @@ const ProfilePicChanger = () => {
     );
 >>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
   };
+=======
+>>>>>>> 2cc080134488e5fcd4bf6aa2a7662abd5e3b3875
 
-  useEffect(() => {
-    // Update the avatar URL when the component mounts
-    if (avatarUrl) {
-      localStorage.setItem('avatarUrl', avatarUrl);
-    }
-  }, [avatarUrl]);
-
-  return (
-    <div className="flex flex-col items-center pt-12">
-      <div className="relative">
-        <img
-          src={avatarUrl || <PersonAddAltIcon fontSize="large" className='img-display-before' />}
-          alt="Avatar"
-          className="img-display-after"
         />
         <button
           onClick={() => setModalOpen(true)}
