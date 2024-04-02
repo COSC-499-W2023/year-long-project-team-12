@@ -140,3 +140,7 @@
 ## Week 11 Mar 17th - Mar 24th 
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/8731e41a-68e5-4cbc-a80e-84f6b2fe163f)
 
+## Week 12 Mar 24th - Mar 31st
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/db6e184b-bc42-4d81-8423-6d1612205147)
+- Working on my final report -> https://docs.google.com/document/d/1dXclTBQRLjnywkg0-Wqs0F4fF8LLGG3KxjwQ4vxFkL0/edit
+
