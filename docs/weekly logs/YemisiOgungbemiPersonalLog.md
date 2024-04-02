@@ -121,3 +121,26 @@
 - Made the slider slide automatically after 3 seconds
 - Added tests for the comments and slider component
 - Adding a limit of requests on the profile page with a collapsible container.
+- 
+  
+
+## Week 9 Mar 4th - Mar 10th
+<img width="1470" alt="image" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/c8fe86cf-7f3b-423f-98c0-03801860f225">
+- Added a terms of agreement box for user that want to upload or submit a recorded video.
+- Add the option for users to upload a video instead of recording a video.
+- Increased the font of the the user info on the profile page.
+
+## Week 10 Mar11 - March March 17th
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/19288364-1f29-4183-bce8-aef9fd42cae7)
+- Researching on how to do use one component for multiple purposes e.g having a change user info component that can do the work of changing a password or changing full name based on what prop is passed in the argument. (it took hours to do but i couldnt figure it out, i ended up using two components but the same css file).
+- allowing users to change their fullname and password.
+- tests for the change name and password feature.
+
+
+## Week 11 Mar 17th - Mar 24th 
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/8731e41a-68e5-4cbc-a80e-84f6b2fe163f)
+
+## Week 12 Mar 24th - Mar 31st
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/db6e184b-bc42-4d81-8423-6d1612205147)
+- Working on my final report -> https://docs.google.com/document/d/1dXclTBQRLjnywkg0-Wqs0F4fF8LLGG3KxjwQ4vxFkL0/edit
+

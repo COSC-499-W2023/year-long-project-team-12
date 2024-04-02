@@ -10,10 +10,74 @@ const Profilepic = () => {
   });
   const [modalOpen, setModalOpen] = useState(false);
 
+<<<<<<< HEAD
   const updateAvatar = (imgSrc) => {
     setAvatarUrl(imgSrc);
     // Save the avatar URL to localStorage
     localStorage.setItem('avatarUrl', imgSrc);
+=======
+const ProfilePicChanger = () => {
+    const { currentUser, updateContextCurrentUser } = useAuth();
+    const [image, setImage] = useState(null);
+  
+    const handleImageChange = (event) => {
+      const selectedImage = event.target.files[0];
+
+      try{
+        const requestObject = new FormData();
+        requestObject.append('image', selectedImage);
+
+        updateProfileImage(currentUser.userId, requestObject).then(resp => {
+          setImage(URL.createObjectURL(selectedImage));
+
+          getUserById(currentUser.userId).then(res => {
+            updateContextCurrentUser(res.data)
+          })
+        });
+      } catch  {
+
+      }
+    };
+
+    const retrieveUserProfileImage = async () => {
+      try {
+        if(currentUser.profileImageId){
+          const imageURL = await getUserProfileImage(currentUser.userId);
+          setImage(imageURL);
+        }
+      } catch (err) {
+          console.error('Error fetching profile image:', err);
+      }
+    };
+  
+    const handleButtonClick = () => {
+      // Trigger click on hidden file input
+      document.getElementById('fileInput').click();
+    };
+  
+    useEffect(() => {
+      retrieveUserProfileImage();
+    }, []); 
+  
+    return (
+      <div className='profilepicchanger'>
+        <input
+          type="file"
+          id="fileInput"
+          accept="image/*"
+          onChange={handleImageChange}
+          style={{ display: 'none' }}
+        />
+        <div onClick={handleButtonClick}>
+          {image ? (
+            <img src={image} alt="Profile" className='img-display-after'  />
+          ) : (
+            <PersonAddAltIcon fontSize="large" className='img-display-before' />
+          )}
+        </div>
+      </div>
+    );
+>>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
   };
 
   useEffect(() => {

@@ -2,13 +2,13 @@ import "./profile.scss";
 import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
 import {useAuth} from "../../context/authContext";
-import MockJobsAppliedTo from "../../components/JobsApplliedTo/MockJobsAppliedTo";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ProfilePicChanger from "./profilepicchanger.js";
 import Posts from "../../components/Posts/Posts.jsx";
+<<<<<<< HEAD
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 import handleSave from "./profilepicchanger.js";
@@ -18,10 +18,17 @@ import handleSave from "./profilepicchanger.js";
 function Profile() {
 
   const [image, setImage] = useState(null);
+=======
+import Videos from "../../components/Videos/Videos.jsx";
+
+
+const Profile = () => {
+>>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
   const { currentUser } = useAuth();
-  const [open, setOpen] = useState(false);
   const [showRequests, setShowRequests] = useState(false);
+  const [showVideos, setShowVideos] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+<<<<<<< HEAD
   const [text, setText] = useState("Show");
   const [notificationCount, setNotificationCount] = useState(2);
   const [src, setSrc] = useState(null);
@@ -40,16 +47,25 @@ function Profile() {
   };
 
 
+=======
+  const [notificationCount, setNotificationCount] = useState(2);
+  
+>>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
   const handleMyRequestsClick = () => {
     setShowRequests(!showRequests);
+    setShowVideos(false);
   };
 
   const handleRecordedVideosClick = () => {
+<<<<<<< HEAD
     console.log("Recorded Videos button clicked!");
+=======
+    setShowVideos(!showVideos);
+    setShowRequests(false);
+>>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
   };
 
   const handleNotificationsClick = () => {
-    console.log("Notifications button clicked!");
     setNotificationCount(0);
   };
 
@@ -57,6 +73,7 @@ function Profile() {
     setNotificationCount(notificationCount + 1);
   };
 
+<<<<<<< HEAD
   const handleSettingsClick = () => {
     document.getElementById("myDropdown").classList.toggle("show");
     window.onclick = function (event) {
@@ -73,6 +90,8 @@ function Profile() {
     };
   };
 
+=======
+>>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
   const dropdownSettings = () => {
     setShowSettings(!showSettings);
   };
@@ -138,9 +157,15 @@ function Profile() {
                 <span>{currentUser.email}</span>
               </div>
             </div>
+<<<<<<< HEAD
 
             <button onClick={handleMyRequestsClick} className="myRequestsButton"> {showRequests ? 'Hide My Requests' : 'Show My Requests'} </button>
             <button onClick={handleRecordedVideosClick} className="recordedVideosButton">Recorded Videos</button>
+=======
+            
+            <button onClick={handleMyRequestsClick} className="myRequestsButton"> {showRequests ? 'Hide My Requests' : 'View My Requests'} </button>  
+            <button onClick={handleRecordedVideosClick} className="recordedVideosButton">{showVideos ? 'Hide My Videos' : "Saved Videos"} </button>
+>>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
             <button onClick={handleNotificationsClick} className="notificationsButton">
               <NotificationsIcon fontSize="large"
                 className="notificationsButton" />
@@ -156,6 +181,7 @@ function Profile() {
             {showSettings &&
               <div className="dropdown">
                 <div id="myDropdown" className="dropdown-content">
+<<<<<<< HEAD
                   
                   <a href="#">Change Profile Name</a>
       
@@ -163,12 +189,22 @@ function Profile() {
                   <a href="#">Change Password</a>
                 </div>
               </div>}
+=======
+                  <Link to="/changename">Change Name</Link>
+                  <a href="#">Change Background photo</a>
+                  <Link to="/changepassword">Change Password</Link>
+                </div>
+            </div>
+          }
+      
+>>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
 
           </div>
         </div>
 
 
         {showRequests && (
+<<<<<<< HEAD
           <div className="collapsibleContainer">
             <h2>My Requests</h2>
             <div className="collapsibleLists">
@@ -183,6 +219,27 @@ function Profile() {
 
 
 
+=======
+              <div className="collapsibleContainer">
+                <h2>My Requests</h2>
+                <div className="collapsibleLists">
+                <Posts displayLimit={5} />
+                </div>
+                <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
+              </div>
+        )}
+
+        {showVideos && (
+              <div className="collapsibleContainer">
+                <h2>My Videos</h2>
+                <div className="collapsibleLists">
+                  <Videos />
+                </div>
+                <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
+              </div>
+        )}
+      </div>
+>>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
     </div>
   );
 }

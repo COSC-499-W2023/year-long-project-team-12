@@ -130,4 +130,21 @@ Responded to issues on the Kanban board, namely:
 
 * Reading week code was on a later branch that needs to now be added to newer code with newer themes and integrated together.
 
-![T2 Week 6](./images/week6_t2ty.png)
+![T2 Week 7&8](./images/week6_t2ty.png)
+
+
+## T2 Week 9 Log (March 3rd - March 10th)
+
+* COMPLETED: Implemented and added testing for the recording changes spoken about and done in some weeks previous too.
+
+![T2 Week 9](./images/tyler_wk9t2.png)
+
+## T2 Week 10 Log (March 11th - March 17th)
+
+* IN PROCESS: started work on some issues in backlog, no code to push as of yet. Will plan on getting bonus marks next week from the carry-over.
+
+![T2 Week 10](./images/tyler_wk10s.png)
+
+## T2 Week 11 + 12 Log (March 18th - March 31st)
+
+![T2 Week 11/12](./images/week12_t2tyler.png)

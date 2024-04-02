@@ -3,48 +3,100 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--body_background);
-    color: var(--body_color);
-}
-.upload-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px dashed #1475cf;
-    height: 400px;
-    width: 600px;
-    cursor: pointer;
-    color: var(--body_color);
-    border-radius: 5px;
-}
-
-
-
-.uploaded-row{
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 20px;
-    border-radius: 5px;
-    background-color: var(--body_background);
+    background: var(--requests_background);
+    min-height: 800px;
+    padding: 20px;
     color: var(--body_color);
 
+    .upload-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 600px;
+        min-width: 800px;
+        cursor: pointer;
+        color: var(--body_color);
+        border-radius: 5px;
+        padding: 40px;
+        background-color: var(--body_background);  
+    }
+    
+    .upload-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px dashed #1475cf;
+        height: 400px;
+        width: 600px;
+        cursor: pointer;
+        color: var(--body_color);
+        border-radius: 5px;
+    }
+    
+    .uploaded-row{
+        margin: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 20px;
+        border-radius: 5px;
+        background-color: var(--body_background);
+        color: var(--body_color);
+    
+    }
+    
+    .upload-content{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px;
+
+        #filename {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+
+        #deleteButton {
+            height: 25px;
+            width: 25px;
+
+            :hover{
+                color: red;
+            }
+        }
+    }
+ 
+    .button{
+        min-width: 100px;
+        padding: 10px 20px;
+        margin: 5px;
+        margin-top: 20px;
+        border: none;
+        background-color: #35a6b4;
+        color: var(--body_color);
+        font-weight: bold;
+        cursor: pointer;
+        font-family: 'Open Sans';
+        border-radius: 10px;
+        
+        &:hover {
+            background-color: var(--body_color);
+            color: var(--body_background);
+        }
+    }
+
+    
 }
 
-.uploaded-content{
-    display: flex;
-    align-items: center;
-}
-
-
-.upload-button{
-    width: 80px;
-    padding: 10px;
-    border: none;
-    background-color: #35a6b4;
-    color: var(--body_color);
-    font-weight: bold;
-    cursor: pointer;
+#termsofAgreementLink {
+    color: var(--link_color);
+    text-decoration: underline;
+    
+    &:hover{
+        cursor: pointer;
+    }
 }

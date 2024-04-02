@@ -24,10 +24,15 @@
     "react-dom": "^18.2.0",
     "react-easy-crop": "^5.0.5",
     "react-icons": "^4.11.0",
+<<<<<<< HEAD
     "react-image-crop": "^11.0.5",
+=======
+    "react-modal": "^3.16.1",
+>>>>>>> cc8a9dd605522ec0a7377d687f92fd0666c1d996
     "react-player": "^2.14.1",
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
+    "react-timer-hook": "^3.0.7",
     "react-webcam": "^7.2.0",
     "sass": "^1.69.3",
     "web-vitals": "^2.1.4"
