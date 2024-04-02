@@ -122,4 +122,22 @@ Group member: Philip Okorie
     <img width="1405" alt="Screenshot 2024-02-11 at 11 06 41 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/61026972-183d-4bfd-9df4-605690714f21">
    
   
+##Week (9-12log)Mar 3rd - Mar 31st
 
+
+
+  * Reviewing other's code
+  * Working on cropping feature for the profile picture and background image
+  * Working on making home page more interactive
+  * Fixng some docker issues with new modules being imported
+  * Testing
+  * Research on how to properly implement the cropping feature and interactive landing pages
+
+    
+<img width="1399" alt="Screenshot 2024-04-02 at 3 42 07 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/c1afcc43-e532-4c0a-9554-358b13c42b94">
+<img width="1358" alt="Screenshot 2024-04-02 at 3 44 45 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/6b89067c-5f2d-4369-8ae1-89f3cde855df">
+<img width="1399" alt="Screenshot 2024-04-02 at 3 42 07 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/072861bc-ad24-4acc-8623-1c3107cd9a7c">
+
+
+
+    
