@@ -8,6 +8,7 @@
   },
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.14",
@@ -24,16 +25,8 @@
     "react-dom": "^18.2.0",
     "react-easy-crop": "^5.0.5",
     "react-icons": "^4.11.0",
-
     "react-image-crop": "^11.0.5",
-
     "react-modal": "^3.16.1",
-
-    "react-image-crop": "^11.0.5",
-
-    "react-modal": "^3.16.1",
-
-
     "react-player": "^2.14.1",
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",

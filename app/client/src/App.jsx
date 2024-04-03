@@ -22,6 +22,7 @@ import "./app.scss";
 import {useAuth} from "./context/authContext";
 import ViewVideo from "./pages/ViewVideo/ViewVideo";
 import ChangeName from "./pages/ChangeUserInfo/ChangeName";
+import { ContactUs } from "./pages/ContactUs/ContactUs";
 import ChangePassword from "./pages/ChangeUserInfo/ChangePassword";
 
 
@@ -116,6 +117,10 @@ const Layout = () =>{
         {
           path:"/login",
           element:<Login/>
+        },
+        {
+          path:"/contactUs",
+          element:<ContactUs/>
         },
         {
           path:"*",

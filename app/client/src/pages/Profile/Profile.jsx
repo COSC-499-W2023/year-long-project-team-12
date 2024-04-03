@@ -87,6 +87,7 @@ const Profile = () => {
                   <Link to="/changename">Change Name</Link>
                   <a href="#">Change Background photo</a>
                   <Link to="/changepassword">Change Password</Link>
+                  <Link to="/contactUs">Give Feedback</Link>
                 </div>
             </div>
           }
