@@ -1,11 +1,12 @@
-import React, { useRef } from 'react';
 import "./ContactUs.scss";
 import emailjs from '@emailjs/browser';
+import React, { useEffect,useRef } from 'react';
+import { useNavigate} from "react-router-dom";
 
 export const ContactUs = () => {
   const form = useRef();
   const config = require("./config.json");
-
+  let navigate = useNavigate();
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -24,7 +25,7 @@ export const ContactUs = () => {
             Name.value = '';
             email.value = '';
             msg.value = '';
-        }, 2000);
+        }, 5000);
         emailjs
       .sendForm(config.serviceId, config.templateId, form.current, {
         publicKey: config.publicKey,
@@ -38,6 +39,17 @@ export const ContactUs = () => {
         },
       );
         success.style.display = 'block';
+        
+
+      
+          // Redirect the user to the previous page after 3 seconds 
+          const redirectTimeout = setTimeout(() => {
+            navigate(-1);
+          }, 3000); 
+      
+          
+          return () => clearTimeout(redirectTimeout);
+        
 
     }
 
@@ -75,7 +87,7 @@ export const ContactUs = () => {
       </div>
 
       <div className='message' >
-            <div className='success' id='success'>Your message has been successfully sent! Our developers will reach out to you soon.</div>
+            <div className='success' id='success'>Your message has been successfully sent! Our developers will reach out to you soon.<span>Redirecting you to the previous page...</span></div>
             <div className='danger' id='danger'>Fields Cant be Empty!</div>
       </div>
       
