@@ -103,7 +103,7 @@ const Profile = () => {
                 <div className="collapsibleLists">
                 <Posts displayLimit={5} />
                 </div>
-                <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
+                
               </div>
         )}
 
@@ -113,7 +113,7 @@ const Profile = () => {
                 <div className="collapsibleLists">
                   <Videos />
                 </div>
-                <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
+                
               </div>
         )}
       </div>
