@@ -2,12 +2,18 @@
         background: var(--requests_background);
         padding-top: 20px;
 
-        .jobs{
-                padding: 20px 70px;
-                display: flex;
-                min-height: 600px;
-                justify-content: center;
-        }
+        
+        .jobs {
+                .post:first-child { // Assuming the first post is the latest
+                    border: 2px solid #35a6b4; // Example highlight color
+                    background-color: #f0f8ff; // Light background to stand out
+                    padding: 20px 70px;
+                    display: flex;
+                    min-height: 600px;
+                    justify-content: center;
+                }
+            }
+            
         
         .searchContainer {
                 display: flex;
