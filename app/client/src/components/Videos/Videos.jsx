@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './videos.scss';
 import { getVideoDetailsListByCreatorId } from '../../services/ClientAPI';
 import { useAuth } from '../../context/authContext';
+import { Link } from 'react-router-dom';
 
 const Videos = () => {
   const { currentUser } = useAuth();
@@ -26,7 +27,11 @@ const Videos = () => {
       ) : (
         <div className="videos">
           {myVideos.map((video) => (
+            <>
             <div>{video.videoId}</div>
+            <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
+            </>
+            
           ))
           }
         </div>

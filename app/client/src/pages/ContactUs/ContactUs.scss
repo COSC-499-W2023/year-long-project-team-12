@@ -10,20 +10,33 @@
     .contactUsForm{
         .formHeader{
             text-align: center;
+            font-size: 50px;
         }
+
         .formField{
             margin: 40px;
+            display: flex;
+            align-items: center;
+            font-size: 25px;
+
+            
 
             label{
                 align-items: left;
                 margin-right: 30px;
                 display: inline-block;
-                width: 50px;
+                width: 100px;
             }
             input,textarea {
                 align-items: right;
                 width: 300px;
                 height: 30px;
+                margin-left: 40px;
+                font-size: 20px;
+            }
+            textarea{
+                height: 100px;
+
             }
         }
         
@@ -74,7 +87,13 @@
         font-weight: 400;
         box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
         transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        font-size: 25px;
         
     
     }
+}
+
+
+#msg label{
+    
 }
