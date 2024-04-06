@@ -1,4 +1,4 @@
-package com.exzbt.business.s3;
+package com.exzbt.business.rekognition;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,8 +6,7 @@ import org.springframework.stereotype.Component;
 import software.amazon.awssdk.services.rekognition.RekognitionClient;
 import software.amazon.awssdk.services.rekognition.model.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Component
 @AllArgsConstructor
@@ -40,6 +39,9 @@ public class RekognitionActions {
                     .build();
 
             StartFaceDetectionResponse startLabelDetectionResult = rekognition.startFaceDetection(faceDetectionRequest);
+            if(Objects.isNull(startLabelDetectionResult)) {
+                return "dev";
+            }
             startJobId = startLabelDetectionResult.jobId();
 
         } catch(RekognitionException e) {
@@ -49,8 +51,10 @@ public class RekognitionActions {
         return startJobId;
     }
 
-    public List<String> getFaceResults(String startJobId) {
-        List<String> facesBoxes = new ArrayList<>();
+    public Map<String, List<String>> getFaceResults(String startJobId) {
+
+        Map<String, List<String>> timeStampToBoxMap = new HashMap<>();
+
         try {
             String paginationToken = null;
             GetFaceDetectionResponse faceDetectionResponse = null;
@@ -94,7 +98,14 @@ public class RekognitionActions {
                 for (FaceDetection face: faces) {
                     String box = face.face().boundingBox().toString();
                     String timestamp = face.timestamp().toString();
-                    facesBoxes.add(box);
+
+                    if (timeStampToBoxMap.containsKey(timestamp)) {
+                        timeStampToBoxMap.get(timestamp).add(box);
+                    } else {
+                        List<String> boxesList = new ArrayList<>();
+                        boxesList.add(box);
+                        timeStampToBoxMap.put(timestamp, boxesList);
+                    }
                 }
             } while (faceDetectionResponse != null && faceDetectionResponse.nextToken() != null);
 
@@ -103,6 +114,6 @@ public class RekognitionActions {
             System.exit(1);
         }
 
-        return facesBoxes;
+        return timeStampToBoxMap;
     }
 }
