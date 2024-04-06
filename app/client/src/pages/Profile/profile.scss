@@ -209,6 +209,18 @@
   margin: auto;
 }
 
+.cropper-wrapper {
+  position: absolute; /* Ensure absolute positioning for the Cropper */
+  top: 50%; /* Align the Cropper vertically at the center */
+  left: 50%; /* Align the Cropper horizontally at the center */
+  transform: translate(-50%, -50%); /* Center the Cropper */
+  max-width: 100%; /* Ensure the Cropper does not exceed the container width */
+  max-height: 100%; /* Ensure the Cropper does not exceed the container height */
+}
+.saveButton{
+  cursor:pointer;
+}
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
        

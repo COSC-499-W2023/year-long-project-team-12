@@ -1,0 +1,99 @@
+.contactUsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    color: var(--body_color);
+    background-color: var(--body_background);
+    padding: 10%;
+
+    .contactUsForm{
+        .formHeader{
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .formField{
+            margin: 40px;
+            display: flex;
+            align-items: center;
+            font-size: 25px;
+
+            
+
+            label{
+                align-items: left;
+                margin-right: 30px;
+                display: inline-block;
+                width: 100px;
+            }
+            input,textarea {
+                align-items: right;
+                width: 300px;
+                height: 30px;
+                margin-left: 40px;
+                font-size: 20px;
+            }
+            textarea{
+                height: 100px;
+
+            }
+        }
+        
+     .message{
+        width: 100%;
+        position: relative;
+
+        margin: 40px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        .success{
+            font-size: 20px;
+            color: green;
+            position: absolute;
+            animation: button .3s linear;
+            display: none;
+
+        }
+        .danger{
+            font-size: 20px;
+            color: red;
+            position: absolute;
+            animation: button .3s linear;
+            display: none;
+        }
+     }  
+    
+}
+
+}
+
+
+
+.sendButtonContainer{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .sendButton{
+        background-color: teal;
+        border: none;
+        cursor: pointer;
+        width: 170px;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 7px;
+        font-weight: 400;
+        box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        font-size: 25px;
+        
+    
+    }
+}
+
+
+#msg label{
+    
+}
