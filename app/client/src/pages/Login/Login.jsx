@@ -12,6 +12,8 @@ const Login = () => {
     const [show403ErrorPopup, setShow403ErrorPopup] = useState(false);
     const [forgotPasswordUsername, setForgotPasswordUsername] = useState("");
     const [showForgotPasswordForm, setShowForgotPasswordForm] = useState(false);
+    const [inputOutline, setInputOutline] = useState("");
+    const [showPopup, setShowPopup] = useState(false);
 
     let navigate = useNavigate();
 
@@ -60,8 +62,9 @@ const Login = () => {
     const handleForgotPasswordSubmit = async (event) => {
         event.preventDefault();
         
-        console.log("Requesting password reset for:", forgotPasswordUsername);
-        setShowForgotPasswordForm(false); 
+        setInputOutline("green");
+        setShowPopup(true);
+
     };
 
     const isValidEmail = (value) => {
@@ -107,6 +110,7 @@ const Login = () => {
                                 placeholder="Email or username"
                                 value={forgotPasswordUsername}
                                 onChange={(e) => setForgotPasswordUsername(e.target.value)}
+                                style={{ outlineColor: inputOutline }}
                             />
                             <button type="submit">Submit</button>
                         </form>
@@ -121,6 +125,13 @@ const Login = () => {
                 <div className="error-popup">
                     <p>Incorrect login details, ensure your username/email and password are entered correctly.</p>
                     <button onClick={() => setShow403ErrorPopup(false)}>Close</button>
+                </div>
+            )}
+
+            {showPopup && (
+                <div className="popup-message">
+                    <p>Displayed for MVP purposes. Full implementation of resetting passwords to be added.</p>
+                    <button onClick={() => setShowPopup(false)}>Close</button>
                 </div>
             )}
         </div>

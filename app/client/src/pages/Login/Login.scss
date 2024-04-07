@@ -104,67 +104,42 @@
     }
 }
 
-.error-popup {
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
+.popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9999; 
-    width: 400px; 
-    background-color: white; 
-    border: 1px solid #ccc; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    padding: 20px; 
-    box-sizing: border-box;
-    border-radius: 10px; 
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    button {
-        border: none;
-        background-color: turquoise;
-        color: var(--body_background);
-        cursor: pointer;
-        display: inline-block;
-        outline: 0;
-        padding: 0 56px;
-        height: 45px;
-        line-height: 45px;
-        border-radius: 7px;
-        font-weight: 400;
-        font-size: 16px;
-        box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
-        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-        margin: 0 10px;
-        z-index: 9999; 
-    }
-
-    button:hover {
-        background-color: var(--body_color);
-        color: var(--body_background);
-        box-shadow: none;
-    }
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 100; 
 }
 
-.error-popup p {
-    text-align: center; 
-    margin: 0 0 20px; 
+.popup-message p {
+    margin: 0 0 20px 0;
 }
 
-.forgot-password-link {
-    color: #007bff;
+.popup-message button {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background-color: #35a6b4;
+    color: white;
     cursor: pointer;
-    text-decoration: underline;
-}
-
-.back-arrow {
-    color: #007bff;
-    cursor: pointer;
+    outline: 0;
+    padding: 0 56px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 7px;
+    font-weight: 400;
     font-size: 16px;
-    text-decoration: underline;
-    display: inline-block; 
-    margin-top: 10px; 
+    box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popup-message button:hover {
+    background-color: darken(#35a6b4, 10%);
+    color: white;
+    box-shadow: none;
 }
