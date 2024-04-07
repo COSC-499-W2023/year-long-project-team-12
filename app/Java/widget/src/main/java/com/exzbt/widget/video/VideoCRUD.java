@@ -63,7 +63,7 @@ public class VideoCRUD {
     public byte[] blurCreatedVideo(
             @PathVariable("creatorId") String creatorId,
             @RequestPart("video") MultipartFile file) {
-        return videoService.blurCreatedVideo(creatorId, file);
+            return videoService.blurCreatedVideo(creatorId, file);
     }
 
     @GetMapping(
