@@ -30,7 +30,7 @@ const Home = () => {
           'Exzbt offers a diverse range of video services, including personalized messages and profiles, notifications, and requests. With our user-friendly platform, you can trust us to deliver exceptional results every time.',
       },
       {
-        title: 'Meet the Owners',
+        title: 'Meet the Team',
         content:
           'Meet the owners of Exzbt: Hameed Karim, Oluwayemisi Ogungbemi, Tyler Rant, Jusnoor Kaur, and Philip Okorie. They are members of the Capstone 499 project.',
       },
@@ -44,7 +44,7 @@ const Home = () => {
       </div>
       <div className="landing-page">
       <header>
-        <h1>Welcome to Exzbt</h1>
+        <h1>Welcome to EX-ZBT</h1>
         <p>A place to request and fulfill video requests</p>
       </header>
       <main>

@@ -19,4 +19,3 @@ test('handleMyProfileClick logs message when "Canvas Preview" image is displayed
     render(<MockProfilePage open={false} text={"Show"}/>)
    expect(screen.getByTestId("setCanvasPreview")).toBeInTheDocument();
 });
-

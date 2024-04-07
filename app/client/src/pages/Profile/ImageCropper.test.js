@@ -19,4 +19,3 @@ test('handleMyProfileClick logs message when "My Profile pic" image has been cro
     render(<MockProfilePage open={false} text={"Show"}/>)
    expect(screen.getByTestId("imagecropper")).toBeInTheDocument();
 });
-
