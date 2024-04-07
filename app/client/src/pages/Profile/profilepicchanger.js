@@ -31,11 +31,12 @@ const ProfilePicChanger = () => {
     const retrieveUserProfileImage = async () => {
       try {
         if(currentUser.profileImageId){
-          const imageURL = await getUserProfileImage(currentUser.userId);
+          const imageURL = getUserProfileImage(currentUser.userId);
           setImage(imageURL);
         }
       } catch (err) {
           console.error('Error fetching profile image:', err);
+          setImage(null);
       }
     };
   

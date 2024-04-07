@@ -20,6 +20,12 @@
     border-radius: 5px;
     padding: 30px;
     background-color: var(--body_background);
+
+    h4 {
+        &:hover {
+            color: #35a6b4;
+        }
+    }
 }
 
 

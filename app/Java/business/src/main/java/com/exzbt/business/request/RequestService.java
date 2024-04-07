@@ -70,7 +70,7 @@ public class RequestService {
         UserDetailsDTO assignedUser = userService.findUserByEmail(creationDTORequest.getAssigneeEmail());
         creationDTORequest.setAssigneeId(assignedUser.getUserId());
         Request request = requestActions.save(creationDTORequest.convertFromDTO());
-        notificationService.sendNotification("New Request Assigned",
+        notificationService.sendNotification("New Request Assigned - " + request.getTitle(),
                 request.getAssigneeId(), request.getCreatorId(), new Date());
         return new RequestDetailsDTO().convertDTO(request);
     }
@@ -94,7 +94,7 @@ public class RequestService {
         request.setAssigneeId(updateRequest.getAssigneeId());
         request.setExpiration(updateRequest.getExpiration());
 
-        notificationService.sendNotification("Request Updated",
+        notificationService.sendNotification("Request Updated - " + request.getTitle(),
                 request.getAssigneeId(), request.getCreatorId(), new Date());
         return new RequestDetailsDTO().convertDTO(requestActions.save(request));
     }
@@ -107,7 +107,7 @@ public class RequestService {
         Request request = requestActions.findById(requestId)
                 .orElseThrow(RuntimeException::new);
 
-        notificationService.sendNotification("Request Deleted",
+        notificationService.sendNotification("Request Deleted - " + request.getTitle(),
                 request.getAssigneeId(), request.getCreatorId(), new Date());
 
         requestActions.deleteById(requestId);
@@ -145,8 +145,8 @@ public class RequestService {
                 .orElseThrow(RuntimeException::new);
         request.setSubmitted(Boolean.TRUE);
 
-        notificationService.sendNotification("Video Submitted to Request",
-                request.getAssigneeId(), request.getCreatorId(), new Date());
+        notificationService.sendNotification("Video Submitted to Request - " + request.getTitle(),
+                request.getCreatorId(), request.getAssigneeId(), new Date());
         requestActions.save(request);
     }
 }

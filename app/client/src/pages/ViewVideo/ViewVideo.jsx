@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import { useState } from 'react';
 import "./ViewVideo.scss";
 import {useAuth} from "../../context/authContext";
+import Drawer from '@mui/material/Drawer';
 import Comments from '../../components/Comments/Comments';
 import {getVideoSubmissionsByRequestId, getRequestVideoByVideoId} from "../../services/ClientAPI";
 
@@ -9,7 +10,21 @@ function ViewVideo() {
     const [video, setVideo] = useState('');
     const { currentRequest } = useAuth();
     const [submissions, setSubmissions] = useState([]);
+    const [openDrawer, setOpenDrawer] = useState(false);
+    const [comments, setComments] = useState([]);
 
+    const getComments = () => {
+        
+    };
+    
+    useEffect(() => {
+        getComments();
+    }, []);
+
+    const toggleDrawer = (newOpen) => () => {
+        setOpenDrawer(newOpen);
+    };
+  
     const getRequestVideoSubmissions = async () => {
         try {
             const resp = await getVideoSubmissionsByRequestId(currentRequest.requestId);
@@ -49,8 +64,17 @@ return (
         <p><i>No video submissions</i></p>
         </>
         }
-         <Comments />
+         <h4 onClick={toggleDrawer(true)}>View Comments</h4>
         </form>
+
+        <Drawer anchor={'right'} open={openDrawer} onClose={toggleDrawer(false)}>
+            <div className="notifDrawer"> 
+              <div className="headingNotif">
+                <h3>Comments</h3>
+              </div>  
+                <Comments />
+            </div>
+        </Drawer>
     </main>
   )
 }
