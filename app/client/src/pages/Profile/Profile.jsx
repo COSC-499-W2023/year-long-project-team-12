@@ -92,6 +92,7 @@ const Profile = () => {
                   <Link to="/changename">Change Name</Link>
                   <a href="#">Change Background photo</a>
                   <Link to="/changepassword">Change Password</Link>
+                  <Link to="/contactUs">Give Feedback</Link>
                 </div>
             </div>
           }
@@ -105,9 +106,8 @@ const Profile = () => {
               <div className="collapsibleContainer">
                 <h2>My Requests</h2>
                 <div className="collapsibleLists">
-                <Posts displayLimit={5} />
+                  <Posts displayLimit={5} />
                 </div>
-                <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
               </div>
         )}
 
@@ -117,7 +117,6 @@ const Profile = () => {
                 <div className="collapsibleLists">
                   <Videos />
                 </div>
-                <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
               </div>
         )}
       </div>

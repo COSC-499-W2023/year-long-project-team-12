@@ -8,6 +8,22 @@
     padding: 20px;
     color: var(--body_color);
 
+    .uploadOptions {
+        display: flex;
+        padding-bottom: 30px;
+    }
+
+    #selectSavedVideo {
+        padding: 20px;
+        width: 600px;
+        margin: 40px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid var(--body_color);
+        background-color: var(--body_background);
+        color: var(--body_color);
+    }
+
     .upload-container {
         display: flex;
         flex-direction: column;

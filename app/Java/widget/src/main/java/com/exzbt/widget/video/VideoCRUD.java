@@ -57,12 +57,13 @@ public class VideoCRUD {
 
     @PostMapping(
             value = "{creatorId}/blurVideo",
-            consumes = MediaType.MULTIPART_FORM_DATA_VALUE
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = "video/mp4"
     )
-    public List<String> blurCreatedVideo(
+    public byte[] blurCreatedVideo(
             @PathVariable("creatorId") String creatorId,
             @RequestPart("video") MultipartFile file) {
-        return videoService.blurCreatedVideo(creatorId, file);
+            return videoService.blurCreatedVideo(creatorId, file);
     }
 
     @GetMapping(

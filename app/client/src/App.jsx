@@ -21,14 +21,14 @@ import Recording from "./pages/Recording/Recording";
 import "./app.scss";
 import {useAuth} from "./context/authContext";
 import ViewVideo from "./pages/ViewVideo/ViewVideo";
+import ViewSavedVideo from "./pages/ViewVideo/ViewSavedVideo";
 import ChangeName from "./pages/ChangeUserInfo/ChangeName";
+import { ContactUs } from "./pages/ContactUs/ContactUs";
 import ChangePassword from "./pages/ChangeUserInfo/ChangePassword";
-
-
 
 function App() {
   const { isCustomerAuthenticated } = useAuth();
-const Layout = () =>{
+  const Layout = () =>{
     return (
       <div className="app">
         <Navbar/>
@@ -93,7 +93,11 @@ const Layout = () =>{
         {
           path:"/editRequest",
           element:<Edit />
-        }        
+        },
+        {
+          path:"/savedVideo",
+          element:<ViewSavedVideo />
+        } 
       ],
     },
     {
@@ -116,6 +120,10 @@ const Layout = () =>{
         {
           path:"/login",
           element:<Login/>
+        },
+        {
+          path:"/contactUs",
+          element:<ContactUs/>
         },
         {
           path:"*",
