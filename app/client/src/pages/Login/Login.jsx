@@ -1,7 +1,7 @@
 import "./Login.scss";
 import { useState } from "react";
 import { useAuth } from "../../context/authContext";
-import { useNavigate, Navigate } from "react-router-dom";
+import { redirect, useNavigate, Navigate } from "react-router-dom";
 
 const Login = () => {
     const { login, isCustomerAuthenticated } = useAuth();
@@ -23,6 +23,11 @@ const Login = () => {
 
     const toggleRegister = () => {
         navigate("/register");
+    };
+
+    const isValidEmail = (value) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(value);
     };
 
     const handleLogin = async (event) => {
@@ -65,11 +70,6 @@ const Login = () => {
         setInputOutline("green");
         setShowPopup(true);
 
-    };
-
-    const isValidEmail = (value) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(value);
     };
 
     return (
