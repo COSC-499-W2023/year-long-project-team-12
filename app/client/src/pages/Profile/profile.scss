@@ -269,3 +269,25 @@
       }
     }
 }  
+
+.notifDrawer {
+  padding: 20px;
+  background-color: var(--body_background);
+  color: var(--body_color);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.headingNotif{
+  display: flex;
+  justify-content: space-between;
+
+  h4 {
+    text-decoration: underline;
+
+    &:hover {
+      cursor: pointer;
+      color: #35a6b4;
+    }
+  }
+}
