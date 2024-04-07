@@ -3,36 +3,36 @@ import { useState } from 'react';
 import "./ViewVideo.scss";
 import {useAuth} from "../../context/authContext";
 import Comments from '../../components/Comments/Comments';
-import {getVideoDetailsByRequestId, getRequestVideoByVideoId} from "../../services/ClientAPI";
+import {getVideoSubmissionsByRequestId, getRequestVideoByVideoId} from "../../services/ClientAPI";
 
 function ViewVideo() {
     const [video, setVideo] = useState('');
     const { currentRequest } = useAuth();
-    const [videoDetails, setVideoDetails] = useState(null);
+    const [submissions, setSubmissions] = useState([]);
 
-    const getRequestVideo = async () => {
+    const getRequestVideoSubmissions = async () => {
         try {
-            const resp = await getVideoDetailsByRequestId(currentRequest.requestId);
-            setVideoDetails(resp.data);
+            const resp = await getVideoSubmissionsByRequestId(currentRequest.requestId);
+            setSubmissions(resp.data);
         } catch (err) {
-            console.error('Error fetching video details:', err);
+            console.error('Error fetching video submissions:', err);
         }
     };
 
     useEffect(() => {
-        getRequestVideo();
+        getRequestVideoSubmissions();
     }, [currentRequest.requestId]);
 
     useEffect(() => {
-        if (videoDetails) {
-            const getVideo = async () => {
-                const videoUrl = await getRequestVideoByVideoId(videoDetails.videoId);
+        if (submissions.length > 0) {
+            const getVideo = () => {
+                var submission = submissions[0];
+                const videoUrl =  getRequestVideoByVideoId(submission.videoId, submission.requestId);
                 setVideo(videoUrl);
             };
             getVideo();
         }
-    }, [videoDetails]);
-
+    }, [submissions]);
 
 return (
     <main className='view-main'>

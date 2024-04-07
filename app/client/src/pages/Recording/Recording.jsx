@@ -98,15 +98,6 @@ const Recording = () => {
     const blob = new Blob(recordedChunks, { type: "video/webm" });
     
     try {
-      const resp = await getVideoDetailsByVideoName(videoName);
-      if(resp.data.videoName === videoName) {
-        return;
-      }
-    } catch (err) {
-        console.error('Error fetching video details');
-    }
-
-    try {
       const saveVideoObject = new FormData();
       saveVideoObject.append('video', blob);
       saveVideoObject.append('created', new Date());

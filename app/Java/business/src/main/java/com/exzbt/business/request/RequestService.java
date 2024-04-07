@@ -1,5 +1,6 @@
 package com.exzbt.business.request;
 
+import com.exzbt.business.notification.NotificationService;
 import com.exzbt.business.request.mappers.RequestCreationDTORequest;
 import com.exzbt.business.request.mappers.RequestDetailsDTO;
 import com.exzbt.business.request.mappers.RequestDetailsRequest;
@@ -30,6 +31,9 @@ public class RequestService {
 
     @Autowired
     private S3Actions s3Actions;
+
+    @Autowired
+    private NotificationService notificationService;
 
     private S3Buckets s3Buckets;
 
@@ -66,6 +70,8 @@ public class RequestService {
         UserDetailsDTO assignedUser = userService.findUserByEmail(creationDTORequest.getAssigneeEmail());
         creationDTORequest.setAssigneeId(assignedUser.getUserId());
         Request request = requestActions.save(creationDTORequest.convertFromDTO());
+        notificationService.sendNotification("New Request Assigned",
+                request.getAssigneeId(), request.getCreatorId(), new Date());
         return new RequestDetailsDTO().convertDTO(request);
     }
 
@@ -88,6 +94,8 @@ public class RequestService {
         request.setAssigneeId(updateRequest.getAssigneeId());
         request.setExpiration(updateRequest.getExpiration());
 
+        notificationService.sendNotification("Request Updated",
+                request.getAssigneeId(), request.getCreatorId(), new Date());
         return new RequestDetailsDTO().convertDTO(requestActions.save(request));
     }
 
@@ -96,6 +104,12 @@ public class RequestService {
             //TODO: exception throw
             return;
         }
+        Request request = requestActions.findById(requestId)
+                .orElseThrow(RuntimeException::new);
+
+        notificationService.sendNotification("Request Deleted",
+                request.getAssigneeId(), request.getCreatorId(), new Date());
+
         requestActions.deleteById(requestId);
     }
 
@@ -130,6 +144,9 @@ public class RequestService {
         Request request = requestActions.findById(requestId)
                 .orElseThrow(RuntimeException::new);
         request.setSubmitted(Boolean.TRUE);
+
+        notificationService.sendNotification("Video Submitted to Request",
+                request.getAssigneeId(), request.getCreatorId(), new Date());
         requestActions.save(request);
     }
 }

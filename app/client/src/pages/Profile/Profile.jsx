@@ -101,9 +101,8 @@ const Profile = () => {
               <div className="collapsibleContainer">
                 <h2>My Requests</h2>
                 <div className="collapsibleLists">
-                <Posts displayLimit={5} />
+                  <Posts displayLimit={5} />
                 </div>
-                
               </div>
         )}
 
@@ -113,7 +112,6 @@ const Profile = () => {
                 <div className="collapsibleLists">
                   <Videos />
                 </div>
-                
               </div>
         )}
       </div>
