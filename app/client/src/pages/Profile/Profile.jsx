@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import ProfilePicChanger from "./profilepicchanger.jsx";
+import ProfilePicChanger from "./profilepicchanger.js";
 import Posts from "../../components/Posts/Posts.jsx";
 import Videos from "../../components/Videos/Videos.jsx";
 import ImageCropProvider from './ImageCropProvider';
