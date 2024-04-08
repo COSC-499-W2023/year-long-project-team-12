@@ -745,7 +745,7 @@ Group member usernames:
 ![imageBE](./images/betest12.png)
 
 
-# Team 13 Term2 Week 12 Log (Mar 25th - Mar 31st)
+# Team 12 Term2 Week 13 Log (Apr 1st - Apr 7th)
 
 Group member usernames:
 
