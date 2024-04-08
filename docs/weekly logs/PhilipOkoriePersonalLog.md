@@ -146,6 +146,9 @@ Group member: Philip Okorie
 * Worked on final report and video
 * Implemented Interactive home page.
 
+<img width="1374" alt="Screenshot 2024-04-07 at 11 55 11 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/5b99ba03-e63a-410c-856e-90eeee610c95">
+
+
 
   
 <img width="1402" alt="Screenshot 2024-04-07 at 3 08 36 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/2553a235-94e9-445f-b6fd-2031d473630c">
