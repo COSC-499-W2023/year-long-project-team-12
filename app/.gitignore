@@ -64,3 +64,8 @@ yarn-error.log*
 # Datasource local storage ignored files
 **/dataSources/
 **/dataSources.local.xml
+
+
+
+##Config file for the feedback api
+config.json

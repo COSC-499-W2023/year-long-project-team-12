@@ -1,39 +1,68 @@
 .changeUserInfoContainer{
-    background-color: var(--body_background);
-    display: flex;
+    * {
+      font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     flex-direction: column;
-    align-items: center;
     color: var(--body_color);
-  }
+    height: 100vh;
+    height: 100vh;
+    background: var(--requests_background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer {
+    flex-direction: column;
+    background-color: var(--body_background);
+    border: 3px solid #35a6b4;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
 
 .changeUserInfoMain {
-  
     width: 550px;
     height: 50vh;
-   
- 
   }
 .changeUserInfoMain h2 {
   margin-bottom: 10px;
 }
- 
-  
+
   .changeUserInfoMain form {
-    
     padding: 20px;
-    border: 2px solid #000;
     border-radius: 10px;
     display: flex;
+    gap: 20px;
     flex-direction: column;
 
   input{
     margin: 10px;
     height: 35px;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    padding: 20px;
+    outline: none;
   }
 
     button{
+        width: fit-content;
+        padding: 15px;
+        margin: auto;
+        border: none;
         background-color: #35a6b4;
-        width: 100%;
+        color: var(--body_color);
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--body_color);
+          color: var(--body_background);
+        }
     }
   }
   

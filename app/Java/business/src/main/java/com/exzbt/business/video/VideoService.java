@@ -1,6 +1,6 @@
 package com.exzbt.business.video;
 
-import com.exzbt.business.s3.RekognitionActions;
+import com.exzbt.business.rekognition.RekognitionActions;
 import com.exzbt.business.video.mappers.VideoDetailsDTO;
 import com.exzbt.business.video.mappers.VideoDetailsRequest;
 import com.exzbt.business.video.mappers.VideoSubmissionDTO;
@@ -11,17 +11,25 @@ import com.exzbt.transaction.video.api.SubmissionActions;
 import com.exzbt.transaction.video.api.VideoActions;
 import com.exzbt.transaction.video.impl.Video;
 import com.exzbt.transaction.video.impl.VideoSubmission;
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
+import org.opencv.core.Mat;
+import org.opencv.core.Size;
+import org.opencv.imgproc.Imgproc;
+import org.opencv.videoio.VideoCapture;
+import org.opencv.videoio.VideoWriter;
+import org.opencv.videoio.Videoio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+
+import static org.opencv.videoio.VideoWriter.fourcc;
+
 
 @Service
 @AllArgsConstructor
@@ -119,8 +127,11 @@ public class VideoService {
         );
     }
 
-    public List<String> blurCreatedVideo(String creatorId, MultipartFile file) {
+    public byte[] blurCreatedVideo(String creatorId, MultipartFile file) {
+
+        byte[] blurredVideo;
         String videoKey = "blurVideos/%s".formatted(creatorId);
+
         try {
             s3Actions.putObject(
                     s3Buckets.getBlurS3(),
@@ -132,7 +143,48 @@ public class VideoService {
         }
 
         String startJobId = rekognitionActions.startFaceDetection(s3Buckets.getBlurS3(), videoKey);
-        return rekognitionActions.getFaceResults(startJobId);
+        if(startJobId.equals("dev")) {
+            Map<String, List<String>> faceResults = new HashMap<>();
+        }else {
+            Map<String, List<String>> faceResults = rekognitionActions.getFaceResults(startJobId);
+        }
+
+        File tempFile;
+        try {
+            tempFile = File.createTempFile("temp_video", ".mp4");
+            Files.write(tempFile.toPath(), file.getBytes());
+
+            VideoCapture capture = new VideoCapture(tempFile.getAbsolutePath());
+            if (!capture.isOpened()) {
+                return null;
+            }
+            int fourcc = fourcc('H', '2', '6', '4');
+            double frameWidth = capture.get(Videoio.CAP_PROP_FRAME_WIDTH);
+            double frameHeight = capture.get(Videoio.CAP_PROP_FRAME_HEIGHT);
+
+            VideoWriter videoWriter = new org.opencv.videoio.VideoWriter
+                    (tempFile.getAbsolutePath(), fourcc, capture.get(Videoio.CAP_PROP_FPS), new Size(frameWidth, frameHeight));
+
+            Mat readFrame = new Mat();
+            while (capture.read(readFrame)) {
+                if(startJobId.equals("dev")) {
+                    Imgproc.blur(readFrame, readFrame, new Size(30,30));
+                } else {
+
+                }
+                videoWriter.write(readFrame);
+            }
+
+            capture.release();
+            videoWriter.release();
+
+            blurredVideo = Files.readAllBytes(Path.of(tempFile.getAbsolutePath()));
+
+        } catch (IOException e) {
+            throw new RuntimeException("failed to upload video to S3", e);
+        }
+
+        return blurredVideo;
     }
 
     public VideoDetailsDTO getVideoByVideoName(String videoName) {
