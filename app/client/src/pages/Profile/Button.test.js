@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Modal from './Modal';
+import Button from './Button';
+
 
 
 
@@ -9,12 +10,12 @@ const MockProfilePage = ({open,text}) =>{
 
   return(
     <>
-    <div data-testid= "Modal" className='Modal'> </div>
+    <div data-testid= "Button" className='Button'> </div>
     </>
   );
 };
 
-test('handleModal logs message when "Modal" is displayed', () => {
+test('handleMyButton logs message when "Button" image is displayed', () => {
     render(<MockProfilePage open={false} text={"Show"}/>)
-   expect(screen.getByTestId("Modal")).toBeInTheDocument();
+   expect(screen.getByTestId("Button")).toBeInTheDocument();
 });

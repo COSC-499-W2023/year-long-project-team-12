@@ -7,9 +7,11 @@ import { useState,useEffect } from "react";
 import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import ProfilePicChanger from "./profilepicchanger.js";
+import ProfilePicChanger from "./profilepicchanger.jsx";
 import Posts from "../../components/Posts/Posts.jsx";
 import Videos from "../../components/Videos/Videos.jsx";
+import ImageCropProvider from "./ImageCropProvider.jsx";
+
 import NotificationDrawer from "../../components/Notification/NotificationDrawer.jsx";
 import { getNotifications, deleteAllNotifications, updateNotifications } from '../../services/ClientAPI';
 
@@ -42,6 +44,7 @@ const Profile = () => {
     setOpenDrawer(newOpen);
     updateNotifications(currentUser.userId);
   };
+ 
   
   const handleMyRequestsClick = () => {
     setShowRequests(!showRequests);
@@ -85,8 +88,12 @@ const Profile = () => {
       <div className="profileContainer">
         <div className="uInfo">          
           <div className="center">
+          <ImageCropProvider>
+          <ProfilePicChanger />
+          </ImageCropProvider>
+          
             
-            <ProfilePicChanger />
+           
           
             <span>{currentUser.firstname} {currentUser.lastname}</span>
             <div className="info">
@@ -118,7 +125,6 @@ const Profile = () => {
             <div className = "dropdown">
                 <div id="myDropdown" className="dropdown-content">
                   <Link to="/changename">Change Name</Link>
-                  <a href="#">Change Background photo</a>
                   <Link to="/changepassword">Change Password</Link>
                   <Link to="/contactUs">Give Feedback</Link>
                 </div>

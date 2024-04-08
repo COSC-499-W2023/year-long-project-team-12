@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Modal from './Modal';
-
+import Sliders from "./Sliders";
 
 
 const MockProfilePage = ({open,text}) =>{
@@ -9,12 +8,12 @@ const MockProfilePage = ({open,text}) =>{
 
   return(
     <>
-    <div data-testid= "Modal" className='Modal'> </div>
+    <div data-testid= "Sliders" className='Sliders'> </div>
     </>
   );
 };
 
-test('handleModal logs message when "Modal" is displayed', () => {
+test('handleSliders logs message when "Sliders" is displayed', () => {
     render(<MockProfilePage open={false} text={"Show"}/>)
-   expect(screen.getByTestId("Modal")).toBeInTheDocument();
+   expect(screen.getByTestId("Sliders")).toBeInTheDocument();
 });

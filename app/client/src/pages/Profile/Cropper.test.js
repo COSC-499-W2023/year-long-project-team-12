@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Modal from './Modal';
+import Cropper from './Cropper';
 
 
 
@@ -9,12 +9,12 @@ const MockProfilePage = ({open,text}) =>{
 
   return(
     <>
-    <div data-testid= "Modal" className='Modal'> </div>
+    <div data-testid= "Cropper" className='Cropper'> </div>
     </>
   );
 };
 
-test('handleModal logs message when "Modal" is displayed', () => {
+test('handleMyCroppedImage logs message when "Cropped Image" image is clicked', () => {
     render(<MockProfilePage open={false} text={"Show"}/>)
-   expect(screen.getByTestId("Modal")).toBeInTheDocument();
+   expect(screen.getByTestId("Cropper")).toBeInTheDocument();
 });
