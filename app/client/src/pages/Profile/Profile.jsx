@@ -92,7 +92,7 @@ const Profile = () => {
         {showVideos && <Videos />}
       </div>
 
-      {/* Notification Sidebar */}
+      {/* Notification Sidebar! */}
       <div className={`notificationSidebar ${notificationSidebarVisible ? 'visible' : ''}`}>
         {notifications.map((notification, index) => (
           <div key={index} className="notificationItem">{notification}</div>

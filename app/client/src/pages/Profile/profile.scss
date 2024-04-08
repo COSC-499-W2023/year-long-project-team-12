@@ -106,7 +106,7 @@
     right: -100%; // Start off the screen to the right
     width: 250px;
     height: 100vh;
-    background-color: rgba(117, 179, 193, 0.832);
+    background-color: white;
     box-shadow: -2px 0 8px rgba(0,0,0,0.2);
     transition: right 0.3s ease;
     z-index: 2000; // Below the buttons but above other content
