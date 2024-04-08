@@ -4,19 +4,17 @@ import Modal from './Modal';
 
 
 
-
 const MockProfilePage = ({open,text}) =>{
     currentUser: { email: 'test@example.com' }
 
   return(
     <>
-    <div data-testid= "modal" className='modal'> </div>
+    <div data-testid= "Modal" className='Modal'> </div>
     </>
   );
 };
 
-test('handleMyProfileClick logs message when "Modal" image has been displayed', () => {
+test('handleModal logs message when "Modal" is displayed', () => {
     render(<MockProfilePage open={false} text={"Show"}/>)
-   expect(screen.getByTestId("modal")).toBeInTheDocument();
+   expect(screen.getByTestId("Modal")).toBeInTheDocument();
 });
-

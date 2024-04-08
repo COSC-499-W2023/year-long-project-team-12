@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import ImageCropper from './ImageCropper';
-
+import cropImage from "./cropImage";
 
 
 
@@ -10,13 +9,15 @@ const MockProfilePage = ({open,text}) =>{
 
   return(
     <>
-    <div data-testid= "imagecropper" className='imagecropper'> </div>
+    <div data-testid= "cropImage" className='cropImage'> </div>
     </>
   );
 };
 
-test('handleMyProfileClick logs message when "My Profile pic" image has been cropped', () => {
+test('handleMyCroppedImage logs message when "Cropped Image" image is clicked', () => {
     render(<MockProfilePage open={false} text={"Show"}/>)
-   expect(screen.getByTestId("imagecropper")).toBeInTheDocument();
+   expect(screen.getByTestId("cropImage")).toBeInTheDocument();
 });
 
+
+  

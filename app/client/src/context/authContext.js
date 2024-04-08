@@ -10,6 +10,9 @@ export const AuthContextProvider = ({ children }) => {
     const [currentRequest,setRequest] = useState(
         JSON.parse(localStorage.getItem("currentRequest")) || null
     );
+    const [currentVideo,setVideo] = useState(
+        JSON.parse(localStorage.getItem("currentVideo")) || null
+    );
 
     const setCurrentRequest = (request) => {
         setRequest({
@@ -21,6 +24,16 @@ export const AuthContextProvider = ({ children }) => {
             created: request.created,
             expiration: request.expiration,
             submitted: request.submitted
+        });
+    };
+
+    const setCurrentVideo = (video) => {
+        setVideo({
+            videoId: video.videoId,
+            creatorId: video.creatorId,
+            videoName: video.videoName,
+            requestId: video.requestId,
+            created: video.created
         });
     };
 
@@ -50,7 +63,6 @@ export const AuthContextProvider = ({ children }) => {
             saveCurrentUser(currentUser).then((resp) => {
                 const jwtToken = resp.headers['authorization'];
                 localStorage.setItem('access_token', jwtToken);
-               // console.log(resp);
                 const decodedToken = jwtDecode(jwtToken);
                 setCurrentUser({
                     username: decodedToken.sub,
@@ -74,9 +86,7 @@ export const AuthContextProvider = ({ children }) => {
             performLogin(usernameAndPassword).then(res => {
                 const jwtToken = res.headers["authorization"];
                 localStorage.setItem("access_token", jwtToken);
-               // console.log(res)
                 const decodedToken = jwtDecode(jwtToken);
-              //  console.log(decodedToken);
                 setCurrentUser({
                     username: decodedToken.sub,
                     userId: res.data.userDetailsDTO.userId,
@@ -120,10 +130,12 @@ export const AuthContextProvider = ({ children }) => {
         <AuthContext.Provider value={{
             currentUser,
             currentRequest,
+            currentVideo,
             register,
             login,
             logOut,
             setCurrentRequest,
+            setCurrentVideo,
             isCustomerAuthenticated,
             updateContextCurrentUser, 
             isHiring

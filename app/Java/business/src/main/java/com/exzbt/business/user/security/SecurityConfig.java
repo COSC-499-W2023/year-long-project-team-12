@@ -33,7 +33,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST,
                                 "api/v1/",
-                                "/api/v1/auth/login")
+                                "/api/v1/auth/login",
+                                "/api/v1/video/*/blurVideo")
                         .permitAll()
                         .requestMatchers(HttpMethod.GET,
                                 "/healthPing",

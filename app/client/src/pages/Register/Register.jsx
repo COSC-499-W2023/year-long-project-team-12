@@ -82,7 +82,6 @@ const Register = () => {
 
       formData.forEach((value, key) => (object[key] = value));
       const currentUser = JSON.stringify(object);
-      console.log(currentUser)
 
       register(currentUser).then(resp => {
         navigate('/profile');

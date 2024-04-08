@@ -60,6 +60,15 @@ export const saveCurrentUser = async (currentUser) => {
     }
 }
 
+export const updateUser = async (userId, userData) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/users/${userId}`,
+            userData, getAuthConfigJSON())
+    }catch (e) {
+        throw e;
+    }
+}
+
 export const uploadRequestVideo = async (requestId, request) => {
     try {
         return await axios.post(`${host_address}/api/v1/requests/${requestId}/submit`,
@@ -92,6 +101,23 @@ export const saveCreatedVideo = async (creatorId, videoObject) => {
     try {
         return await axios.post(`${host_address}/api/v1/video/${creatorId}/saveVideo`,
             videoObject,  getAuthConfigMultiPart())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const getCommentsById = async (requestId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/comments/${requestId}`, getAuthConfig())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const createNewComment = async (comment, requestId) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/comments/create/${requestId}`,
+            comment, getAuthConfigJSON())
     }catch (e) {
         throw e;
     }
@@ -135,21 +161,21 @@ export const getUserProfileImage = (userId) =>
     `${host_address}/api/v1/users/${userId}/profileImage`;
 
 
-export const getVideoDetailsByRequestId = async (requestId) => {
-    try {
-        return await axios.get(`${host_address}/api/v1/video/${requestId}/videoInfo`, getAuthConfig())
-    }catch (e) {
-        throw e;
-    }
-}
+// export const getVideoDetailsByRequestId = async (requestId) => {
+//     try {
+//         return await axios.get(`${host_address}/api/v1/video/${requestId}/requestVideoDetails`, getAuthConfig())
+//     }catch (e) {
+//         throw e;
+//     }
+// }
 
-export const getVideoDetailsByVideoName = async (videoName) => {
-    try {
-        return await axios.get(`${host_address}/api/v1/video/${videoName}/videoInfo`, getAuthConfig())
-    }catch (e) {
-        throw e;
-    }
-}
+// export const getVideoDetailsByVideoName = async (videoName) => {
+//     try {
+//         return await axios.get(`${host_address}/api/v1/video/${videoName}/videoInfo`, getAuthConfig())
+//     }catch (e) {
+//         throw e;
+//     }
+// }
 
 
 export const getVideoDetailsListByCreatorId = async (creatorId) => {
@@ -160,8 +186,51 @@ export const getVideoDetailsListByCreatorId = async (creatorId) => {
     }
 }
 
-export const getRequestVideoByVideoId = (videoId) =>
-    `${host_address}/api/v1/video/${videoId}/requestVideo`;
+
+export const getNotifications = async (userId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/notifications/${userId}`, getAuthConfig())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const updateNotifications = async (userId) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/notifications/update/${userId}`, new FormData(), getAuthConfigJSON())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const deleteNotificationById = async (notificationId) => {
+    try {
+        return await axios.delete(`${host_address}/api/v1/notifications/delete/${notificationId}`,
+            getAuthConfigJSON())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const deleteAllNotifications = async (userId) => {
+    try {
+        return await axios.delete(`${host_address}/api/v1/notifications/deleteAll/${userId}`,
+            getAuthConfigJSON())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const getVideoSubmissionsByRequestId = async (requestId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/video/${requestId}/videoSubmissions`, getAuthConfig())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const getRequestVideoByVideoId = (videoId, requestId) =>
+    `${host_address}/api/v1/video/${videoId}/requestVideo?requestId=${requestId}`;
 
 export const getSavedVideoByVideoId = (videoId) =>
     `${host_address}/api/v1/video/${videoId}/savedVideo`;

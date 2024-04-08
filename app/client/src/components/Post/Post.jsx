@@ -136,14 +136,22 @@ function Post({request}) {
                                 <button onClick={toggleDetails}>Details</button>
                             </div>
                             <div className='info' id="submit">
-                                <Link to="/recording">
-                                    <button onClick={handleRequestContext}>Record Video</button>
-                                </Link>
+                                {new Date(request.expiration) > new Date()? 
+                                    <Link to="/recording">
+                                        <button onClick={handleRequestContext}>Record Video</button>
+                                    </Link>
+                                    :
+                                    <></>
+                                }
                             </div>
                             <div className='info' id="submit">
-                                <Link to="/upload">
-                                    <button onClick={handleRequestContext}>Upload Video</button>
-                                </Link>
+                                {new Date(request.expiration) > new Date()? 
+                                    <Link to="/upload">
+                                        <button onClick={handleRequestContext}>Upload Video</button>
+                                    </Link>
+                                    :
+                                    <></>
+                                }
                             </div>
 
                             {details && (

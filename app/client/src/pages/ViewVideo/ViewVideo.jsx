@@ -2,37 +2,52 @@ import React, {useEffect} from 'react'
 import { useState } from 'react';
 import "./ViewVideo.scss";
 import {useAuth} from "../../context/authContext";
+import Drawer from '@mui/material/Drawer';
 import Comments from '../../components/Comments/Comments';
-import {getVideoDetailsByRequestId, getRequestVideoByVideoId} from "../../services/ClientAPI";
+import {getVideoSubmissionsByRequestId, getRequestVideoByVideoId} from "../../services/ClientAPI";
 
 function ViewVideo() {
     const [video, setVideo] = useState('');
     const { currentRequest } = useAuth();
-    const [videoDetails, setVideoDetails] = useState(null);
+    const [submissions, setSubmissions] = useState([]);
+    const [openDrawer, setOpenDrawer] = useState(false);
+    const [comments, setComments] = useState([]);
 
-    const getRequestVideo = async () => {
+    const getComments = () => {
+        
+    };
+    
+    useEffect(() => {
+        getComments();
+    }, []);
+
+    const toggleDrawer = (newOpen) => () => {
+        setOpenDrawer(newOpen);
+    };
+  
+    const getRequestVideoSubmissions = async () => {
         try {
-            const resp = await getVideoDetailsByRequestId(currentRequest.requestId);
-            setVideoDetails(resp.data);
+            const resp = await getVideoSubmissionsByRequestId(currentRequest.requestId);
+            setSubmissions(resp.data);
         } catch (err) {
-            console.error('Error fetching video details:', err);
+            console.error('Error fetching video submissions:', err);
         }
     };
 
     useEffect(() => {
-        getRequestVideo();
+        getRequestVideoSubmissions();
     }, [currentRequest.requestId]);
 
     useEffect(() => {
-        if (videoDetails) {
-            const getVideo = async () => {
-                const videoUrl = await getRequestVideoByVideoId(videoDetails.videoId);
+        if (submissions.length > 0) {
+            const getVideo = () => {
+                var submission = submissions[0];
+                const videoUrl =  getRequestVideoByVideoId(submission.videoId, submission.requestId);
                 setVideo(videoUrl);
             };
             getVideo();
         }
-    }, [videoDetails]);
-
+    }, [submissions]);
 
 return (
     <main className='view-main'>
@@ -49,8 +64,17 @@ return (
         <p><i>No video submissions</i></p>
         </>
         }
-         <Comments />
+         <h4 onClick={toggleDrawer(true)}>View Comments</h4>
         </form>
+
+        <Drawer anchor={'right'} open={openDrawer} onClose={toggleDrawer(false)}>
+            <div className="notifDrawer"> 
+              <div className="headingNotif">
+                <h3>Comments</h3>
+              </div>  
+                <Comments />
+            </div>
+        </Drawer>
     </main>
   )
 }
