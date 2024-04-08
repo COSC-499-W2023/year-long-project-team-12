@@ -710,7 +710,7 @@ Group member usernames:
 
 ![imageBE](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/8f28f6a0-40ce-420a-8611-1855bb194567)
 
- # Team 12 Term2 Week 11 Log (Mar 18th - Mar 24th)
+ # Team 12 Term2 Week 12 Log (Mar 25th - Mar 31st)
 
 Group member usernames:
 
@@ -743,6 +743,46 @@ Group member usernames:
 ![imageFE](./images/fetestsweek12.png)
 
 ![imageBE](./images/betest12.png)
+
+
+# Team 13 Term2 Week 12 Log (Mar 25th - Mar 31st)
+
+Group member usernames:
+
+* @yemoski - Oluwayemisi Ogungbemi
+
+* @Abdulhameed23 - Hameed Karim
+
+* @PhilipOkorie - Philip Okorie
+
+* @jusnoorkaur - Jusnoor Kaur Sachdeva
+
+* @tmg-repo - Tyler Grant
+
+## Features for Milestone
+
+* Finishing all frontend features - Notifications, Comments.
+* Handling/fixing broken tests. 
+* Finishing all backend features - new DB tables, new APIs, services
+* Enabling user forgot password feature, cropping, etc
+* Project reports and video demos creation.
+
+## Burnup Chart 
+
+![BurnUp](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/aad4d9be-4414-4509-aea9-166636cdfd1d)
+
+## Kanban board tasks identified this week:
+
+![Kanban](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/3117daf3-b39b-464c-b367-b17068f359b2)
+
+
+## Testing
+
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/10ec1aaa-6524-4f39-9161-9071e4f5a2c8)
+
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/6b2ddb45-903e-400f-a26c-961bc86b5fc0)
+
+
 
 
 
