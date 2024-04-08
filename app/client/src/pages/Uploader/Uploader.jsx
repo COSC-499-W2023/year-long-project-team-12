@@ -36,7 +36,8 @@ function Uploader() {
       getMyVideos();
     }, [savedVideo]);
 
-    const handleUpload = async () => {
+    const handleUpload = async (event) => {
+      event.preventDefault();
         setSubmitting(true);
         if (!agreeTerms) {
             setErrorLabel("Please agree to the Terms of Agreement");
@@ -44,7 +45,7 @@ function Uploader() {
             return;
         }
 
-        if (savedVideo) {
+        if (savedVideo && savedVideoURLId!=="") {
           fetch(getSavedVideoByVideoId(savedVideoURLId))
             .then((resp) => resp.blob())
             .then((videoBlob) => setVideo(videoBlob));
@@ -174,7 +175,8 @@ function Uploader() {
         
         {savedVideo && (
           <>
-            <select id='selectSavedVideo' onChange={handleSavedVideoSelect}>
+            <select id='selectSavedVideo' value={savedVideoURLId} onChange={handleSavedVideoSelect}>
+              <option value="">Select a Video</option>
               {myVideos.map((video) => (
                 <option key={video.videoId} value={video.videoId}>
                   {video.videoName}

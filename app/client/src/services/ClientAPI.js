@@ -60,6 +60,15 @@ export const saveCurrentUser = async (currentUser) => {
     }
 }
 
+export const updateUser = async (userId, userData) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/users/${userId}`,
+            userData, getAuthConfigJSON())
+    }catch (e) {
+        throw e;
+    }
+}
+
 export const uploadRequestVideo = async (requestId, request) => {
     try {
         return await axios.post(`${host_address}/api/v1/requests/${requestId}/submit`,
@@ -92,6 +101,23 @@ export const saveCreatedVideo = async (creatorId, videoObject) => {
     try {
         return await axios.post(`${host_address}/api/v1/video/${creatorId}/saveVideo`,
             videoObject,  getAuthConfigMultiPart())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const getCommentsById = async (requestId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/comments/${requestId}`, getAuthConfig())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const createNewComment = async (comment, requestId) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/comments/create/${requestId}`,
+            comment, getAuthConfigJSON())
     }catch (e) {
         throw e;
     }
@@ -155,6 +181,41 @@ export const getUserProfileImage = (userId) =>
 export const getVideoDetailsListByCreatorId = async (creatorId) => {
     try {
         return await axios.get(`${host_address}/api/v1/video/${creatorId}/videos`, getAuthConfig())
+    }catch (e) {
+        throw e;
+    }
+}
+
+
+export const getNotifications = async (userId) => {
+    try {
+        return await axios.get(`${host_address}/api/v1/notifications/${userId}`, getAuthConfig())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const updateNotifications = async (userId) => {
+    try {
+        return await axios.post(`${host_address}/api/v1/notifications/update/${userId}`, new FormData(), getAuthConfigJSON())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const deleteNotificationById = async (notificationId) => {
+    try {
+        return await axios.delete(`${host_address}/api/v1/notifications/delete/${notificationId}`,
+            getAuthConfigJSON())
+    }catch (e) {
+        throw e;
+    }
+}
+
+export const deleteAllNotifications = async (userId) => {
+    try {
+        return await axios.delete(`${host_address}/api/v1/notifications/deleteAll/${userId}`,
+            getAuthConfigJSON())
     }catch (e) {
         throw e;
     }

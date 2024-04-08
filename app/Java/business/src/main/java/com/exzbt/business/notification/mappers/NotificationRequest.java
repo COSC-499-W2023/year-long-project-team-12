@@ -23,7 +23,7 @@ public class NotificationRequest {
         Notification notification = new Notification();
         notification.setContent(this.getContent());
         notification.setCreated(new Date());
-        notification.setCreatorId(this.getContent());
+        notification.setCreatorId(this.getCreatorId());
         notification.setAssigneeId(this.getAssigneeId());
         notification.setViewed(Boolean.FALSE);
         return notification;

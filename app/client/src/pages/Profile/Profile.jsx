@@ -1,8 +1,9 @@
 import "./profile.scss";
 import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
+import Drawer from '@mui/material/Drawer';
 import {useAuth} from "../../context/authContext";
-import { useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 import { Link } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -11,14 +12,38 @@ import Posts from "../../components/Posts/Posts.jsx";
 import Videos from "../../components/Videos/Videos.jsx";
 import ImageCropProvider from "./ImageCropProvider.jsx";
 
-
+import NotificationDrawer from "../../components/Notification/NotificationDrawer.jsx";
+import { getNotifications, deleteAllNotifications, updateNotifications } from '../../services/ClientAPI';
 
 const Profile = () => {
   const { currentUser } = useAuth();
   const [showRequests, setShowRequests] = useState(false);
   const [showVideos, setShowVideos] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [notificationCount, setNotificationCount] = useState(2);
+  const [notificationCount, setNotificationCount] = useState(0);
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const [notifications, setMyNotifications] = useState([]);
+  const [clearAll, setClear] = useState(false);
+
+  const getMyNotifications = () => {
+    getNotifications(currentUser.userId)
+      .then((resp) => {
+        let sorted = resp.data.sort((a,b) => b.created - a.created)
+        .filter((notification) => !notification.viewed);
+        setMyNotifications(sorted);
+        setNotificationCount(sorted.length);
+      })
+      .catch((err) => {});
+  };
+
+  useEffect(() => {
+    getMyNotifications();
+  }, []);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpenDrawer(newOpen);
+    updateNotifications(currentUser.userId);
+  };
  
   
   const handleMyRequestsClick = () => {
@@ -35,8 +60,16 @@ const Profile = () => {
     setNotificationCount(0);
   };
 
-  const handleNewRequest = () => {
-    setNotificationCount(notificationCount + 1);
+  const handleClear = (event) => {
+    event.preventDefault();
+    setClear(true);
+
+    deleteAllNotifications(currentUser.userId).then(response => {
+      getNotifications(currentUser.userId).then((resp) => {
+        setMyNotifications(resp.data);
+        setNotificationCount(resp.data.length);
+      })
+    }).catch((err) => {});
   };
 
   const dropdownSettings = () => {
@@ -77,7 +110,7 @@ const Profile = () => {
             <button onClick={handleMyRequestsClick} className="myRequestsButton"> {showRequests ? 'Hide My Requests' : 'View My Requests'} </button>  
             <button onClick={handleRecordedVideosClick} className="recordedVideosButton">{showVideos ? 'Hide My Videos' : "Saved Videos"} </button>
             <button onClick={handleNotificationsClick} className="notificationsButton">
-            <NotificationsIcon fontSize="large"
+            <NotificationsIcon onClick={toggleDrawer(true)} fontSize="large"
              className="notificationsButton"/>
             {notificationCount > 0 && (
               <span className="notificationCount">{notificationCount}</span>
@@ -97,8 +130,6 @@ const Profile = () => {
                 </div>
             </div>
           }
-      
-
           </div>
         </div>
 
@@ -120,6 +151,16 @@ const Profile = () => {
                 </div>
               </div>
         )}
+
+        <Drawer anchor={'right'} open={openDrawer} onClose={toggleDrawer(false)}>
+            <div className="notifDrawer"> 
+              <div className="headingNotif">
+                <h3>Notifications</h3>
+                {(notifications.length > 0 && !clearAll) && <h4 onClick={handleClear}>CLEAR ALL</h4>}
+              </div>  
+                {!clearAll? <NotificationDrawer /> : <>No Notifications!</>}
+            </div>
+        </Drawer>
       </div>
     </div>
   );

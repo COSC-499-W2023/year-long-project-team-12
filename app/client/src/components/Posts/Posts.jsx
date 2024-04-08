@@ -45,20 +45,17 @@ function Posts({ displayLimit }) {
       {myRequests.length === 0 ? (
         <>
           <div className="norequests">There is no request for you at the moment!</div>
-          
         </>
-        
-        
       ) : (
         <div className="posts">
           {displayedRequests.map((request) => (
-            <>
              <Post request={request} key={request.requestId} />
-            <Link to="/jobs"><button  className="myRequestsButton"> Show More</button></Link>
+          ))}
+          {displayLimit ? 
+            <Link to="/jobs"><button  className="myRequestsButton">Show More</button></Link>
+            :
+            <>
             </>
-           
-            
-          ))
           }
         </div>
       )}

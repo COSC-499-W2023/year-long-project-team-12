@@ -72,13 +72,18 @@ public class UserService  {
         AppUser user = userTransaction.findById(id)
                 .orElseThrow(() -> new UsernameNotFoundException(USER_NOT_FOUND));
 
-        if(Objects.isNull(updateRequest) || Objects.equals(user, updateRequest.convertFromDTO())) {
+        if(Objects.isNull(updateRequest)) {
             //TODO: exception throw
             return null;
         }
 
-        AppUser updatedUser = updateRequest.convertFromDTO();
-        return new UserDetailsDTO().convertDTO(userTransaction.save(updatedUser));
+        user.setFirstName(updateRequest.getFirstName());
+        user.setLastName(updateRequest.getLastName());
+        if (Objects.nonNull(updateRequest.getPassword()) && !updateRequest.getPassword().isEmpty()) {
+            user.setPassword(updateRequest.getPassword());
+        }
+
+        return new UserDetailsDTO().convertDTO(userTransaction.save(user));
     }
 
     public void deleteUserById(String userId) {
