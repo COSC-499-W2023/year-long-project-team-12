@@ -1,4 +1,3 @@
-
 import "./profile.scss";
 import PlaceIcon from "@mui/icons-material/Place";
 import LanguageIcon from "@mui/icons-material/Language";
