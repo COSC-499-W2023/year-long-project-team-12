@@ -138,6 +138,23 @@ Group member: Philip Okorie
 <img width="1358" alt="Screenshot 2024-04-02 at 3 44 45 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/6b89067c-5f2d-4369-8ae1-89f3cde855df">
 <img width="1399" alt="Screenshot 2024-04-02 at 3 42 07 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/072861bc-ad24-4acc-8623-1c3107cd9a7c">
 
+## Last Log(April 1st-7th)
+
+* Finished the cropping feature
+* Linked to the backend
+* Reviewed others code
+* Worked on final report and video
+* Implemented Interactive home page.
+
+
+  
+<img width="1402" alt="Screenshot 2024-04-07 at 3 08 36 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/2553a235-94e9-445f-b6fd-2031d473630c">
+
+<img width="1366" alt="Screenshot 2024-04-07 at 3 08 13 PM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/e1412792-5f54-4f8d-96cc-4a2316bc1aa6">
+
+<img width="1329" alt="Screenshot 2024-04-02 at 12 41 48 AM" src="https://github.com/COSC-499-W2023/year-long-project-team-12/assets/61035007/52fb2fe5-cf59-47d8-8bcb-f607966bd570">
+
+
 
 
     
