@@ -284,3 +284,18 @@ Group member username:
 
 ![HameedTasks](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/3cc16ff8-9300-4ff0-a1cb-47f2febee726)
 
+## Week 13 Log (April 1st - April 7th)
+
+Group member username:
+@Abdulhameed23 - Hameed Karim
+
+* Finished notifications and comments features.
+* Fixed and enabled updating profile features.
+* Enabled submit video from saved videos feature.
+* Worked on and completed final project report and video demo.
+
+![HameedTasks](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/2afcbad7-2731-46ca-91bf-0c43682573dc)
+
+
+![HameedTasks](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/87030215/8f89b94c-cdd5-47a3-862d-f465efcaf9a1)
+
