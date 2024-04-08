@@ -144,3 +144,9 @@
 ![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/db6e184b-bc42-4d81-8423-6d1612205147)
 - Working on my final report -> https://docs.google.com/document/d/1dXclTBQRLjnywkg0-Wqs0F4fF8LLGG3KxjwQ4vxFkL0/edit
 
+## Week 13 Apr 1st - Apr 7th
+![image](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/45835101/0c8f1f3e-7df3-495b-88de-32d71fcde52f)
+- Working on my final report -> https://docs.google.com/document/d/1dXclTBQRLjnywkg0-Wqs0F4fF8LLGG3KxjwQ4vxFkL0/edit
+- Implementing a feedback form that allows users to provide feedback which can make the app better. 
+
+
