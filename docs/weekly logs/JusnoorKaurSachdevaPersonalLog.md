@@ -148,7 +148,7 @@ Group Member : Jusnoor Kaur Sachdeva
 
 
 
-<h3>Week 10 log (March 10th - March 17th)</h3>
+<h3>Week 12 log (March 17th - March 24th)</h3>
 Group Member : Jusnoor Kaur Sachdeva 
 
 * Team discussions
@@ -158,4 +158,20 @@ Group Member : Jusnoor Kaur Sachdeva
 * Learning to creat API for sending notification to user after registering
 
 ![IMG_0122](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/b3978e78-772d-4d46-b854-a3a70e3589b7)
+
+
+
+<h3>Week 13 log (March 24th - March 31st)</h3>
+Group Member : Jusnoor Kaur Sachdeva 
+
+* Team discussions
+* Team meetings
+* Completed the weekly log
+* added slide bar for notification
+* tried to add sorting feature to search bar when searching requets
+
+
+
+![Screenshot 2024-04-08 at 1 27 14 AM](https://github.com/COSC-499-W2023/year-long-project-team-12/assets/77403231/3a2c1a02-c7ba-4b61-839b-b0bc1b090c3a)
+
 
